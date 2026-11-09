@@ -1,0 +1,2904 @@
+{
+  "por_uf_faixa": [
+    {
+      "uf_code": "11",
+      "uf": "RO",
+      "faixa": "70-74",
+      "census": 34028,
+      "comp_2t": 22213,
+      "aptos": 35623,
+      "diff": -11815,
+      "ratio": 0.6528
+    },
+    {
+      "uf_code": "11",
+      "uf": "RO",
+      "faixa": "75-79",
+      "census": 21246,
+      "comp_2t": 9860,
+      "aptos": 22666,
+      "diff": -11386,
+      "ratio": 0.4641
+    },
+    {
+      "uf_code": "11",
+      "uf": "RO",
+      "faixa": "80-84",
+      "census": 13194,
+      "comp_2t": 3869,
+      "aptos": 13526,
+      "diff": -9325,
+      "ratio": 0.2932
+    },
+    {
+      "uf_code": "11",
+      "uf": "RO",
+      "faixa": "85-89",
+      "census": 6353,
+      "comp_2t": 1063,
+      "aptos": 6538,
+      "diff": -5290,
+      "ratio": 0.1673
+    },
+    {
+      "uf_code": "11",
+      "uf": "RO",
+      "faixa": "90-94",
+      "census": 2451,
+      "comp_2t": 233,
+      "aptos": 2895,
+      "diff": -2218,
+      "ratio": 0.0951
+    },
+    {
+      "uf_code": "11",
+      "uf": "RO",
+      "faixa": "95-99",
+      "census": 620,
+      "comp_2t": 30,
+      "aptos": 1367,
+      "diff": -590,
+      "ratio": 0.0484
+    },
+    {
+      "uf_code": "11",
+      "uf": "RO",
+      "faixa": "100+",
+      "census": 147,
+      "comp_2t": 9,
+      "aptos": 423,
+      "diff": -138,
+      "ratio": 0.0612
+    },
+    {
+      "uf_code": "12",
+      "uf": "AC",
+      "faixa": "70-74",
+      "census": 13779,
+      "comp_2t": 8685,
+      "aptos": 14867,
+      "diff": -5094,
+      "ratio": 0.6303
+    },
+    {
+      "uf_code": "12",
+      "uf": "AC",
+      "faixa": "75-79",
+      "census": 8969,
+      "comp_2t": 4023,
+      "aptos": 9630,
+      "diff": -4946,
+      "ratio": 0.4485
+    },
+    {
+      "uf_code": "12",
+      "uf": "AC",
+      "faixa": "80-84",
+      "census": 5567,
+      "comp_2t": 1745,
+      "aptos": 6091,
+      "diff": -3822,
+      "ratio": 0.3135
+    },
+    {
+      "uf_code": "12",
+      "uf": "AC",
+      "faixa": "85-89",
+      "census": 2742,
+      "comp_2t": 546,
+      "aptos": 3121,
+      "diff": -2196,
+      "ratio": 0.1991
+    },
+    {
+      "uf_code": "12",
+      "uf": "AC",
+      "faixa": "90-94",
+      "census": 1265,
+      "comp_2t": 148,
+      "aptos": 1613,
+      "diff": -1117,
+      "ratio": 0.117
+    },
+    {
+      "uf_code": "12",
+      "uf": "AC",
+      "faixa": "95-99",
+      "census": 414,
+      "comp_2t": 23,
+      "aptos": 732,
+      "diff": -391,
+      "ratio": 0.0556
+    },
+    {
+      "uf_code": "12",
+      "uf": "AC",
+      "faixa": "100+",
+      "census": 142,
+      "comp_2t": 15,
+      "aptos": 343,
+      "diff": -127,
+      "ratio": 0.1056
+    },
+    {
+      "uf_code": "13",
+      "uf": "AM",
+      "faixa": "70-74",
+      "census": 60937,
+      "comp_2t": 39858,
+      "aptos": 63009,
+      "diff": -21079,
+      "ratio": 0.6541
+    },
+    {
+      "uf_code": "13",
+      "uf": "AM",
+      "faixa": "75-79",
+      "census": 37869,
+      "comp_2t": 16543,
+      "aptos": 37543,
+      "diff": -21326,
+      "ratio": 0.4368
+    },
+    {
+      "uf_code": "13",
+      "uf": "AM",
+      "faixa": "80-84",
+      "census": 22925,
+      "comp_2t": 6077,
+      "aptos": 21684,
+      "diff": -16848,
+      "ratio": 0.2651
+    },
+    {
+      "uf_code": "13",
+      "uf": "AM",
+      "faixa": "85-89",
+      "census": 11919,
+      "comp_2t": 1850,
+      "aptos": 12198,
+      "diff": -10069,
+      "ratio": 0.1552
+    },
+    {
+      "uf_code": "13",
+      "uf": "AM",
+      "faixa": "90-94",
+      "census": 5087,
+      "comp_2t": 449,
+      "aptos": 7447,
+      "diff": -4638,
+      "ratio": 0.0883
+    },
+    {
+      "uf_code": "13",
+      "uf": "AM",
+      "faixa": "95-99",
+      "census": 1775,
+      "comp_2t": 112,
+      "aptos": 4802,
+      "diff": -1663,
+      "ratio": 0.0631
+    },
+    {
+      "uf_code": "13",
+      "uf": "AM",
+      "faixa": "100+",
+      "census": 731,
+      "comp_2t": 58,
+      "aptos": 2775,
+      "diff": -673,
+      "ratio": 0.0793
+    },
+    {
+      "uf_code": "14",
+      "uf": "RR",
+      "faixa": "70-74",
+      "census": 8730,
+      "comp_2t": 5878,
+      "aptos": 8627,
+      "diff": -2852,
+      "ratio": 0.6733
+    },
+    {
+      "uf_code": "14",
+      "uf": "RR",
+      "faixa": "75-79",
+      "census": 5049,
+      "comp_2t": 2684,
+      "aptos": 5092,
+      "diff": -2365,
+      "ratio": 0.5316
+    },
+    {
+      "uf_code": "14",
+      "uf": "RR",
+      "faixa": "80-84",
+      "census": 2947,
+      "comp_2t": 1067,
+      "aptos": 2777,
+      "diff": -1880,
+      "ratio": 0.3621
+    },
+    {
+      "uf_code": "14",
+      "uf": "RR",
+      "faixa": "85-89",
+      "census": 1424,
+      "comp_2t": 380,
+      "aptos": 1265,
+      "diff": -1044,
+      "ratio": 0.2669
+    },
+    {
+      "uf_code": "14",
+      "uf": "RR",
+      "faixa": "90-94",
+      "census": 595,
+      "comp_2t": 69,
+      "aptos": 504,
+      "diff": -526,
+      "ratio": 0.116
+    },
+    {
+      "uf_code": "14",
+      "uf": "RR",
+      "faixa": "95-99",
+      "census": 175,
+      "comp_2t": 10,
+      "aptos": 120,
+      "diff": -165,
+      "ratio": 0.0571
+    },
+    {
+      "uf_code": "14",
+      "uf": "RR",
+      "faixa": "100+",
+      "census": 73,
+      "comp_2t": 7,
+      "aptos": 44,
+      "diff": -66,
+      "ratio": 0.0959
+    },
+    {
+      "uf_code": "15",
+      "uf": "PA",
+      "faixa": "70-74",
+      "census": 154240,
+      "comp_2t": 108496,
+      "aptos": 172789,
+      "diff": -45744,
+      "ratio": 0.7034
+    },
+    {
+      "uf_code": "15",
+      "uf": "PA",
+      "faixa": "75-79",
+      "census": 101321,
+      "comp_2t": 50319,
+      "aptos": 115347,
+      "diff": -51002,
+      "ratio": 0.4966
+    },
+    {
+      "uf_code": "15",
+      "uf": "PA",
+      "faixa": "80-84",
+      "census": 62180,
+      "comp_2t": 19954,
+      "aptos": 75079,
+      "diff": -42226,
+      "ratio": 0.3209
+    },
+    {
+      "uf_code": "15",
+      "uf": "PA",
+      "faixa": "85-89",
+      "census": 32049,
+      "comp_2t": 5673,
+      "aptos": 42360,
+      "diff": -26376,
+      "ratio": 0.177
+    },
+    {
+      "uf_code": "15",
+      "uf": "PA",
+      "faixa": "90-94",
+      "census": 13364,
+      "comp_2t": 1329,
+      "aptos": 25867,
+      "diff": -12035,
+      "ratio": 0.0994
+    },
+    {
+      "uf_code": "15",
+      "uf": "PA",
+      "faixa": "95-99",
+      "census": 4135,
+      "comp_2t": 242,
+      "aptos": 15820,
+      "diff": -3893,
+      "ratio": 0.0585
+    },
+    {
+      "uf_code": "15",
+      "uf": "PA",
+      "faixa": "100+",
+      "census": 1664,
+      "comp_2t": 112,
+      "aptos": 7678,
+      "diff": -1552,
+      "ratio": 0.0673
+    },
+    {
+      "uf_code": "16",
+      "uf": "AP",
+      "faixa": "70-74",
+      "census": 10198,
+      "comp_2t": 6704,
+      "aptos": 11455,
+      "diff": -3494,
+      "ratio": 0.6574
+    },
+    {
+      "uf_code": "16",
+      "uf": "AP",
+      "faixa": "75-79",
+      "census": 6662,
+      "comp_2t": 2908,
+      "aptos": 7429,
+      "diff": -3754,
+      "ratio": 0.4365
+    },
+    {
+      "uf_code": "16",
+      "uf": "AP",
+      "faixa": "80-84",
+      "census": 4023,
+      "comp_2t": 1171,
+      "aptos": 4164,
+      "diff": -2852,
+      "ratio": 0.2911
+    },
+    {
+      "uf_code": "16",
+      "uf": "AP",
+      "faixa": "85-89",
+      "census": 2213,
+      "comp_2t": 324,
+      "aptos": 1905,
+      "diff": -1889,
+      "ratio": 0.1464
+    },
+    {
+      "uf_code": "16",
+      "uf": "AP",
+      "faixa": "90-94",
+      "census": 903,
+      "comp_2t": 82,
+      "aptos": 669,
+      "diff": -821,
+      "ratio": 0.0908
+    },
+    {
+      "uf_code": "16",
+      "uf": "AP",
+      "faixa": "95-99",
+      "census": 275,
+      "comp_2t": 12,
+      "aptos": 179,
+      "diff": -263,
+      "ratio": 0.0436
+    },
+    {
+      "uf_code": "16",
+      "uf": "AP",
+      "faixa": "100+",
+      "census": 163,
+      "comp_2t": 1,
+      "aptos": 95,
+      "diff": -162,
+      "ratio": 0.0061
+    },
+    {
+      "uf_code": "17",
+      "uf": "TO",
+      "faixa": "70-74",
+      "census": 34053,
+      "comp_2t": 24227,
+      "aptos": 33636,
+      "diff": -9826,
+      "ratio": 0.7114
+    },
+    {
+      "uf_code": "17",
+      "uf": "TO",
+      "faixa": "75-79",
+      "census": 23007,
+      "comp_2t": 12703,
+      "aptos": 22826,
+      "diff": -10304,
+      "ratio": 0.5521
+    },
+    {
+      "uf_code": "17",
+      "uf": "TO",
+      "faixa": "80-84",
+      "census": 15028,
+      "comp_2t": 5815,
+      "aptos": 14252,
+      "diff": -9213,
+      "ratio": 0.3869
+    },
+    {
+      "uf_code": "17",
+      "uf": "TO",
+      "faixa": "85-89",
+      "census": 7749,
+      "comp_2t": 1804,
+      "aptos": 6770,
+      "diff": -5945,
+      "ratio": 0.2328
+    },
+    {
+      "uf_code": "17",
+      "uf": "TO",
+      "faixa": "90-94",
+      "census": 3327,
+      "comp_2t": 496,
+      "aptos": 2692,
+      "diff": -2831,
+      "ratio": 0.1491
+    },
+    {
+      "uf_code": "17",
+      "uf": "TO",
+      "faixa": "95-99",
+      "census": 1049,
+      "comp_2t": 85,
+      "aptos": 719,
+      "diff": -964,
+      "ratio": 0.081
+    },
+    {
+      "uf_code": "17",
+      "uf": "TO",
+      "faixa": "100+",
+      "census": 322,
+      "comp_2t": 20,
+      "aptos": 228,
+      "diff": -302,
+      "ratio": 0.0621
+    },
+    {
+      "uf_code": "21",
+      "uf": "MA",
+      "faixa": "70-74",
+      "census": 149283,
+      "comp_2t": 105077,
+      "aptos": 156757,
+      "diff": -44206,
+      "ratio": 0.7039
+    },
+    {
+      "uf_code": "21",
+      "uf": "MA",
+      "faixa": "75-79",
+      "census": 99505,
+      "comp_2t": 53384,
+      "aptos": 106017,
+      "diff": -46121,
+      "ratio": 0.5365
+    },
+    {
+      "uf_code": "21",
+      "uf": "MA",
+      "faixa": "80-84",
+      "census": 67294,
+      "comp_2t": 24738,
+      "aptos": 72385,
+      "diff": -42556,
+      "ratio": 0.3676
+    },
+    {
+      "uf_code": "21",
+      "uf": "MA",
+      "faixa": "85-89",
+      "census": 35679,
+      "comp_2t": 7710,
+      "aptos": 40269,
+      "diff": -27969,
+      "ratio": 0.2161
+    },
+    {
+      "uf_code": "21",
+      "uf": "MA",
+      "faixa": "90-94",
+      "census": 14994,
+      "comp_2t": 1949,
+      "aptos": 21689,
+      "diff": -13045,
+      "ratio": 0.13
+    },
+    {
+      "uf_code": "21",
+      "uf": "MA",
+      "faixa": "95-99",
+      "census": 5096,
+      "comp_2t": 393,
+      "aptos": 11471,
+      "diff": -4703,
+      "ratio": 0.0771
+    },
+    {
+      "uf_code": "21",
+      "uf": "MA",
+      "faixa": "100+",
+      "census": 2471,
+      "comp_2t": 160,
+      "aptos": 7253,
+      "diff": -2311,
+      "ratio": 0.0648
+    },
+    {
+      "uf_code": "22",
+      "uf": "PI",
+      "faixa": "70-74",
+      "census": 93426,
+      "comp_2t": 68969,
+      "aptos": 95819,
+      "diff": -24457,
+      "ratio": 0.7382
+    },
+    {
+      "uf_code": "22",
+      "uf": "PI",
+      "faixa": "75-79",
+      "census": 62951,
+      "comp_2t": 35095,
+      "aptos": 63705,
+      "diff": -27856,
+      "ratio": 0.5575
+    },
+    {
+      "uf_code": "22",
+      "uf": "PI",
+      "faixa": "80-84",
+      "census": 41416,
+      "comp_2t": 15523,
+      "aptos": 38560,
+      "diff": -25893,
+      "ratio": 0.3748
+    },
+    {
+      "uf_code": "22",
+      "uf": "PI",
+      "faixa": "85-89",
+      "census": 22528,
+      "comp_2t": 5114,
+      "aptos": 18628,
+      "diff": -17414,
+      "ratio": 0.227
+    },
+    {
+      "uf_code": "22",
+      "uf": "PI",
+      "faixa": "90-94",
+      "census": 10491,
+      "comp_2t": 1292,
+      "aptos": 7549,
+      "diff": -9199,
+      "ratio": 0.1232
+    },
+    {
+      "uf_code": "22",
+      "uf": "PI",
+      "faixa": "95-99",
+      "census": 3236,
+      "comp_2t": 209,
+      "aptos": 2092,
+      "diff": -3027,
+      "ratio": 0.0646
+    },
+    {
+      "uf_code": "22",
+      "uf": "PI",
+      "faixa": "100+",
+      "census": 714,
+      "comp_2t": 41,
+      "aptos": 474,
+      "diff": -673,
+      "ratio": 0.0574
+    },
+    {
+      "uf_code": "23",
+      "uf": "CE",
+      "faixa": "70-74",
+      "census": 240089,
+      "comp_2t": 167190,
+      "aptos": 241133,
+      "diff": -72899,
+      "ratio": 0.6964
+    },
+    {
+      "uf_code": "23",
+      "uf": "CE",
+      "faixa": "75-79",
+      "census": 161761,
+      "comp_2t": 83186,
+      "aptos": 159446,
+      "diff": -78575,
+      "ratio": 0.5143
+    },
+    {
+      "uf_code": "23",
+      "uf": "CE",
+      "faixa": "80-84",
+      "census": 114462,
+      "comp_2t": 37533,
+      "aptos": 108186,
+      "diff": -76929,
+      "ratio": 0.3279
+    },
+    {
+      "uf_code": "23",
+      "uf": "CE",
+      "faixa": "85-89",
+      "census": 61360,
+      "comp_2t": 12258,
+      "aptos": 56784,
+      "diff": -49102,
+      "ratio": 0.1998
+    },
+    {
+      "uf_code": "23",
+      "uf": "CE",
+      "faixa": "90-94",
+      "census": 28425,
+      "comp_2t": 2882,
+      "aptos": 30907,
+      "diff": -25543,
+      "ratio": 0.1014
+    },
+    {
+      "uf_code": "23",
+      "uf": "CE",
+      "faixa": "95-99",
+      "census": 9540,
+      "comp_2t": 550,
+      "aptos": 18322,
+      "diff": -8990,
+      "ratio": 0.0577
+    },
+    {
+      "uf_code": "23",
+      "uf": "CE",
+      "faixa": "100+",
+      "census": 1999,
+      "comp_2t": 72,
+      "aptos": 6453,
+      "diff": -1927,
+      "ratio": 0.036
+    },
+    {
+      "uf_code": "24",
+      "uf": "RN",
+      "faixa": "70-74",
+      "census": 90552,
+      "comp_2t": 62032,
+      "aptos": 90736,
+      "diff": -28520,
+      "ratio": 0.685
+    },
+    {
+      "uf_code": "24",
+      "uf": "RN",
+      "faixa": "75-79",
+      "census": 61387,
+      "comp_2t": 31190,
+      "aptos": 60483,
+      "diff": -30197,
+      "ratio": 0.5081
+    },
+    {
+      "uf_code": "24",
+      "uf": "RN",
+      "faixa": "80-84",
+      "census": 43434,
+      "comp_2t": 14287,
+      "aptos": 40480,
+      "diff": -29147,
+      "ratio": 0.3289
+    },
+    {
+      "uf_code": "24",
+      "uf": "RN",
+      "faixa": "85-89",
+      "census": 23049,
+      "comp_2t": 4546,
+      "aptos": 19918,
+      "diff": -18503,
+      "ratio": 0.1972
+    },
+    {
+      "uf_code": "24",
+      "uf": "RN",
+      "faixa": "90-94",
+      "census": 10573,
+      "comp_2t": 1094,
+      "aptos": 8125,
+      "diff": -9479,
+      "ratio": 0.1035
+    },
+    {
+      "uf_code": "24",
+      "uf": "RN",
+      "faixa": "95-99",
+      "census": 3971,
+      "comp_2t": 180,
+      "aptos": 2778,
+      "diff": -3791,
+      "ratio": 0.0453
+    },
+    {
+      "uf_code": "24",
+      "uf": "RN",
+      "faixa": "100+",
+      "census": 976,
+      "comp_2t": 36,
+      "aptos": 630,
+      "diff": -940,
+      "ratio": 0.0369
+    },
+    {
+      "uf_code": "25",
+      "uf": "PB",
+      "faixa": "70-74",
+      "census": 114396,
+      "comp_2t": 77679,
+      "aptos": 116521,
+      "diff": -36717,
+      "ratio": 0.679
+    },
+    {
+      "uf_code": "25",
+      "uf": "PB",
+      "faixa": "75-79",
+      "census": 78868,
+      "comp_2t": 38598,
+      "aptos": 76790,
+      "diff": -40270,
+      "ratio": 0.4894
+    },
+    {
+      "uf_code": "25",
+      "uf": "PB",
+      "faixa": "80-84",
+      "census": 55786,
+      "comp_2t": 17320,
+      "aptos": 47956,
+      "diff": -38466,
+      "ratio": 0.3105
+    },
+    {
+      "uf_code": "25",
+      "uf": "PB",
+      "faixa": "85-89",
+      "census": 29470,
+      "comp_2t": 5296,
+      "aptos": 21650,
+      "diff": -24174,
+      "ratio": 0.1797
+    },
+    {
+      "uf_code": "25",
+      "uf": "PB",
+      "faixa": "90-94",
+      "census": 13604,
+      "comp_2t": 1269,
+      "aptos": 7943,
+      "diff": -12335,
+      "ratio": 0.0933
+    },
+    {
+      "uf_code": "25",
+      "uf": "PB",
+      "faixa": "95-99",
+      "census": 4470,
+      "comp_2t": 202,
+      "aptos": 2068,
+      "diff": -4268,
+      "ratio": 0.0452
+    },
+    {
+      "uf_code": "25",
+      "uf": "PB",
+      "faixa": "100+",
+      "census": 1330,
+      "comp_2t": 48,
+      "aptos": 547,
+      "diff": -1282,
+      "ratio": 0.0361
+    },
+    {
+      "uf_code": "26",
+      "uf": "PE",
+      "faixa": "70-74",
+      "census": 244559,
+      "comp_2t": 160050,
+      "aptos": 248031,
+      "diff": -84509,
+      "ratio": 0.6544
+    },
+    {
+      "uf_code": "26",
+      "uf": "PE",
+      "faixa": "75-79",
+      "census": 164298,
+      "comp_2t": 76042,
+      "aptos": 161725,
+      "diff": -88256,
+      "ratio": 0.4628
+    },
+    {
+      "uf_code": "26",
+      "uf": "PE",
+      "faixa": "80-84",
+      "census": 108159,
+      "comp_2t": 30884,
+      "aptos": 93757,
+      "diff": -77275,
+      "ratio": 0.2855
+    },
+    {
+      "uf_code": "26",
+      "uf": "PE",
+      "faixa": "85-89",
+      "census": 55895,
+      "comp_2t": 9679,
+      "aptos": 46520,
+      "diff": -46216,
+      "ratio": 0.1732
+    },
+    {
+      "uf_code": "26",
+      "uf": "PE",
+      "faixa": "90-94",
+      "census": 24463,
+      "comp_2t": 2345,
+      "aptos": 23524,
+      "diff": -22118,
+      "ratio": 0.0959
+    },
+    {
+      "uf_code": "26",
+      "uf": "PE",
+      "faixa": "95-99",
+      "census": 7704,
+      "comp_2t": 393,
+      "aptos": 13960,
+      "diff": -7311,
+      "ratio": 0.051
+    },
+    {
+      "uf_code": "26",
+      "uf": "PE",
+      "faixa": "100+",
+      "census": 2141,
+      "comp_2t": 94,
+      "aptos": 6016,
+      "diff": -2047,
+      "ratio": 0.0439
+    },
+    {
+      "uf_code": "27",
+      "uf": "AL",
+      "faixa": "70-74",
+      "census": 75283,
+      "comp_2t": 40897,
+      "aptos": 74028,
+      "diff": -34386,
+      "ratio": 0.5432
+    },
+    {
+      "uf_code": "27",
+      "uf": "AL",
+      "faixa": "75-79",
+      "census": 48936,
+      "comp_2t": 17521,
+      "aptos": 48283,
+      "diff": -31415,
+      "ratio": 0.358
+    },
+    {
+      "uf_code": "27",
+      "uf": "AL",
+      "faixa": "80-84",
+      "census": 30513,
+      "comp_2t": 6316,
+      "aptos": 25340,
+      "diff": -24197,
+      "ratio": 0.207
+    },
+    {
+      "uf_code": "27",
+      "uf": "AL",
+      "faixa": "85-89",
+      "census": 15155,
+      "comp_2t": 1702,
+      "aptos": 10254,
+      "diff": -13453,
+      "ratio": 0.1123
+    },
+    {
+      "uf_code": "27",
+      "uf": "AL",
+      "faixa": "90-94",
+      "census": 6351,
+      "comp_2t": 362,
+      "aptos": 3404,
+      "diff": -5989,
+      "ratio": 0.057
+    },
+    {
+      "uf_code": "27",
+      "uf": "AL",
+      "faixa": "95-99",
+      "census": 1991,
+      "comp_2t": 59,
+      "aptos": 875,
+      "diff": -1932,
+      "ratio": 0.0296
+    },
+    {
+      "uf_code": "27",
+      "uf": "AL",
+      "faixa": "100+",
+      "census": 820,
+      "comp_2t": 17,
+      "aptos": 362,
+      "diff": -803,
+      "ratio": 0.0207
+    },
+    {
+      "uf_code": "28",
+      "uf": "SE",
+      "faixa": "70-74",
+      "census": 53018,
+      "comp_2t": 31018,
+      "aptos": 52451,
+      "diff": -22000,
+      "ratio": 0.585
+    },
+    {
+      "uf_code": "28",
+      "uf": "SE",
+      "faixa": "75-79",
+      "census": 35714,
+      "comp_2t": 14164,
+      "aptos": 36529,
+      "diff": -21550,
+      "ratio": 0.3966
+    },
+    {
+      "uf_code": "28",
+      "uf": "SE",
+      "faixa": "80-84",
+      "census": 22684,
+      "comp_2t": 5353,
+      "aptos": 20313,
+      "diff": -17331,
+      "ratio": 0.236
+    },
+    {
+      "uf_code": "28",
+      "uf": "SE",
+      "faixa": "85-89",
+      "census": 12085,
+      "comp_2t": 1675,
+      "aptos": 9188,
+      "diff": -10410,
+      "ratio": 0.1386
+    },
+    {
+      "uf_code": "28",
+      "uf": "SE",
+      "faixa": "90-94",
+      "census": 5584,
+      "comp_2t": 378,
+      "aptos": 3564,
+      "diff": -5206,
+      "ratio": 0.0677
+    },
+    {
+      "uf_code": "28",
+      "uf": "SE",
+      "faixa": "95-99",
+      "census": 1904,
+      "comp_2t": 49,
+      "aptos": 1068,
+      "diff": -1855,
+      "ratio": 0.0257
+    },
+    {
+      "uf_code": "28",
+      "uf": "SE",
+      "faixa": "100+",
+      "census": 531,
+      "comp_2t": 7,
+      "aptos": 308,
+      "diff": -524,
+      "ratio": 0.0132
+    },
+    {
+      "uf_code": "29",
+      "uf": "BA",
+      "faixa": "70-74",
+      "census": 392325,
+      "comp_2t": 265110,
+      "aptos": 405825,
+      "diff": -127215,
+      "ratio": 0.6757
+    },
+    {
+      "uf_code": "29",
+      "uf": "BA",
+      "faixa": "75-79",
+      "census": 268296,
+      "comp_2t": 130141,
+      "aptos": 269797,
+      "diff": -138155,
+      "ratio": 0.4851
+    },
+    {
+      "uf_code": "29",
+      "uf": "BA",
+      "faixa": "80-84",
+      "census": 180081,
+      "comp_2t": 57096,
+      "aptos": 177653,
+      "diff": -122985,
+      "ratio": 0.3171
+    },
+    {
+      "uf_code": "29",
+      "uf": "BA",
+      "faixa": "85-89",
+      "census": 96021,
+      "comp_2t": 18329,
+      "aptos": 95103,
+      "diff": -77692,
+      "ratio": 0.1909
+    },
+    {
+      "uf_code": "29",
+      "uf": "BA",
+      "faixa": "90-94",
+      "census": 47354,
+      "comp_2t": 4941,
+      "aptos": 54451,
+      "diff": -42413,
+      "ratio": 0.1043
+    },
+    {
+      "uf_code": "29",
+      "uf": "BA",
+      "faixa": "95-99",
+      "census": 16113,
+      "comp_2t": 832,
+      "aptos": 27514,
+      "diff": -15281,
+      "ratio": 0.0516
+    },
+    {
+      "uf_code": "29",
+      "uf": "BA",
+      "faixa": "100+",
+      "census": 5336,
+      "comp_2t": 189,
+      "aptos": 12839,
+      "diff": -5147,
+      "ratio": 0.0354
+    },
+    {
+      "uf_code": "31",
+      "uf": "MG",
+      "faixa": "70-74",
+      "census": 658397,
+      "comp_2t": 437340,
+      "aptos": 664039,
+      "diff": -221057,
+      "ratio": 0.6642
+    },
+    {
+      "uf_code": "31",
+      "uf": "MG",
+      "faixa": "75-79",
+      "census": 441366,
+      "comp_2t": 216064,
+      "aptos": 454617,
+      "diff": -225302,
+      "ratio": 0.4895
+    },
+    {
+      "uf_code": "31",
+      "uf": "MG",
+      "faixa": "80-84",
+      "census": 289945,
+      "comp_2t": 99239,
+      "aptos": 305164,
+      "diff": -190706,
+      "ratio": 0.3423
+    },
+    {
+      "uf_code": "31",
+      "uf": "MG",
+      "faixa": "85-89",
+      "census": 161822,
+      "comp_2t": 37429,
+      "aptos": 183816,
+      "diff": -124393,
+      "ratio": 0.2313
+    },
+    {
+      "uf_code": "31",
+      "uf": "MG",
+      "faixa": "90-94",
+      "census": 71046,
+      "comp_2t": 10544,
+      "aptos": 104048,
+      "diff": -60502,
+      "ratio": 0.1484
+    },
+    {
+      "uf_code": "31",
+      "uf": "MG",
+      "faixa": "95-99",
+      "census": 20046,
+      "comp_2t": 2001,
+      "aptos": 64635,
+      "diff": -18045,
+      "ratio": 0.0998
+    },
+    {
+      "uf_code": "31",
+      "uf": "MG",
+      "faixa": "100+",
+      "census": 4104,
+      "comp_2t": 365,
+      "aptos": 26437,
+      "diff": -3739,
+      "ratio": 0.0889
+    },
+    {
+      "uf_code": "32",
+      "uf": "ES",
+      "faixa": "70-74",
+      "census": 111235,
+      "comp_2t": 71979,
+      "aptos": 110549,
+      "diff": -39256,
+      "ratio": 0.6471
+    },
+    {
+      "uf_code": "32",
+      "uf": "ES",
+      "faixa": "75-79",
+      "census": 70070,
+      "comp_2t": 31747,
+      "aptos": 66742,
+      "diff": -38323,
+      "ratio": 0.4531
+    },
+    {
+      "uf_code": "32",
+      "uf": "ES",
+      "faixa": "80-84",
+      "census": 45991,
+      "comp_2t": 13539,
+      "aptos": 41634,
+      "diff": -32452,
+      "ratio": 0.2944
+    },
+    {
+      "uf_code": "32",
+      "uf": "ES",
+      "faixa": "85-89",
+      "census": 26189,
+      "comp_2t": 4920,
+      "aptos": 23013,
+      "diff": -21269,
+      "ratio": 0.1879
+    },
+    {
+      "uf_code": "32",
+      "uf": "ES",
+      "faixa": "90-94",
+      "census": 11719,
+      "comp_2t": 1245,
+      "aptos": 11802,
+      "diff": -10474,
+      "ratio": 0.1062
+    },
+    {
+      "uf_code": "32",
+      "uf": "ES",
+      "faixa": "95-99",
+      "census": 3313,
+      "comp_2t": 181,
+      "aptos": 6467,
+      "diff": -3132,
+      "ratio": 0.0546
+    },
+    {
+      "uf_code": "32",
+      "uf": "ES",
+      "faixa": "100+",
+      "census": 678,
+      "comp_2t": 40,
+      "aptos": 2101,
+      "diff": -638,
+      "ratio": 0.059
+    },
+    {
+      "uf_code": "33",
+      "uf": "RJ",
+      "faixa": "70-74",
+      "census": 559632,
+      "comp_2t": 345082,
+      "aptos": 561240,
+      "diff": -214550,
+      "ratio": 0.6166
+    },
+    {
+      "uf_code": "33",
+      "uf": "RJ",
+      "faixa": "75-79",
+      "census": 353656,
+      "comp_2t": 151526,
+      "aptos": 374380,
+      "diff": -202130,
+      "ratio": 0.4285
+    },
+    {
+      "uf_code": "33",
+      "uf": "RJ",
+      "faixa": "80-84",
+      "census": 229376,
+      "comp_2t": 64233,
+      "aptos": 249767,
+      "diff": -165143,
+      "ratio": 0.28
+    },
+    {
+      "uf_code": "33",
+      "uf": "RJ",
+      "faixa": "85-89",
+      "census": 128213,
+      "comp_2t": 22864,
+      "aptos": 155976,
+      "diff": -105349,
+      "ratio": 0.1783
+    },
+    {
+      "uf_code": "33",
+      "uf": "RJ",
+      "faixa": "90-94",
+      "census": 57985,
+      "comp_2t": 5889,
+      "aptos": 117288,
+      "diff": -52096,
+      "ratio": 0.1016
+    },
+    {
+      "uf_code": "33",
+      "uf": "RJ",
+      "faixa": "95-99",
+      "census": 15800,
+      "comp_2t": 888,
+      "aptos": 111056,
+      "diff": -14912,
+      "ratio": 0.0562
+    },
+    {
+      "uf_code": "33",
+      "uf": "RJ",
+      "faixa": "100+",
+      "census": 2712,
+      "comp_2t": 207,
+      "aptos": 39850,
+      "diff": -2505,
+      "ratio": 0.0763
+    },
+    {
+      "uf_code": "35",
+      "uf": "SP",
+      "faixa": "70-74",
+      "census": 1403952,
+      "comp_2t": 857141,
+      "aptos": 1367350,
+      "diff": -546811,
+      "ratio": 0.6105
+    },
+    {
+      "uf_code": "35",
+      "uf": "SP",
+      "faixa": "75-79",
+      "census": 913197,
+      "comp_2t": 379757,
+      "aptos": 898819,
+      "diff": -533440,
+      "ratio": 0.4159
+    },
+    {
+      "uf_code": "35",
+      "uf": "SP",
+      "faixa": "80-84",
+      "census": 577843,
+      "comp_2t": 151287,
+      "aptos": 570724,
+      "diff": -426556,
+      "ratio": 0.2618
+    },
+    {
+      "uf_code": "35",
+      "uf": "SP",
+      "faixa": "85-89",
+      "census": 313739,
+      "comp_2t": 49701,
+      "aptos": 329547,
+      "diff": -264038,
+      "ratio": 0.1584
+    },
+    {
+      "uf_code": "35",
+      "uf": "SP",
+      "faixa": "90-94",
+      "census": 135807,
+      "comp_2t": 11433,
+      "aptos": 192101,
+      "diff": -124374,
+      "ratio": 0.0842
+    },
+    {
+      "uf_code": "35",
+      "uf": "SP",
+      "faixa": "95-99",
+      "census": 34872,
+      "comp_2t": 1625,
+      "aptos": 130836,
+      "diff": -33247,
+      "ratio": 0.0466
+    },
+    {
+      "uf_code": "35",
+      "uf": "SP",
+      "faixa": "100+",
+      "census": 5095,
+      "comp_2t": 212,
+      "aptos": 51518,
+      "diff": -4883,
+      "ratio": 0.0416
+    },
+    {
+      "uf_code": "41",
+      "uf": "PR",
+      "faixa": "70-74",
+      "census": 345043,
+      "comp_2t": 229271,
+      "aptos": 340084,
+      "diff": -115772,
+      "ratio": 0.6645
+    },
+    {
+      "uf_code": "41",
+      "uf": "PR",
+      "faixa": "75-79",
+      "census": 229624,
+      "comp_2t": 113042,
+      "aptos": 218988,
+      "diff": -116582,
+      "ratio": 0.4923
+    },
+    {
+      "uf_code": "41",
+      "uf": "PR",
+      "faixa": "80-84",
+      "census": 139580,
+      "comp_2t": 46250,
+      "aptos": 119353,
+      "diff": -93330,
+      "ratio": 0.3314
+    },
+    {
+      "uf_code": "41",
+      "uf": "PR",
+      "faixa": "85-89",
+      "census": 72310,
+      "comp_2t": 15163,
+      "aptos": 55420,
+      "diff": -57147,
+      "ratio": 0.2097
+    },
+    {
+      "uf_code": "41",
+      "uf": "PR",
+      "faixa": "90-94",
+      "census": 28812,
+      "comp_2t": 3378,
+      "aptos": 20678,
+      "diff": -25434,
+      "ratio": 0.1172
+    },
+    {
+      "uf_code": "41",
+      "uf": "PR",
+      "faixa": "95-99",
+      "census": 7152,
+      "comp_2t": 418,
+      "aptos": 5960,
+      "diff": -6734,
+      "ratio": 0.0584
+    },
+    {
+      "uf_code": "41",
+      "uf": "PR",
+      "faixa": "100+",
+      "census": 1299,
+      "comp_2t": 56,
+      "aptos": 1613,
+      "diff": -1243,
+      "ratio": 0.0431
+    },
+    {
+      "uf_code": "42",
+      "uf": "SC",
+      "faixa": "70-74",
+      "census": 217685,
+      "comp_2t": 148875,
+      "aptos": 213287,
+      "diff": -68810,
+      "ratio": 0.6839
+    },
+    {
+      "uf_code": "42",
+      "uf": "SC",
+      "faixa": "75-79",
+      "census": 135349,
+      "comp_2t": 66835,
+      "aptos": 123702,
+      "diff": -68514,
+      "ratio": 0.4938
+    },
+    {
+      "uf_code": "42",
+      "uf": "SC",
+      "faixa": "80-84",
+      "census": 80253,
+      "comp_2t": 26688,
+      "aptos": 67522,
+      "diff": -53565,
+      "ratio": 0.3325
+    },
+    {
+      "uf_code": "42",
+      "uf": "SC",
+      "faixa": "85-89",
+      "census": 41661,
+      "comp_2t": 8731,
+      "aptos": 34313,
+      "diff": -32930,
+      "ratio": 0.2096
+    },
+    {
+      "uf_code": "42",
+      "uf": "SC",
+      "faixa": "90-94",
+      "census": 16316,
+      "comp_2t": 1891,
+      "aptos": 16401,
+      "diff": -14425,
+      "ratio": 0.1159
+    },
+    {
+      "uf_code": "42",
+      "uf": "SC",
+      "faixa": "95-99",
+      "census": 3858,
+      "comp_2t": 236,
+      "aptos": 9219,
+      "diff": -3622,
+      "ratio": 0.0612
+    },
+    {
+      "uf_code": "42",
+      "uf": "SC",
+      "faixa": "100+",
+      "census": 667,
+      "comp_2t": 54,
+      "aptos": 3607,
+      "diff": -613,
+      "ratio": 0.081
+    },
+    {
+      "uf_code": "43",
+      "uf": "RS",
+      "faixa": "70-74",
+      "census": 410542,
+      "comp_2t": 284105,
+      "aptos": 417393,
+      "diff": -126437,
+      "ratio": 0.692
+    },
+    {
+      "uf_code": "43",
+      "uf": "RS",
+      "faixa": "75-79",
+      "census": 271574,
+      "comp_2t": 139471,
+      "aptos": 273127,
+      "diff": -132103,
+      "ratio": 0.5136
+    },
+    {
+      "uf_code": "43",
+      "uf": "RS",
+      "faixa": "80-84",
+      "census": 167840,
+      "comp_2t": 59492,
+      "aptos": 163791,
+      "diff": -108348,
+      "ratio": 0.3545
+    },
+    {
+      "uf_code": "43",
+      "uf": "RS",
+      "faixa": "85-89",
+      "census": 91204,
+      "comp_2t": 21302,
+      "aptos": 90296,
+      "diff": -69902,
+      "ratio": 0.2336
+    },
+    {
+      "uf_code": "43",
+      "uf": "RS",
+      "faixa": "90-94",
+      "census": 37178,
+      "comp_2t": 5079,
+      "aptos": 43647,
+      "diff": -32099,
+      "ratio": 0.1366
+    },
+    {
+      "uf_code": "43",
+      "uf": "RS",
+      "faixa": "95-99",
+      "census": 9060,
+      "comp_2t": 701,
+      "aptos": 23501,
+      "diff": -8359,
+      "ratio": 0.0774
+    },
+    {
+      "uf_code": "43",
+      "uf": "RS",
+      "faixa": "100+",
+      "census": 1536,
+      "comp_2t": 105,
+      "aptos": 8605,
+      "diff": -1431,
+      "ratio": 0.0684
+    },
+    {
+      "uf_code": "50",
+      "uf": "MS",
+      "faixa": "70-74",
+      "census": 68719,
+      "comp_2t": 46924,
+      "aptos": 69835,
+      "diff": -21795,
+      "ratio": 0.6828
+    },
+    {
+      "uf_code": "50",
+      "uf": "MS",
+      "faixa": "75-79",
+      "census": 45514,
+      "comp_2t": 22877,
+      "aptos": 45064,
+      "diff": -22637,
+      "ratio": 0.5026
+    },
+    {
+      "uf_code": "50",
+      "uf": "MS",
+      "faixa": "80-84",
+      "census": 28242,
+      "comp_2t": 9719,
+      "aptos": 27568,
+      "diff": -18523,
+      "ratio": 0.3441
+    },
+    {
+      "uf_code": "50",
+      "uf": "MS",
+      "faixa": "85-89",
+      "census": 15129,
+      "comp_2t": 3202,
+      "aptos": 14367,
+      "diff": -11927,
+      "ratio": 0.2116
+    },
+    {
+      "uf_code": "50",
+      "uf": "MS",
+      "faixa": "90-94",
+      "census": 6336,
+      "comp_2t": 795,
+      "aptos": 7222,
+      "diff": -5541,
+      "ratio": 0.1255
+    },
+    {
+      "uf_code": "50",
+      "uf": "MS",
+      "faixa": "95-99",
+      "census": 1720,
+      "comp_2t": 117,
+      "aptos": 3787,
+      "diff": -1603,
+      "ratio": 0.068
+    },
+    {
+      "uf_code": "50",
+      "uf": "MS",
+      "faixa": "100+",
+      "census": 468,
+      "comp_2t": 22,
+      "aptos": 1666,
+      "diff": -446,
+      "ratio": 0.047
+    },
+    {
+      "uf_code": "51",
+      "uf": "MT",
+      "faixa": "70-74",
+      "census": 74788,
+      "comp_2t": 49675,
+      "aptos": 74569,
+      "diff": -25113,
+      "ratio": 0.6642
+    },
+    {
+      "uf_code": "51",
+      "uf": "MT",
+      "faixa": "75-79",
+      "census": 47331,
+      "comp_2t": 23093,
+      "aptos": 46101,
+      "diff": -24238,
+      "ratio": 0.4879
+    },
+    {
+      "uf_code": "51",
+      "uf": "MT",
+      "faixa": "80-84",
+      "census": 28512,
+      "comp_2t": 9214,
+      "aptos": 27223,
+      "diff": -19298,
+      "ratio": 0.3232
+    },
+    {
+      "uf_code": "51",
+      "uf": "MT",
+      "faixa": "85-89",
+      "census": 13980,
+      "comp_2t": 2903,
+      "aptos": 13996,
+      "diff": -11077,
+      "ratio": 0.2077
+    },
+    {
+      "uf_code": "51",
+      "uf": "MT",
+      "faixa": "90-94",
+      "census": 5513,
+      "comp_2t": 675,
+      "aptos": 6991,
+      "diff": -4838,
+      "ratio": 0.1224
+    },
+    {
+      "uf_code": "51",
+      "uf": "MT",
+      "faixa": "95-99",
+      "census": 1456,
+      "comp_2t": 121,
+      "aptos": 3558,
+      "diff": -1335,
+      "ratio": 0.0831
+    },
+    {
+      "uf_code": "51",
+      "uf": "MT",
+      "faixa": "100+",
+      "census": 492,
+      "comp_2t": 62,
+      "aptos": 1576,
+      "diff": -430,
+      "ratio": 0.126
+    },
+    {
+      "uf_code": "52",
+      "uf": "GO",
+      "faixa": "70-74",
+      "census": 173459,
+      "comp_2t": 114058,
+      "aptos": 164743,
+      "diff": -59401,
+      "ratio": 0.6576
+    },
+    {
+      "uf_code": "52",
+      "uf": "GO",
+      "faixa": "75-79",
+      "census": 111463,
+      "comp_2t": 56338,
+      "aptos": 105151,
+      "diff": -55125,
+      "ratio": 0.5054
+    },
+    {
+      "uf_code": "52",
+      "uf": "GO",
+      "faixa": "80-84",
+      "census": 70254,
+      "comp_2t": 25032,
+      "aptos": 62063,
+      "diff": -45222,
+      "ratio": 0.3563
+    },
+    {
+      "uf_code": "52",
+      "uf": "GO",
+      "faixa": "85-89",
+      "census": 34864,
+      "comp_2t": 8207,
+      "aptos": 28894,
+      "diff": -26657,
+      "ratio": 0.2354
+    },
+    {
+      "uf_code": "52",
+      "uf": "GO",
+      "faixa": "90-94",
+      "census": 14065,
+      "comp_2t": 1990,
+      "aptos": 10717,
+      "diff": -12075,
+      "ratio": 0.1415
+    },
+    {
+      "uf_code": "52",
+      "uf": "GO",
+      "faixa": "95-99",
+      "census": 3713,
+      "comp_2t": 292,
+      "aptos": 2635,
+      "diff": -3421,
+      "ratio": 0.0786
+    },
+    {
+      "uf_code": "52",
+      "uf": "GO",
+      "faixa": "100+",
+      "census": 903,
+      "comp_2t": 69,
+      "aptos": 672,
+      "diff": -834,
+      "ratio": 0.0764
+    },
+    {
+      "uf_code": "53",
+      "uf": "DF",
+      "faixa": "70-74",
+      "census": 66188,
+      "comp_2t": 51590,
+      "aptos": 68630,
+      "diff": -14598,
+      "ratio": 0.7794
+    },
+    {
+      "uf_code": "53",
+      "uf": "DF",
+      "faixa": "75-79",
+      "census": 42396,
+      "comp_2t": 26616,
+      "aptos": 42605,
+      "diff": -15780,
+      "ratio": 0.6278
+    },
+    {
+      "uf_code": "53",
+      "uf": "DF",
+      "faixa": "80-84",
+      "census": 27501,
+      "comp_2t": 13022,
+      "aptos": 25340,
+      "diff": -14479,
+      "ratio": 0.4735
+    },
+    {
+      "uf_code": "53",
+      "uf": "DF",
+      "faixa": "85-89",
+      "census": 14401,
+      "comp_2t": 4662,
+      "aptos": 11867,
+      "diff": -9739,
+      "ratio": 0.3237
+    },
+    {
+      "uf_code": "53",
+      "uf": "DF",
+      "faixa": "90-94",
+      "census": 6121,
+      "comp_2t": 1292,
+      "aptos": 4506,
+      "diff": -4829,
+      "ratio": 0.2111
+    },
+    {
+      "uf_code": "53",
+      "uf": "DF",
+      "faixa": "95-99",
+      "census": 1720,
+      "comp_2t": 200,
+      "aptos": 1162,
+      "diff": -1520,
+      "ratio": 0.1163
+    },
+    {
+      "uf_code": "53",
+      "uf": "DF",
+      "faixa": "100+",
+      "census": 300,
+      "comp_2t": 14,
+      "aptos": 217,
+      "diff": -286,
+      "ratio": 0.0467
+    }
+  ],
+  "por_uf_total_70plus": [
+    {
+      "uf_code": "11",
+      "uf": "RO",
+      "census": 78039,
+      "comp_2t": 37277,
+      "aptos": 83038,
+      "diff": -40762,
+      "ratio": 0.4777
+    },
+    {
+      "uf_code": "12",
+      "uf": "AC",
+      "census": 32878,
+      "comp_2t": 15185,
+      "aptos": 36397,
+      "diff": -17693,
+      "ratio": 0.4619
+    },
+    {
+      "uf_code": "13",
+      "uf": "AM",
+      "census": 141243,
+      "comp_2t": 64947,
+      "aptos": 149458,
+      "diff": -76296,
+      "ratio": 0.4598
+    },
+    {
+      "uf_code": "14",
+      "uf": "RR",
+      "census": 18993,
+      "comp_2t": 10095,
+      "aptos": 18429,
+      "diff": -8898,
+      "ratio": 0.5315
+    },
+    {
+      "uf_code": "15",
+      "uf": "PA",
+      "census": 368953,
+      "comp_2t": 186125,
+      "aptos": 454940,
+      "diff": -182828,
+      "ratio": 0.5045
+    },
+    {
+      "uf_code": "16",
+      "uf": "AP",
+      "census": 24437,
+      "comp_2t": 11202,
+      "aptos": 25896,
+      "diff": -13235,
+      "ratio": 0.4584
+    },
+    {
+      "uf_code": "17",
+      "uf": "TO",
+      "census": 84535,
+      "comp_2t": 45150,
+      "aptos": 81123,
+      "diff": -39385,
+      "ratio": 0.5341
+    },
+    {
+      "uf_code": "21",
+      "uf": "MA",
+      "census": 374322,
+      "comp_2t": 193411,
+      "aptos": 415841,
+      "diff": -180911,
+      "ratio": 0.5167
+    },
+    {
+      "uf_code": "22",
+      "uf": "PI",
+      "census": 234762,
+      "comp_2t": 126243,
+      "aptos": 226827,
+      "diff": -108519,
+      "ratio": 0.5377
+    },
+    {
+      "uf_code": "23",
+      "uf": "CE",
+      "census": 617636,
+      "comp_2t": 303671,
+      "aptos": 621231,
+      "diff": -313965,
+      "ratio": 0.4917
+    },
+    {
+      "uf_code": "24",
+      "uf": "RN",
+      "census": 233942,
+      "comp_2t": 113365,
+      "aptos": 223150,
+      "diff": -120577,
+      "ratio": 0.4846
+    },
+    {
+      "uf_code": "25",
+      "uf": "PB",
+      "census": 297924,
+      "comp_2t": 140412,
+      "aptos": 273475,
+      "diff": -157512,
+      "ratio": 0.4713
+    },
+    {
+      "uf_code": "26",
+      "uf": "PE",
+      "census": 607219,
+      "comp_2t": 279487,
+      "aptos": 593533,
+      "diff": -327732,
+      "ratio": 0.4603
+    },
+    {
+      "uf_code": "27",
+      "uf": "AL",
+      "census": 179049,
+      "comp_2t": 66874,
+      "aptos": 162546,
+      "diff": -112175,
+      "ratio": 0.3735
+    },
+    {
+      "uf_code": "28",
+      "uf": "SE",
+      "census": 131520,
+      "comp_2t": 52644,
+      "aptos": 123421,
+      "diff": -78876,
+      "ratio": 0.4003
+    },
+    {
+      "uf_code": "29",
+      "uf": "BA",
+      "census": 1005526,
+      "comp_2t": 476638,
+      "aptos": 1043182,
+      "diff": -528888,
+      "ratio": 0.474
+    },
+    {
+      "uf_code": "31",
+      "uf": "MG",
+      "census": 1646726,
+      "comp_2t": 802982,
+      "aptos": 1802756,
+      "diff": -843744,
+      "ratio": 0.4876
+    },
+    {
+      "uf_code": "32",
+      "uf": "ES",
+      "census": 269195,
+      "comp_2t": 123651,
+      "aptos": 262308,
+      "diff": -145544,
+      "ratio": 0.4593
+    },
+    {
+      "uf_code": "33",
+      "uf": "RJ",
+      "census": 1347374,
+      "comp_2t": 590689,
+      "aptos": 1609557,
+      "diff": -756685,
+      "ratio": 0.4384
+    },
+    {
+      "uf_code": "35",
+      "uf": "SP",
+      "census": 3384505,
+      "comp_2t": 1451156,
+      "aptos": 3540895,
+      "diff": -1933349,
+      "ratio": 0.4288
+    },
+    {
+      "uf_code": "41",
+      "uf": "PR",
+      "census": 823820,
+      "comp_2t": 407578,
+      "aptos": 762096,
+      "diff": -416242,
+      "ratio": 0.4947
+    },
+    {
+      "uf_code": "42",
+      "uf": "SC",
+      "census": 495789,
+      "comp_2t": 253310,
+      "aptos": 468051,
+      "diff": -242479,
+      "ratio": 0.5109
+    },
+    {
+      "uf_code": "43",
+      "uf": "RS",
+      "census": 988934,
+      "comp_2t": 510255,
+      "aptos": 1020360,
+      "diff": -478679,
+      "ratio": 0.516
+    },
+    {
+      "uf_code": "50",
+      "uf": "MS",
+      "census": 166128,
+      "comp_2t": 83656,
+      "aptos": 169509,
+      "diff": -82472,
+      "ratio": 0.5036
+    },
+    {
+      "uf_code": "51",
+      "uf": "MT",
+      "census": 172072,
+      "comp_2t": 85743,
+      "aptos": 174014,
+      "diff": -86329,
+      "ratio": 0.4983
+    },
+    {
+      "uf_code": "52",
+      "uf": "GO",
+      "census": 408721,
+      "comp_2t": 205986,
+      "aptos": 374875,
+      "diff": -202735,
+      "ratio": 0.504
+    },
+    {
+      "uf_code": "53",
+      "uf": "DF",
+      "census": 158627,
+      "comp_2t": 97396,
+      "aptos": 154327,
+      "diff": -61231,
+      "ratio": 0.614
+    }
+  ],
+  "por_uf_90plus": [
+    {
+      "uf_code": "11",
+      "uf": "RO",
+      "census": 3218,
+      "comp_2t": 272,
+      "aptos": 4685,
+      "diff": -2946,
+      "ratio": 0.0845
+    },
+    {
+      "uf_code": "12",
+      "uf": "AC",
+      "census": 1821,
+      "comp_2t": 186,
+      "aptos": 2688,
+      "diff": -1635,
+      "ratio": 0.1021
+    },
+    {
+      "uf_code": "13",
+      "uf": "AM",
+      "census": 7593,
+      "comp_2t": 619,
+      "aptos": 15024,
+      "diff": -6974,
+      "ratio": 0.0815
+    },
+    {
+      "uf_code": "14",
+      "uf": "RR",
+      "census": 843,
+      "comp_2t": 86,
+      "aptos": 668,
+      "diff": -757,
+      "ratio": 0.102
+    },
+    {
+      "uf_code": "15",
+      "uf": "PA",
+      "census": 19163,
+      "comp_2t": 1683,
+      "aptos": 49365,
+      "diff": -17480,
+      "ratio": 0.0878
+    },
+    {
+      "uf_code": "16",
+      "uf": "AP",
+      "census": 1341,
+      "comp_2t": 95,
+      "aptos": 943,
+      "diff": -1246,
+      "ratio": 0.0708
+    },
+    {
+      "uf_code": "17",
+      "uf": "TO",
+      "census": 4698,
+      "comp_2t": 601,
+      "aptos": 3639,
+      "diff": -4097,
+      "ratio": 0.1279
+    },
+    {
+      "uf_code": "21",
+      "uf": "MA",
+      "census": 22561,
+      "comp_2t": 2502,
+      "aptos": 40413,
+      "diff": -20059,
+      "ratio": 0.1109
+    },
+    {
+      "uf_code": "22",
+      "uf": "PI",
+      "census": 14441,
+      "comp_2t": 1542,
+      "aptos": 10115,
+      "diff": -12899,
+      "ratio": 0.1068
+    },
+    {
+      "uf_code": "23",
+      "uf": "CE",
+      "census": 39964,
+      "comp_2t": 3504,
+      "aptos": 55682,
+      "diff": -36460,
+      "ratio": 0.0877
+    },
+    {
+      "uf_code": "24",
+      "uf": "RN",
+      "census": 15520,
+      "comp_2t": 1310,
+      "aptos": 11533,
+      "diff": -14210,
+      "ratio": 0.0844
+    },
+    {
+      "uf_code": "25",
+      "uf": "PB",
+      "census": 19404,
+      "comp_2t": 1519,
+      "aptos": 10558,
+      "diff": -17885,
+      "ratio": 0.0783
+    },
+    {
+      "uf_code": "26",
+      "uf": "PE",
+      "census": 34308,
+      "comp_2t": 2832,
+      "aptos": 43500,
+      "diff": -31476,
+      "ratio": 0.0825
+    },
+    {
+      "uf_code": "27",
+      "uf": "AL",
+      "census": 9162,
+      "comp_2t": 438,
+      "aptos": 4641,
+      "diff": -8724,
+      "ratio": 0.0478
+    },
+    {
+      "uf_code": "28",
+      "uf": "SE",
+      "census": 8019,
+      "comp_2t": 434,
+      "aptos": 4940,
+      "diff": -7585,
+      "ratio": 0.0541
+    },
+    {
+      "uf_code": "29",
+      "uf": "BA",
+      "census": 68803,
+      "comp_2t": 5962,
+      "aptos": 94804,
+      "diff": -62841,
+      "ratio": 0.0867
+    },
+    {
+      "uf_code": "31",
+      "uf": "MG",
+      "census": 95196,
+      "comp_2t": 12910,
+      "aptos": 195120,
+      "diff": -82286,
+      "ratio": 0.1356
+    },
+    {
+      "uf_code": "32",
+      "uf": "ES",
+      "census": 15710,
+      "comp_2t": 1466,
+      "aptos": 20370,
+      "diff": -14244,
+      "ratio": 0.0933
+    },
+    {
+      "uf_code": "33",
+      "uf": "RJ",
+      "census": 76497,
+      "comp_2t": 6984,
+      "aptos": 268194,
+      "diff": -69513,
+      "ratio": 0.0913
+    },
+    {
+      "uf_code": "35",
+      "uf": "SP",
+      "census": 175774,
+      "comp_2t": 13270,
+      "aptos": 374455,
+      "diff": -162504,
+      "ratio": 0.0755
+    },
+    {
+      "uf_code": "41",
+      "uf": "PR",
+      "census": 37263,
+      "comp_2t": 3852,
+      "aptos": 28251,
+      "diff": -33411,
+      "ratio": 0.1034
+    },
+    {
+      "uf_code": "42",
+      "uf": "SC",
+      "census": 20841,
+      "comp_2t": 2181,
+      "aptos": 29227,
+      "diff": -18660,
+      "ratio": 0.1046
+    },
+    {
+      "uf_code": "43",
+      "uf": "RS",
+      "census": 47774,
+      "comp_2t": 5885,
+      "aptos": 75753,
+      "diff": -41889,
+      "ratio": 0.1232
+    },
+    {
+      "uf_code": "50",
+      "uf": "MS",
+      "census": 8524,
+      "comp_2t": 934,
+      "aptos": 12675,
+      "diff": -7590,
+      "ratio": 0.1096
+    },
+    {
+      "uf_code": "51",
+      "uf": "MT",
+      "census": 7461,
+      "comp_2t": 858,
+      "aptos": 12125,
+      "diff": -6603,
+      "ratio": 0.115
+    },
+    {
+      "uf_code": "52",
+      "uf": "GO",
+      "census": 18681,
+      "comp_2t": 2351,
+      "aptos": 14024,
+      "diff": -16330,
+      "ratio": 0.1258
+    },
+    {
+      "uf_code": "53",
+      "uf": "DF",
+      "census": 8141,
+      "comp_2t": 1506,
+      "aptos": 5885,
+      "diff": -6635,
+      "ratio": 0.185
+    }
+  ],
+  "por_uf_95plus": [
+    {
+      "uf_code": "11",
+      "uf": "RO",
+      "census": 767,
+      "comp_2t": 39,
+      "aptos": 1790,
+      "diff": -728,
+      "ratio": 0.0508
+    },
+    {
+      "uf_code": "12",
+      "uf": "AC",
+      "census": 556,
+      "comp_2t": 38,
+      "aptos": 1075,
+      "diff": -518,
+      "ratio": 0.0683
+    },
+    {
+      "uf_code": "13",
+      "uf": "AM",
+      "census": 2506,
+      "comp_2t": 170,
+      "aptos": 7577,
+      "diff": -2336,
+      "ratio": 0.0678
+    },
+    {
+      "uf_code": "14",
+      "uf": "RR",
+      "census": 248,
+      "comp_2t": 17,
+      "aptos": 164,
+      "diff": -231,
+      "ratio": 0.0685
+    },
+    {
+      "uf_code": "15",
+      "uf": "PA",
+      "census": 5799,
+      "comp_2t": 354,
+      "aptos": 23498,
+      "diff": -5445,
+      "ratio": 0.061
+    },
+    {
+      "uf_code": "16",
+      "uf": "AP",
+      "census": 438,
+      "comp_2t": 13,
+      "aptos": 274,
+      "diff": -425,
+      "ratio": 0.0297
+    },
+    {
+      "uf_code": "17",
+      "uf": "TO",
+      "census": 1371,
+      "comp_2t": 105,
+      "aptos": 947,
+      "diff": -1266,
+      "ratio": 0.0766
+    },
+    {
+      "uf_code": "21",
+      "uf": "MA",
+      "census": 7567,
+      "comp_2t": 553,
+      "aptos": 18724,
+      "diff": -7014,
+      "ratio": 0.0731
+    },
+    {
+      "uf_code": "22",
+      "uf": "PI",
+      "census": 3950,
+      "comp_2t": 250,
+      "aptos": 2566,
+      "diff": -3700,
+      "ratio": 0.0633
+    },
+    {
+      "uf_code": "23",
+      "uf": "CE",
+      "census": 11539,
+      "comp_2t": 622,
+      "aptos": 24775,
+      "diff": -10917,
+      "ratio": 0.0539
+    },
+    {
+      "uf_code": "24",
+      "uf": "RN",
+      "census": 4947,
+      "comp_2t": 216,
+      "aptos": 3408,
+      "diff": -4731,
+      "ratio": 0.0437
+    },
+    {
+      "uf_code": "25",
+      "uf": "PB",
+      "census": 5800,
+      "comp_2t": 250,
+      "aptos": 2615,
+      "diff": -5550,
+      "ratio": 0.0431
+    },
+    {
+      "uf_code": "26",
+      "uf": "PE",
+      "census": 9845,
+      "comp_2t": 487,
+      "aptos": 19976,
+      "diff": -9358,
+      "ratio": 0.0495
+    },
+    {
+      "uf_code": "27",
+      "uf": "AL",
+      "census": 2811,
+      "comp_2t": 76,
+      "aptos": 1237,
+      "diff": -2735,
+      "ratio": 0.027
+    },
+    {
+      "uf_code": "28",
+      "uf": "SE",
+      "census": 2435,
+      "comp_2t": 56,
+      "aptos": 1376,
+      "diff": -2379,
+      "ratio": 0.023
+    },
+    {
+      "uf_code": "29",
+      "uf": "BA",
+      "census": 21449,
+      "comp_2t": 1021,
+      "aptos": 40353,
+      "diff": -20428,
+      "ratio": 0.0476
+    },
+    {
+      "uf_code": "31",
+      "uf": "MG",
+      "census": 24150,
+      "comp_2t": 2366,
+      "aptos": 91072,
+      "diff": -21784,
+      "ratio": 0.098
+    },
+    {
+      "uf_code": "32",
+      "uf": "ES",
+      "census": 3991,
+      "comp_2t": 221,
+      "aptos": 8568,
+      "diff": -3770,
+      "ratio": 0.0554
+    },
+    {
+      "uf_code": "33",
+      "uf": "RJ",
+      "census": 18512,
+      "comp_2t": 1095,
+      "aptos": 150906,
+      "diff": -17417,
+      "ratio": 0.0592
+    },
+    {
+      "uf_code": "35",
+      "uf": "SP",
+      "census": 39967,
+      "comp_2t": 1837,
+      "aptos": 182354,
+      "diff": -38130,
+      "ratio": 0.046
+    },
+    {
+      "uf_code": "41",
+      "uf": "PR",
+      "census": 8451,
+      "comp_2t": 474,
+      "aptos": 7573,
+      "diff": -7977,
+      "ratio": 0.0561
+    },
+    {
+      "uf_code": "42",
+      "uf": "SC",
+      "census": 4525,
+      "comp_2t": 290,
+      "aptos": 12826,
+      "diff": -4235,
+      "ratio": 0.0641
+    },
+    {
+      "uf_code": "43",
+      "uf": "RS",
+      "census": 10596,
+      "comp_2t": 806,
+      "aptos": 32106,
+      "diff": -9790,
+      "ratio": 0.0761
+    },
+    {
+      "uf_code": "50",
+      "uf": "MS",
+      "census": 2188,
+      "comp_2t": 139,
+      "aptos": 5453,
+      "diff": -2049,
+      "ratio": 0.0635
+    },
+    {
+      "uf_code": "51",
+      "uf": "MT",
+      "census": 1948,
+      "comp_2t": 183,
+      "aptos": 5134,
+      "diff": -1765,
+      "ratio": 0.0939
+    },
+    {
+      "uf_code": "52",
+      "uf": "GO",
+      "census": 4616,
+      "comp_2t": 361,
+      "aptos": 3307,
+      "diff": -4255,
+      "ratio": 0.0782
+    },
+    {
+      "uf_code": "53",
+      "uf": "DF",
+      "census": 2020,
+      "comp_2t": 214,
+      "aptos": 1379,
+      "diff": -1806,
+      "ratio": 0.1059
+    }
+  ],
+  "por_uf_100plus": [
+    {
+      "uf_code": "11",
+      "uf": "RO",
+      "census": 147,
+      "comp_2t": 9,
+      "aptos": 423,
+      "diff": -138,
+      "ratio": 0.0612
+    },
+    {
+      "uf_code": "12",
+      "uf": "AC",
+      "census": 142,
+      "comp_2t": 15,
+      "aptos": 343,
+      "diff": -127,
+      "ratio": 0.1056
+    },
+    {
+      "uf_code": "13",
+      "uf": "AM",
+      "census": 731,
+      "comp_2t": 58,
+      "aptos": 2775,
+      "diff": -673,
+      "ratio": 0.0793
+    },
+    {
+      "uf_code": "14",
+      "uf": "RR",
+      "census": 73,
+      "comp_2t": 7,
+      "aptos": 44,
+      "diff": -66,
+      "ratio": 0.0959
+    },
+    {
+      "uf_code": "15",
+      "uf": "PA",
+      "census": 1664,
+      "comp_2t": 112,
+      "aptos": 7678,
+      "diff": -1552,
+      "ratio": 0.0673
+    },
+    {
+      "uf_code": "16",
+      "uf": "AP",
+      "census": 163,
+      "comp_2t": 1,
+      "aptos": 95,
+      "diff": -162,
+      "ratio": 0.0061
+    },
+    {
+      "uf_code": "17",
+      "uf": "TO",
+      "census": 322,
+      "comp_2t": 20,
+      "aptos": 228,
+      "diff": -302,
+      "ratio": 0.0621
+    },
+    {
+      "uf_code": "21",
+      "uf": "MA",
+      "census": 2471,
+      "comp_2t": 160,
+      "aptos": 7253,
+      "diff": -2311,
+      "ratio": 0.0648
+    },
+    {
+      "uf_code": "22",
+      "uf": "PI",
+      "census": 714,
+      "comp_2t": 41,
+      "aptos": 474,
+      "diff": -673,
+      "ratio": 0.0574
+    },
+    {
+      "uf_code": "23",
+      "uf": "CE",
+      "census": 1999,
+      "comp_2t": 72,
+      "aptos": 6453,
+      "diff": -1927,
+      "ratio": 0.036
+    },
+    {
+      "uf_code": "24",
+      "uf": "RN",
+      "census": 976,
+      "comp_2t": 36,
+      "aptos": 630,
+      "diff": -940,
+      "ratio": 0.0369
+    },
+    {
+      "uf_code": "25",
+      "uf": "PB",
+      "census": 1330,
+      "comp_2t": 48,
+      "aptos": 547,
+      "diff": -1282,
+      "ratio": 0.0361
+    },
+    {
+      "uf_code": "26",
+      "uf": "PE",
+      "census": 2141,
+      "comp_2t": 94,
+      "aptos": 6016,
+      "diff": -2047,
+      "ratio": 0.0439
+    },
+    {
+      "uf_code": "27",
+      "uf": "AL",
+      "census": 820,
+      "comp_2t": 17,
+      "aptos": 362,
+      "diff": -803,
+      "ratio": 0.0207
+    },
+    {
+      "uf_code": "28",
+      "uf": "SE",
+      "census": 531,
+      "comp_2t": 7,
+      "aptos": 308,
+      "diff": -524,
+      "ratio": 0.0132
+    },
+    {
+      "uf_code": "29",
+      "uf": "BA",
+      "census": 5336,
+      "comp_2t": 189,
+      "aptos": 12839,
+      "diff": -5147,
+      "ratio": 0.0354
+    },
+    {
+      "uf_code": "31",
+      "uf": "MG",
+      "census": 4104,
+      "comp_2t": 365,
+      "aptos": 26437,
+      "diff": -3739,
+      "ratio": 0.0889
+    },
+    {
+      "uf_code": "32",
+      "uf": "ES",
+      "census": 678,
+      "comp_2t": 40,
+      "aptos": 2101,
+      "diff": -638,
+      "ratio": 0.059
+    },
+    {
+      "uf_code": "33",
+      "uf": "RJ",
+      "census": 2712,
+      "comp_2t": 207,
+      "aptos": 39850,
+      "diff": -2505,
+      "ratio": 0.0763
+    },
+    {
+      "uf_code": "35",
+      "uf": "SP",
+      "census": 5095,
+      "comp_2t": 212,
+      "aptos": 51518,
+      "diff": -4883,
+      "ratio": 0.0416
+    },
+    {
+      "uf_code": "41",
+      "uf": "PR",
+      "census": 1299,
+      "comp_2t": 56,
+      "aptos": 1613,
+      "diff": -1243,
+      "ratio": 0.0431
+    },
+    {
+      "uf_code": "42",
+      "uf": "SC",
+      "census": 667,
+      "comp_2t": 54,
+      "aptos": 3607,
+      "diff": -613,
+      "ratio": 0.081
+    },
+    {
+      "uf_code": "43",
+      "uf": "RS",
+      "census": 1536,
+      "comp_2t": 105,
+      "aptos": 8605,
+      "diff": -1431,
+      "ratio": 0.0684
+    },
+    {
+      "uf_code": "50",
+      "uf": "MS",
+      "census": 468,
+      "comp_2t": 22,
+      "aptos": 1666,
+      "diff": -446,
+      "ratio": 0.047
+    },
+    {
+      "uf_code": "51",
+      "uf": "MT",
+      "census": 492,
+      "comp_2t": 62,
+      "aptos": 1576,
+      "diff": -430,
+      "ratio": 0.126
+    },
+    {
+      "uf_code": "52",
+      "uf": "GO",
+      "census": 903,
+      "comp_2t": 69,
+      "aptos": 672,
+      "diff": -834,
+      "ratio": 0.0764
+    },
+    {
+      "uf_code": "53",
+      "uf": "DF",
+      "census": 300,
+      "comp_2t": 14,
+      "aptos": 217,
+      "diff": -286,
+      "ratio": 0.0467
+    }
+  ],
+  "nacional": {
+    "por_uf_total_70plus": {
+      "census": 14292869,
+      "comp_2t": 6735128,
+      "aptos": 14871235,
+      "diff": -7557741,
+      "ratio": 0.4712
+    },
+    "por_uf_90plus": {
+      "census": 782721,
+      "comp_2t": 75782,
+      "aptos": 1389277,
+      "diff": -706939,
+      "ratio": 0.0968
+    },
+    "por_uf_95plus": {
+      "census": 202992,
+      "comp_2t": 12253,
+      "aptos": 651033,
+      "diff": -190739,
+      "ratio": 0.0604
+    },
+    "por_uf_100plus": {
+      "census": 37814,
+      "comp_2t": 2092,
+      "aptos": 184330,
+      "diff": -35722,
+      "ratio": 0.0553
+    }
+  }
+}

@@ -1,0 +1,380 @@
+[
+ {
+  "id": "GAP-ZIP-09",
+  "tipo": "A",
+  "descricao": "Assinatura SW usa CEPESC (algoritmo proprietário). Nenhum script verifica. Metade da cadeia de confiança é inverificável externamente.",
+  "arquivo": "assinatura.asn1:13"
+ },
+ {
+  "id": "GAP-ZIP-24",
+  "tipo": "A",
+  "descricao": "Nenhum script abre BU e RDV simultaneamente. Cruzamento total(BU) vs soma(votos RDV) nunca é feito.",
+  "arquivo": "todos os scripts"
+ },
+ {
+  "id": "GAP-ZIP-40",
+  "tipo": "A",
+  "descricao": "valida_assinaturas() verifica SÓ assinatura HW. A assinatura SW é hash-verificada mas nunca verificada criptograficamente.",
+  "arquivo": "assinatura_hash.py:105"
+ },
+ {
+  "id": "GAP-ZIP-45",
+  "tipo": "A",
+  "descricao": "verifica_qrcode.py referencia certificados inexistentes no ZIP. SEMPRE falha. Erro capturado silenciosamente.",
+  "arquivo": "verifica_qrcode.py:73-74"
+ },
+ {
+  "id": "GAP-EVO-01",
+  "tipo": "A",
+  "descricao": "v1/2022: verificação tautológica — chave embutida no BU verifica o próprio BU. Removida silenciosamente em v2.0.",
+  "arquivo": "bu_assinatura_tuplas.py (v1)"
+ },
+ {
+  "id": "GAP-ZIP-21",
+  "tipo": "A",
+  "descricao": "Assinatura SW usa tagChaves (string opaca YYYYMMDDHHMM) em vez de certificado X.509. Sem cadeia de confiança.",
+  "arquivo": "assinatura.asn1:50-53"
+ },
+ {
+  "id": "GAP-ZIP-04",
+  "tipo": "A",
+  "descricao": "valida_certificado() verifica apenas assinatura vs CAs hardcoded. Não verifica data, uso de chave, CRL, nem RFC 5280.",
+  "arquivo": "mr_util.py:271-278"
+ },
+ {
+  "id": "GAP-ZIP-14",
+  "tipo": "A",
+  "descricao": "Enums TipoVoto com valores DIFERENTES entre BU e RDV. nominal=1 no BU, nominal=2 no RDV. Cruzamento impossível sem mapeamento manual.",
+  "arquivo": "bu.asn1 / rdv.asn1"
+ },
+ {
+  "id": "GAP-ZIP-01",
+  "tipo": "B",
+  "descricao": "bu_assinatura_tuplas.py extrai chave do VSC sem chamar valida_certificado(). Cert auto-assinado passa.",
+  "arquivo": "bu_assinatura_tuplas.py:163"
+ },
+ {
+  "id": "GAP-ZIP-05",
+  "tipo": "B",
+  "descricao": "AC URNA hardcoded expirou 2026-07-18 — 99 dias antes da eleição. Aceita sem aviso por causa do GAP-ZIP-04.",
+  "arquivo": "mr_util.py:917-940"
+ },
+ {
+  "id": "GAP-ZIP-07",
+  "tipo": "B",
+  "descricao": "Campo fase (simulado/oficial/treinamento) NUNCA verificado. BU simulado processado como oficial.",
+  "arquivo": "bu.asn1:43-47"
+ },
+ {
+  "id": "GAP-ZIP-08",
+  "tipo": "B",
+  "descricao": "Dependência ECPy via git+https:// de conta pessoal GitHub. Lib cripto de supply chain terceirizada.",
+  "arquivo": "requirements.txt"
+ },
+ {
+  "id": "GAP-ZIP-12",
+  "tipo": "B",
+  "descricao": "Ed521 usa OID privado 1.3.6.1.4.1.44588.2.1 (TSE/CEPESC). Algoritmo sem padrão público.",
+  "arquivo": "mr_util.py"
+ },
+ {
+  "id": "GAP-ZIP-17",
+  "tipo": "B",
+  "descricao": "README diz 1° caractere do nome indica fase, nenhum script verifica. Combinado com GAP-ZIP-07.",
+  "arquivo": "README.pdf / todos"
+ },
+ {
+  "id": "GAP-ZIP-20",
+  "tipo": "B",
+  "descricao": "SHA-1 aceito como algoritmo. Colisões comprovadas desde 2017 (SHAttered). Superfície de downgrade.",
+  "arquivo": "assinatura.asn1:22-27"
+ },
+ {
+  "id": "GAP-ZIP-25",
+  "tipo": "B",
+  "descricao": "TipoEnvelope NUNCA verificado por nenhum script. RDV processado como BU sem erro.",
+  "arquivo": "todos os scripts"
+ },
+ {
+  "id": "GAP-ZIP-26",
+  "tipo": "B",
+  "descricao": "AlgoritmoHash do envelope NUNCA lido. SHA-512 hardcoded. Downgrade SHA-1 não detectado.",
+  "arquivo": "todos os scripts"
+ },
+ {
+  "id": "GAP-ZIP-27",
+  "tipo": "B",
+  "descricao": "assert usado para validação de segurança. python -O remove silenciosamente.",
+  "arquivo": "mr_util.py:245"
+ },
+ {
+  "id": "GAP-ZIP-31",
+  "tipo": "B",
+  "descricao": "ECPy: maleabilidade EdDSA (Issue #16). Aceita assinaturas não-canônicas. 6+ anos sem fix.",
+  "arquivo": "ECPy (dependência)"
+ },
+ {
+  "id": "GAP-ZIP-32",
+  "tipo": "B",
+  "descricao": "ECPy: bug aritmético no ponto infinito (Issue #23). G*n ≠ G*(n-1)+G. 5+ anos sem fix.",
+  "arquivo": "ECPy (dependência)"
+ },
+ {
+  "id": "GAP-ZIP-33",
+  "tipo": "B",
+  "descricao": "ECPy projeto abandonado. Último commit out/2021. Commit pinado é código não-released.",
+  "arquivo": "requirements.txt"
+ },
+ {
+  "id": "GAP-ZIP-34",
+  "tipo": "B",
+  "descricao": "pyOpenSSL CVE-2026-27459 — buffer overflow CVSS 9.8. Versão incluída é vulnerável.",
+  "arquivo": "requirements.txt"
+ },
+ {
+  "id": "GAP-ZIP-36",
+  "tipo": "B",
+  "descricao": "Sem lock file. >= sem upper bound = builds não-determinísticos entre auditorias.",
+  "arquivo": "requirements.txt"
+ },
+ {
+  "id": "GAP-ZIP-42",
+  "tipo": "B",
+  "descricao": "QR: se primeira parte não tem IDUE, partes de urnas diferentes combinam sem detecção.",
+  "arquivo": "verifica_qrcode.py"
+ },
+ {
+  "id": "GAP-EVO-02",
+  "tipo": "B",
+  "descricao": "MotivoApuracaoMistaComBU(5) mudou de significado entre v2.0 e v2.1. Mesmo valor, semântica oposta.",
+  "arquivo": "bu.asn1 / rdv.asn1"
+ },
+ {
+  "id": "GAP-EVO-03",
+  "tipo": "B",
+  "descricao": "Modelos urna pré-2020 removidos silenciosamente. Verificação retroativa impossível.",
+  "arquivo": "mr_util.py / assinatura.asn1"
+ },
+ {
+  "id": "GAP-EVO-08",
+  "tipo": "B",
+  "descricao": "Mudança estrutural QUEBRANTE v2.0→v2.1 sem versionamento no ASN.1.",
+  "arquivo": "assinatura.asn1"
+ },
+ {
+  "id": "GAP-ZIP-02",
+  "tipo": "C",
+  "descricao": "Path traversal: nomeArquivo sem sanitização permite ../",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-03",
+  "tipo": "C",
+  "descricao": "verifica_qrcode.py referencia diretório certificados/ inexistente",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-06",
+  "tipo": "C",
+  "descricao": "Inconsistência entre scripts: 3 abordagens de validação diferentes",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-10",
+  "tipo": "C",
+  "descricao": "GeneralString sem restrição aceita /, .., null bytes — causa raiz do path traversal",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-11",
+  "tipo": "C",
+  "descricao": "idCriptografia = turno. Parâmetro cripto público e previsível, 3 valores.",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-13",
+  "tipo": "C",
+  "descricao": "8 campos OPTIONAL no BU sem tratamento de ausência",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-15",
+  "tipo": "C",
+  "descricao": "6+ GeneralString sem restrição no RDV",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-16",
+  "tipo": "C",
+  "descricao": "Envelope genérico com conteúdo OCTET STRING opaco",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-22",
+  "tipo": "C",
+  "descricao": "TipoEnvelope pula valor(3) sem documentação",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-23",
+  "tipo": "C",
+  "descricao": "TipoUrna pula valores(2)(5) sem documentação",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-28",
+  "tipo": "C",
+  "descricao": "common_name() aceita só 2 dos 5 tipos X.509 de string",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-29",
+  "tipo": "C",
+  "descricao": "except Exception: forjamento indistinguível de bug",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-30",
+  "tipo": "C",
+  "descricao": "SEQUENCE OF sem SIZE mínimo: BU vazio é válido pela spec",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-35",
+  "tipo": "C",
+  "descricao": "pyOpenSSL CVE-2026-27448 auth bypass, CVSS 5.3",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-38",
+  "tipo": "C",
+  "descricao": "Campos deprecados seguranca e historicoVotoImpresso ativos",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-41",
+  "tipo": "C",
+  "descricao": "Extração de chave EC ignora parameters, assume secp521r1",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-43",
+  "tipo": "C",
+  "descricao": "QR verifica assinatura sobre hash mas não cruza hash com BU real",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-46",
+  "tipo": "C",
+  "descricao": "Duas libs ASN.1 diferentes no mesmo pacote (asn1tools + asn1crypto)",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-47",
+  "tipo": "C",
+  "descricao": "Duas implementações de extração de chave incompatíveis no mesmo pacote",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-48",
+  "tipo": "C",
+  "descricao": "parse_qrcode_text() sem sanitização de input",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-EVO-04",
+  "tipo": "C",
+  "descricao": "rdv.asn1 zero alterações v2.0→v2.1 enquanto bu.asn1 evolui",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-EVO-07",
+  "tipo": "C",
+  "descricao": "reservaSecao renomeado para contingenciaSecao — mudança semântica",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-18",
+  "tipo": "D",
+  "descricao": "Typos em specs oficiais: Eleções, seçõe, ReuperarResultado, iso8859=1, aruqivo",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-19",
+  "tipo": "D",
+  "descricao": "RFC 5280 Appendix A copiado sem referência (627 linhas)",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-37",
+  "tipo": "D",
+  "descricao": "Divergência ordem vs ordemGeracaoHash é não-fatal, só loga",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-39",
+  "tipo": "D",
+  "descricao": "README.pdf 41 dias antes do ZIP, scripts atualizados sem doc",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-44",
+  "tipo": "D",
+  "descricao": "bu_dump.py apaga conteudo do envelope antes de imprimir",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-49",
+  "tipo": "D",
+  "descricao": "rdv_resumo.py: índice hardcoded [1] sem boundary check",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-50",
+  "tipo": "D",
+  "descricao": "assinatura_certificado.py: path traversal na extração de certificado",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-EVO-05",
+  "tipo": "D",
+  "descricao": "3 scripts inalterados v2.0→v2.1 apesar de mudanças estruturais na spec",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-EVO-06",
+  "tipo": "D",
+  "descricao": "bu_dump.py única mudança: \"asn1\" → \"ASN.1\" na help string",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-EVO-09",
+  "tipo": "D",
+  "descricao": "envelopeZeresimaImpressa(6) novo sem documentação",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-EVO-10",
+  "tipo": "D",
+  "descricao": "Typo resutlado_eleicao corrigido após eleição de 2024",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-EVO-11",
+  "tipo": "D",
+  "descricao": "try/except adicionado v2.1 — melhoria real",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-EVO-12",
+  "tipo": "D",
+  "descricao": "Mudança de lib crypto ed25519→ecpy sem documentação",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-EVO-13",
+  "tipo": "D",
+  "descricao": "Certificados de urnas reais hardcoded em arquivo de demo",
+  "arquivo": ""
+ }
+]

@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Design plan: dark-first editorial data journalism. Ink background with cool bias,
+   amber = anomalia/fantasma, teal = real/controle, rose = crítico. Display face is
+   expressive and tight; body is quiet; data is monospaced. */
+:root {
+  --bg: #f6f7f9;
+  --bg-elev: #ffffff;
+  --bg-sunk: #eceef2;
+  --glass: rgba(246, 247, 249, 0.72);
+  --fg: #0e1116;
+  --fg-2: #454d5b;
+  --fg-3: #7b8494;
+  --line: rgba(14, 17, 22, 0.1);
+  --line-strong: rgba(14, 17, 22, 0.18);
+
+  --amber: #c27803;
+  --amber-soft: rgba(194, 120, 3, 0.12);
+  --teal: #0f8f83;
+  --teal-soft: rgba(15, 143, 131, 0.12);
+  --rose: #d6285a;
+  --rose-soft: rgba(214, 40, 90, 0.12);
+  --slate: #8a94a6;
+
+  --glow-amber: rgba(245, 185, 66, 0.25);
+  --glow-teal: rgba(45, 212, 191, 0.2);
+
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0a0c10;
+  --bg-elev: #12151b;
+  --bg-sunk: #07080b;
+  --glass: rgba(10, 12, 16, 0.62);
+  --fg: #e9ecf1;
+  --fg-2: #a4acb9;
+  --fg-3: #6c7585;
+  --line: rgba(233, 236, 241, 0.08);
+  --line-strong: rgba(233, 236, 241, 0.16);
+
+  --amber: #f5b942;
+  --amber-soft: rgba(245, 185, 66, 0.14);
+  --teal: #2dd4bf;
+  --teal-soft: rgba(45, 212, 191, 0.14);
+  --rose: #fb7185;
+  --rose-soft: rgba(251, 113, 133, 0.14);
+  --slate: #5b6475;
+
+  --glow-amber: rgba(245, 185, 66, 0.35);
+  --glow-teal: rgba(45, 212, 191, 0.3);
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elev: var(--bg-elev);
+  --color-bg-sunk: var(--bg-sunk);
+  --color-fg: var(--fg);
+  --color-fg-2: var(--fg-2);
+  --color-fg-3: var(--fg-3);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-amber: var(--amber);
+  --color-amber-soft: var(--amber-soft);
+  --color-teal: var(--teal);
+  --color-teal-soft: var(--teal-soft);
+  --color-rose: var(--rose);
+  --color-rose-soft: var(--rose-soft);
+  --color-slate: var(--slate);
+
+  --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.75rem;
+  --radius-3xl: 2.25rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--amber); color: #0a0c10; }
+
+/* Subtle grid texture for hero bands */
+.grid-texture {
+  background-image:
+    linear-gradient(to right, var(--line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);
+}
+
+/* Soft radial glows */
+.glow-amber { background: radial-gradient(closest-side, var(--glow-amber), transparent); }
+.glow-teal { background: radial-gradient(closest-side, var(--glow-teal), transparent); }
+
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* Display type: tight tracking, balanced wrap */
+.display {
+  font-family: var(--font-display);
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+.display-md {
+  font-family: var(--font-display);
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.prose-audit p { max-width: 66ch; }
+.prose-audit p + p { margin-top: 1em; }
+.prose-audit strong { color: var(--fg); font-weight: 600; }
+
+/* Glass surfaces */
+.glass {
+  background: var(--glass);
+  backdrop-filter: saturate(160%) blur(18px);
+  -webkit-backdrop-filter: saturate(160%) blur(18px);
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Hide scrollbar for horizontal pill rows */
+.no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Table polish */
+.data-table th {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+  font-weight: 600;
+  padding: 0.75rem 0.9rem;
+  border-bottom: 1px solid var(--line-strong);
+  text-align: left;
+  white-space: nowrap;
+}
+.data-table td {
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tbody tr:hover td { background: var(--bg-sunk); }

@@ -1,0 +1,348 @@
+{
+  "test": "Teste 3: Consistência Histórica da Inversão Biológica",
+  "date": "2026-11-09",
+  "years_with_2t": [
+    2012,
+    2014,
+    2018,
+    2022
+  ],
+  "summary": {
+    "2012": {
+      "bands_70plus": {
+        "70 a 74 anos": {
+          "comp_1t": 2431242,
+          "comp_2t": 456639,
+          "delta_abs": -1974603,
+          "delta_pct": -81.22
+        },
+        "75 a 79 anos": {
+          "comp_1t": 1204791,
+          "comp_2t": 215278,
+          "delta_abs": -989513,
+          "delta_pct": -82.13
+        },
+        "80 a 84 anos": {
+          "comp_1t": 517079,
+          "comp_2t": 89974,
+          "delta_abs": -427105,
+          "delta_pct": -82.6
+        },
+        "85 a 89 anos": {
+          "comp_1t": 161930,
+          "comp_2t": 27257,
+          "delta_abs": -134673,
+          "delta_pct": -83.17
+        },
+        "90 a 94 anos": {
+          "comp_1t": 34882,
+          "comp_2t": 5038,
+          "delta_abs": -29844,
+          "delta_pct": -85.56
+        },
+        "95 a 99 anos": {
+          "comp_1t": 6190,
+          "comp_2t": 722,
+          "delta_abs": -5468,
+          "delta_pct": -88.34
+        },
+        "100 anos ou mais": {
+          "comp_1t": 3298,
+          "comp_2t": 538,
+          "delta_abs": -2760,
+          "delta_pct": -83.69
+        }
+      },
+      "bands_control": {
+        "40 a 44 anos": {
+          "comp_1t": 11405327,
+          "comp_2t": 2624992,
+          "delta_abs": -8780335,
+          "delta_pct": -76.98
+        },
+        "45 a 49 anos": {
+          "comp_1t": 11016752,
+          "comp_2t": 2550716,
+          "delta_abs": -8466036,
+          "delta_pct": -76.85
+        },
+        "50 a 54 anos": {
+          "comp_1t": 9616874,
+          "comp_2t": 2248195,
+          "delta_abs": -7368679,
+          "delta_pct": -76.62
+        },
+        "55 a 59 anos": {
+          "comp_1t": 8053694,
+          "comp_2t": 1874701,
+          "delta_abs": -6178993,
+          "delta_pct": -76.72
+        },
+        "60 a 64 anos": {
+          "comp_1t": 6286005,
+          "comp_2t": 1418635,
+          "delta_abs": -4867370,
+          "delta_pct": -77.43
+        },
+        "65 a 69 anos": {
+          "comp_1t": 4388669,
+          "comp_2t": 956419,
+          "delta_abs": -3432250,
+          "delta_pct": -78.21
+        }
+      }
+    },
+    "2014": {
+      "bands_70plus": {
+        "70 a 74 anos": {
+          "comp_1t": 2268619,
+          "comp_2t": 2323402,
+          "delta_abs": 54783,
+          "delta_pct": 2.41
+        },
+        "75 a 79 anos": {
+          "comp_1t": 1083533,
+          "comp_2t": 1137030,
+          "delta_abs": 53497,
+          "delta_pct": 4.94
+        },
+        "80 a 84 anos": {
+          "comp_1t": 417983,
+          "comp_2t": 448656,
+          "delta_abs": 30673,
+          "delta_pct": 7.34
+        },
+        "85 a 89 anos": {
+          "comp_1t": 135655,
+          "comp_2t": 147617,
+          "delta_abs": 11962,
+          "delta_pct": 8.82
+        },
+        "90 a 94 anos": {
+          "comp_1t": 27720,
+          "comp_2t": 30402,
+          "delta_abs": 2682,
+          "delta_pct": 9.68
+        },
+        "95 a 99 anos": {
+          "comp_1t": 4684,
+          "comp_2t": 5023,
+          "delta_abs": 339,
+          "delta_pct": 7.24
+        },
+        "100 anos ou mais": {
+          "comp_1t": 2530,
+          "comp_2t": 2522,
+          "delta_abs": -8,
+          "delta_pct": -0.32
+        }
+      },
+      "bands_control": {
+        "40 a 44 anos": {
+          "comp_1t": 11504509,
+          "comp_2t": 11284215,
+          "delta_abs": -220294,
+          "delta_pct": -1.91
+        },
+        "45 a 49 anos": {
+          "comp_1t": 11047507,
+          "comp_2t": 10877117,
+          "delta_abs": -170390,
+          "delta_pct": -1.54
+        },
+        "50 a 54 anos": {
+          "comp_1t": 10141564,
+          "comp_2t": 10006635,
+          "delta_abs": -134929,
+          "delta_pct": -1.33
+        },
+        "55 a 59 anos": {
+          "comp_1t": 8507973,
+          "comp_2t": 8408178,
+          "delta_abs": -99795,
+          "delta_pct": -1.17
+        },
+        "60 a 64 anos": {
+          "comp_1t": 6703883,
+          "comp_2t": 6652859,
+          "delta_abs": -51024,
+          "delta_pct": -0.76
+        },
+        "65 a 69 anos": {
+          "comp_1t": 4637040,
+          "comp_2t": 4627179,
+          "delta_abs": -9861,
+          "delta_pct": -0.21
+        }
+      }
+    },
+    "2018": {
+      "bands_70plus": {
+        "70 a 74 anos": {
+          "comp_1t": 2630591,
+          "comp_2t": 2688194,
+          "delta_abs": 57603,
+          "delta_pct": 2.19
+        },
+        "75 a 79 anos": {
+          "comp_1t": 1188659,
+          "comp_2t": 1230561,
+          "delta_abs": 41902,
+          "delta_pct": 3.53
+        },
+        "80 a 84 anos": {
+          "comp_1t": 475944,
+          "comp_2t": 494931,
+          "delta_abs": 18987,
+          "delta_pct": 3.99
+        },
+        "85 a 89 anos": {
+          "comp_1t": 148709,
+          "comp_2t": 154729,
+          "delta_abs": 6020,
+          "delta_pct": 4.05
+        },
+        "90 a 94 anos": {
+          "comp_1t": 33697,
+          "comp_2t": 34700,
+          "delta_abs": 1003,
+          "delta_pct": 2.98
+        },
+        "95 a 99 anos": {
+          "comp_1t": 5085,
+          "comp_2t": 5213,
+          "delta_abs": 128,
+          "delta_pct": 2.52
+        },
+        "100 anos ou mais": {
+          "comp_1t": 1507,
+          "comp_2t": 1507,
+          "delta_abs": 0,
+          "delta_pct": 0.0
+        }
+      },
+      "bands_control": {
+        "40 a 44 anos": {
+          "comp_1t": 12054649,
+          "comp_2t": 11930498,
+          "delta_abs": -124151,
+          "delta_pct": -1.03
+        },
+        "45 a 49 anos": {
+          "comp_1t": 11034882,
+          "comp_2t": 10961051,
+          "delta_abs": -73831,
+          "delta_pct": -0.67
+        },
+        "50 a 54 anos": {
+          "comp_1t": 10634019,
+          "comp_2t": 10591984,
+          "delta_abs": -42035,
+          "delta_pct": -0.4
+        },
+        "55 a 59 anos": {
+          "comp_1t": 9347035,
+          "comp_2t": 9321249,
+          "delta_abs": -25786,
+          "delta_pct": -0.28
+        },
+        "60 a 64 anos": {
+          "comp_1t": 7645176,
+          "comp_2t": 7650175,
+          "delta_abs": 4999,
+          "delta_pct": 0.07
+        },
+        "65 a 69 anos": {
+          "comp_1t": 5531268,
+          "comp_2t": 5570099,
+          "delta_abs": 38831,
+          "delta_pct": 0.7
+        }
+      }
+    },
+    "2022": {
+      "bands_70plus": {
+        "70 a 74 anos": {
+          "comp_1t": 3591058,
+          "comp_2t": 3834655,
+          "delta_abs": 243597,
+          "delta_pct": 6.78
+        },
+        "75 a 79 anos": {
+          "comp_1t": 1613326,
+          "comp_2t": 1807190,
+          "delta_abs": 193864,
+          "delta_pct": 12.02
+        },
+        "80 a 84 anos": {
+          "comp_1t": 654036,
+          "comp_2t": 766869,
+          "delta_abs": 112833,
+          "delta_pct": 17.25
+        },
+        "85 a 89 anos": {
+          "comp_1t": 209870,
+          "comp_2t": 257122,
+          "delta_abs": 47252,
+          "delta_pct": 22.51
+        },
+        "90 a 94 anos": {
+          "comp_1t": 49783,
+          "comp_2t": 63558,
+          "delta_abs": 13775,
+          "delta_pct": 27.67
+        },
+        "95 a 99 anos": {
+          "comp_1t": 7604,
+          "comp_2t": 10166,
+          "delta_abs": 2562,
+          "delta_pct": 33.69
+        },
+        "100 anos ou mais": {
+          "comp_1t": 1681,
+          "comp_2t": 2097,
+          "delta_abs": 416,
+          "delta_pct": 24.75
+        }
+      },
+      "bands_control": {
+        "40 a 44 anos": {
+          "comp_1t": 13584124,
+          "comp_2t": 13613962,
+          "delta_abs": 29838,
+          "delta_pct": 0.22
+        },
+        "45 a 49 anos": {
+          "comp_1t": 11933263,
+          "comp_2t": 11961569,
+          "delta_abs": 28306,
+          "delta_pct": 0.24
+        },
+        "50 a 54 anos": {
+          "comp_1t": 11048136,
+          "comp_2t": 11085095,
+          "delta_abs": 36959,
+          "delta_pct": 0.33
+        },
+        "55 a 59 anos": {
+          "comp_1t": 10452798,
+          "comp_2t": 10494181,
+          "delta_abs": 41383,
+          "delta_pct": 0.4
+        },
+        "60 a 64 anos": {
+          "comp_1t": 8728897,
+          "comp_2t": 8776742,
+          "delta_abs": 47845,
+          "delta_pct": 0.55
+        },
+        "65 a 69 anos": {
+          "comp_1t": 6699252,
+          "comp_2t": 6778586,
+          "delta_abs": 79334,
+          "delta_pct": 1.18
+        }
+      }
+    }
+  }
+}

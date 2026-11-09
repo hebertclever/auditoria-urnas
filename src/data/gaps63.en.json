@@ -1,0 +1,380 @@
+[
+ {
+  "id": "GAP-ZIP-09",
+  "tipo": "A",
+  "descricao": "SW signature uses CEPESC (proprietary algorithm). No script verifies it. Half of the chain of trust cannot be verified externally.",
+  "arquivo": "assinatura.asn1:13"
+ },
+ {
+  "id": "GAP-ZIP-24",
+  "tipo": "A",
+  "descricao": "No script opens BU and RDV at the same time. The cross-check total(BU) vs sum(RDV votes) is never performed.",
+  "arquivo": "all scripts"
+ },
+ {
+  "id": "GAP-ZIP-40",
+  "tipo": "A",
+  "descricao": "valida_assinaturas() verifies ONLY the HW signature. The SW signature is hash-checked but never cryptographically verified.",
+  "arquivo": "assinatura_hash.py:105"
+ },
+ {
+  "id": "GAP-ZIP-45",
+  "tipo": "A",
+  "descricao": "verifica_qrcode.py references certificates that do not exist in the ZIP. It ALWAYS fails. The error is silently swallowed.",
+  "arquivo": "verifica_qrcode.py:73-74"
+ },
+ {
+  "id": "GAP-EVO-01",
+  "tipo": "A",
+  "descricao": "v1/2022: tautological verification — the key embedded in the BU verifies the BU itself. Silently removed in v2.0.",
+  "arquivo": "bu_assinatura_tuplas.py (v1)"
+ },
+ {
+  "id": "GAP-ZIP-21",
+  "tipo": "A",
+  "descricao": "SW signature uses tagChaves (opaque YYYYMMDDHHMM string) instead of an X.509 certificate. No chain of trust.",
+  "arquivo": "assinatura.asn1:50-53"
+ },
+ {
+  "id": "GAP-ZIP-04",
+  "tipo": "A",
+  "descricao": "valida_certificado() only checks the signature against hardcoded CAs. It does not check validity dates, key usage, CRL or RFC 5280.",
+  "arquivo": "mr_util.py:271-278"
+ },
+ {
+  "id": "GAP-ZIP-14",
+  "tipo": "A",
+  "descricao": "TipoVoto enums have DIFFERENT values in BU and RDV. nominal=1 in the BU, nominal=2 in the RDV. Cross-checking is impossible without a manual mapping.",
+  "arquivo": "bu.asn1 / rdv.asn1"
+ },
+ {
+  "id": "GAP-ZIP-01",
+  "tipo": "B",
+  "descricao": "bu_assinatura_tuplas.py extracts the key from the VSC without calling valida_certificado(). A self-signed cert passes.",
+  "arquivo": "bu_assinatura_tuplas.py:163"
+ },
+ {
+  "id": "GAP-ZIP-05",
+  "tipo": "B",
+  "descricao": "Hardcoded AC URNA expired on 2026-07-18 — 99 days before the election. Accepted without warning because of GAP-ZIP-04.",
+  "arquivo": "mr_util.py:917-940"
+ },
+ {
+  "id": "GAP-ZIP-07",
+  "tipo": "B",
+  "descricao": "The fase field (simulated/official/training) is NEVER checked. A simulated BU is processed as official.",
+  "arquivo": "bu.asn1:43-47"
+ },
+ {
+  "id": "GAP-ZIP-08",
+  "tipo": "B",
+  "descricao": "ECPy dependency via git+https:// from a personal GitHub account. Crypto lib from a third-party supply chain.",
+  "arquivo": "requirements.txt"
+ },
+ {
+  "id": "GAP-ZIP-12",
+  "tipo": "B",
+  "descricao": "Ed521 uses private OID 1.3.6.1.4.1.44588.2.1 (TSE/CEPESC). Algorithm with no public standard.",
+  "arquivo": "mr_util.py"
+ },
+ {
+  "id": "GAP-ZIP-17",
+  "tipo": "B",
+  "descricao": "README says the 1st character of the file name indicates the fase; no script checks it. Combined with GAP-ZIP-07.",
+  "arquivo": "README.pdf / all"
+ },
+ {
+  "id": "GAP-ZIP-20",
+  "tipo": "B",
+  "descricao": "SHA-1 accepted as an algorithm. Collisions proven since 2017 (SHAttered). Downgrade surface.",
+  "arquivo": "assinatura.asn1:22-27"
+ },
+ {
+  "id": "GAP-ZIP-25",
+  "tipo": "B",
+  "descricao": "TipoEnvelope is NEVER checked by any script. An RDV is processed as a BU without error.",
+  "arquivo": "all scripts"
+ },
+ {
+  "id": "GAP-ZIP-26",
+  "tipo": "B",
+  "descricao": "The envelope's AlgoritmoHash is NEVER read. SHA-512 is hardcoded. SHA-1 downgrade goes undetected.",
+  "arquivo": "all scripts"
+ },
+ {
+  "id": "GAP-ZIP-27",
+  "tipo": "B",
+  "descricao": "assert used for security validation. python -O silently strips it.",
+  "arquivo": "mr_util.py:245"
+ },
+ {
+  "id": "GAP-ZIP-31",
+  "tipo": "B",
+  "descricao": "ECPy: EdDSA malleability (Issue #16). Accepts non-canonical signatures. 6+ years without a fix.",
+  "arquivo": "ECPy (dependency)"
+ },
+ {
+  "id": "GAP-ZIP-32",
+  "tipo": "B",
+  "descricao": "ECPy: arithmetic bug at the point at infinity (Issue #23). G*n ≠ G*(n-1)+G. 5+ years without a fix.",
+  "arquivo": "ECPy (dependency)"
+ },
+ {
+  "id": "GAP-ZIP-33",
+  "tipo": "B",
+  "descricao": "ECPy is an abandoned project. Last commit Oct/2021. The pinned commit is unreleased code.",
+  "arquivo": "requirements.txt"
+ },
+ {
+  "id": "GAP-ZIP-34",
+  "tipo": "B",
+  "descricao": "pyOpenSSL CVE-2026-27459 — buffer overflow, CVSS 9.8. The bundled version is vulnerable.",
+  "arquivo": "requirements.txt"
+ },
+ {
+  "id": "GAP-ZIP-36",
+  "tipo": "B",
+  "descricao": "No lock file. >= with no upper bound = non-deterministic builds across audits.",
+  "arquivo": "requirements.txt"
+ },
+ {
+  "id": "GAP-ZIP-42",
+  "tipo": "B",
+  "descricao": "QR: if the first part has no IDUE, parts from different voting machines combine undetected.",
+  "arquivo": "verifica_qrcode.py"
+ },
+ {
+  "id": "GAP-EVO-02",
+  "tipo": "B",
+  "descricao": "MotivoApuracaoMistaComBU(5) changed meaning between v2.0 and v2.1. Same value, opposite semantics.",
+  "arquivo": "bu.asn1 / rdv.asn1"
+ },
+ {
+  "id": "GAP-EVO-03",
+  "tipo": "B",
+  "descricao": "Pre-2020 voting machine models silently removed. Retroactive verification is impossible.",
+  "arquivo": "mr_util.py / assinatura.asn1"
+ },
+ {
+  "id": "GAP-EVO-08",
+  "tipo": "B",
+  "descricao": "BREAKING structural change v2.0→v2.1 with no versioning in the ASN.1.",
+  "arquivo": "assinatura.asn1"
+ },
+ {
+  "id": "GAP-ZIP-02",
+  "tipo": "C",
+  "descricao": "Path traversal: unsanitized nomeArquivo allows ../",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-03",
+  "tipo": "C",
+  "descricao": "verifica_qrcode.py references a non-existent certificados/ directory",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-06",
+  "tipo": "C",
+  "descricao": "Inconsistency across scripts: 3 different validation approaches",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-10",
+  "tipo": "C",
+  "descricao": "Unconstrained GeneralString accepts /, .., null bytes — root cause of the path traversal",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-11",
+  "tipo": "C",
+  "descricao": "idCriptografia = election round. Public, predictable crypto parameter, 3 values.",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-13",
+  "tipo": "C",
+  "descricao": "8 OPTIONAL fields in the BU with no handling for absence",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-15",
+  "tipo": "C",
+  "descricao": "6+ unconstrained GeneralString fields in the RDV",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-16",
+  "tipo": "C",
+  "descricao": "Generic envelope with opaque OCTET STRING content",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-22",
+  "tipo": "C",
+  "descricao": "TipoEnvelope skips value(3) without documentation",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-23",
+  "tipo": "C",
+  "descricao": "TipoUrna skips values(2)(5) without documentation",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-28",
+  "tipo": "C",
+  "descricao": "common_name() accepts only 2 of the 5 X.509 string types",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-29",
+  "tipo": "C",
+  "descricao": "except Exception: forgery indistinguishable from a bug",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-30",
+  "tipo": "C",
+  "descricao": "SEQUENCE OF with no minimum SIZE: an empty BU is valid per the spec",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-35",
+  "tipo": "C",
+  "descricao": "pyOpenSSL CVE-2026-27448 auth bypass, CVSS 5.3",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-38",
+  "tipo": "C",
+  "descricao": "Deprecated fields seguranca and historicoVotoImpresso still active",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-41",
+  "tipo": "C",
+  "descricao": "EC key extraction ignores parameters, assumes secp521r1",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-43",
+  "tipo": "C",
+  "descricao": "QR verifies the signature over the hash but never matches the hash to the real BU",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-46",
+  "tipo": "C",
+  "descricao": "Two different ASN.1 libs in the same package (asn1tools + asn1crypto)",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-47",
+  "tipo": "C",
+  "descricao": "Two incompatible key-extraction implementations in the same package",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-48",
+  "tipo": "C",
+  "descricao": "parse_qrcode_text() with no input sanitization",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-EVO-04",
+  "tipo": "C",
+  "descricao": "rdv.asn1 has zero changes v2.0→v2.1 while bu.asn1 evolves",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-EVO-07",
+  "tipo": "C",
+  "descricao": "reservaSecao renamed to contingenciaSecao — semantic change",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-18",
+  "tipo": "D",
+  "descricao": "Typos in official specs: Eleções, seçõe, ReuperarResultado, iso8859=1, aruqivo",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-19",
+  "tipo": "D",
+  "descricao": "RFC 5280 Appendix A copied without attribution (627 lines)",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-37",
+  "tipo": "D",
+  "descricao": "ordem vs ordemGeracaoHash mismatch is non-fatal, only logged",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-39",
+  "tipo": "D",
+  "descricao": "README.pdf dated 41 days before the ZIP; scripts updated without docs",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-44",
+  "tipo": "D",
+  "descricao": "bu_dump.py clears the envelope's conteudo field before printing",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-49",
+  "tipo": "D",
+  "descricao": "rdv_resumo.py: hardcoded index [1] with no bounds check",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-ZIP-50",
+  "tipo": "D",
+  "descricao": "assinatura_certificado.py: path traversal in certificate extraction",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-EVO-05",
+  "tipo": "D",
+  "descricao": "3 scripts unchanged v2.0→v2.1 despite structural changes in the spec",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-EVO-06",
+  "tipo": "D",
+  "descricao": "bu_dump.py's only change: \"asn1\" → \"ASN.1\" in the help string",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-EVO-09",
+  "tipo": "D",
+  "descricao": "New envelopeZeresimaImpressa(6) with no documentation",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-EVO-10",
+  "tipo": "D",
+  "descricao": "Typo resutlado_eleicao fixed after the 2024 election",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-EVO-11",
+  "tipo": "D",
+  "descricao": "try/except added in v2.1 — a genuine improvement",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-EVO-12",
+  "tipo": "D",
+  "descricao": "Crypto lib switch ed25519→ecpy without documentation",
+  "arquivo": ""
+ },
+ {
+  "id": "GAP-EVO-13",
+  "tipo": "D",
+  "descricao": "Certificates of real voting machines hardcoded in a demo file",
+  "arquivo": ""
+ }
+]
