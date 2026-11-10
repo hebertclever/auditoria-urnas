@@ -138,6 +138,7 @@ const pt = {
         "Objeção “nasceram depois de 2022”: a faixa 95–99 tinha ~165 mil pessoas no Censo. Mesmo que todas vivessem até 2026 (impossível), somariam ~203 mil com os 37,8 mil — ainda abaixo de 298 mil.",
         "Uma subcontagem do Censo teria de ser de 8 vezes para explicar o TSE. A cobertura do Censo é da ordem de 97%.",
         "13 municípios têm 578 centenários no TSE e zero óbitos de centenários em 2020–2024. Com expectativa de vida de ~2 anos aos 100, esperar-se-iam centenas de mortes.",
+        "O DATASUS registrou 74.242 mortes de centenários em 5 anos (2020–2024). O cadastro tem quase o triplo disso em centenários aptos — mais mortos registrados do que todas as mortes de centenários de meia década.",
       ],
     },
     method: [
@@ -482,6 +483,7 @@ const en: typeof pt = {
         "Objection “they turned 100 after 2022”: the 95–99 group had ~165 thousand people in the Census. Even if all of them lived to 2026 (impossible), they would add up to ~203 thousand with the 37.8 thousand — still below 298 thousand.",
         "A Census undercount would have to be 8-fold to explain the TSE. Census coverage is on the order of 97%.",
         "13 municipalities have 578 centenarians in the TSE and zero centenarian deaths in 2020–2024. With a life expectancy of ~2 years at 100, hundreds of deaths would be expected.",
+        "DATASUS recorded 74,242 centenarian deaths in 5 years (2020–2024). The registry holds nearly three times as many centenarians eligible to vote — more registered than every centenarian death in half a decade.",
       ],
     },
     method: [

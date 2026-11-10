@@ -28,19 +28,19 @@ export const prova = {
     eyebrow: { pt: "Fatos, não opinião", en: "Facts, not opinion" } as L,
     title: { pt: "O que esta auditoria prova", en: "What this audit proves" } as L,
     lead: {
-      pt: "Cada item abaixo é aritmética sobre fontes primárias oficiais (T0). Não depende de interpretação. Abra “Auditar” para refazer a conta.",
-      en: "Each item below is arithmetic on primary official sources (T0). It requires no interpretation. Open “Audit” to redo the math.",
+      pt: "Cada item abaixo é aritmética sobre fontes primárias oficiais (T0) — do IBGE (população), do TSE (cadastro e comparecimento) e do DATASUS/Ministério da Saúde (óbitos). Não depende de interpretação. Abra “Auditar” para refazer a conta.",
+      en: "Each item below is arithmetic on primary official sources (T0) — from IBGE (population), the TSE (registry and turnout) and DATASUS/Ministry of Health (deaths). It requires no interpretation. Open “Audit” to redo the math.",
     } as L,
     itens: [
       {
         n: 1,
         claim: { pt: "As duas bases oficiais do Estado se contradizem muito além de qualquer erro de medição.", en: "The State's two official databases contradict each other far beyond any measurement error." } as L,
         detail: {
-          pt: "O IBGE contou 37.814 pessoas com 100 anos ou mais, de porta em porta, em 2022. O TSE tem 298.239 registradas para votar. São 7,9 vezes mais. A diferença (260 mil) não é erro de amostra — é uma ordem de grandeza.",
-          en: "IBGE counted 37,814 people aged 100+, door to door, in 2022. The TSE has 298,239 registered to vote. That is 7.9 times more. The gap (260k) is not sampling error — it is an order of magnitude.",
+          pt: "O IBGE contou 37.814 pessoas com 100 anos ou mais, de porta em porta, em 2022. O TSE tem 298.239 registradas para votar. São 7,9 vezes mais. E o DATASUS confirma que centenários morrem — cerca de 15 mil por ano: o excesso não é longevidade, é falta de baixa no cadastro. A diferença não é erro de amostra — é uma ordem de grandeza.",
+          en: "IBGE counted 37,814 people aged 100+, door to door, in 2022. The TSE has 298,239 registered to vote. That is 7.9 times more. And DATASUS confirms centenarians die — about 15,000 a year: the excess is not longevity, it is a failure to remove them from the registry. The gap is not sampling error — it is an order of magnitude.",
         } as L,
         tipo: { pt: "Prova de erro de base", en: "Proof of a database error" } as L,
-        fonte: { tier: "T0", source: { pt: "IBGE Censo 2022 (SIDRA 9514) · TSE perfil de comparecimento 2026", en: "IBGE 2022 Census (SIDRA 9514) · TSE turnout profile 2026" }, date: "2022 · 2026", href: "https://sidra.ibge.gov.br/tabela/9514" } as Fonte,
+        fonte: { tier: "T0", source: { pt: "IBGE Censo 2022 (SIDRA 9514) · TSE perfil 2026 · DATASUS/SIM", en: "IBGE 2022 Census (SIDRA 9514) · TSE profile 2026 · DATASUS/SIM" }, date: "2022 · 2026", href: "https://sidra.ibge.gov.br/tabela/9514" } as Fonte,
       },
       {
         n: 2,
@@ -311,16 +311,19 @@ export const prova = {
     ],
   },
 
-  // Pergunta direta — resposta precisa
+  // Pergunta direta — resposta precisa (título e corpo alinhados)
   mortosVotaram: {
-    pergunta: { pt: "Então está provado que mortos votaram?", en: "So is it proven that dead people voted?" } as L,
+    pergunta: { pt: "Mortos votaram? O que está provado — e o que só o governo pode confirmar", en: "Did dead people vote? What is proven — and what only the government can confirm" } as L,
+    provadoLabel: { pt: "O que está provado", en: "What is proven" } as L,
+    naoProvadoLabel: { pt: "O que ainda não está provado", en: "What is not proven yet" } as L,
+    perguntaLabel: { pt: "A pergunta certa", en: "The right question" } as L,
     provado: {
-      pt: "Está provado que mortos reais — pessoas que o Ministério da Saúde registra como falecidas — permaneceram no cadastro do TSE, aptas a votar, às centenas de milhares. Isso não é estimativa nem estatística: é a diferença entre os óbitos reais (DATASUS, que não inventa mortes) e os cancelamentos que o próprio TSE fez. Só em 2022 foram pelo menos 560 mil eleitores mortos sem baixa no cadastro.",
-      en: "It is proven that real dead people — individuals the Ministry of Health records as deceased — remained in the TSE registry, eligible to vote, by the hundreds of thousands. This is not an estimate or a statistic: it is the difference between real deaths (DATASUS, which does not invent deaths) and the cancellations the TSE itself made. In 2022 alone, at least 560,000 dead voters went uncancelled.",
+      pt: "Está provado que mortos reais — pessoas que o Ministério da Saúde registra como falecidas — permaneceram no cadastro do TSE, aptas a votar, às centenas de milhares. Não é estimativa nem estatística: é a diferença entre os óbitos reais (DATASUS, que não inventa mortes) e os cancelamentos que o próprio TSE fez. Só em 2022 foram pelo menos 560 mil eleitores mortos sem baixa no cadastro.",
+      en: "It is proven that real dead people — individuals the Ministry of Health records as deceased — remained in the TSE registry, eligible to vote, by the hundreds of thousands. Not an estimate or a statistic: it is the difference between real deaths (DATASUS, which does not invent deaths) and the cancellations the TSE itself made. In 2022 alone, at least 560,000 dead voters went uncancelled.",
     } as L,
     falta: {
-      pt: "O que falta para dizer que uma pessoa específica, morta, teve voto registrado em seu nome é um único dado: o comparecimento ligado ao CPF. Esse dado é sigiloso (LGPD) e só o governo tem. O cruzamento leva menos de uma hora.",
-      en: "What is missing to say that one specific dead person had a vote recorded in their name is a single piece of data: turnout linked to the ID. That data is confidential (LGPD) and only the government holds it. The cross-check takes under an hour.",
+      pt: "Não está provado — com dado público — que esses títulos votaram, nem no total. Em alguns municípios houve mais votos do que moradores; mas parte disso também pode ser eleitor vivo com domicílio eleitoral em outro município, o que a lei permite. Separar um morto que votou de um vivo registrado fora exige ligar cada voto ao CPF. Esse dado é sigiloso (LGPD) e só o governo tem — e o cruzamento leva menos de uma hora.",
+      en: "It is not proven — with public data — that these registrations voted, not even in aggregate. In some municipalities there were more votes than residents; but part of that may also be living voters whose electoral domicile is in another municipality, which the law allows. Telling a dead person who voted from a living voter registered elsewhere requires linking each vote to the ID. That data is confidential (LGPD) and only the government holds it — and the cross-check takes under an hour.",
     } as L,
     porque: {
       pt: "Por isso a pergunta certa mudou. Não é mais “há mortos aptos a votar no cadastro?” — há, e está provado. É “por que o governo, que pode confirmar em uma hora se esses mortos votaram, não confirma e não responde à população?”.",

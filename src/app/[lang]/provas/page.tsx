@@ -120,15 +120,15 @@ export default async function ProvasPage({ params }: PageProps<"/[lang]/provas">
             <h3 className="display-md text-2xl font-semibold text-fg sm:text-3xl">{L(prova.mortosVotaram.pergunta)}</h3>
             <div className="mt-5 grid gap-5 lg:grid-cols-3">
               <p className="text-[0.98rem] leading-relaxed text-fg">
-                <span className="mb-1 block font-mono text-[0.65rem] uppercase tracking-widest text-teal">{lang === "pt" ? "Provado" : "Proven"}</span>
+                <span className="mb-1 block font-mono text-[0.65rem] uppercase tracking-widest text-teal">{L(prova.mortosVotaram.provadoLabel)}</span>
                 {L(prova.mortosVotaram.provado)}
               </p>
               <p className="text-[0.98rem] leading-relaxed text-fg-2">
-                <span className="mb-1 block font-mono text-[0.65rem] uppercase tracking-widest text-amber">{lang === "pt" ? "O que falta" : "What is missing"}</span>
+                <span className="mb-1 block font-mono text-[0.65rem] uppercase tracking-widest text-amber">{L(prova.mortosVotaram.naoProvadoLabel)}</span>
                 {L(prova.mortosVotaram.falta)}
               </p>
               <p className="text-[0.98rem] font-medium leading-relaxed text-fg">
-                <span className="mb-1 block font-mono text-[0.65rem] uppercase tracking-widest text-rose">{lang === "pt" ? "A pergunta certa" : "The right question"}</span>
+                <span className="mb-1 block font-mono text-[0.65rem] uppercase tracking-widest text-rose">{L(prova.mortosVotaram.perguntaLabel)}</span>
                 {L(prova.mortosVotaram.porque)}
               </p>
             </div>

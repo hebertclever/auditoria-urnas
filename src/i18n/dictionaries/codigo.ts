@@ -160,6 +160,26 @@ const pt = {
     linhas: "linhas",
     interversao: "Inter-versão",
   },
+  porque: {
+    eyebrow: "A pergunta inevitável",
+    title: "Por que o TSE publicaria um kit que não funciona?",
+    intro: "Não sabemos a intenção — e não vamos fingir que sabemos. Dá para separar o que é fato (verificável no código e no histórico) do que é motivo (que só o TSE pode explicar). As duas respostas possíveis são graves, e ambas pedem explicação.",
+    qas: [
+      {
+        q: "Por que um kit que não verifica?",
+        fato: "A ferramenta de QR nunca roda — faltam certificados no pacote. Metade das assinaturas não é checada. 63 falhas, todas reduzindo a verificação. Um kit assim satisfaz a cobrança por “verificação pública” sem entregar verificação de verdade.",
+        motivo: "Pode ser incompetência (código de rascunho, nunca testado de ponta a ponta) ou aparência de transparência (publicar algo que parece verificar, mas não verifica). Qualquer das duas exige resposta.",
+      },
+      {
+        q: "Por que a verificação de 2022 era falsa — e sumiu em 2024?",
+        fato: "Em 2022, a chave que “verificava” o boletim vinha de dentro do próprio boletim: quem o forja controla a chave que o confere. Em 2024, isso foi removido — sem changelog, sem nota de segurança.",
+        motivo: "O erro pode ter sido não perceber a circularidade; a remoção silenciosa, só processo ruim. Mas quem confiou na “verificação” de 2022 foi induzido a erro, e quem acompanhava as mudanças não foi avisado de que ela nunca valeu nada.",
+      },
+    ],
+    fecho: "Proposital ou não, o resultado é o mesmo: a verificação pública não verifica, e as mudanças não são explicadas. Isso, por si, é o que exige auditoria independente e uma resposta pública.",
+    fatoLabel: "O fato (verificável)",
+    motivoLabel: "O motivo (só o TSE explica)",
+  },
   naoDizemos: {
     eyebrow: "Para ser exato",
     title: "O que NÃO estamos dizendo",
@@ -342,6 +362,26 @@ const en: typeof pt = {
     densFmt: "1 gap every",
     linhas: "lines",
     interversao: "Cross-version",
+  },
+  porque: {
+    eyebrow: "The inevitable question",
+    title: "Why would the TSE publish a kit that does not work?",
+    intro: "We do not know the intent — and we will not pretend to. We can separate what is fact (verifiable in the code and its history) from what is motive (which only the TSE can explain). Both possible answers are serious, and both demand an explanation.",
+    qas: [
+      {
+        q: "Why a kit that does not verify?",
+        fato: "The QR tool never runs — certificates are missing from the package. Half the signatures are never checked. 63 flaws, all reducing verification. A kit like this satisfies the demand for “public verification” without delivering real verification.",
+        motivo: "It may be incompetence (draft code, never tested end to end) or the appearance of transparency (publishing something that looks like it verifies, but does not). Either one demands an answer.",
+      },
+      {
+        q: "Why was the 2022 verification fake — and gone by 2024?",
+        fato: "In 2022, the key that “verified” the bulletin came from inside the bulletin itself: whoever forges it controls the key that checks it. In 2024 this was removed — no changelog, no security note.",
+        motivo: "The error may have been failing to notice the circularity; the silent removal, merely poor process. But anyone who trusted the 2022 “verification” was misled, and anyone tracking the changes was never told it had never meant anything.",
+      },
+    ],
+    fecho: "Intentional or not, the outcome is the same: the public verification does not verify, and the changes are not explained. That, on its own, is what demands an independent audit and a public answer.",
+    fatoLabel: "The fact (verifiable)",
+    motivoLabel: "The motive (only the TSE can explain)",
   },
   naoDizemos: {
     eyebrow: "To be precise",

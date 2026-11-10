@@ -15,10 +15,41 @@ const RES_23751 = "https://www.tse.jus.br/legislacao/compilada/res/2026/resoluca
 export function ClosingSection() {
   const { lang, dict } = useLang();
   const d = dict.codigo.naoDizemos;
+  const p = dict.codigo.porque;
   const f = dict.codigo.fontes;
   const zip = fontes.find((x) => x.url.includes("arquivos-transmitidos"));
   const efasev = fontes.find((x) => x.url.includes("oficio-do-ministro"));
   return (
+    <>
+    <Section id="porque" className="border-t border-line">
+      <Reveal>
+        <Eyebrow tone="rose">{p.eyebrow}</Eyebrow>
+        <Heading className="mt-3">{p.title}</Heading>
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-fg-2">{p.intro}</p>
+      </Reveal>
+      <div className="mt-10 grid gap-4 lg:grid-cols-2">
+        {p.qas.map((qa, i) => (
+          <Reveal key={i} delay={i * 0.06}>
+            <div className="flex h-full flex-col rounded-2xl border border-line bg-bg-elev p-5 sm:p-6">
+              <h3 className="display-md text-lg font-semibold leading-snug">{qa.q}</h3>
+              <div className="mt-4 space-y-4 text-[0.95rem] leading-relaxed">
+                <p>
+                  <span className="mb-1 block font-mono text-[0.65rem] uppercase tracking-widest text-teal">{p.fatoLabel}</span>
+                  <span className="text-fg-2">{qa.fato}</span>
+                </p>
+                <p>
+                  <span className="mb-1 block font-mono text-[0.65rem] uppercase tracking-widest text-amber">{p.motivoLabel}</span>
+                  <span className="text-fg-2">{qa.motivo}</span>
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+      <Reveal delay={0.1} className="mt-6">
+        <Callout tone="rose"><p className="text-[1.02rem]">{p.fecho}</p></Callout>
+      </Reveal>
+    </Section>
     <Section id="nao-dizemos" className="border-t border-line">
       <Reveal>
         <Eyebrow tone="teal">{d.eyebrow}</Eyebrow>
@@ -58,5 +89,6 @@ export function ClosingSection() {
         </Sources>
       </Reveal>
     </Section>
+    </>
   );
 }

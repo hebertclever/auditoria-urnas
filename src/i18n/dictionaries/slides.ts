@@ -41,7 +41,7 @@ const pt = {
       title: "O IBGE achou 37.814. O TSE tem 298.239.",
       lead: "Em 2022, os recenseadores do IBGE bateram em cada porta do país e encontraram 37.814 pessoas vivas com 100 anos ou mais. O cadastro do TSE tem 298.239 pessoas dessa idade registradas para votar.",
       takeaway: "São 260 mil centenários a mais no cadastro do que o Censo achou vivos — quase quatro Maracanãs lotados.",
-      calc: "298.239 (TSE, perfil de comparecimento 2026, faixa 100+) − 37.814 (Censo 2022, SIDRA 9514, faixa 100+) = 260.425.",
+      calc: "298.239 (TSE, perfil de comparecimento 2026, faixa 100+) − 37.814 (Censo 2022, SIDRA 9514, faixa 100+) = 260.425. E o DATASUS confirma: 74.242 mortes de centenários em 5 anos — o excesso é falta de baixa, não longevidade.",
       fonte: "TSE perfil de comparecimento 2026 · IBGE Censo 2022",
     },
     {
@@ -217,7 +217,7 @@ const en: typeof pt = {
       title: "IBGE found 37,814. The TSE has 298,239.",
       lead: "In 2022, IBGE enumerators knocked on every door in the country and found 37,814 living people aged 100 or over. The TSE registry has 298,239 people of that age registered to vote.",
       takeaway: "That is 260,000 more centenarians in the registry than the Census found alive — almost four packed Maracanã stadiums.",
-      calc: "298,239 (TSE turnout profile 2026, age 100+) − 37,814 (2022 Census, SIDRA 9514, age 100+) = 260,425.",
+      calc: "298,239 (TSE turnout profile 2026, age 100+) − 37,814 (2022 Census, SIDRA 9514, age 100+) = 260,425. And DATASUS confirms it: 74,242 centenarian deaths in 5 years — the excess is a failure to remove, not longevity.",
       fonte: "TSE turnout profile 2026 · IBGE 2022 Census",
     },
     {

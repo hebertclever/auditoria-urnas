@@ -2,14 +2,45 @@
 
 import { FileCheck2, TrendingDown, ShieldCheck } from "lucide-react";
 import { prova } from "@/data/prova";
+import { centenarios, limpeza } from "@/data/cadastro";
 import { useLang, useFmt } from "@/i18n/context";
 import { t } from "@/i18n/config";
 import { Eyebrow, Heading, Lead } from "@/components/ui/section";
 import { Callout } from "@/components/ui/callout";
 import { SourceTag, Sources } from "@/components/ui/source-tag";
 import { Reveal } from "@/components/ui/reveal";
+import { BarChart, type Bar } from "@/components/charts/bar-chart";
 
 const icons = [FileCheck2, TrendingDown, ShieldCheck];
+
+function DatasusCharts() {
+  const { lang } = useLang();
+  const { fmt, fmtCompact } = useFmt();
+  const totais: Bar[] = limpeza.mortesSerie.map((r) => ({ label: String(r.ano), value: r.mortes, tone: "slate" }));
+  const cent: Bar[] = centenarios.obitos100PorAno.map((r) => ({ label: String(r.ano), value: r.obitos, tone: "teal" }));
+  return (
+    <div className="grid gap-5 md:grid-cols-2">
+      <div className="rounded-2xl border border-line bg-bg-elev p-4 sm:p-5">
+        <h3 className="mb-1 text-sm font-semibold text-fg">
+          {lang === "pt" ? "Mortes registradas no Brasil, por ano" : "Deaths registered in Brazil, per year"}
+        </h3>
+        <p className="mb-2 text-xs text-fg-3">
+          {lang === "pt" ? "DATASUS/SIM — cada morte com atestado médico." : "DATASUS/SIM — each death with a medical certificate."}
+        </p>
+        <BarChart data={totais} height={220} format={(v) => fmtCompact(v)} minZero showValues />
+      </div>
+      <div className="rounded-2xl border border-line bg-bg-elev p-4 sm:p-5">
+        <h3 className="mb-1 text-sm font-semibold text-fg">
+          {lang === "pt" ? "Mortes de centenários, por ano" : "Centenarian deaths, per year"}
+        </h3>
+        <p className="mb-2 text-xs text-fg-3">
+          {lang === "pt" ? `DATASUS/SIM — 5 anos somam ${fmt(74_242)}, contra +200 mil no cadastro.` : `DATASUS/SIM — 5 years total ${fmt(74_242)}, against 200k+ in the registry.`}
+        </p>
+        <BarChart data={cent} height={220} format={(v) => fmt(v)} minZero showValues />
+      </div>
+    </div>
+  );
+}
 
 export function DatasusConfiabilidade() {
   const { lang } = useLang();
@@ -65,6 +96,10 @@ export function DatasusConfiabilidade() {
           </div>
           <p className="text-[0.98rem] leading-relaxed text-fg-2 [&_strong]:font-semibold [&_strong]:text-fg">{L(d.concreto.text)}</p>
         </div>
+      </Reveal>
+
+      <Reveal className="mt-6">
+        <DatasusCharts />
       </Reveal>
 
       <Reveal className="mt-6">
