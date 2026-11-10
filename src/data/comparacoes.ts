@@ -28,23 +28,23 @@ const maracanas = (n: number) => n / refs.maracana;
 export const comparacoes: Record<string, Comparacao> = {
   centenariosFantasma: {
     id: "centenariosFantasma",
-    numero: 260_425,
+    numero: 211_153,
     formato: "int",
     rotulo: { pt: "centenários no cadastro do TSE que o Censo não encontrou vivos", en: "centenarians in the TSE registry the Census did not find alive" },
     equivalente: {
-      pt: `${maracanas(260_425).toFixed(1).replace(".", ",")} Maracanãs lotados só de pessoas com mais de 100 anos que ninguém achou em casa`,
-      en: `${maracanas(260_425).toFixed(1)} sold-out Maracanã stadiums filled only with people over 100 whom nobody found at home`,
+      pt: `${maracanas(211_153).toFixed(1).replace(".", ",")} Maracanãs lotados só de pessoas com mais de 100 anos que ninguém achou em casa`,
+      en: `${maracanas(211_153).toFixed(1)} sold-out Maracanã stadiums filled only with people over 100 whom nobody found at home`,
     },
-    detalhe: { pt: "O Censo encontrou 37.814 (meio Maracanã). O TSE tem 298.239 (quase quatro).", en: "The Census found 37,814 (half a Maracanã). The TSE has 298,239 (almost four)." },
+    detalhe: { pt: "O Censo encontrou 37.814 (meio Maracanã). O TSE tem 248.967 (mais de três).", en: "The Census found 37,814 (half a Maracanã). The TSE has 248,967 (more than three)." },
   },
   razaoCentenarios: {
     id: "razaoCentenarios",
-    numero: 7.9,
+    numero: 6.6,
     formato: "x",
     rotulo: { pt: "vezes mais centenários no TSE do que no Censo", en: "times more centenarians in the TSE than in the Census" },
     equivalente: {
-      pt: "Se o IBGE contou 10 pessoas numa sala, o TSE tem 79 nomes para essa mesma sala",
-      en: "If IBGE counted 10 people in a room, the TSE has 79 names for that same room",
+      pt: "Se o IBGE contou 10 pessoas numa sala, o TSE tem 66 nomes para essa mesma sala",
+      en: "If IBGE counted 10 people in a room, the TSE has 66 names for that same room",
     },
   },
   gapAnual: {

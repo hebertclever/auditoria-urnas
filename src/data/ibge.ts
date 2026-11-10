@@ -157,12 +157,12 @@ export const ibge = {
     ],
   },
 
-  // Bloco F — centenários: o Censo INFLA; 7,9× é piso
+  // Bloco F — centenários: o Censo INFLA; 6,6× é piso
   centenarios: {
     titulo: { pt: "Centenários: o Censo conta a mais, não a menos", en: "Centenarians: the Census overcounts, not undercounts" } as L,
     texto: {
-      pt: "A demografia brasileira sabe há anos que o Censo exagera a idade dos muito idosos: em 1991 contou 13.296 centenários quando os óbitos indicavam cerca de 4.400 — três vezes mais. Em 2000, 65% das idades 100+ foram imputadas. Em 2010, de 2 a 3 vezes mais que os métodos indiretos. Se o Censo 2022 ainda infla centenários, o número real de vivos é menor que 37.814 — e a razão 7,9× entre cadastro TSE e Censo é um piso, não um teto.",
-      en: "Brazilian demographers have known for years that the Census exaggerates the ages of the very old: in 1991 it counted 13,296 centenarians when deaths pointed to about 4,400 — three times more. In 2000, 65% of ages 100+ were imputed. In 2010, 2 to 3 times more than indirect methods. If the 2022 Census still inflates centenarians, the true number alive is below 37,814 — and the 7.9× ratio between the TSE registry and the Census is a floor, not a ceiling.",
+      pt: "A demografia brasileira sabe há anos que o Censo exagera a idade dos muito idosos: em 1991 contou 13.296 centenários quando os óbitos indicavam cerca de 4.400 — três vezes mais. Em 2000, 65% das idades 100+ foram imputadas. Em 2010, de 2 a 3 vezes mais que os métodos indiretos. Se o Censo 2022 ainda infla centenários, o número real de vivos é menor que 37.814 — e a razão 6,6× entre cadastro TSE e Censo é um piso, não um teto.",
+      en: "Brazilian demographers have known for years that the Census exaggerates the ages of the very old: in 1991 it counted 13,296 centenarians when deaths pointed to about 4,400 — three times more. In 2000, 65% of ages 100+ were imputed. In 2010, 2 to 3 times more than indirect methods. If the 2022 Census still inflates centenarians, the true number alive is below 37,814 — and the 6.6× ratio between the TSE registry and the Census is a floor, not a ceiling.",
     } as L,
     fontes: [
       { tier: "T1" as Tier, fonte: { pt: "Gomes & Turra, Demographic Research 20(20)", en: "Gomes & Turra, Demographic Research 20(20)" } as L, data: "2009", url: "https://www.demographic-research.org/volumes/vol20/20/20-20.pdf" },

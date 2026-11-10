@@ -119,7 +119,7 @@ export default async function CadastroPage({ params }: PageProps<"/[lang]/cadast
         <div className="mt-6 grid gap-6">
           <Stagger className="grid grid-cols-1 gap-3 sm:grid-cols-3">
             <MotionItem variants={staggerItem}><StatTile value={centenariosPctFantasma * 100} format="pct0" label={d.p2.stats.fantasma} tone="rose" /></MotionItem>
-            <MotionItem variants={staggerItem}><StatTile value={140 / 7.5} format="dec1" suffix="×" label={d.p2.stats.japao} tone="amber" /></MotionItem>
+            <MotionItem variants={staggerItem}><StatTile value={123 / 7.5} format="dec1" suffix="×" label={d.p2.stats.japao} tone="amber" /></MotionItem>
             <MotionItem variants={staggerItem}><StatTile value={centenarios.municipiosZeroObitos.qtd} label={d.p2.stats.zero} tone="neutral" /></MotionItem>
           </Stagger>
           <Reveal><ChartCentenarios /></Reveal>

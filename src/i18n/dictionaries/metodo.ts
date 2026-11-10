@@ -128,6 +128,7 @@ const pt = {
     items: [
       { antes: "17.505 cancelamentos por óbito/ano", depois: "787.825 cancelamentos por falecimento em 2022", por: "O 17.505 era o total de 2025 cancelado “por outros motivos diversos, como óbitos” — misturava duplicidade e decisões judiciais. O gap anual correto é ~560 mil (42%), não 98,9%." },
       { antes: "32.384 centenários no Censo 2022", depois: "37.814 centenários no Censo 2022", por: "Soma de todos os municípios na SIDRA 9514. A razão TSE/Censo cai de 9,2× para 7,9× e o excedente de 89% para 87% — mais conservador." },
+      { antes: "298.239 centenários aptos no TSE (soma dos arquivos por UF)", depois: "248.967 centenários aptos no TSE (arquivo nacional consolidado, 1º turno 2026)", por: "A soma dos arquivos por UF dá um total maior que o arquivo nacional consolidado do próprio TSE. Adotamos o menor — o que qualquer pessoa reproduz baixando o arquivo oficial BRASIL. A razão cai de 7,9× para 6,6×; a conclusão não muda." },
       { antes: "“Votos matematicamente impossíveis”", depois: "“Diferenças entre comparecimento e residentes do Censo”", por: "Reconferência ADR-053: domicílio eleitoral pode diferir de residência; o rótulo antecipava uma conclusão que os dados não sustentam." },
     ],
   },
@@ -269,6 +270,7 @@ const en: typeof pt = {
     items: [
       { antes: "17,505 cancellations due to death per year", depois: "787,825 cancellations due to death in 2022", por: "The 17,505 was the 2025 total cancelled “for other miscellaneous reasons, such as death” — it mixed duplicates and court orders. The correct annual gap is ~560,000 (42%), not 98.9%." },
       { antes: "32,384 centenarians in the 2022 Census", depois: "37,814 centenarians in the 2022 Census", por: "Sum of all municipalities in SIDRA 9514. The TSE/Census ratio falls from 9.2× to 7.9× and the excess from 89% to 87% — more conservative." },
+      { antes: "298,239 centenarians registered at the TSE (sum of per-state files)", depois: "248,967 centenarians registered at the TSE (consolidated national file, 2026 round 1)", por: "Summing the per-state files yields a larger total than the TSE's own consolidated national file. We adopted the smaller one — the figure anyone reproduces by downloading the official BRASIL file. The ratio drops from 7.9× to 6.6×; the conclusion does not change." },
       { antes: "“Mathematically impossible votes”", depois: "“Differences between turnout and Census residents”", por: "Re-check ADR-053: electoral domicile may differ from residence; the label anticipated a conclusion the data does not support." },
     ],
   },

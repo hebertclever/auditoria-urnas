@@ -59,7 +59,7 @@ export const historicoInversao: { ano: AnoHist; faixas: { faixa: string; delta: 
 export const centenarios = {
   censo2022: 37_814,
   popCenso2022: 203_062_512,
-  tse2026Aptos100: 298_239,
+  tse2026Aptos100: 248_967,
   comp100_2026_1T: 2_141,
   comp100_2022_2T: 2_097,
   aptos100_2022: 184_438,
@@ -77,7 +77,7 @@ export const centenarios = {
     { pais: { pt: "Itália", en: "Italy" } as L, valor: 4.0 },
     { pais: { pt: "Japão", en: "Japan" } as L, valor: 7.5 },
     { pais: { pt: "Brasil · Censo IBGE", en: "Brazil · IBGE Census" } as L, valor: 18.6 },
-    { pais: { pt: "Brasil · cadastro TSE", en: "Brazil · TSE registry" } as L, valor: 140 },
+    { pais: { pt: "Brasil · cadastro TSE", en: "Brazil · TSE registry" } as L, valor: 123 },
   ],
   municipiosZeroObitos: { qtd: 13, centenariosTSE: 578, exemplos: [
     { nome: "São João da Ponte", uf: "MG", cent: 244 },
@@ -85,8 +85,8 @@ export const centenarios = {
     { nome: "Fruta de Leite", uf: "MG", cent: 117 },
   ] },
 };
-export const centenariosRazao = centenarios.tse2026Aptos100 / centenarios.censo2022; // ≈ 7,9×
-export const centenariosExcedente = centenarios.tse2026Aptos100 - centenarios.censo2022; // 260.425
+export const centenariosRazao = centenarios.tse2026Aptos100 / centenarios.censo2022; // ≈ 6,6×
+export const centenariosExcedente = centenarios.tse2026Aptos100 - centenarios.censo2022; // 211.153
 export const centenariosPctFantasma = centenariosExcedente / centenarios.tse2026Aptos100; // ≈ 0,87
 
 // Fantasmas 90+ (Censo 2022 × aptos TSE 2022)

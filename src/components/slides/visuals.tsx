@@ -106,7 +106,7 @@ function Centenarios() {
             <motion.ellipse key={i} cx={174} cy={150 - i * 7} rx={44 - i * 2} ry={16 - i} fill="none" stroke="var(--amber)" strokeWidth="2.5"
               initial={{ scale: 0.3, opacity: 0 }} animate={{ scale: 1, opacity: 1 - i * 0.12 }} transition={{ ...spring, delay: 0.2 + i * 0.12 }} />
           ))}
-          <text x={174} y={182} textAnchor="middle" fontSize="18" fontWeight="700" fill="var(--amber)" className="tabular font-mono">{fmt(298239)}</text>
+          <text x={174} y={182} textAnchor="middle" fontSize="18" fontWeight="700" fill="var(--amber)" className="tabular font-mono">{fmt(248967)}</text>
           <text x={174} y={198} textAnchor="middle" fontSize="9" fill="var(--fg-3)">{labels.tse}</text>
         </g>
       </svg>
@@ -280,7 +280,8 @@ function DeadCount({ active }: VisualProps) {
   const { lang } = useLang();
   // 1.491.608 adultos (95% com título ≈ 1.417.028) mortes -> 787.825 cancelados -> 629.203 restam
   const rows = [
-    { v: 1_491_608, w: 100, fill: "var(--slate)", lbl: lang === "pt" ? "adultos mortos (DATASUS)" : "adult deaths (DATASUS)" },
+    { v: 1_491_608, w: 100, fill: "var(--slate)", lbl: lang === "pt" ? "adultos mortos (DATASUS, exato)" : "adult deaths (DATASUS, exact)" },
+    { v: 1_417_028, w: 95, fill: "var(--slate)", lbl: lang === "pt" ? "com título de eleitor (~95%)" : "registered to vote (~95%)" },
     { v: 787_825, w: 53, fill: "var(--teal)", lbl: lang === "pt" ? "cancelados" : "cancelled" },
     { v: 629_203, w: 42, fill: "var(--rose)", lbl: lang === "pt" ? "mortos ainda aptos" : "dead still eligible" },
   ];
@@ -298,10 +299,10 @@ function DeadCount({ active }: VisualProps) {
           >
             <div
               className="rounded-xl border px-3 py-2.5 text-center"
-              style={{ background: i === 2 ? "var(--rose-soft)" : "var(--bg-elev)", borderColor: i === 2 ? "var(--rose)" : "var(--line-strong)" }}
+              style={{ background: i === rows.length - 1 ? "var(--rose-soft)" : "var(--bg-elev)", borderColor: i === rows.length - 1 ? "var(--rose)" : "var(--line-strong)" }}
             >
               <div className="font-mono text-base font-semibold tabular sm:text-xl" style={{ color: r.fill }}>
-                {i === 1 ? "−" : ""}{fmt(r.v)}
+                {i === 2 ? "−" : ""}{fmt(r.v)}
               </div>
               <div className="font-mono text-[0.6rem] uppercase tracking-wider text-fg-3">{r.lbl}</div>
             </div>

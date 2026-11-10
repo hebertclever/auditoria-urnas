@@ -51,7 +51,7 @@ const pt = {
       {
         titulo: "Limite biológico dos centenários",
         objetivo: "Construir uma cadeia que não dependa de domicílio eleitoral nem de premissas de sobrevivência.",
-        resultado: "Censo 2022: 37.814 centenários vivos. TSE 2026: 298.239 registrados. Razão de 7,9 vezes, comparação nacional, T0 contra T0. Treze municípios têm centenários no TSE e zero óbitos de centenários em cinco anos.",
+        resultado: "Censo 2022: 37.814 centenários vivos. TSE 2026: 248.967 registrados. Razão de 6,6 vezes, comparação nacional, T0 contra T0. Treze municípios têm centenários no TSE e zero óbitos de centenários em cinco anos.",
       },
       {
         titulo: "Capacidade funcional",
@@ -179,7 +179,7 @@ const en: typeof pt = {
       {
         titulo: "Biological limit of centenarians",
         objetivo: "Build a chain that depends neither on electoral domicile nor on survival assumptions.",
-        resultado: "2022 Census: 37,814 centenarians alive. TSE 2026: 298,239 registered. A 7.9-fold ratio, national comparison, T0 against T0. Thirteen municipalities have centenarians in the TSE registry and zero centenarian deaths in five years.",
+        resultado: "2022 Census: 37,814 centenarians alive. TSE 2026: 248,967 registered. A 6.6-fold ratio, national comparison, T0 against T0. Thirteen municipalities have centenarians in the TSE registry and zero centenarian deaths in five years.",
       },
       {
         titulo: "Functional capacity",

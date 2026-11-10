@@ -16,7 +16,7 @@ export const prova = {
       en: "This audit accuses no one of fraud. But, with official data, it proves three things that demand an answer: that the State's own databases contradict each other, that the registry is not maintained as the law requires, and that in many cases more votes were recorded than there were living people to cast them.",
     } as L,
     bullets: [
-      { pt: "Erro de base provado: o cadastro do TSE tem 7,9× mais centenários do que o IBGE encontrou vivos.", en: "Proven data error: the TSE registry has 7.9× more centenarians than IBGE found alive." },
+      { pt: "Erro de base provado: o cadastro do TSE tem 6,6× mais centenários do que o IBGE encontrou vivos.", en: "Proven data error: the TSE registry has 6.6× more centenarians than IBGE found alive." },
       { pt: "Erro de processo provado: 44% dos títulos de quem morre não são cancelados no ano — número do próprio TSE.", en: "Proven process error: 44% of dead voters' registrations go uncancelled within the year — the TSE's own figure." },
       { pt: "Impossibilidade provada: em 137 municípios houve mais comparecimento do que pessoas vivas na faixa.", en: "Proven impossibility: in 137 municipalities turnout exceeded the living people in the age band." },
     ] as { pt: string; en: string }[],
@@ -34,10 +34,10 @@ export const prova = {
     itens: [
       {
         n: 1,
-        claim: { pt: "Em escala, é impossível que essas pessoas estejam vivas. O cadastro tem quase 8 vezes mais centenários do que o Brasil tem de gente com 100 anos.", en: "At scale, it is impossible for these people to be alive. The registry holds almost 8 times more centenarians than Brazil has people aged 100." } as L,
+        claim: { pt: "Em escala, é impossível que essas pessoas estejam vivas. O cadastro tem mais de 6 vezes mais centenários do que o Brasil tem de gente com 100 anos.", en: "At scale, it is impossible for these people to be alive. The registry holds more than 6 times more centenarians than Brazil has people aged 100." } as L,
         detail: {
-          pt: "O IBGE contou 37.814 pessoas com 100 anos ou mais, de porta em porta, em 2022. O TSE tem 298.239 registradas para votar. São 7,9 vezes mais. E o DATASUS confirma que centenários morrem — cerca de 15 mil por ano: o excesso não é longevidade, é falta de baixa no cadastro. A diferença não é erro de amostra — é uma ordem de grandeza.",
-          en: "IBGE counted 37,814 people aged 100+, door to door, in 2022. The TSE has 298,239 registered to vote. That is 7.9 times more. And DATASUS confirms centenarians die — about 15,000 a year: the excess is not longevity, it is a failure to remove them from the registry. The gap is not sampling error — it is an order of magnitude.",
+          pt: "O IBGE contou 37.814 pessoas com 100 anos ou mais, de porta em porta, em 2022. O TSE tem 248.967 registradas para votar. São 6,6 vezes mais. E o DATASUS confirma que centenários morrem — cerca de 15 mil por ano: o excesso não é longevidade, é falta de baixa no cadastro. A diferença não é erro de amostra — é uma ordem de grandeza.",
+          en: "IBGE counted 37,814 people aged 100+, door to door, in 2022. The TSE has 248,967 registered to vote. That is 6.6 times more. And DATASUS confirms centenarians die — about 15,000 a year: the excess is not longevity, it is a failure to remove them from the registry. The gap is not sampling error — it is an order of magnitude.",
         } as L,
         tipo: { pt: "Prova de impossibilidade demográfica", en: "Proof of demographic impossibility" } as L,
         fonte: { tier: "T0", source: { pt: "IBGE Censo 2022 (SIDRA 9514) · TSE perfil 2026 · DATASUS/SIM", en: "IBGE 2022 Census (SIDRA 9514) · TSE profile 2026 · DATASUS/SIM" }, date: "2022 · 2026", href: "https://sidra.ibge.gov.br/tabela/9514" } as Fonte,
@@ -107,7 +107,7 @@ export const prova = {
     barras: [
       { k: { pt: "Erro do Censo medido pelo próprio IBGE (nacional)", en: "Census error measured by IBGE itself (national)" } as L, v: 8.3, tone: "teal" as const },
       { k: { pt: "Erro do Censo em municípios pequenos (onde estão os achados)", en: "Census error in small municipalities (where the findings are)" } as L, v: 3.9, tone: "teal" as const },
-      { k: { pt: "Subcontagem que o IBGE precisaria para “explicar” os centenários", en: "Undercount IBGE would need to “explain” the centenarians" } as L, v: 87, tone: "rose" as const },
+      { k: { pt: "Subcontagem que o IBGE precisaria para “explicar” os centenários", en: "Undercount IBGE would need to “explain” the centenarians" } as L, v: 85, tone: "rose" as const },
       { k: { pt: "Subcontagem que o IBGE precisaria em Davinópolis", en: "Undercount IBGE would need in Davinópolis" } as L, v: 104, tone: "rose" as const },
     ],
     pontos: [
@@ -117,16 +117,16 @@ export const prova = {
       },
       {
         t: { pt: "O Censo erra pouco — e erra ainda menos onde estão os achados.", en: "The Census errs little — and errs even less where the findings are." } as L,
-        b: { pt: "A pós-enumeração do IBGE mediu 8,3% de erro líquido nacional, 3,9% em municípios pequenos e 3,3–3,5% nos idosos de 75–79 anos. Para o cadastro do TSE estar certo, o Censo teria de ter deixado de contar 87% dos centenários — achar 1 a cada 8.", en: "IBGE's post-enumeration measured 8.3% national net error, 3.9% in small municipalities and 3.3–3.5% among the 75–79. For the TSE registry to be right, the Census would have had to miss 87% of centenarians — to find 1 in 8." } as L,
+        b: { pt: "A pós-enumeração do IBGE mediu 8,3% de erro líquido nacional, 3,9% em municípios pequenos e 3,3–3,5% nos idosos de 75–79 anos. Para o cadastro do TSE estar certo, o Censo teria de ter deixado de contar 85% dos centenários — achar menos de 1 em cada 6.", en: "IBGE's post-enumeration measured 8.3% national net error, 3.9% in small municipalities and 3.3–3.5% among the 75–79. For the TSE registry to be right, the Census would have had to miss 85% of centenarians — to find fewer than 1 in 6." } as L,
       },
       {
         t: { pt: "A ciência mostra que o Censo conta centenários a MAIS, não a menos.", en: "Research shows the Census overcounts centenarians, not undercounts." } as L,
-        b: { pt: "A demografia brasileira documenta que o Censo superestima os muito idosos em 2 a 3 vezes (idades declaradas sem registro civil). Isso torna o gap do TSE ainda maior: 7,9× é um piso, não um teto.", en: "Brazilian demography documents that the Census overstates the very old by 2–3× (ages declared without civil records). That makes the TSE gap even larger: 7.9× is a floor, not a ceiling." } as L,
+        b: { pt: "A demografia brasileira documenta que o Censo superestima os muito idosos em 2 a 3 vezes (idades declaradas sem registro civil). Isso torna o gap do TSE ainda maior: 6,6× é um piso, não um teto.", en: "Brazilian demography documents that the Census overstates the very old by 2–3× (ages declared without civil records). That makes the TSE gap even larger: 6.6× is a floor, not a ceiling." } as L,
       },
     ],
     verdict: {
-      pt: "Conclusão: é praticamente certo que o erro está na base do TSE. Nenhuma pós-enumeração, nenhum padrão internacional, descreve um censo que erre 87% para menos nos idosos. O TSE é a autoridade sobre a eleição — não sobre quantos brasileiros existem. A régua da realidade é o IBGE, e é a régua que o próprio Estado adota.",
-      en: "Conclusion: it is practically certain the error is in the TSE's database. No post-enumeration, no international benchmark, describes a census that undercounts the elderly by 87%. The TSE is the authority on the election — not on how many Brazilians exist. The yardstick of reality is IBGE, and it is the yardstick the State itself adopts.",
+      pt: "Conclusão: é praticamente certo que o erro está na base do TSE. Nenhuma pós-enumeração, nenhum padrão internacional, descreve um censo que erre 85% para menos nos idosos. O TSE é a autoridade sobre a eleição — não sobre quantos brasileiros existem. A régua da realidade é o IBGE, e é a régua que o próprio Estado adota.",
+      en: "Conclusion: it is practically certain the error is in the TSE's database. No post-enumeration, no international benchmark, describes a census that undercounts the elderly by 85%. The TSE is the authority on the election — not on how many Brazilians exist. The yardstick of reality is IBGE, and it is the yardstick the State itself adopts.",
     } as L,
     fontes: [
       { tier: "T0", source: { pt: "IBGE · Pesquisa de Pós-Enumeração do Censo 2022 (liv102110)", en: "IBGE · 2022 Census Post-Enumeration Survey (liv102110)" }, date: "ago 2024", href: "https://biblioteca.ibge.gov.br/visualizacao/livros/liv102110.pdf" } as Fonte,
@@ -253,9 +253,10 @@ export const prova = {
     } as L,
     // Funil provado (um ano, 2022)
     funil: [
-      { value: 1_491_608, label: { pt: "adultos (18+) morreram em 2022 — contagem exata do DATASUS (que ainda subnotifica)", en: "adults (18+) died in 2022 — exact DATASUS count (which still underreports)" } as L, tone: "slate" as const },
+      { value: 1_491_608, label: { pt: "adultos (18+) morreram em 2022 — contagem exata do DATASUS, que ainda subnotifica", en: "adults (18+) died in 2022 — exact DATASUS count, which still underreports" } as L, tone: "slate" as const },
+      { value: 1_417_028, label: { pt: "deles tinham título de eleitor (~95% dos adultos, segundo o próprio TSE)", en: "of them held a voter registration (~95% of adults, per the TSE itself)" } as L, tone: "slate" as const },
       { value: 787_825, label: { pt: "títulos o TSE cancelou por óbito naquele ano", en: "registrations the TSE cancelled for death that year" } as L, tone: "teal" as const },
-      { value: 629_203, label: { pt: "eleitores comprovadamente mortos permaneceram aptos a votar", en: "demonstrably dead voters remained eligible to vote" } as L, tone: "rose" as const },
+      { value: 629_203, label: { pt: "eleitores comprovadamente mortos permaneceram aptos a votar (1.417.028 − 787.825)", en: "demonstrably dead voters remained eligible to vote (1,417,028 − 787,825)" } as L, tone: "rose" as const },
     ],
     cicloLabel: { pt: "No ciclo entre as duas eleições presidenciais (2022–2026), isso acumula cerca de", en: "Across the cycle between the two presidential elections (2022–2026), this accumulates about" } as L,
     ciclo: 2_517_000,

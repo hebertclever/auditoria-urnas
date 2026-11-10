@@ -38,9 +38,9 @@ export function Kpis() {
         titulo: { pt: "Centenários TSE × Censo", en: "TSE × Census centenarians" },
         fonte: { tier: "T0", source: { pt: "TSE perfil de comparecimento 2026 · IBGE Censo 2022", en: "TSE turnout profile 2026 · IBGE 2022 Census" }, href: SRC.tse2026 },
         arquivo: "perfil_comparecimento_abstencao_2026 · SIDRA 9514 (faixa 100+)",
-        metodo: { pt: "Somamos os aptos com 100+ anos no perfil nacional do TSE (298.239) e comparamos com os centenários contados vivos no Censo 2022 (37.814).", en: "We summed voters aged 100+ in the TSE national profile (298,239) and compared with centenarians counted alive in the 2022 Census (37,814)." },
-        comando: "aptos_100 = sum(perfil[perfil.faixa=='100+'].aptos)   # 298.239\ncenso_100 = SIDRA.t9514(faixa='100+', ano=2022)         # 37.814",
-        dados: { tse_aptos_100: 298239, censo_vivos_100: 37814, excedente: 260425 },
+        metodo: { pt: "Somamos os aptos com 100+ anos no perfil nacional do TSE (248.967) e comparamos com os centenários contados vivos no Censo 2022 (37.814).", en: "We summed voters aged 100+ in the TSE national profile (248,967) and compared with centenarians counted alive in the 2022 Census (37,814)." },
+        comando: "aptos_100 = sum(perfil[perfil.faixa=='100+'].aptos)   # 248.967\ncenso_100 = SIDRA.t9514(faixa='100+', ano=2022)         # 37.814",
+        dados: { tse_aptos_100: 248967, censo_vivos_100: 37814, excedente: 211153 },
       },
     },
     {
@@ -48,8 +48,8 @@ export function Kpis() {
       aud: {
         titulo: { pt: "Razão TSE ÷ Censo", en: "TSE ÷ Census ratio" },
         fonte: { tier: "T0", source: { pt: "TSE 2026 · IBGE Censo 2022", en: "TSE 2026 · IBGE 2022 Census" }, href: SRC.sidra9514 },
-        metodo: { pt: "298.239 ÷ 37.814 = 7,9. Comparação nacional — migração interna não altera o total do país.", en: "298,239 ÷ 37,814 = 7.9. National comparison — internal migration does not change the country total." },
-        dados: { razao: 298239 / 37814 },
+        metodo: { pt: "248.967 ÷ 37.814 = 6,6. Comparação nacional — migração interna não altera o total do país.", en: "248,967 ÷ 37,814 = 6.6. National comparison — internal migration does not change the country total." },
+        dados: { razao: 248967 / 37814 },
       },
     },
     {

@@ -37,7 +37,7 @@ const pt = {
       desc: "Cinco pilares de evidência, do mais forte ao mais fraco, de que o cadastro eleitoral está inflado com títulos de pessoas falecidas.",
       bullets: [
         "A inversão biológica: quanto mais velho o eleitor, maior o aumento de comparecimento entre turnos — em 2014, 2018 e 2022.",
-        "7,9 vezes mais centenários no TSE do que o Censo contou vivos.",
+        "6,6 vezes mais centenários no TSE do que o Censo contou vivos.",
         "O TSE cancela 56% dos títulos de quem morre. O resto acumula.",
       ],
       cta: "Explorar o cadastro",
@@ -128,7 +128,7 @@ const en: typeof pt = {
       desc: "Five pillars of evidence, strongest to weakest, that the voter registry is inflated with registrations of deceased people.",
       bullets: [
         "The biological inversion: the older the voter, the larger the turnout increase between rounds — in 2014, 2018 and 2022.",
-        "7.9 times more centenarians in the TSE registry than the Census counted alive.",
+        "6.6 times more centenarians in the TSE registry than the Census counted alive.",
         "The TSE cancels 56% of the registrations of those who die. The rest accumulates.",
       ],
       cta: "Explore the registry",
