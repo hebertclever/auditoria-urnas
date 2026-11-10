@@ -98,10 +98,13 @@ export const fantasmas90 = [
 export const fantasmas90Total = fantasmas90.reduce((s, r) => s + r.excesso, 0); // 608.394
 
 // Pilar 3 — gap de limpeza (2022, melhor ano com desagregação por motivo)
+// Mortes de ADULTOS (18+) são contagem EXATA do DATASUS/SIM (registros individuais, 7,67 mi de óbitos 2020–2024).
+// A única premissa é a fração de adultos com título (~95%, TSE: ~156 mi títulos / ~160 mi adultos) — declarada e conservadora.
 export const limpeza = {
   mortesTotais2022: 1_586_000,
-  fracaoEleitores: 0.85,
-  mortesEleitores2022: 1_348_000,
+  mortesAdultos2022: 1_491_608,
+  fracaoComTitulo: 0.95,
+  mortesEleitores2022: 1_417_028,
   cancelamentos2022: {
     falecimento: 787_825,
     judiciais: 5_765,
@@ -110,20 +113,22 @@ export const limpeza = {
     revisao: 3,
     total: 793_776,
   },
-  gapAnual: 560_175,
-  taxaCancelamento: 0.584,
+  gapAnual: 629_203,
+  taxaCancelamento: 0.556,
+  taxaCancelVsAdultos: 0.528,
   acumulado: [
-    { periodo: { pt: "1 ano", en: "1 year" } as L, anos: 1, titulos: 560_000 },
-    { periodo: { pt: "4 anos (entre presidenciais)", en: "4 years (between presidential elections)" } as L, anos: 4, titulos: 2_240_000 },
-    { periodo: { pt: "10 anos", en: "10 years" } as L, anos: 10, titulos: 5_600_000 },
-    { periodo: { pt: "20 anos", en: "20 years" } as L, anos: 20, titulos: 11_200_000 },
+    { periodo: { pt: "1 ano", en: "1 year" } as L, anos: 1, titulos: 629_000 },
+    { periodo: { pt: "4 anos (entre presidenciais)", en: "4 years (between presidential elections)" } as L, anos: 4, titulos: 2_517_000 },
+    { periodo: { pt: "10 anos", en: "10 years" } as L, anos: 10, titulos: 6_292_000 },
+    { periodo: { pt: "20 anos", en: "20 years" } as L, anos: 20, titulos: 12_584_000 },
   ],
+  // Mortes de adultos (18+) por ano — contagem exata DATASUS/SIM
   mortesSerie: [
-    { ano: 2019, mortes: 1_350_000 },
-    { ano: 2020, mortes: 1_565_000 },
-    { ano: 2021, mortes: 1_753_000 },
-    { ano: 2022, mortes: 1_586_000 },
-    { ano: 2024, mortes: 1_532_015 },
+    { ano: 2020, mortes: 1_506_753 },
+    { ano: 2021, mortes: 1_782_077 },
+    { ano: 2022, mortes: 1_491_608 },
+    { ano: 2023, mortes: 1_414_028 },
+    { ano: 2024, mortes: 1_482_449 },
   ],
   nota17505: {
     pt: "O número 17.505, citado em versões anteriores como “cancelamentos por óbito”, é na verdade o total cancelado em 2025 “por outros motivos diversos, como óbitos” — mistura duplicidade, decisões judiciais e óbitos. Corrigido.",

@@ -262,14 +262,14 @@ function Funnel() {
         ))}
         {/* 6 cancelados saem (teal) */}
         <motion.g initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1, duration: 0.5 }}>
-          <text x={46} y={176} fontSize="10" fill="var(--teal)" className="font-mono">✓ 58% cancelados</text>
+          <text x={46} y={176} fontSize="10" fill="var(--teal)" className="font-mono">✓ 56% cancelados</text>
         </motion.g>
         {/* 4 acumulam (amber) */}
         <motion.rect x={120} y={158} width={24} height={30} rx={3} fill="var(--amber)"
           initial={{ height: 0, y: 188 }} animate={{ height: 30, y: 158 }} transition={{ delay: 1.1, duration: 0.6 }} />
-        <text x={132} y={200} textAnchor="middle" fontSize="8" fill="var(--amber)" className="font-mono">42%</text>
+        <text x={132} y={200} textAnchor="middle" fontSize="8" fill="var(--amber)" className="font-mono">44%</text>
       </svg>
-      <Caption>+{fmt(560175)} títulos de mortos por ano</Caption>
+      <Caption>+{fmt(629203)} títulos de mortos por ano</Caption>
     </div>
   );
 }
@@ -278,11 +278,11 @@ function Funnel() {
 function DeadCount({ active }: VisualProps) {
   const { fmt } = useFmt();
   const { lang } = useLang();
-  // 1.348.000 mortes -> 787.825 cancelados -> 560.175 restam
+  // 1.491.608 adultos (95% com título ≈ 1.417.028) mortes -> 787.825 cancelados -> 629.203 restam
   const rows = [
-    { v: 1_348_000, w: 100, fill: "var(--slate)", lbl: lang === "pt" ? "mortes de eleitores" : "voter deaths" },
-    { v: 787_825, w: 58, fill: "var(--teal)", lbl: lang === "pt" ? "cancelados" : "cancelled" },
-    { v: 560_175, w: 42, fill: "var(--rose)", lbl: lang === "pt" ? "mortos ainda aptos" : "dead still eligible" },
+    { v: 1_491_608, w: 100, fill: "var(--slate)", lbl: lang === "pt" ? "adultos mortos (DATASUS)" : "adult deaths (DATASUS)" },
+    { v: 787_825, w: 53, fill: "var(--teal)", lbl: lang === "pt" ? "cancelados" : "cancelled" },
+    { v: 629_203, w: 42, fill: "var(--rose)", lbl: lang === "pt" ? "mortos ainda aptos" : "dead still eligible" },
   ];
   return (
     <div className="w-full max-w-[420px]">
@@ -317,7 +317,7 @@ function DeadCount({ active }: VisualProps) {
         <div className="font-mono text-[0.6rem] uppercase tracking-widest text-fg-3">
           {lang === "pt" ? "no ciclo 2022–2026" : "across the 2022–2026 cycle"}
         </div>
-        <div className="display tabular text-[clamp(1.8rem,7vw,2.8rem)] font-semibold text-rose">≈ {fmt(2_240_000)}</div>
+        <div className="display tabular text-[clamp(1.8rem,7vw,2.8rem)] font-semibold text-rose">≈ {fmt(2_517_000)}</div>
       </motion.div>
     </div>
   );

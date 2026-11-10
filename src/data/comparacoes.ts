@@ -49,23 +49,23 @@ export const comparacoes: Record<string, Comparacao> = {
   },
   gapAnual: {
     id: "gapAnual",
-    numero: 560_175,
+    numero: 629_203,
     formato: "int",
     rotulo: { pt: "títulos de eleitores falecidos que ficam sem cancelar a cada ano", en: "registrations of deceased voters left uncancelled every year" },
     equivalente: {
-      pt: "uma Florianópolis inteira (537 mil habitantes) de eleitores mortos entra no cadastro por ano",
-      en: "an entire Florianópolis (537,000 people) of dead voters is added to the registry every year",
+      pt: "mais do que toda a Florianópolis (537 mil habitantes) em eleitores mortos entra no cadastro por ano",
+      en: "more than the whole of Florianópolis (537,000 people) in dead voters is added to the registry every year",
     },
-    detalhe: { pt: "De cada 10 eleitores que morrem, cerca de 4 ainda estão no cadastro no fim do ano.", en: "Of every 10 voters who die, about 4 are still registered at year's end." },
+    detalhe: { pt: "De cada 10 eleitores que morrem, mais de 4 ainda estão no cadastro no fim do ano.", en: "Of every 10 voters who die, more than 4 are still registered at year's end." },
   },
   acumulado4anos: {
     id: "acumulado4anos",
-    numero: 2_240_000,
+    numero: 2_517_000,
     formato: "int",
     rotulo: { pt: "títulos de falecidos acumulados entre duas eleições presidenciais", en: "deceased registrations accumulated between two presidential elections" },
     equivalente: {
-      pt: "quase uma Belo Horizonte (2,3 milhões) de títulos de mortos ativos no dia da eleição",
-      en: "almost a whole Belo Horizonte (2.3 million) of dead people's registrations active on election day",
+      pt: "mais do que uma Belo Horizonte (2,3 milhões) em títulos de mortos ativos no dia da eleição",
+      en: "more than a whole Belo Horizonte (2.3 million) in dead people's registrations active on election day",
     },
   },
   fantasmas90: {
@@ -156,12 +156,12 @@ export const comparacoes: Record<string, Comparacao> = {
   },
   cancelamento58: {
     id: "cancelamento58",
-    numero: 58.4,
+    numero: 55.6,
     formato: "pct",
     rotulo: { pt: "dos títulos de quem morreu em 2022 foram cancelados no mesmo ano", en: "of the registrations of people who died in 2022 were cancelled that year" },
     equivalente: {
-      pt: "é como um condomínio que atualiza a lista de moradores só para 6 em cada 10 falecidos — e cobra a taxa dos outros 4",
-      en: "like a condo that updates its resident list for only 6 of every 10 deceased — and keeps billing the other 4",
+      pt: "é como um condomínio que atualiza a lista de moradores para pouco mais da metade dos falecidos — e segue cobrando a taxa dos outros",
+      en: "like a condo that updates its resident list for barely more than half of the deceased — and keeps billing the rest",
     },
   },
 };

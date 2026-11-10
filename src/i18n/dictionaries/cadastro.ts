@@ -24,7 +24,7 @@ const pt = {
     stats: {
       tse: "centenários registrados como eleitores no TSE (2026), contra 37.814 encontrados vivos pelo Censo 2022",
       razao: "mais centenários no cadastro do TSE do que o IBGE contou, porta a porta, no Censo",
-      gap: "títulos de eleitores falecidos que ficam sem cancelamento a cada ano (gap de 42%)",
+      gap: "títulos de eleitores falecidos que ficam sem cancelamento a cada ano (gap de 44%)",
       controle: "o aumento de comparecimento dos idosos entre os turnos, comparado ao dos adultos (2022)",
     },
     note:
@@ -155,19 +155,19 @@ const pt = {
     eyebrow: "Pilar 3 · o mecanismo",
     title: "A limpeza que não acontece",
     lead:
-      "O TSE é obrigado a cancelar o título de quem morre. Em 2022, cancelou 787.825 títulos por falecimento. Naquele ano, cerca de 1,35 milhão de eleitores morreram. Quatro em cada dez títulos de falecidos ficaram ativos.",
+      "O TSE é obrigado a cancelar o título de quem morre. Em 2022, cancelou 787.825 títulos por falecimento. Naquele ano, 1.491.608 adultos morreram — contagem exata do DATASUS. Mais de quatro em cada dez títulos de falecidos ficaram ativos.",
     steps: [
       {
         t: "Mortes entram",
-        b: "Todo ano, cerca de 1,35 milhão de pessoas com título de eleitor morrem no Brasil. Cada ponto que cai no funil é um título que deveria ser cancelado.",
+        b: "Todo ano, cerca de 1,5 milhão de adultos morrem no Brasil — contagem exata do DATASUS, e ~95% têm título. Cada ponto que cai no funil é um título que deveria ser cancelado.",
       },
       {
         t: "Só parte sai cancelada",
-        b: "Em 2022, o melhor ano com dados detalhados, o TSE cancelou 787.825 títulos por falecimento — 58%. Os outros 42%, cerca de 560 mil, continuaram ativos no cadastro.",
+        b: "Em 2022, o melhor ano com dados detalhados, o TSE cancelou 787.825 títulos por falecimento — 56%. Os outros 44%, cerca de 629 mil, continuaram ativos no cadastro.",
       },
       {
         t: "A pilha cresce",
-        b: "O que não é cancelado acumula. Em quatro anos, entre duas eleições presidenciais, a pilha chega a 2,2 milhões de títulos de pessoas mortas aptas a votar. Em dez anos, 5,6 milhões.",
+        b: "O que não é cancelado acumula. Em quatro anos, entre duas eleições presidenciais, a pilha chega a 2,5 milhões de títulos de pessoas mortas aptas a votar. Em dez anos, 5,6 milhões.",
       },
     ],
     anim: {
@@ -179,7 +179,7 @@ const pt = {
     },
     chart: {
       title: "Mortes de eleitores × cancelamentos por falecimento (2022)",
-      note: "Mortes de eleitores = 85% das 1,586 milhão de mortes registradas (parcela da população com título). Cancelamentos: TSE, maio de 2023.",
+      note: "Mortes de adultos (18+) = 1.491.608, contagem exata do DATASUS/SIM; ~95% dos adultos têm título. Cancelamentos: TSE, maio de 2023.",
       mortes: "Mortes de eleitores",
       cancelados: "Cancelados",
       gap: "Não cancelados",
@@ -200,8 +200,8 @@ const pt = {
     },
     method: [
       "Cancelamentos 2022 por motivo: 793.776 no total; 787.825 (99,25%) por falecimento; 5.765 por decisão judicial; 145 por perda de direitos; 38 por duplicidade; 3 por revisão. Fonte: TSE, maio de 2023.",
-      "Mortes 2022: ~1,586 milhão (DATASUS/SIM). Parcela com título estimada em 85%: quase todas as mortes ocorrem em adultos, e ~95% dos adultos têm título.",
-      "Gap = 1.348.000 − 787.825 = 560.175 (41,6%).",
+      "Mortes de adultos (18+) em 2022: 1.491.608 — contagem exata dos registros individuais do DATASUS/SIM. Parcela com título: ~95% dos adultos (TSE: ~156 mi títulos para ~160 mi adultos).",
+      "Gap = 1.417.028 − 787.825 = 629.203 (44,4%). Sem premissa alguma, só sobre adultos: 787.825 ÷ 1.491.608 = 52,8% cancelados.",
       "Ressalva: o dado de 2022 pode incluir óbitos de anos anteriores processados com atraso (pandemia). Isso tornaria o gap de anos individuais maior e o acumulado menor; a ordem de grandeza não muda.",
     ],
     naoProva:
@@ -369,7 +369,7 @@ const en: typeof pt = {
     stats: {
       tse: "centenarians registered as voters by the TSE (2026), against 37,814 found alive by the 2022 Census",
       razao: "more centenarians in the TSE registry than IBGE counted, door to door, in the Census",
-      gap: "registrations of deceased voters left uncancelled every year (a 42% gap)",
+      gap: "registrations of deceased voters left uncancelled every year (a 44% gap)",
       controle: "the rise in elderly turnout between rounds, compared with adults (2022)",
     },
     note:
@@ -500,19 +500,19 @@ const en: typeof pt = {
     eyebrow: "Pillar 3 · the mechanism",
     title: "The clean-up that does not happen",
     lead:
-      "The TSE is required to cancel the registration of anyone who dies. In 2022 it cancelled 787,825 registrations due to death. That year, about 1.35 million voters died. Four in ten registrations of the deceased stayed active.",
+      "The TSE is required to cancel the registration of anyone who dies. In 2022 it cancelled 787,825 registrations due to death. That year, 1,491,608 adults died — an exact DATASUS count. More than four in ten registrations of the deceased stayed active.",
     steps: [
       {
         t: "Deaths come in",
-        b: "Every year, about 1.35 million people holding a voter registration die in Brazil. Each dot falling into the funnel is a registration that should be cancelled.",
+        b: "Every year, about 1.5 million adults die in Brazil — an exact DATASUS count, and ~95% hold a registration. Each dot falling into the funnel is a registration that should be cancelled.",
       },
       {
         t: "Only part comes out cancelled",
-        b: "In 2022, the best year with detailed data, the TSE cancelled 787,825 registrations due to death — 58%. The other 42%, about 560 thousand, stayed active in the registry.",
+        b: "In 2022, the best year with detailed data, the TSE cancelled 787,825 registrations due to death — 56%. The other 44%, about 560 thousand, stayed active in the registry.",
       },
       {
         t: "The pile grows",
-        b: "What is not cancelled accumulates. In four years, between two presidential elections, the pile reaches 2.2 million registrations of dead people eligible to vote. In ten years, 5.6 million.",
+        b: "What is not cancelled accumulates. In four years, between two presidential elections, the pile reaches 2.5 million registrations of dead people eligible to vote. In ten years, 5.6 million.",
       },
     ],
     anim: {
@@ -524,7 +524,7 @@ const en: typeof pt = {
     },
     chart: {
       title: "Voter deaths × cancellations due to death (2022)",
-      note: "Voter deaths = 85% of the 1.586 million recorded deaths (the share of the population holding a registration). Cancellations: TSE, May 2023.",
+      note: "Adult (18+) deaths = 1,491,608, exact count from DATASUS/SIM; ~95% of adults hold a registration. Cancellations: TSE, May 2023.",
       mortes: "Voter deaths",
       cancelados: "Cancelled",
       gap: "Not cancelled",
@@ -545,8 +545,8 @@ const en: typeof pt = {
     },
     method: [
       "2022 cancellations by reason: 793,776 in total; 787,825 (99.25%) due to death; 5,765 by court order; 145 for loss of political rights; 38 duplicates; 3 by registry review. Source: TSE, May 2023.",
-      "2022 deaths: ~1.586 million (DATASUS/SIM). Share holding a registration estimated at 85%: almost all deaths occur among adults, and ~95% of adults are registered.",
-      "Gap = 1,348,000 − 787,825 = 560,175 (41.6%).",
+      "Adult (18+) deaths in 2022: 1,491,608 — exact count of individual DATASUS/SIM records. Share registered: ~95% of adults (TSE: ~156M registrations for ~160M adults).",
+      "Gap = 1,417,028 − 787,825 = 629,203 (44.4%). With no assumption at all, adults only: 787,825 ÷ 1,491,608 = 52.8% cancelled.",
       "Caveat: the 2022 figure may include deaths from earlier years processed late (pandemic). That would make single-year gaps larger and the accumulated total smaller; the order of magnitude does not change.",
     ],
     naoProva:

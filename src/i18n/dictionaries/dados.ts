@@ -61,7 +61,7 @@ const pt = {
       {
         titulo: "Gap de limpeza cadastral",
         objetivo: "Medir quantos títulos de eleitores falecidos o TSE deixa de cancelar por ano.",
-        resultado: "Em 2022, 787.825 cancelamentos por falecimento contra ~1,35 milhão de mortes de eleitores: gap de ~560 mil por ano (42%). Corrige o número 17.505 usado antes, que misturava motivos.",
+        resultado: "Em 2022, 787.825 cancelamentos por falecimento contra 1,49 milhão de adultos mortos (DATASUS, exato): gap de ~629 mil por ano (44%). Corrige o número 17.505 usado antes, que misturava motivos.",
       },
     ],
     tabelas: {
@@ -189,7 +189,7 @@ const en: typeof pt = {
       {
         titulo: "Registry clean-up gap",
         objetivo: "Measure how many registrations of deceased voters the TSE fails to cancel each year.",
-        resultado: "In 2022, 787,825 cancellations due to death against ~1.35 million voter deaths: a gap of ~560,000 per year (42%). Corrects the 17,505 figure used earlier, which mixed reasons.",
+        resultado: "In 2022, 787,825 cancellations due to death against 1.49 million adult deaths (DATASUS, exact): a gap of ~629,000 per year (44%). Corrects the 17,505 figure used earlier, which mixed reasons.",
       },
     ],
     tabelas: {

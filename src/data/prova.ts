@@ -17,7 +17,7 @@ export const prova = {
     } as L,
     bullets: [
       { pt: "Erro de base provado: o cadastro do TSE tem 7,9× mais centenários do que o IBGE encontrou vivos.", en: "Proven data error: the TSE registry has 7.9× more centenarians than IBGE found alive." },
-      { pt: "Erro de processo provado: 42% dos títulos de quem morre não são cancelados no ano — número do próprio TSE.", en: "Proven process error: 42% of dead voters' registrations go uncancelled within the year — the TSE's own figure." },
+      { pt: "Erro de processo provado: 44% dos títulos de quem morre não são cancelados no ano — número do próprio TSE.", en: "Proven process error: 44% of dead voters' registrations go uncancelled within the year — the TSE's own figure." },
       { pt: "Impossibilidade provada: em 137 municípios houve mais comparecimento do que pessoas vivas na faixa.", en: "Proven impossibility: in 137 municipalities turnout exceeded the living people in the age band." },
     ] as { pt: string; en: string }[],
     cta: { pt: "Ver o que está provado e o que exigir", en: "See what is proven and what to demand" } as L,
@@ -34,12 +34,12 @@ export const prova = {
     itens: [
       {
         n: 1,
-        claim: { pt: "As duas bases oficiais do Estado se contradizem muito além de qualquer erro de medição.", en: "The State's two official databases contradict each other far beyond any measurement error." } as L,
+        claim: { pt: "Em escala, é impossível que essas pessoas estejam vivas. O cadastro tem quase 8 vezes mais centenários do que o Brasil tem de gente com 100 anos.", en: "At scale, it is impossible for these people to be alive. The registry holds almost 8 times more centenarians than Brazil has people aged 100." } as L,
         detail: {
           pt: "O IBGE contou 37.814 pessoas com 100 anos ou mais, de porta em porta, em 2022. O TSE tem 298.239 registradas para votar. São 7,9 vezes mais. E o DATASUS confirma que centenários morrem — cerca de 15 mil por ano: o excesso não é longevidade, é falta de baixa no cadastro. A diferença não é erro de amostra — é uma ordem de grandeza.",
           en: "IBGE counted 37,814 people aged 100+, door to door, in 2022. The TSE has 298,239 registered to vote. That is 7.9 times more. And DATASUS confirms centenarians die — about 15,000 a year: the excess is not longevity, it is a failure to remove them from the registry. The gap is not sampling error — it is an order of magnitude.",
         } as L,
-        tipo: { pt: "Prova de erro de base", en: "Proof of a database error" } as L,
+        tipo: { pt: "Prova de impossibilidade demográfica", en: "Proof of demographic impossibility" } as L,
         fonte: { tier: "T0", source: { pt: "IBGE Censo 2022 (SIDRA 9514) · TSE perfil 2026 · DATASUS/SIM", en: "IBGE 2022 Census (SIDRA 9514) · TSE profile 2026 · DATASUS/SIM" }, date: "2022 · 2026", href: "https://sidra.ibge.gov.br/tabela/9514" } as Fonte,
       },
       {
@@ -54,10 +54,10 @@ export const prova = {
       },
       {
         n: 3,
-        claim: { pt: "O cadastro não é mantido como a lei manda: 42% dos títulos de quem morre ficam ativos no ano.", en: "The registry is not maintained as the law requires: 42% of dead voters' registrations stay active within the year." } as L,
+        claim: { pt: "O cadastro não é mantido como a lei manda: 44% dos títulos de quem morre ficam ativos no ano.", en: "The registry is not maintained as the law requires: 44% of dead voters' registrations stay active within the year." } as L,
         detail: {
-          pt: "Em 2022 morreram cerca de 1,35 milhão de eleitores. O TSE cancelou 787.825 títulos por óbito. Sobram 560 mil por ano sem cancelar. Como a base de óbitos subnotifica (nunca inventa mortes), o gap real é ainda maior. A Resolução TSE 22.166/2006 já prevê o cruzamento automático com os óbitos desde 2006.",
-          en: "In 2022 about 1.35 million voters died. The TSE cancelled 787,825 registrations for death. That leaves 560k uncancelled per year. Since the death registry underreports (it never invents deaths), the real gap is even larger. TSE Resolution 22.166/2006 has required automatic cross-checking with death records since 2006.",
+          pt: "Em 2022 morreram 1.491.608 adultos — contagem exata do DATASUS, não estimativa; ~95% deles tinham título. O TSE cancelou 787.825 títulos por óbito. Sobram 629 mil por ano sem cancelar. Como a base de óbitos subnotifica (nunca inventa mortes), o gap real é ainda maior. A Resolução TSE 22.166/2006 já prevê o cruzamento automático com os óbitos desde 2006.",
+          en: "In 2022, 1,491,608 adults died — an exact DATASUS count, not an estimate; ~95% of them were registered. The TSE cancelled 787,825 registrations for death. That leaves 629k uncancelled per year. Since the death registry underreports (it never invents deaths), the real gap is even larger. TSE Resolution 22.166/2006 has required automatic cross-checking with death records since 2006.",
         } as L,
         tipo: { pt: "Prova de erro de processo", en: "Proof of a process error" } as L,
         fonte: { tier: "T0", source: { pt: "TSE, cancelamentos 2022 · DATASUS/SIM", en: "TSE, 2022 cancellations · DATASUS/SIM" }, date: "2023", href: "https://www.tse.jus.br/comunicacao/noticias/2023/Maio/justica-eleitoral-cancelou-quase-800-mil-titulos-em-2022" } as Fonte,
@@ -253,12 +253,12 @@ export const prova = {
     } as L,
     // Funil provado (um ano, 2022)
     funil: [
-      { value: 1_348_000, label: { pt: "eleitores morreram em 2022 (e o DATASUS subnotifica — o real é maior)", en: "voters died in 2022 (and DATASUS underreports — the real figure is higher)" } as L, tone: "slate" as const },
+      { value: 1_491_608, label: { pt: "adultos (18+) morreram em 2022 — contagem exata do DATASUS (que ainda subnotifica)", en: "adults (18+) died in 2022 — exact DATASUS count (which still underreports)" } as L, tone: "slate" as const },
       { value: 787_825, label: { pt: "títulos o TSE cancelou por óbito naquele ano", en: "registrations the TSE cancelled for death that year" } as L, tone: "teal" as const },
-      { value: 560_175, label: { pt: "eleitores comprovadamente mortos permaneceram aptos a votar", en: "demonstrably dead voters remained eligible to vote" } as L, tone: "rose" as const },
+      { value: 629_203, label: { pt: "eleitores comprovadamente mortos permaneceram aptos a votar", en: "demonstrably dead voters remained eligible to vote" } as L, tone: "rose" as const },
     ],
     cicloLabel: { pt: "No ciclo entre as duas eleições presidenciais (2022–2026), isso acumula cerca de", en: "Across the cycle between the two presidential elections (2022–2026), this accumulates about" } as L,
-    ciclo: 2_240_000,
+    ciclo: 2_517_000,
     cicloUnidade: { pt: "títulos de mortos aptos a votar", en: "dead people's registrations eligible to vote" } as L,
     // Sinais mensuráveis de uso (não é o total que votou, mas é medido)
     sinaisTitle: { pt: "Sinais mensuráveis de que essas inscrições foram usadas", en: "Measurable signs that these registrations were used" } as L,
@@ -318,8 +318,8 @@ export const prova = {
     naoProvadoLabel: { pt: "O que ainda não está provado", en: "What is not proven yet" } as L,
     perguntaLabel: { pt: "A pergunta certa", en: "The right question" } as L,
     provado: {
-      pt: "Está provado que mortos reais — pessoas que o Ministério da Saúde registra como falecidas — permaneceram no cadastro do TSE, aptas a votar, às centenas de milhares. Não é estimativa nem estatística: é a diferença entre os óbitos reais (DATASUS, que não inventa mortes) e os cancelamentos que o próprio TSE fez. Só em 2022 foram pelo menos 560 mil eleitores mortos sem baixa no cadastro.",
-      en: "It is proven that real dead people — individuals the Ministry of Health records as deceased — remained in the TSE registry, eligible to vote, by the hundreds of thousands. Not an estimate or a statistic: it is the difference between real deaths (DATASUS, which does not invent deaths) and the cancellations the TSE itself made. In 2022 alone, at least 560,000 dead voters went uncancelled.",
+      pt: "Está provado que mortos reais — pessoas que o Ministério da Saúde registra como falecidas — permaneceram no cadastro do TSE, aptas a votar, às centenas de milhares. Não é estimativa nem estatística: é a diferença entre os óbitos reais (DATASUS, que não inventa mortes) e os cancelamentos que o próprio TSE fez. Só em 2022 foram pelo menos 629 mil eleitores mortos sem baixa no cadastro.",
+      en: "It is proven that real dead people — individuals the Ministry of Health records as deceased — remained in the TSE registry, eligible to vote, by the hundreds of thousands. Not an estimate or a statistic: it is the difference between real deaths (DATASUS, which does not invent deaths) and the cancellations the TSE itself made. In 2022 alone, at least 629,000 dead voters went uncancelled.",
     } as L,
     falta: {
       pt: "Não está provado — com dado público — que esses títulos votaram, nem no total. Em alguns municípios houve mais votos do que moradores; mas parte disso também pode ser eleitor vivo com domicílio eleitoral em outro município, o que a lei permite. Separar um morto que votou de um vivo registrado fora exige ligar cada voto ao CPF. Esse dado é sigiloso (LGPD) e só o governo tem — e o cruzamento leva menos de uma hora.",

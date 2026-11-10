@@ -57,7 +57,7 @@ export function Kpis() {
       aud: {
         titulo: { pt: "Gap de cancelamento anual", en: "Annual cancellation gap" },
         fonte: { tier: "T0", source: { pt: "DATASUS/SIM · TSE cancelamentos 2022", en: "DATASUS/SIM · TSE 2022 cancellations" }, href: SRC.cancel2022 },
-        metodo: { pt: "Mortes de eleitores em 2022 ≈ 1,35 mi (85% de 1,59 mi do SIM). O TSE cancelou 787.825 títulos por óbito. Gap = 560.175/ano.", en: "Voter deaths in 2022 ≈ 1.35M (85% of SIM's 1.59M). The TSE cancelled 787,825 registrations for death. Gap = 560,175/year." },
+        metodo: { pt: "Mortes de adultos em 2022 = 1.491.608 (DATASUS, contagem exata); ~95% com título ≈ 1,42 mi de eleitores. O TSE cancelou 787.825 títulos por óbito. Gap = 629.203/ano.", en: "Voter deaths in 2022 ≈ 1.35M (85% of SIM's 1.59M). The TSE cancelled 787,825 registrations for death. Gap = 629,203/year." },
         dados: limpeza.cancelamentos2022,
       },
     },
