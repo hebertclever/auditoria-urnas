@@ -24,8 +24,8 @@ export function CountUp({
 
   useEffect(() => {
     if (!inView) return;
-    if (reduced) { setVal(to); return; }
-    const controls = animate(0, to, { duration, ease: [0.16, 1, 0.3, 1], onUpdate: (v) => setVal(v) });
+    // State flows through animate()'s onUpdate (external-system sync); reduced motion uses duration 0.
+    const controls = animate(0, to, { duration: reduced ? 0 : duration, ease: [0.16, 1, 0.3, 1], onUpdate: (v) => setVal(v) });
     return () => controls.stop();
   }, [inView, to, duration, reduced]);
 

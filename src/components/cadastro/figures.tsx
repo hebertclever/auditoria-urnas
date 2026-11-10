@@ -8,9 +8,14 @@ export function useAnimatedNumber(target: number, active: boolean, duration = 1.
   const [v, setV] = useState(0);
   const reduced = useReducedMotion();
   useEffect(() => {
-    if (!active) { setV(0); return; }
-    if (reduced) { setV(target); return; }
-    const c = animate(0, target, { duration, ease: [0.16, 1, 0.3, 1], onUpdate: (x) => setV(x) });
+    // All state updates flow through animate()'s onUpdate callback (external-system sync),
+    // so nothing is set synchronously in the effect body. Reduced motion / inactive use duration 0.
+    const to = active ? target : 0;
+    const c = animate(0, to, {
+      duration: active && !reduced ? duration : 0,
+      ease: [0.16, 1, 0.3, 1],
+      onUpdate: (x) => setV(x),
+    });
     return () => c.stop();
   }, [target, active, duration, reduced]);
   return v;

@@ -2,14 +2,13 @@
 
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
-import { useEffect, useState } from "react";
 import { useLang } from "@/i18n/context";
+import { useMounted } from "@/lib/use-mounted";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const { dict } = useLang();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  const mounted = useMounted();
   const dark = mounted ? theme === "dark" : true;
   const t = dict.common.nav.toggleTheme;
   return (
