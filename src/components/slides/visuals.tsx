@@ -99,10 +99,10 @@ function Centenarios() {
   return (
     <div>
       <svg viewBox="0 0 240 210" className="w-full max-w-[360px]">
-        {/* Censo ~0.5 Maracanã: one small ring. TSE ~3.8: four rings */}
+        {/* Censo ~0.5 Maracanã: one small ring. TSE 248.967/78.838 ≈ 3.2: three rings */}
         <Stadium x={66} fill="var(--teal)" label={labels.censo} value={fmt(37814)} />
         <g>
-          {[0, 1, 2, 3].map((i) => (
+          {[0, 1, 2].map((i) => (
             <motion.ellipse key={i} cx={174} cy={150 - i * 7} rx={44 - i * 2} ry={16 - i} fill="none" stroke="var(--amber)" strokeWidth="2.5"
               initial={{ scale: 0.3, opacity: 0 }} animate={{ scale: 1, opacity: 1 - i * 0.12 }} transition={{ ...spring, delay: 0.2 + i * 0.12 }} />
           ))}
@@ -115,10 +115,10 @@ function Centenarios() {
   );
 }
 
-/* ---------- 4. Sala 10 → 79 ---------- */
+/* ---------- 4. Sala 10 → 66 ---------- */
 function RoomRatio() {
   const teal = Array.from({ length: 10 });
-  const amber = Array.from({ length: 79 });
+  const amber = Array.from({ length: 66 });
   return (
     <div className="grid grid-cols-2 gap-4">
       <div className="rounded-xl border border-line bg-bg-elev p-3">
@@ -135,7 +135,7 @@ function RoomRatio() {
             <motion.span key={i} className="aspect-square rounded-full bg-amber" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: i * 0.012, ...spring }} />
           ))}
         </div>
-        <p className="mt-2 text-center font-mono text-[0.65rem] text-amber">TSE · 79</p>
+        <p className="mt-2 text-center font-mono text-[0.65rem] text-amber">TSE · 66</p>
       </div>
     </div>
   );
