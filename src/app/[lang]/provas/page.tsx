@@ -38,7 +38,22 @@ export default async function ProvasPage({ params }: PageProps<"/[lang]/provas">
             <Eyebrow tone="amber">{L(prova.provado.eyebrow)}</Eyebrow>
             <Heading as="h1" className="mt-5 max-w-4xl">{L(prova.provado.title)}</Heading>
             <Lead className="mt-7 max-w-3xl">{L(prova.provado.lead)}</Lead>
-            <p className="mt-5 max-w-3xl rounded-xl border border-amber/30 bg-bg/40 p-4 text-[0.9rem] leading-relaxed text-fg-2">{L(prova.resposta.atribuicao)}</p>
+          </Reveal>
+
+          {/* O QUE VAMOS DEMONSTRAR */}
+          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {prova.provado.resumo.map((r, i) => (
+              <Reveal key={i} delay={i * 0.05}>
+                <div className="flex h-full flex-col rounded-2xl border border-amber/20 bg-bg-elev/80 p-4 backdrop-blur-sm">
+                  <h3 className="display-md text-base font-semibold text-amber">{L(r.t)}</h3>
+                  <p className="mt-1.5 text-[0.85rem] leading-relaxed text-fg-2">{L(r.b)}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={0.3}>
+            <p className="mt-8 max-w-3xl rounded-xl border border-line bg-bg-elev/60 p-4 text-[0.88rem] leading-relaxed text-fg-2">{L(prova.resposta.atribuicao)}</p>
           </Reveal>
         </Container>
       </div>

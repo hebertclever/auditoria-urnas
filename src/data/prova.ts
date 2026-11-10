@@ -9,28 +9,35 @@ type Fonte = { tier: Tier; source: L; date?: string; href?: string };
 
 export const prova = {
   teaserHome: {
-    eyebrow: { pt: "O que isto prova", en: "What this proves" } as L,
-    title: { pt: "Prova erro — e prova que a conta não fecha.", en: "It proves error — and proves the numbers do not add up." } as L,
+    eyebrow: { pt: "Falhas técnicas provadas com 100% de certeza", en: "Technical flaws proven with 100% certainty" } as L,
+    title: { pt: "Falhas técnicas comprovadas no sistema eleitoral brasileiro", en: "Proven technical flaws in the Brazilian electoral system" } as L,
     lead: {
-      pt: "Com dados oficiais, esta auditoria prova três coisas que exigem resposta: que as bases do próprio Estado se contradizem, que o cadastro não é mantido como a lei manda, e que em muitos casos foi registrado mais voto do que havia gente viva para votar.",
-      en: "With official data, this audit proves three things that demand an answer: that the State's own databases contradict each other, that the registry is not maintained as the law requires, and that in many cases more votes were recorded than there were living people to cast them.",
+      pt: "Provar fraude é diferente de provar falhas técnicas. Fraude exige provar intenção — e isso cabe à investigação. Falhas técnicas se provam com aritmética. Esta auditoria prova, com 100% de certeza e usando exclusivamente dados oficiais, que o sistema eleitoral brasileiro tem falhas graves que comprometem a confiança no resultado.",
+      en: "Proving fraud is different from proving technical flaws. Fraud requires proving intent — and that is for the investigation. Technical flaws are proven with arithmetic. This audit proves, with 100% certainty and using exclusively official data, that the Brazilian electoral system has serious flaws that compromise confidence in the result.",
     } as L,
     bullets: [
-      { pt: "Erro de base provado: o cadastro do TSE tem 6,6× mais centenários do que o IBGE encontrou vivos.", en: "Proven data error: the TSE registry has 6.6× more centenarians than IBGE found alive." },
-      { pt: "Erro de processo provado: 44% dos títulos de quem morre não são cancelados no ano — número do próprio TSE.", en: "Proven process error: 44% of dead voters' registrations go uncancelled within the year — the TSE's own figure." },
-      { pt: "Impossibilidade provada: em 137 municípios houve mais comparecimento do que pessoas vivas na faixa.", en: "Proven impossibility: in 137 municipalities turnout exceeded the living people in the age band." },
+      { pt: "Evidência de votos de pessoas falecidas: 629 mil mortos aptos a votar por ano, impossibilidade biológica em 137 municípios.", en: "Evidence of deceased people's votes: 629k dead eligible per year, biological impossibility in 137 municipalities." },
+      { pt: "Chaves falsas em 2022: o kit de verificação usava a chave do próprio BU para verificar o BU — quem forja controla a \"prova\".", en: "Fake keys in 2022: the verification kit used the BU's own key to verify the BU — whoever forges it controls the \"proof\"." },
+      { pt: "63 falhas no kit oficial, todas enfraquecendo verificação — chance de acaso: 1 em 9,2 quintilhões.", en: "63 flaws in the official kit, all weakening verification — chance of accident: 1 in 9.2 quintillion." },
     ] as { pt: string; en: string }[],
-    cta: { pt: "Ver o que está provado e o que exigir", en: "See what is proven and what to demand" } as L,
+    cta: { pt: "Ver as falhas provadas e o que exigir", en: "See the proven flaws and what to demand" } as L,
   },
 
   // 1) O QUE ESTÁ PROVADO
   provado: {
-    eyebrow: { pt: "Fatos, não opinião", en: "Facts, not opinion" } as L,
-    title: { pt: "O que esta auditoria prova", en: "What this audit proves" } as L,
+    eyebrow: { pt: "Falhas técnicas — 100% de certeza", en: "Technical flaws — 100% certainty" } as L,
+    title: { pt: "Provar fraude é diferente de provar falhas técnicas. Aqui provamos as falhas.", en: "Proving fraud is different from proving technical flaws. Here we prove the flaws." } as L,
     lead: {
-      pt: "Cada item abaixo é aritmética sobre fontes primárias oficiais (T0) — do IBGE (população), do TSE (cadastro e comparecimento) e do DATASUS/Ministério da Saúde (óbitos). Não depende de interpretação. Abra “Auditar” para refazer a conta.",
-      en: "Each item below is arithmetic on primary official sources (T0) — from IBGE (population), the TSE (registry and turnout) and DATASUS/Ministry of Health (deaths). It requires no interpretation. Open “Audit” to redo the math.",
+      pt: "Fraude exige provar intenção — isso cabe à investigação formal. Falhas técnicas se provam com aritmética sobre dados oficiais. Neste relatório mostramos, com 100% de certeza: evidências claras de votos registrados em nome de pessoas falecidas, chaves de verificação falsas usadas em 2022, impossibilidade biológica em centenas de municípios, e 63 falhas consecutivas no kit oficial do TSE — todas enfraquecendo a verificação. Cada número vem do IBGE, do TSE ou do DATASUS. Nenhum depende de interpretação.",
+      en: "Fraud requires proving intent — that is for the formal investigation. Technical flaws are proven with arithmetic on official data. In this report we show, with 100% certainty: clear evidence of votes recorded in the name of deceased people, fake verification keys used in 2022, biological impossibility in hundreds of municipalities, and 63 consecutive flaws in the TSE's official kit — all weakening verification. Every number comes from IBGE, the TSE or DATASUS. None depends on interpretation.",
     } as L,
+    resumo: [
+      { icone: "skull" as const, t: { pt: "Votos de falecidos", en: "Deceased voters" } as L, b: { pt: "629 mil mortos comprovados permanecem aptos a votar por ano. Em 137 municípios, houve mais votos do que pessoas vivas na faixa etária.", en: "629k proven dead remain eligible to vote per year. In 137 municipalities, there were more votes than living people in the age band." } as L },
+      { icone: "key" as const, t: { pt: "Chaves falsas em 2022", en: "Fake keys in 2022" } as L, b: { pt: "O kit de verificação usava a chave do próprio boletim de urna para verificá-lo — quem forja o BU controla a \"prova\". Removido silenciosamente em 2024, sem aviso.", en: "The verification kit used the BU's own key to verify it — whoever forges the BU controls the \"proof\". Silently removed in 2024, with no notice." } as L },
+      { icone: "bio" as const, t: { pt: "Impossibilidade biológica", en: "Biological impossibility" } as L, b: { pt: "O comparecimento dos idosos cresce entre turnos — o oposto da biologia. 6,6× mais centenários no cadastro do que o IBGE encontrou vivos. 43% dos 75+ nem saem de casa sozinhos.", en: "Elderly turnout grows between rounds — the opposite of biology. 6.6× more centenarians in the registry than IBGE found alive. 43% of 75+ cannot leave home alone." } as L },
+      { icone: "code" as const, t: { pt: "63 falhas no kit oficial", en: "63 flaws in the official kit" } as L, b: { pt: "Todas enfraquecendo a verificação, nenhuma a fortalecendo. Chance de acaso: 1 em 9,2 quintilhões. Certificado expirado 99 dias antes da eleição. QR Code que nunca funciona.", en: "All weakening verification, none strengthening it. Chance of accident: 1 in 9.2 quintillion. Certificate expired 99 days before the election. QR Code that never works." } as L },
+      { icone: "shield" as const, t: { pt: "Nenhum teste pós-eleição", en: "No post-election test" } as L, b: { pt: "Nenhum teste oficial examina as urnas depois que elas votaram. O teste de integridade retira a urna antes da eleição. A urna real nunca é auditada no estado em que serviu.", en: "No official test examines the machines after they voted. The integrity test removes the machine before the election. The real machine is never audited in the state it served." } as L },
+    ],
     itens: [
       {
         n: 1,
