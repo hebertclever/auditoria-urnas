@@ -154,11 +154,11 @@ const pt = {
     },
     {
       id: "naoprovamos",
-      eyebrow: "Honestidade intelectual",
-      title: "O que isto NÃO prova",
-      lead: "Ceticismo é o método, não a conclusão. Não encontramos nenhum caso individual de voto em nome de falecido, nenhuma prova de intenção e nenhuma atribuição a candidato ou partido. O que encontramos é um cadastro inflado e um kit que não verifica o que diz verificar.",
-      takeaway: "“Ainda não achei o gap” nunca vira “está tudo certo”. E um sinal forte nunca vira acusação sem prova.",
-      calc: "O excesso municipal (137 municípios, 1.089 diferenças) se dilui quando agregado por estado — por isso é o sinal mais fraco, e não um pilar.",
+      eyebrow: "O que os dados provam",
+      title: "Isto prova erro — e erro em eleição é inaceitável",
+      lead: "Os dados provam erros concretos: cadastro inflado com centenas de milhares de mortos aptos a votar, kit de verificação que não verifica, impossibilidade matemática em 137 municípios. Não podemos ter erros em uma eleição. O número exato de votos afetados depende de um cruzamento que o governo faz em uma hora e não publica.",
+      takeaway: "Os erros estão provados. Erros em eleição não são aceitáveis. O número final é a conta que o governo se recusa a fazer.",
+      calc: "O excesso municipal (137 municípios, 1.089 diferenças) é impossibilidade matemática: mais votos do que pessoas vivas contadas pelo Censo na faixa.",
       fonte: "",
     },
     {
@@ -330,11 +330,11 @@ const en: typeof pt = {
     },
     {
       id: "naoprovamos",
-      eyebrow: "Intellectual honesty",
-      title: "What this does NOT prove",
-      lead: "Skepticism is the method, not the conclusion. We found no individual case of a vote cast in a dead person's name, no proof of intent, and no attribution to any candidate or party. What we found is an inflated registry and a kit that does not verify what it claims to.",
-      takeaway: "“I haven't found the gap yet” never becomes “everything is fine.” And a strong signal never becomes an accusation without proof.",
-      calc: "The municipal excess (137 municipalities, 1,089 differences) dissolves when aggregated by state — which is why it is the weakest signal, not a pillar.",
+      eyebrow: "What the data proves",
+      title: "This proves error — and error in an election is unacceptable",
+      lead: "The data proves concrete errors: a registry inflated with hundreds of thousands of dead people eligible to vote, a verification kit that does not verify, and mathematical impossibility in 137 municipalities. We cannot have errors in an election. The exact number of affected votes depends on a cross-check the government runs in one hour and does not publish.",
+      takeaway: "The errors are proven. Errors in an election are unacceptable. The exact count is the number the government refuses to produce.",
+      calc: "The municipal excess (137 municipalities, 1,089 differences) is mathematical impossibility: more votes than living people counted by the Census in the age band.",
       fonte: "",
     },
     {

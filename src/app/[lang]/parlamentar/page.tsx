@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Check, ArrowRight, Lock } from "lucide-react";
+import { Check, ArrowRight, Lock, Clock } from "lucide-react";
 import { Section, Container, Eyebrow, Heading, Lead } from "@/components/ui/section";
 import { Callout } from "@/components/ui/callout";
 import { Reveal } from "@/components/ui/reveal";
@@ -122,6 +122,43 @@ export default async function ParlamentarPage({ params }: PageProps<"/[lang]/par
           </Link>
         </Reveal>
       </Section>
-    </>
+      {/* AUDITORIA FÍSICA — por que testar a urna de exemplo não basta */}
+      <Section className="border-t border-line">
+        <Reveal>
+          <Eyebrow tone="rose">{L(p.auditoriaFisica.eyebrow)}</Eyebrow>
+          <Heading className="mt-3 max-w-3xl">{L(p.auditoriaFisica.title)}</Heading>
+          <Lead className="mt-5">{L(p.auditoriaFisica.lead)}</Lead>
+        </Reveal>
+        <div className="mt-10 flex flex-col gap-4">
+          {p.auditoriaFisica.pontos.map((pt, i) => (
+            <Reveal key={i} delay={i * 0.04}>
+              <div className="rounded-2xl border border-line bg-bg-elev p-5 sm:p-6">
+                <div className="flex items-start gap-3">
+                  <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-rose/40 bg-rose-soft font-mono text-sm font-semibold text-rose">
+                    {i + 1}
+                  </span>
+                  <div className="min-w-0">
+                    <h3 className="display-md text-lg font-semibold leading-snug">{L(pt.t)}</h3>
+                    <p className="mt-2 text-[0.95rem] leading-relaxed text-fg-2">{L(pt.b)}</p>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal className="mt-6">
+          <div className="flex items-start gap-3 rounded-2xl border border-amber/30 bg-amber-soft p-5 sm:p-6">
+            <Clock className="mt-0.5 h-5 w-5 shrink-0 text-amber" />
+            <p className="text-[0.95rem] font-medium leading-relaxed text-fg">{L(p.auditoriaFisica.prazo)}</p>
+          </div>
+        </Reveal>
+        <Reveal className="mt-6">
+          <Callout tone="rose" title={lang === "pt" ? "Conclusão" : "Conclusion"}>
+            <p className="font-medium text-fg">{L(p.auditoriaFisica.conclusao)}</p>
+          </Callout>
+        </Reveal>
+      </Section>
+
+        </>
   );
 }

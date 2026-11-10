@@ -13,6 +13,7 @@ import { MagnitudeFunnel } from "@/components/provas/magnitude";
 import { Estimativa2026 } from "@/components/provas/estimativa-2026";
 import { Objecoes } from "@/components/provas/objecoes";
 import { CodigoNecessario } from "@/components/provas/codigo-necessario";
+import { AuditoriaAmostral } from "@/components/provas/auditoria-amostral";
 import { objecoes } from "@/data/objecoes";
 import { DatasusConfiabilidade } from "@/components/shared/datasus-confiabilidade";
 import { cn } from "@/lib/utils";
@@ -37,6 +38,7 @@ export default async function ProvasPage({ params }: PageProps<"/[lang]/provas">
             <Eyebrow tone="amber">{L(prova.provado.eyebrow)}</Eyebrow>
             <Heading as="h1" className="mt-5 max-w-4xl">{L(prova.provado.title)}</Heading>
             <Lead className="mt-7 max-w-3xl">{L(prova.provado.lead)}</Lead>
+            <p className="mt-5 max-w-3xl rounded-xl border border-amber/30 bg-bg/40 p-4 text-[0.9rem] leading-relaxed text-fg-2">{L(prova.resposta.atribuicao)}</p>
           </Reveal>
         </Container>
       </div>
@@ -186,6 +188,11 @@ export default async function ProvasPage({ params }: PageProps<"/[lang]/provas">
         <CodigoNecessario />
       </Section>
 
+      {/* AUDITORIA AMOSTRAL — por que a urna de exemplo não basta */}
+      <Section className="border-t border-line">
+        <AuditoriaAmostral />
+      </Section>
+
       {/* AÇÕES */}
       <Section className="border-t border-line">
         <Reveal>
@@ -223,6 +230,7 @@ export default async function ProvasPage({ params }: PageProps<"/[lang]/provas">
             <div className="glow-amber pointer-events-none absolute -bottom-32 -right-20 h-80 w-80 opacity-60" />
             <Heading className="relative max-w-3xl">{L(prova.resposta.title)}</Heading>
             <p className="relative mt-6 max-w-3xl text-lg leading-relaxed text-fg-2">{L(prova.resposta.body)}</p>
+            <p className="relative mt-4 max-w-3xl rounded-xl border border-amber/40 bg-bg/50 p-4 text-[0.95rem] font-medium leading-relaxed text-fg">{L(prova.resposta.atribuicao)}</p>
             <div className="relative mt-8 flex flex-wrap gap-3">
               <Link href={href(lang, "/parlamentar/")} className="inline-flex items-center gap-2 rounded-full bg-amber px-5 py-2.5 text-sm font-semibold text-bg transition hover:opacity-90">
                 {lang === "pt" ? "O que um parlamentar pode pedir" : "What a legislator can request"} <ArrowRight className="h-4 w-4" />

@@ -443,21 +443,29 @@ function Bank() {
   );
 }
 
-/* ---------- 15. O que não provamos ---------- */
+/* ---------- 15. O que os dados provam ---------- */
 function Limits() {
   const { lang } = useLang();
-  const items = lang === "pt"
-    ? ["caso individual de voto de falecido", "prova de intenção", "atribuição a candidato"]
-    : ["individual case of a dead voter", "proof of intent", "attribution to a candidate"];
+  const proven = lang === "pt"
+    ? ["Erro no cadastro: centenas de milhares de mortos aptos", "Erro no kit: 63 falhas, todas enfraquecendo verificação", "Impossibilidade matemática em 137 municípios"]
+    : ["Registry error: hundreds of thousands of dead eligible", "Kit error: 63 flaws, all weakening verification", "Mathematical impossibility in 137 municipalities"];
+  const pending = lang === "pt"
+    ? "Fraude não está excluída — precisa ser investigada"
+    : "Fraud is not excluded — it must be investigated";
   return (
     <div className="w-full max-w-[360px] space-y-3">
-      {items.map((it, i) => (
-        <motion.div key={i} className="flex items-center gap-3 rounded-lg border border-line bg-bg-elev px-4 py-3"
+      {proven.map((it, i) => (
+        <motion.div key={i} className="flex items-center gap-3 rounded-lg border border-teal/30 bg-teal-soft px-4 py-3"
           initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.15, duration: 0.5 }}>
-          <span className="text-rose">✕</span>
-          <span className="text-sm text-fg-2 line-through decoration-rose/50">{it}</span>
+          <span className="text-teal font-semibold">&#10003;</span>
+          <span className="text-sm text-fg">{it}</span>
         </motion.div>
       ))}
+      <motion.div className="flex items-center gap-3 rounded-lg border border-amber/30 bg-amber-soft px-4 py-3"
+        initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.45, duration: 0.5 }}>
+        <span className="text-amber font-semibold">!</span>
+        <span className="text-sm font-medium text-fg">{pending}</span>
+      </motion.div>
     </div>
   );
 }

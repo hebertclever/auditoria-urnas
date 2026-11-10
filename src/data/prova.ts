@@ -10,10 +10,10 @@ type Fonte = { tier: Tier; source: L; date?: string; href?: string };
 export const prova = {
   teaserHome: {
     eyebrow: { pt: "O que isto prova", en: "What this proves" } as L,
-    title: { pt: "Não prova fraude. Prova erro — e prova que a conta não fecha.", en: "It does not prove fraud. It proves error — and proves the numbers do not add up." } as L,
+    title: { pt: "Prova erro — e prova que a conta não fecha.", en: "It proves error — and proves the numbers do not add up." } as L,
     lead: {
-      pt: "Esta auditoria não acusa ninguém de fraude. Mas, com dados oficiais, prova três coisas que exigem resposta: que as bases do próprio Estado se contradizem, que o cadastro não é mantido como a lei manda, e que em muitos casos foi registrado mais voto do que havia gente viva para votar.",
-      en: "This audit accuses no one of fraud. But, with official data, it proves three things that demand an answer: that the State's own databases contradict each other, that the registry is not maintained as the law requires, and that in many cases more votes were recorded than there were living people to cast them.",
+      pt: "Com dados oficiais, esta auditoria prova três coisas que exigem resposta: que as bases do próprio Estado se contradizem, que o cadastro não é mantido como a lei manda, e que em muitos casos foi registrado mais voto do que havia gente viva para votar.",
+      en: "With official data, this audit proves three things that demand an answer: that the State's own databases contradict each other, that the registry is not maintained as the law requires, and that in many cases more votes were recorded than there were living people to cast them.",
     } as L,
     bullets: [
       { pt: "Erro de base provado: o cadastro do TSE tem 6,6× mais centenários do que o IBGE encontrou vivos.", en: "Proven data error: the TSE registry has 6.6× more centenarians than IBGE found alive." },
@@ -125,8 +125,8 @@ export const prova = {
       },
     ],
     verdict: {
-      pt: "Conclusão: é praticamente certo que o erro está na base do TSE. Nenhuma pós-enumeração, nenhum padrão internacional, descreve um censo que erre 85% para menos nos idosos. O TSE é a autoridade sobre a eleição — não sobre quantos brasileiros existem. A régua da realidade é o IBGE, e é a régua que o próprio Estado adota.",
-      en: "Conclusion: it is practically certain the error is in the TSE's database. No post-enumeration, no international benchmark, describes a census that undercounts the elderly by 85%. The TSE is the authority on the election — not on how many Brazilians exist. The yardstick of reality is IBGE, and it is the yardstick the State itself adopts.",
+      pt: "Conclusão: é praticamente certo que o erro está na base do TSE. Nenhuma pós-enumeração, nenhum padrão internacional, descreve um censo que erre 85% para menos nos idosos. O TSE é a autoridade sobre a eleição — não sobre quantos brasileiros existem. A régua da realidade é o IBGE, e é a régua que o próprio Estado adota. Erro em eleição é inaceitável — e fraude não está excluída como possibilidade enquanto a investigação não for feita.",
+      en: "Conclusion: it is practically certain the error is in the TSE's database. No post-enumeration, no international benchmark, describes a census that undercounts the elderly by 85%. The TSE is the authority on the election — not on how many Brazilians exist. The yardstick of reality is IBGE, and it is the yardstick the State itself adopts. Error in an election is unacceptable — and fraud is not excluded as a possibility until the investigation is done.",
     } as L,
     fontes: [
       { tier: "T0", source: { pt: "IBGE · Pesquisa de Pós-Enumeração do Censo 2022 (liv102110)", en: "IBGE · 2022 Census Post-Enumeration Survey (liv102110)" }, date: "ago 2024", href: "https://biblioteca.ibge.gov.br/visualizacao/livros/liv102110.pdf" } as Fonte,
@@ -173,8 +173,8 @@ export const prova = {
       },
     ],
     verdict: {
-      pt: "As três réguas oficiais do Estado — Censo, estimativas e óbitos — têm margens de erro conhecidas, e todas erram na direção que reforça o achado. Para a conta fechar a favor do TSE, as três teriam de errar ao mesmo tempo, cada uma na direção oposta à que sua própria metodologia documenta.",
-      en: "The State's three official yardsticks — Census, estimates and deaths — have known margins of error, and all err in the direction that reinforces the finding. For the numbers to come out in the TSE's favour, all three would have to err at once, each in the opposite direction to what its own methodology documents.",
+      pt: "As três réguas oficiais do Estado — Censo, estimativas e óbitos — têm margens de erro conhecidas, e todas erram na direção que reforça o achado. Para a conta fechar a favor do TSE, as três teriam de errar ao mesmo tempo, cada uma na direção oposta à que sua própria metodologia documenta. Os erros estão provados. Não podemos aceitá-los em uma eleição.",
+      en: "The State's three official yardsticks — Census, estimates and deaths — have known margins of error, and all err in the direction that reinforces the finding. For the numbers to come out in the TSE's favour, all three would have to err at once, each in the opposite direction to what its own methodology documents. The errors are proven. We cannot accept them in an election.",
     } as L,
     fontes: [
       { tier: "T1", source: { pt: "Costa et al., Population Health Metrics — completude do registro de óbitos (record linkage), SIM ≈ 98%", en: "Costa et al., Population Health Metrics — death reporting completeness (record linkage), SIM ≈ 98%" }, date: "2020", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7650525/" } as Fonte,
@@ -239,13 +239,158 @@ export const prova = {
     } as L,
   },
 
+  // AUDITORIA AMOSTRAL — por que testar a urna lacrada de exemplo não basta
+  auditoriaAmostral: {
+    eyebrow: { pt: "A auditoria que falta", en: "The missing audit" } as L,
+    title: { pt: "Testar a urna lacrada de exemplo não prova nada", en: "Testing a sealed example machine proves nothing" } as L,
+    lead: {
+      pt: "Uma auditoria correta testa, no estado pós-eleição, as urnas que realmente foram usadas — as com maiores anomalias e outras sorteadas. Uma urna lacrada de exemplo, escolhida pelo próprio auditado, não diz nada: se houvesse um ataque, ele não estaria na unidade que vai ser exibida.",
+      en: "A correct audit tests, in their post-election state, the machines that were actually used — those with the largest anomalies and others drawn by lot. A sealed example machine, chosen by the audited party itself, says nothing: if there were an attack, it would not be in the unit that will be exhibited.",
+    } as L,
+
+    partes: [
+      {
+        n: 1,
+        titulo: { pt: "O que é testado hoje", en: "What is tested today" } as L,
+        corpo: {
+          pt: "O teste de integridade (Res. TSE 23.673/2021, arts. 53 e 57–64) retira a urna na véspera da eleição e a substitui por outra; o teste é feito na urna retirada, não na que conta os votos reais da seção. O teste de autenticidade (AVPART) confere hashes antes da votação, em cerca de 10 seções por UF, e não testa comportamento nem hardware após o uso. Na prática, cerca de 32% das urnas de integridade são escolhidas por entidades e 68% sorteadas. O EFASEV/2022 registrou 580 urnas testadas por turno em todo o Brasil.",
+          en: "The integrity test (TSE Res. 23.673/2021, arts. 53 and 57–64) removes the machine on the eve of the election and replaces it with another; the test is run on the withdrawn machine, not the one that counts the real votes in the section. The authenticity test (AVPART) checks hashes before voting, in about 10 sections per state, and does not test behavior or hardware after use. In practice, about 32% of the integrity machines are chosen by oversight entities and 68% drawn by lot. The EFASEV/2022 report recorded 580 machines tested per round across the entire country.",
+        } as L,
+        tom: "amber" as const,
+      },
+      {
+        n: 2,
+        titulo: { pt: "O que falta", en: "What is missing" } as L,
+        corpo: {
+          pt: "Nas fontes oficiais lidas, não encontramos teste oficial que examine, depois da votação, as urnas efetivamente usadas no estado em que foram usadas. O próprio relatório EFASEV/2022 das Forças Armadas concluiu: \"somente um teste funcional, em condições normais de uso, pode atestar\" a integridade de hardware e software; que o teste atual \"não reproduz inteiramente as condições normais de uso\"; e que isso \"não permite afirmar que o SEV está isento da influência de um eventual código malicioso\". A recomendação: análise dos binários efetivamente executados e mais urnas selecionadas aleatoriamente. Os arts. 51–52 da Res. 23.673 abrem um canal para verificação pós-pleito — mas ele precisa ser usado.",
+          en: "In the official sources reviewed, we found no official test that examines, after voting, the machines actually used in the state they were used. The EFASEV/2022 report by the Armed Forces itself concluded: \"only a functional test, under normal conditions of use, can attest\" to the integrity of hardware and software; that the current test \"does not fully reproduce the normal conditions of use\"; and that this \"does not allow affirming that the electronic voting system is free from the influence of a potential malicious code\". The recommendation: analysis of the binaries actually executed and more randomly selected machines. Arts. 51–52 of Res. 23.673 open a channel for post-election verification — but it needs to be used.",
+        } as L,
+        tom: "rose" as const,
+      },
+      {
+        n: 3,
+        titulo: { pt: "A analogia da blitz", en: "The checkpoint analogy" } as L,
+        corpo: {
+          pt: "A blitz da Lei Seca funciona porque o motorista não sabe onde ela estará. Se a localização for anunciada com antecedência, quem bebeu pega outra rota — e a blitz não flagra ninguém. Uma auditoria correta segue o mesmo princípio: a unidade auditada não pode saber de antemão qual urna será examinada. Por isso a urna lacrada de exemplo, exibida com cerimônia pelo próprio auditado, não substitui o exame real: se houvesse código anômalo, ele não estaria naquela urna.",
+          en: "Brazil's drunk-driving checkpoints (Lei Seca) work because the driver does not know where they will be. If the location is announced in advance, anyone who drank takes another route — and the checkpoint catches nobody. A correct audit follows the same principle: the audited party must not know in advance which machine will be examined. That is why a sealed example machine, ceremonially exhibited by the audited party itself, does not replace the real examination: if there were anomalous code, it would not be in that machine.",
+        } as L,
+        tom: "amber" as const,
+      },
+      {
+        n: 4,
+        titulo: { pt: "Amostra correta: direcionada + aleatória", en: "Correct sample: targeted + random" } as L,
+        corpo: {
+          pt: "Duas camadas são necessárias. A primeira é direcionada: as urnas com maiores anomalias — por exemplo, maior taxa de bypass biométrico ou maior discrepância frente à referência local (3.988 de 497.897 seções atendem ao menos um critério; 54 na prioridade mais alta). A segunda é aleatória: urnas sorteadas com semente pública verificável (por exemplo, números da Loteria Federal do dia). Nenhuma das duas basta sozinha: a direcionada perde valor se o adversário conhece o critério, e a aleatória pode não alcançar a anomalia concentrada. A combinação cobre todos os cenários.",
+          en: "Two layers are needed. The first is targeted: the machines with the largest anomalies — for example, highest biometric bypass rate or greatest discrepancy from the local reference (3,988 of 497,897 sections meet at least one criterion; 54 at the highest priority). The second is random: machines drawn with a public verifiable seed (for example, that day's Federal Lottery numbers). Neither alone suffices: the targeted sample loses value if the adversary knows the criteria, and the random one may miss a concentrated anomaly. The combination covers all scenarios.",
+        } as L,
+        tom: "teal" as const,
+      },
+      {
+        n: 5,
+        titulo: { pt: "O que deve ser testado", en: "What must be tested" } as L,
+        corpo: {
+          pt: "Não apenas a urna: também as mídias (de carga, votação e resultado), o Transportador de Arquivos, o JE-Connect, o Receptor de Arquivos (RecArquivos), o Sistot (totalização), o Gedai-UE e qualquer coletor de dados usado na cadeia. O exame compara: conteúdo da urna usada × fonte assinada × arquivo transmitido × resultado totalizado. Todos esses sistemas estão listados no art. 3 da Res. 23.673 — são fiscalizáveis por lei.",
+          en: "Not just the machine: also the media (loading, voting and result), the File Transporter, JE-Connect, the File Receiver (RecArquivos), Sistot (totalization), Gedai-UE, and any data collector used in the chain. The examination compares: used-machine contents × signed source × transmitted file × totalized result. All these systems are listed in art. 3 of Res. 23.673 — they are subject to oversight by law.",
+        } as L,
+        tom: "amber" as const,
+      },
+      {
+        n: 6,
+        titulo: { pt: "Tamanho da amostra", en: "Sample size" } as L,
+        corpo: {
+          pt: "A probabilidade de detectar pelo menos uma urna alterada numa amostra aleatória de n, entre N urnas das quais K foram alteradas (fração f = K/N), é aproximadamente P = 1 − (1−f)ⁿ. Para 95% de confiança, bastam: 59 urnas se 5% foram alteradas, 149 se 2%, 299 se 1%, 598 se 0,5% e 2.995 se 0,1%. Se zero alterações forem encontradas em n urnas, a prevalência é no máximo 3/n com 95% de confiança (regra de três). Uma única urna lacrada de exemplo detecta com probabilidade ≈ f — ou zero, se o adversário sabe qual será.",
+          en: "The probability of detecting at least one altered machine in a random sample of n, out of N machines of which K were altered (fraction f = K/N), is approximately P = 1 − (1−f)ⁿ. For 95% confidence: 59 machines suffice if 5% were altered, 149 if 2%, 299 if 1%, 598 if 0.5%, and 2,995 if 0.1%. If zero alterations are found in n machines, the prevalence is at most 3/n at 95% confidence (rule of three). A single sealed example machine detects with probability ≈ f — or zero, if the adversary knows which one it will be.",
+        } as L,
+        tom: "rose" as const,
+      },
+      {
+        n: 7,
+        titulo: { pt: "O canal legal existe", en: "The legal channel exists" } as L,
+        corpo: {
+          pt: "A Res. TSE 23.673/2021 (arts. 51–52) permite que entidades fiscalizadoras — incluindo o Congresso Nacional (art. 6) — solicitem verificação pós-pleito, apresentando fatos, indícios e um plano de trabalho. O prazo se encerra 5 dias antes da data-limite do Calendário Eleitoral para manutenção dos lacres. Pela Res. 23.751/2026, art. 272, as urnas permanecem lacradas até 12 de janeiro de 2027 — logo o prazo estimado para o pedido é por volta de 7 de janeiro de 2027 (confirmar no Calendário Eleitoral vigente). Os arts. 45–50 determinam que os arquivos de auditoria da cadeia de custódia sejam preservados por 100 dias a partir do 1º turno (4 de outubro de 2026 ≈ 12 de janeiro de 2027).",
+          en: "TSE Res. 23.673/2021 (arts. 51–52) allows oversight entities — including the National Congress (art. 6) — to request post-election verification, presenting facts, evidence and a work plan. The deadline is 5 days before the Electoral Calendar date-limit for seal maintenance. Per Res. 23.751/2026, art. 272, the machines remain sealed until 12 January 2027 — so the estimated deadline for the request is around 7 January 2027 (confirm in the current Electoral Calendar). Arts. 45–50 require that the chain-of-custody audit files be preserved for 100 days from the first round (4 October 2026 ≈ 12 January 2027).",
+        } as L,
+        tom: "teal" as const,
+      },
+    ],
+
+    // Tabela comparativa
+    comparacao: {
+      titulo: { pt: "O que se testa hoje × O que precisa ser testado", en: "What is tested today × What needs to be tested" } as L,
+      colunas: {
+        aspecto: { pt: "Aspecto", en: "Aspect" } as L,
+        hoje: { pt: "Hoje", en: "Today" } as L,
+        necessario: { pt: "Necessário", en: "Needed" } as L,
+      },
+      linhas: [
+        {
+          aspecto: { pt: "Quando", en: "When" } as L,
+          hoje: { pt: "Antes da votação (autenticidade) ou na véspera, em urna retirada (integridade)", en: "Before voting (authenticity) or on the eve, on a withdrawn machine (integrity)" } as L,
+          necessario: { pt: "Depois da votação, na urna que serviu à seção real", en: "After voting, on the machine that served the real section" } as L,
+        },
+        {
+          aspecto: { pt: "O quê", en: "What" } as L,
+          hoje: { pt: "Hashes de programas (autenticidade) ou simulação com cédulas de papel (integridade)", en: "Program hashes (authenticity) or simulation with paper ballots (integrity)" } as L,
+          necessario: { pt: "Conteúdo da urna × fonte assinada × transmitido × totalizado — toda a cadeia", en: "Machine contents × signed source × transmitted × totalized — the full chain" } as L,
+        },
+        {
+          aspecto: { pt: "Quem escolhe", en: "Who chooses" } as L,
+          hoje: { pt: "~32% escolhidas por entidades, ~68% sorteadas; o auditado participa da seleção", en: "~32% chosen by entities, ~68% drawn; the audited party participates in the selection" } as L,
+          necessario: { pt: "Amostra direcionada (anomalias) + aleatória com semente pública verificável", en: "Targeted sample (anomalies) + random with public verifiable seed" } as L,
+        },
+        {
+          aspecto: { pt: "Cobertura", en: "Coverage" } as L,
+          hoje: { pt: "~580 urnas por turno em 497.897 seções (0,12%)", en: "~580 machines per round out of 497,897 sections (0.12%)" } as L,
+          necessario: { pt: "59 a 2.995 urnas conforme a fração suspeita (95% de confiança)", en: "59 to 2,995 machines depending on the suspected fraction (95% confidence)" } as L,
+        },
+        {
+          aspecto: { pt: "Escopo", en: "Scope" } as L,
+          hoje: { pt: "Apenas a urna", en: "Only the machine" } as L,
+          necessario: { pt: "Urna + mídias + Transportador + JE-Connect + RecArquivos + Sistot + Gedai-UE", en: "Machine + media + Transporter + JE-Connect + RecArquivos + Sistot + Gedai-UE" } as L,
+        },
+      ],
+    },
+
+    // Tamanho da amostra — tabela
+    amostraTabela: [
+      { f: "5%", n: 59, label: { pt: "Se 5% das urnas foram alteradas", en: "If 5% of machines were altered" } as L },
+      { f: "2%", n: 149, label: { pt: "Se 2% foram alteradas", en: "If 2% were altered" } as L },
+      { f: "1%", n: 299, label: { pt: "Se 1% foram alteradas", en: "If 1% were altered" } as L },
+      { f: "0,5%", n: 598, label: { pt: "Se 0,5% foram alteradas", en: "If 0.5% were altered" } as L },
+      { f: "0,1%", n: 2_995, label: { pt: "Se 0,1% foram alteradas", en: "If 0.1% were altered" } as L },
+    ],
+    amostraConfianca: { pt: "95% de confiança", en: "95% confidence" } as L,
+    amostraFormula: { pt: "n = ⌈ln(1−c) / ln(1−f)⌉", en: "n = ⌈ln(1−c) / ln(1−f)⌉" } as L,
+    amostraRegra3: {
+      pt: "Se zero alterações forem encontradas em n urnas: prevalência ≤ 3/n (95% CI)",
+      en: "If zero alterations are found in n machines: prevalence ≤ 3/n (95% CI)",
+    } as L,
+    amostraExemplo: {
+      pt: "Uma única urna lacrada de exemplo: probabilidade de detecção ≈ f — ou zero, se o adversário sabe qual será.",
+      en: "A single sealed example machine: detection probability ≈ f — or zero, if the adversary knows which one it will be.",
+    } as L,
+
+    limites: [
+      { pt: "Os erros estão provados; fraude não está excluída — esta auditoria física é o caminho para investigá-la.", en: "The errors are proven; fraud is not excluded — this physical audit is the way to investigate it." },
+      { pt: "Usa o processo legal existente (Res. 23.673, arts. 51–52) — o instrumento já existe, falta usá-lo.", en: "Uses the existing legal process (Res. 23.673, arts. 51–52) — the instrument already exists, it just needs to be used." },
+      { pt: "O desenho amostral apresentado é ilustrativo; a auditoria efetiva deve ser projetada por peritos independentes.", en: "The sample design presented is illustrative; the actual audit must be designed by independent experts." },
+    ] as { pt: string; en: string }[],
+
+    fontes: [
+      { tier: "T0", source: { pt: "Res. TSE 23.673/2021 (alterada pelas Res. 23.728/2024 e 23.758/2026)", en: "TSE Res. 23.673/2021 (amended by Res. 23.728/2024 and 23.758/2026)" }, href: "https://www.tse.jus.br/legislacao/compilada/res/2021/resolucao-no-23-673-de-14-de-dezembro-de-2021" } as Fonte,
+      { tier: "T0", source: { pt: "Res. TSE 23.751/2026, art. 272 (lacres até 12/01/2027)", en: "TSE Res. 23.751/2026, art. 272 (seals until 12 Jan 2027)" }, href: "https://www.tse.jus.br/legislacao/compilada/res/2026/resolucao-no-23-751-de-14-de-marco-de-2026" } as Fonte,
+      { tier: "T0", source: { pt: "Relatório EFASEV/2022, Anexo G — Forças Armadas", en: "EFASEV/2022 Report, Annex G — Armed Forces" }, date: "2022" } as Fonte,
+      { tier: "T0", source: { pt: "BUs/BWEB TSE 2026/T2 (critérios de anomalia)", en: "BUs/BWEB TSE 2026/T2 (anomaly criteria)" }, date: "2026", href: "https://dadosabertos.tse.jus.br/dataset/resultados-2026" } as Fonte,
+    ],
+  },
+
   // 4) AÇÕES CONCRETAS
   acoes: {
     eyebrow: { pt: "O que pedir", en: "What to request" } as L,
     title: { pt: "Ações concretas para parlamentares, Ministério Público e cidadãos", en: "Concrete actions for legislators, prosecutors and citizens" } as L,
     lead: {
-      pt: "Fiscalizar os números do Estado é um direito e um dever da democracia. Estas são medidas institucionais, apartidárias, com base legal existente — não acusações.",
-      en: "Scrutinizing the State's numbers is a democratic right and duty. These are institutional, non-partisan measures grounded in existing law — not accusations.",
+      pt: "Fiscalizar os números do Estado é um direito e um dever da democracia. Estas são medidas institucionais, apartidárias, com base legal existente.",
+      en: "Scrutinizing the State's numbers is a democratic right and duty. These are institutional, non-partisan measures grounded in existing law.",
     } as L,
     itens: [
       {
@@ -354,15 +499,15 @@ export const prova = {
   mortosVotaram: {
     pergunta: { pt: "Mortos votaram? O que está provado — e o que só o governo pode confirmar", en: "Did dead people vote? What is proven — and what only the government can confirm" } as L,
     provadoLabel: { pt: "O que está provado", en: "What is proven" } as L,
-    naoProvadoLabel: { pt: "O que ainda não está provado", en: "What is not proven yet" } as L,
+    naoProvadoLabel: { pt: "O que só o governo pode fechar", en: "What only the government can settle" } as L,
     perguntaLabel: { pt: "A pergunta certa", en: "The right question" } as L,
     provado: {
       pt: "Está provado que mortos reais — pessoas que o Ministério da Saúde registra como falecidas — permaneceram no cadastro do TSE, aptas a votar, às centenas de milhares. Não é estimativa nem estatística: é a diferença entre os óbitos reais (DATASUS, que não inventa mortes) e os cancelamentos que o próprio TSE fez. Só em 2022 foram pelo menos 629 mil eleitores mortos sem baixa no cadastro.",
       en: "It is proven that real dead people — individuals the Ministry of Health records as deceased — remained in the TSE registry, eligible to vote, by the hundreds of thousands. Not an estimate or a statistic: it is the difference between real deaths (DATASUS, which does not invent deaths) and the cancellations the TSE itself made. In 2022 alone, at least 629,000 dead voters went uncancelled.",
     } as L,
     falta: {
-      pt: "Não está provado — com dado público — que esses títulos votaram, nem no total. Em alguns municípios houve mais votos do que moradores; mas parte disso também pode ser eleitor vivo com domicílio eleitoral em outro município, o que a lei permite. Separar um morto que votou de um vivo registrado fora exige ligar cada voto ao CPF. Esse dado é sigiloso (LGPD) e só o governo tem — e o cruzamento leva menos de uma hora.",
-      en: "It is not proven — with public data — that these registrations voted, not even in aggregate. In some municipalities there were more votes than residents; but part of that may also be living voters whose electoral domicile is in another municipality, which the law allows. Telling a dead person who voted from a living voter registered elsewhere requires linking each vote to the ID. That data is confidential (LGPD) and only the government holds it — and the cross-check takes under an hour.",
+      pt: "O dado que falta — quantos desses mortos tiveram comparecimento registrado — depende de um cruzamento CPF × óbito × comparecimento que o governo faz em menos de uma hora e não publica. Em 137 municípios já houve mais votos do que moradores; o domicílio eleitoral pode explicar uma parte, mas não pode explicar mortos. Separar cada caso exige ligar o voto ao CPF. Esse dado é sigiloso (LGPD) e só o governo tem.",
+      en: "The missing number — how many of these dead had turnout recorded — depends on a CPF × death × turnout cross-check the government runs in under an hour and does not publish. In 137 municipalities there were already more votes than residents; electoral domicile may explain some of that, but it cannot explain dead people. Separating each case requires linking the vote to the ID. That data is confidential (LGPD) and only the government holds it.",
     } as L,
     porque: {
       pt: "Por isso a pergunta certa mudou. Não é mais “há mortos aptos a votar no cadastro?” — há, e está provado. É “por que o governo, que pode confirmar em uma hora se esses mortos votaram, não confirma e não responde à população?”.",
@@ -373,8 +518,12 @@ export const prova = {
   resposta: {
     title: { pt: "A população merece uma resposta", en: "The public deserves an answer" } as L,
     body: {
-      pt: "Isto não é uma teoria — é uma conta que não fecha, feita com os números que o próprio governo publica. O cadastro eleitoral tem centenas de milhares de registros que não correspondem a pessoas vivas; o TSE não cancela os títulos de quem morre no ritmo que a lei exige; e a ferramenta que deveria permitir ao cidadão verificar tudo isso não funciona. Nada disso prova fraude. Tudo isso prova que uma auditoria séria, independente e profunda precisa ser feita — e que a resposta está a um cruzamento de dados de distância.",
-      en: "This is not a theory — it is a sum that does not add up, built from the government's own published numbers. The voter registry holds hundreds of thousands of records that do not correspond to living people; the TSE does not cancel the dead's registrations at the pace the law requires; and the tool meant to let citizens verify all this does not work. None of it proves fraud. All of it proves that a serious, independent, thorough audit must be done — and that the answer is one data cross-check away.",
+      pt: "É uma conta que não fecha, feita com os números que o próprio governo publica. O cadastro eleitoral tem centenas de milhares de mortos aptos a votar; o TSE não cancela os títulos no ritmo que a lei exige; e a ferramenta de verificação não funciona. Fraude não está excluída como possibilidade — e precisa ser investigada. Não podemos ter erros em uma eleição. A resposta está a um cruzamento de dados de distância.",
+      en: "It is a sum that does not add up, built from the government's own published numbers. The voter registry has hundreds of thousands of dead people eligible to vote; the TSE does not cancel the registrations at the pace the law requires; and the verification tool does not work. Fraud is not excluded as a possibility — and it must be investigated. We cannot have errors in an election. The answer is one data cross-check away.",
+    } as L,
+    atribuicao: {
+      pt: "Fraude não está excluída — mas não deve ser atribuída ao candidato vencedor. Se provada, poderia ter vindo de qualquer direção: interna ou externa, ataque coordenado ou individual. É objetivamente errado atribuir fraude ao vencedor sem prova direta. Mas os erros até aqui demonstrados demandam obrigatoriamente respostas claras do Estado.",
+      en: "Fraud is not excluded — but it should not be attributed to the winning candidate. If proven, it could have come from any direction: internal or external, a coordinated attack or an individual one. It is objectively wrong to attribute fraud to the winner without direct proof. But the errors demonstrated so far mandatorily demand clear answers from the State.",
     } as L,
   },
 };
