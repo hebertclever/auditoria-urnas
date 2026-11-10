@@ -7,6 +7,7 @@ import { dados } from "./dados";
 import { metodo } from "./metodo";
 import { dashboard } from "./dashboard";
 import { slides } from "./slides";
+import { provas } from "./provas";
 
 export function getDictionary(lang: Locale) {
   return {
@@ -18,6 +19,7 @@ export function getDictionary(lang: Locale) {
     metodo: metodo[lang],
     dashboard: dashboard[lang],
     slides: slides[lang],
+    provas: provas[lang],
   };
 }
 

@@ -19,7 +19,7 @@ export function NaoProvamos() {
             <Eyebrow tone="amber">{n.eyebrow}</Eyebrow>
             <Heading className="mt-3">{n.title}</Heading>
             <Link
-              href={href(lang, "/metodo/#limites")}
+              href={href(lang, "/provas/")}
               className="group mt-6 inline-flex items-center gap-2 text-sm font-semibold text-amber"
             >
               {n.link}

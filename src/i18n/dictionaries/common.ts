@@ -3,6 +3,7 @@ const pt = {
   nav: {
     cadastro: "Cadastro",
     codigo: "Código",
+    provas: "O que prova",
     dashboard: "Painel",
     slides: "Slides",
     dados: "Dados",
@@ -91,6 +92,7 @@ const en: typeof pt = {
   nav: {
     cadastro: "Registry",
     codigo: "Code",
+    provas: "What it proves",
     dashboard: "Dashboard",
     slides: "Slides",
     dados: "Data",

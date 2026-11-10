@@ -78,15 +78,15 @@ const pt = {
     ],
   },
   naoProvamos: {
-    eyebrow: "Honestidade intelectual",
-    title: "O que esta auditoria não prova",
+    eyebrow: "Os limites — honestos e precisos",
+    title: "O que falta provar — e por que só o governo pode fechar",
     items: [
-      "Nenhum caso individual de voto em nome de pessoa falecida. Sem acesso a CPF, inscrição e comparecimento da mesma pessoa, o triângulo não fecha com dados públicos.",
-      "Nenhuma prova de intenção. Cadastro inflado pode ser ineficiência burocrática, não manipulação deliberada.",
+      "Nenhum caso individual de voto em nome de pessoa falecida — com dados públicos. O triângulo CPF × óbito × comparecimento é protegido por lei. Mas o governo tem as três bases e pode fechar em menos de uma hora.",
+      "Nenhuma prova de intenção. Cadastro inflado e falhas técnicas podem ser incompetência, não manipulação deliberada. Ambas exigem resposta.",
       "Nenhuma atribuição a candidato ou partido. Ratear votos excedentes pela votação municipal é artefato estatístico, não identificação de destino.",
-      "Os excessos municipais (137 municípios, 1.089 diferenças) se diluem quando agregados por estado. São o sinal mais fraco, não o mais forte.",
+      "Os excessos municipais se diluem quando agregados por estado — por isso os tratamos como o sinal mais fraco, e apoiamos a prova nos pilares que resistem.",
     ],
-    link: "Ler os limites completos",
+    link: "Ver o que está provado",
   },
 };
 
@@ -169,15 +169,15 @@ const en: typeof pt = {
     ],
   },
   naoProvamos: {
-    eyebrow: "Intellectual honesty",
-    title: "What this audit does not prove",
+    eyebrow: "The limits — honest and precise",
+    title: "What is left to prove — and why only the government can close it",
     items: [
-      "No individual case of a vote cast in a dead person's name. Without the same person's CPF, registration and turnout record, the triangle cannot be closed with public data.",
-      "No proof of intent. An inflated registry may be bureaucratic inefficiency, not deliberate manipulation.",
+      "No individual case of a vote cast in a dead person's name — with public data. The CPF × death × turnout triangle is protected by law. But the government holds all three databases and can close it in under an hour.",
+      "No proof of intent. An inflated registry and technical flaws may be incompetence, not deliberate manipulation. Both demand an answer.",
       "No attribution to any candidate or party. Apportioning excess votes by municipal results is a statistical artefact, not an identification of where votes went.",
-      "The municipal excesses (137 municipalities, 1,089 differences) dilute when aggregated by state. They are the weakest signal, not the strongest.",
+      "The municipal excesses dilute when aggregated by state — so we treat them as the weakest signal, and rest the proof on the pillars that hold.",
     ],
-    link: "Read the full limits",
+    link: "See what is proven",
   },
 };
 
