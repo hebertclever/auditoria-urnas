@@ -13,7 +13,7 @@ const ELDER = new Set<string>(FAIXAS_IDOSOS);
 const PCT: Metric[] = ["delta", "turn1", "turn2", "dpp"];
 
 export function FaixaExplorer() {
-  const { dict } = useLang();
+  const { lang, dict } = useLang();
   const { fmtPct, fmtCompact } = useFmt();
   const d = dict.dashboard.faixa;
   const [metric, setMetric] = useState<Metric>("delta");
@@ -69,6 +69,13 @@ export function FaixaExplorer() {
           {metric === "delta" && (
             <Segmented options={[{ key: "2014", label: "2014" }, { key: "2018", label: "2018" }, { key: "2022", label: "2022" }]} value={year} onChange={setYear} />
           )}
+          {metric === "delta" && (
+            <p className="max-w-[16rem] text-right text-[0.7rem] leading-snug text-fg-3">
+              {lang === "pt"
+                ? "2026 não entra: o TSE publicou só o 1º turno, e a comparação entre turnos precisa dos dois."
+                : "2026 is not included: the TSE published only the 1st round, and the round-to-round comparison needs both."}
+            </p>
+          )}
         </div>
       }
     >
@@ -76,6 +83,7 @@ export function FaixaExplorer() {
         <p className="mb-4 text-sm leading-relaxed text-fg-2">{d.simple}</p>
       </SimpleOnly>
       <BarChart
+        key={`${metric}-${year}`}
         data={bars}
         height={360}
         format={fmt}

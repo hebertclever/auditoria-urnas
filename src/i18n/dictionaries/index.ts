@@ -8,6 +8,7 @@ import { metodo } from "./metodo";
 import { dashboard } from "./dashboard";
 import { slides } from "./slides";
 import { provas } from "./provas";
+import { parlamentar } from "./parlamentar";
 
 export function getDictionary(lang: Locale) {
   return {
@@ -20,6 +21,7 @@ export function getDictionary(lang: Locale) {
     dashboard: dashboard[lang],
     slides: slides[lang],
     provas: provas[lang],
+    parlamentar: parlamentar[lang],
   };
 }
 

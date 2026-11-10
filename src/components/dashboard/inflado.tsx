@@ -41,7 +41,7 @@ export function InfladoPanel() {
         <h3 className="text-sm font-semibold text-fg">{d.intl}</h3>
         <Segmented options={[{ key: "linear", label: d.linear }, { key: "log", label: d.log }]} value={scale} onChange={setScale} />
       </div>
-      <ul className="mt-4 space-y-2.5">
+      <ul key={scale} className="mt-4 space-y-2.5">
         {intl.map((row, i) => {
           const brasilTSE = i === intl.length - 1;
           return (
@@ -50,8 +50,9 @@ export function InfladoPanel() {
               <div className="h-3 overflow-hidden rounded-full bg-bg-sunk">
                 <motion.div
                   className={brasilTSE ? "h-full rounded-full bg-amber" : "h-full rounded-full bg-slate"}
-                  initial={{ width: 0 }} whileInView={{ width: `${widthOf(row.valor)}%` }} viewport={{ once: true }}
-                  animate={{ width: `${widthOf(row.valor)}%` }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                  initial={{ width: 0 }}
+                  animate={{ width: `${widthOf(row.valor)}%` }}
+                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: i * 0.04 }}
                 />
               </div>
               <span className="w-12 text-right font-mono tabular text-sm text-fg">{row.valor.toLocaleString(loc, { maximumFractionDigits: 1 })}</span>

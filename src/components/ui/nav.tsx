@@ -21,6 +21,7 @@ export function Nav() {
     { href: href(lang, "/cadastro/"), key: "/cadastro", label: n.cadastro },
     { href: href(lang, "/codigo/"), key: "/codigo", label: n.codigo },
     { href: href(lang, "/provas/"), key: "/provas", label: n.provas },
+    { href: href(lang, "/parlamentar/"), key: "/parlamentar", label: n.parlamentar },
     { href: href(lang, "/dashboard/"), key: "/dashboard", label: n.dashboard },
     { href: href(lang, "/slides/"), key: "/slides", label: n.slides },
     { href: href(lang, "/dados/"), key: "/dados", label: n.dados },

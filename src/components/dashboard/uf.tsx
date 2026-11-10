@@ -101,7 +101,7 @@ export function UFExplorer() {
         {d.live.replace("{nA}", String(nAptos)).replace("{nC}", String(nComp))}
       </div>
       <div className="mt-4">
-        <BarChart data={bars} height={300} format={fmt} baseline={isRatio ? 1 : undefined} baselineLabel={isRatio ? d.ref : undefined} minZero showValues={false} />
+        <BarChart key={`${metric}-${faixa}`} data={bars} height={300} format={fmt} baseline={isRatio ? 1 : undefined} baselineLabel={isRatio ? d.ref : undefined} minZero showValues={false} />
       </div>
       <div className="mt-5 overflow-x-auto">
         <table className="data-table w-full min-w-[32rem]">

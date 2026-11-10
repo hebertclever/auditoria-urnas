@@ -10,6 +10,9 @@ import { href } from "@/i18n/routes";
 import { prova } from "@/data/prova";
 import { ErrorBars } from "@/components/provas/error-bars";
 import { MagnitudeFunnel } from "@/components/provas/magnitude";
+import { Estimativa2026 } from "@/components/provas/estimativa-2026";
+import { Objecoes } from "@/components/provas/objecoes";
+import { objecoes } from "@/data/objecoes";
 import { DatasusConfiabilidade } from "@/components/shared/datasus-confiabilidade";
 import { cn } from "@/lib/utils";
 
@@ -133,6 +136,29 @@ export default async function ProvasPage({ params }: PageProps<"/[lang]/provas">
         </Reveal>
       </Section>
 
+      {/* 2026 — estimativa e por que não há 2º turno */}
+      <Section className="border-t border-line">
+        <Reveal>
+          <Eyebrow tone="teal">{L(prova.estimativa2026.eyebrow)}</Eyebrow>
+          <Heading className="mt-3">{L(prova.estimativa2026.title)}</Heading>
+        </Reveal>
+        <div className="mt-8">
+          <Estimativa2026 />
+        </div>
+      </Section>
+
+      {/* OBJEÇÕES */}
+      <Section className="border-t border-line">
+        <Reveal>
+          <Eyebrow tone="amber">{L(objecoes.eyebrow)}</Eyebrow>
+          <Heading className="mt-3">{L(objecoes.title)}</Heading>
+          <Lead className="mt-5">{L(objecoes.lead)}</Lead>
+        </Reveal>
+        <div className="mt-10">
+          <Objecoes />
+        </div>
+      </Section>
+
       {/* GOVERNO PODE FECHAR EM 1 HORA */}
       <Section className="border-t border-line">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-16">
@@ -192,11 +218,11 @@ export default async function ProvasPage({ params }: PageProps<"/[lang]/provas">
             <Heading className="relative max-w-3xl">{L(prova.resposta.title)}</Heading>
             <p className="relative mt-6 max-w-3xl text-lg leading-relaxed text-fg-2">{L(prova.resposta.body)}</p>
             <div className="relative mt-8 flex flex-wrap gap-3">
-              <Link href={href(lang, "/dados/")} className="inline-flex items-center gap-2 rounded-full bg-fg px-5 py-2.5 text-sm font-medium text-bg transition hover:opacity-90">
-                {lang === "pt" ? "Ver os dados" : "See the data"} <ArrowRight className="h-4 w-4" />
+              <Link href={href(lang, "/parlamentar/")} className="inline-flex items-center gap-2 rounded-full bg-amber px-5 py-2.5 text-sm font-semibold text-bg transition hover:opacity-90">
+                {lang === "pt" ? "O que um parlamentar pode pedir" : "What a legislator can request"} <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link href={href(lang, "/metodo/")} className="inline-flex items-center gap-2 rounded-full border border-line-strong px-5 py-2.5 text-sm font-medium text-fg transition hover:border-amber/50">
-                {lang === "pt" ? "Como auditamos" : "How we audited"}
+              <Link href={href(lang, "/dados/")} className="inline-flex items-center gap-2 rounded-full border border-line-strong px-5 py-2.5 text-sm font-medium text-fg transition hover:border-amber/50">
+                {lang === "pt" ? "Ver os dados" : "See the data"}
               </Link>
             </div>
           </div>

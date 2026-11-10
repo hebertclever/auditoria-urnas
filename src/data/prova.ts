@@ -265,6 +265,41 @@ export const prova = {
     ],
   },
 
+  // 2026 — o 2º turno ainda não foi publicado
+  estimativa2026: {
+    eyebrow: { pt: "A eleição de 2026", en: "The 2026 election" } as L,
+    title: { pt: "E 2026? O 2º turno ainda não foi publicado", en: "And 2026? The runoff has not been published yet" } as L,
+    porque: {
+      pt: "O TSE gera o arquivo de comparecimento e abstenção uma vez e o disponibiliza. A versão de 2026 foi gerada em 21 de outubro de 2026 — quatro dias antes do 2º turno, que ocorreu em 25 de outubro. Por isso o dado oficial de 2026 traz apenas o 1º turno. O perfil consolidado do 2º turno costuma sair semanas depois, após o fechamento das estatísticas da eleição. Até lá, a inversão de 2026 não pode ser medida — mas pode ser projetada a partir do padrão de 2014, 2018 e 2022.",
+      en: "The TSE generates the turnout-and-abstention file once and publishes it. The 2026 version was generated on 21 October 2026 — four days before the runoff, which took place on 25 October. That is why the official 2026 data contains only the first round. The consolidated second-round profile usually comes out weeks later, after the election statistics are closed. Until then, the 2026 inversion cannot be measured — but it can be projected from the 2014, 2018 and 2022 pattern.",
+    } as L,
+    turnoutNota: {
+      pt: "Comparecimento por idade no 1º turno de 2026 (dado oficial). A queda com a idade é normal e esperada; a anomalia não está aqui — está no aumento entre turnos, que só aparece com o 2º turno.",
+      en: "Turnout by age in the 2026 first round (official data). The decline with age is normal and expected; the anomaly is not here — it is in the increase between rounds, which only appears with the runoff.",
+    } as L,
+    // 2026 1T real (perfil de comparecimento BRASIL, NR_TURNO=1)
+    turnout1T: [
+      { faixa: "70-74", turnout: 68.7, comp: 4_032_260 },
+      { faixa: "75-79", turnout: 52.3, comp: 2_110_254 },
+      { faixa: "80-84", turnout: 37.1, comp: 860_270 },
+      { faixa: "85-89", turnout: 24.2, comp: 299_732 },
+      { faixa: "90-94", turnout: 13.5, comp: 75_865 },
+      { faixa: "95-99", turnout: 4.3, comp: 12_298 },
+      { faixa: "100+", turnout: 0.7, comp: 1_815 },
+    ],
+    projMin: 50_000,
+    projMax: 267_000,
+    projTitle: { pt: "Projeção para o 2º turno de 2026", en: "Projection for the 2026 runoff" } as L,
+    projTexto: {
+      pt: "Se o 2º turno de 2026 seguir o padrão das eleições anteriores, o excesso de comparecimento dos idosos — acima do ritmo da faixa 70–74 — ficaria entre cerca de 50 mil (padrão mais brando, de 2018) e 267 mil (padrão mais extremo, de 2022). É projeção, não medição: desaparece no dia em que o TSE publicar o perfil real do 2º turno. E a conta que não depende de projeção — os mortos que ficaram aptos a votar — continua valendo para 2026.",
+      en: "If the 2026 runoff follows the pattern of previous elections, the excess elderly turnout — above the pace of the 70–74 band — would land between about 50,000 (the milder 2018 pattern) and 267,000 (the more extreme 2022 pattern). It is a projection, not a measurement: it vanishes the day the TSE publishes the real runoff profile. And the figure that needs no projection — the dead who remained eligible to vote — still holds for 2026.",
+    } as L,
+    fontes: [
+      { tier: "T0", source: { pt: "TSE · perfil de comparecimento e abstenção 2026 (gerado 21/10/2026, só 1º turno)", en: "TSE · 2026 turnout and abstention profile (generated 21 Oct 2026, 1st round only)" }, date: "21/10/2026", href: "https://dadosabertos.tse.jus.br/dataset/comparecimento-e-abstencao-2026" } as Fonte,
+      { tier: "T0", source: { pt: "TSE · perfil 2014/2018/2022 (padrão histórico da projeção)", en: "TSE · 2014/2018/2022 profiles (historical projection pattern)" }, date: "2014–2022", href: "https://dadosabertos.tse.jus.br/dataset/comparecimento-e-abstencao-2022" } as Fonte,
+    ],
+  },
+
   // Pergunta direta — resposta precisa
   mortosVotaram: {
     pergunta: { pt: "Então está provado que mortos votaram?", en: "So is it proven that dead people voted?" } as L,
