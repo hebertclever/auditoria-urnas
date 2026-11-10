@@ -56,8 +56,8 @@ export const prova = {
         n: 3,
         claim: { pt: "O cadastro não é mantido como a lei manda: 42% dos títulos de quem morre ficam ativos no ano.", en: "The registry is not maintained as the law requires: 42% of dead voters' registrations stay active within the year." } as L,
         detail: {
-          pt: "Em 2022 morreram cerca de 1,35 milhão de eleitores. O TSE cancelou 787.825 títulos por óbito. Sobram 560 mil por ano sem cancelar. A Resolução TSE 22.166/2006 já prevê o cruzamento automático com os óbitos desde 2006.",
-          en: "In 2022 about 1.35 million voters died. The TSE cancelled 787,825 registrations for death. That leaves 560k uncancelled per year. TSE Resolution 22.166/2006 has required automatic cross-checking with death records since 2006.",
+          pt: "Em 2022 morreram cerca de 1,35 milhão de eleitores. O TSE cancelou 787.825 títulos por óbito. Sobram 560 mil por ano sem cancelar. Como a base de óbitos subnotifica (nunca inventa mortes), o gap real é ainda maior. A Resolução TSE 22.166/2006 já prevê o cruzamento automático com os óbitos desde 2006.",
+          en: "In 2022 about 1.35 million voters died. The TSE cancelled 787,825 registrations for death. That leaves 560k uncancelled per year. Since the death registry underreports (it never invents deaths), the real gap is even larger. TSE Resolution 22.166/2006 has required automatic cross-checking with death records since 2006.",
         } as L,
         tipo: { pt: "Prova de erro de processo", en: "Proof of a process error" } as L,
         fonte: { tier: "T0", source: { pt: "TSE, cancelamentos 2022 · DATASUS/SIM", en: "TSE, 2022 cancellations · DATASUS/SIM" }, date: "2023", href: "https://www.tse.jus.br/comunicacao/noticias/2023/Maio/justica-eleitoral-cancelou-quase-800-mil-titulos-em-2022" } as Fonte,
@@ -66,8 +66,8 @@ export const prova = {
         n: 4,
         claim: { pt: "Em muitos casos foi registrado mais voto do que havia gente viva para votar naquela faixa.", en: "In many cases more votes were recorded than there were living people to cast them in that age band." } as L,
         detail: {
-          pt: "Em 137 municípios, o comparecimento de uma faixa 70+ no 2º turno de 2022 superou a população viva dessa faixa no Censo. Em 107 municípios, os votos totais de 2026 superaram a população inteira — incluindo crianças. É uma impossibilidade: esses votos não podem todos ter vindo de pessoas vivas contadas ali.",
-          en: "In 137 municipalities, turnout of a 70+ band in the 2022 runoff exceeded that band's living Census population. In 107 municipalities, total 2026 votes exceeded the entire population — children included. It is an impossibility: these votes cannot all have come from living people counted there.",
+          pt: "Em 137 municípios, o comparecimento de uma faixa 70+ no 2º turno de 2022 superou a população viva dessa faixa no Censo. Em 107 municípios, os votos totais de 2026 superaram a população inteira — incluindo crianças. É uma impossibilidade: esses votos não podem todos ter vindo de pessoas vivas contadas ali. Restam poucas explicações — e uma delas é o uso de inscrições de pessoas que não estão mais vivas.",
+          en: "In 137 municipalities, turnout of a 70+ band in the 2022 runoff exceeded that band's living Census population. In 107 municipalities, total 2026 votes exceeded the entire population — children included. It is an impossibility: these votes cannot all have come from living people counted there. Few explanations remain — and one of them is the use of registrations of people no longer alive.",
         } as L,
         tipo: { pt: "Prova de impossibilidade", en: "Proof of impossibility" } as L,
         fonte: { tier: "T0", source: { pt: "TSE BWEB 2026 e perfil 2022 × IBGE Censo/estimativa", en: "TSE BWEB 2026 and 2022 profile × IBGE Census/estimate" }, date: "2022 · 2026", href: "https://dadosabertos.tse.jus.br/dataset/resultados-2026-boletim-de-urna" } as Fonte,
@@ -134,6 +134,44 @@ export const prova = {
     ],
   },
 
+  // 2b) E O DATASUS, PODE ESTAR ERRADO?
+  datasus: {
+    eyebrow: { pt: "A terceira régua", en: "The third yardstick" } as L,
+    title: { pt: "E o DATASUS, pode estar errado sobre os óbitos?", en: "And could DATASUS be wrong about the deaths?" } as L,
+    lead: {
+      pt: "Parte da prova usa a base de óbitos do Ministério da Saúde (o SIM). Então vale a mesma pergunta: qual a chance de ela estar errada? A resposta é curta — o SIM pode deixar de registrar uma morte, mas não inventa mortos. E essa direção joga a favor da prova.",
+      en: "Part of the proof uses the Ministry of Health's death registry (SIM). So the same question applies: what are the odds it is wrong? The answer is short — SIM may miss a death, but it does not invent the dead. And that direction works in the proof's favour.",
+    } as L,
+    stats: [
+      { value: { pt: "≈ 98%", en: "≈ 98%" } as L, label: { pt: "das mortes do país são captadas pelo SIM (completude nacional)", en: "of the country's deaths are captured by SIM (national completeness)" } as L },
+      { value: { pt: "96,1%", en: "96.1%" } as L, label: { pt: "já era a cobertura em 2011 — e vem subindo desde então", en: "was already the coverage in 2011 — and has risen since" } as L },
+      { value: { pt: "93%", en: "93%" } as L, label: { pt: "dos municípios têm completude do SIM acima de 90%", en: "of municipalities have SIM completeness above 90%" } as L },
+    ],
+    pontos: [
+      {
+        t: { pt: "Ninguém entra na base sem atestado de óbito.", en: "No one enters the registry without a death certificate." } as L,
+        b: { pt: "Uma morte só chega ao SIM através de uma Declaração de Óbito assinada por médico, que também alimenta o cartório. Registrar um vivo como morto exigiria um atestado falso — algo raro e que o próprio cruzamento do governo filtra, caso a caso.", en: "A death only reaches SIM through a physician-signed death certificate, which also feeds the civil registry. Recording a living person as dead would require a false certificate — rare, and something the government's own cross-check filters, case by case." } as L,
+      },
+      {
+        t: { pt: "O erro do SIM é faltar morte, não sobrar.", en: "SIM's error is missing deaths, not adding them." } as L,
+        b: { pt: "Quando o SIM erra, é por subnotificação: mortes reais que não foram captadas, sobretudo no passado e no Norte. Isso significa que o número real de mortes é igual ou maior que o registrado — nunca menor.", en: "When SIM errs, it is by underreporting: real deaths not captured, mostly in the past and in the North. That means the true number of deaths is equal to or greater than what is recorded — never less." } as L,
+      },
+      {
+        t: { pt: "Por isso o erro do DATASUS fortalece a prova.", en: "That is why the DATASUS error strengthens the proof." } as L,
+        b: { pt: "Se há mais mortes do que o SIM contou, então o gap de títulos não cancelados é ainda maior, e o número de idosos que deveriam estar vivos é ainda menor. Qualquer imperfeição do DATASUS piora o quadro para o TSE — não melhora.", en: "If there are more deaths than SIM counted, then the gap of uncancelled registrations is even larger, and the number of elderly who should be alive is even smaller. Any DATASUS imperfection worsens the picture for the TSE — it does not soften it." } as L,
+      },
+    ],
+    verdict: {
+      pt: "As três réguas oficiais do Estado — Censo, estimativas e óbitos — têm margens de erro conhecidas, e todas erram na direção que reforça o achado. Para a conta fechar a favor do TSE, as três teriam de errar ao mesmo tempo, cada uma na direção oposta à que sua própria metodologia documenta.",
+      en: "The State's three official yardsticks — Census, estimates and deaths — have known margins of error, and all err in the direction that reinforces the finding. For the numbers to come out in the TSE's favour, all three would have to err at once, each in the opposite direction to what its own methodology documents.",
+    } as L,
+    fontes: [
+      { tier: "T1", source: { pt: "Costa et al., Population Health Metrics — completude do registro de óbitos (record linkage), SIM ≈ 98%", en: "Costa et al., Population Health Metrics — death reporting completeness (record linkage), SIM ≈ 98%" }, date: "2020", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7650525/" } as Fonte,
+      { tier: "T1", source: { pt: "Avaliação da qualidade do SIM: scoping review, Cadernos de Saúde Pública", en: "Quality of the SIM: scoping review, Cadernos de Saúde Pública" }, date: "2025", href: "https://www.scielo.br/j/csc/a/JHw8xXsmfTNMkv9Tnyw66WH/?lang=pt" } as Fonte,
+      { tier: "T0", source: { pt: "DATASUS/SIM — Consolidação do SIM, cobertura 96,1% em 2011", en: "DATASUS/SIM — SIM consolidation, 96.1% coverage in 2011" }, date: "2011", href: "http://tabnet.datasus.gov.br/cgi/sim/Consolida_Sim_2011.pdf" } as Fonte,
+    ],
+  },
+
   // 3) O GOVERNO PODE FECHAR ISSO EM UMA HORA
   governo: {
     eyebrow: { pt: "A resposta que falta", en: "The missing answer" } as L,
@@ -192,6 +230,56 @@ export const prova = {
         base: { pt: "Princípio da publicidade (CF, art. 37)", en: "Principle of publicity (Constitution, art. 37)" } as L,
       },
     ],
+  },
+
+  // QUANTOS? A conta do que é mensurável
+  magnitude: {
+    eyebrow: { pt: "A conta", en: "The count" } as L,
+    title: { pt: "Quantos mortos entraram nessa eleição?", en: "How many dead entered this election?" } as L,
+    lead: {
+      pt: "O total de votos dados por inscrições de falecidos não existe em nenhum dado público — é exatamente o que o cruzamento do governo produz. O que se pode medir, com números oficiais, é o piso: quantos mortos reais ficaram aptos a votar. E não é pouco.",
+      en: "The total number of votes cast through deceased registrations exists in no public dataset — it is exactly what the government's cross-check would produce. What can be measured, with official numbers, is the floor: how many real dead people remained eligible to vote. And it is not small.",
+    } as L,
+    // Funil provado (um ano, 2022)
+    funil: [
+      { value: 1_348_000, label: { pt: "eleitores morreram em 2022 (e o DATASUS subnotifica — o real é maior)", en: "voters died in 2022 (and DATASUS underreports — the real figure is higher)" } as L, tone: "slate" as const },
+      { value: 787_825, label: { pt: "títulos o TSE cancelou por óbito naquele ano", en: "registrations the TSE cancelled for death that year" } as L, tone: "teal" as const },
+      { value: 560_175, label: { pt: "eleitores comprovadamente mortos permaneceram aptos a votar", en: "demonstrably dead voters remained eligible to vote" } as L, tone: "rose" as const },
+    ],
+    cicloLabel: { pt: "No ciclo entre as duas eleições presidenciais (2022–2026), isso acumula cerca de", en: "Across the cycle between the two presidential elections (2022–2026), this accumulates about" } as L,
+    ciclo: 2_240_000,
+    cicloUnidade: { pt: "títulos de mortos aptos a votar", en: "dead people's registrations eligible to vote" } as L,
+    // Sinais mensuráveis de uso (não é o total que votou, mas é medido)
+    sinaisTitle: { pt: "Sinais mensuráveis de que essas inscrições foram usadas", en: "Measurable signs that these registrations were used" } as L,
+    sinais: [
+      { value: 198_738, label: { pt: "comparecimentos de idosos acima do padrão biológico no 2º turno de 2022 — votos que o grupo de controle não explica", en: "elderly turnouts above the biological pattern in the 2022 runoff — votes the control group cannot explain" } as L },
+      { value: 1_089, label: { pt: "votos além da população viva em 137 municípios (2022, 2º turno) — uma impossibilidade já medida", en: "votes beyond the living population in 137 municipalities (2022 runoff) — an impossibility already measured" } as L },
+    ],
+    cap: {
+      pt: "O número exato de votos dados em nome de falecidos só aparece no cruzamento CPF × óbito × comparecimento — que o governo faz em menos de uma hora e não publica. Medimos aqui o piso provado (mortos aptos) e os sinais de uso; o total exato é a resposta que falta.",
+      en: "The exact number of votes cast in deceased people's names appears only in the ID × death × turnout cross-check — which the government runs in under an hour and does not publish. We measure here the proven floor (dead people eligible) and the signs of use; the exact total is the missing answer.",
+    } as L,
+    fontes: [
+      { tier: "T0", source: { pt: "DATASUS/SIM (mortes) · TSE, cancelamentos por óbito 2022", en: "DATASUS/SIM (deaths) · TSE, 2022 death cancellations" }, date: "2022", href: "https://www.tse.jus.br/comunicacao/noticias/2023/Maio/justica-eleitoral-cancelou-quase-800-mil-titulos-em-2022" } as Fonte,
+      { tier: "T0", source: { pt: "TSE perfil de comparecimento 2022 (inversão biológica e excesso municipal)", en: "TSE 2022 turnout profile (biological inversion and municipal excess)" }, date: "2022", href: "https://dadosabertos.tse.jus.br/dataset/comparecimento-e-abstencao-2022" } as Fonte,
+    ],
+  },
+
+  // Pergunta direta — resposta precisa
+  mortosVotaram: {
+    pergunta: { pt: "Então está provado que mortos votaram?", en: "So is it proven that dead people voted?" } as L,
+    provado: {
+      pt: "Está provado que mortos reais — pessoas que o Ministério da Saúde registra como falecidas — permaneceram no cadastro do TSE, aptas a votar, às centenas de milhares. Isso não é estimativa nem estatística: é a diferença entre os óbitos reais (DATASUS, que não inventa mortes) e os cancelamentos que o próprio TSE fez. Só em 2022 foram pelo menos 560 mil eleitores mortos sem baixa no cadastro.",
+      en: "It is proven that real dead people — individuals the Ministry of Health records as deceased — remained in the TSE registry, eligible to vote, by the hundreds of thousands. This is not an estimate or a statistic: it is the difference between real deaths (DATASUS, which does not invent deaths) and the cancellations the TSE itself made. In 2022 alone, at least 560,000 dead voters went uncancelled.",
+    } as L,
+    falta: {
+      pt: "O que falta para dizer que uma pessoa específica, morta, teve voto registrado em seu nome é um único dado: o comparecimento ligado ao CPF. Esse dado é sigiloso (LGPD) e só o governo tem. O cruzamento leva menos de uma hora.",
+      en: "What is missing to say that one specific dead person had a vote recorded in their name is a single piece of data: turnout linked to the ID. That data is confidential (LGPD) and only the government holds it. The cross-check takes under an hour.",
+    } as L,
+    porque: {
+      pt: "Por isso a pergunta certa mudou. Não é mais “há mortos aptos a votar no cadastro?” — há, e está provado. É “por que o governo, que pode confirmar em uma hora se esses mortos votaram, não confirma e não responde à população?”.",
+      en: "That is why the right question has changed. It is no longer “are there dead people eligible to vote in the registry?” — there are, and it is proven. It is “why does the government, which can confirm in one hour whether those dead people voted, not confirm it and not answer the public?”.",
+    } as L,
   },
 
   resposta: {

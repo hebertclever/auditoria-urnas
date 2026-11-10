@@ -274,6 +274,55 @@ function Funnel() {
   );
 }
 
+/* ---------- 9b. Quantos mortos aptos ---------- */
+function DeadCount({ active }: VisualProps) {
+  const { fmt } = useFmt();
+  const { lang } = useLang();
+  // 1.348.000 mortes -> 787.825 cancelados -> 560.175 restam
+  const rows = [
+    { v: 1_348_000, w: 100, fill: "var(--slate)", lbl: lang === "pt" ? "mortes de eleitores" : "voter deaths" },
+    { v: 787_825, w: 58, fill: "var(--teal)", lbl: lang === "pt" ? "cancelados" : "cancelled" },
+    { v: 560_175, w: 42, fill: "var(--rose)", lbl: lang === "pt" ? "mortos ainda aptos" : "dead still eligible" },
+  ];
+  return (
+    <div className="w-full max-w-[420px]">
+      <div className="flex flex-col gap-2.5">
+        {rows.map((r, i) => (
+          <motion.div
+            key={i}
+            className="mx-auto w-full"
+            style={{ maxWidth: `${30 + r.w * 0.7}%` }}
+            initial={{ opacity: 0, y: 12 }}
+            animate={active ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: i * 0.4, duration: 0.6, ease }}
+          >
+            <div
+              className="rounded-xl border px-3 py-2.5 text-center"
+              style={{ background: i === 2 ? "var(--rose-soft)" : "var(--bg-elev)", borderColor: i === 2 ? "var(--rose)" : "var(--line-strong)" }}
+            >
+              <div className="font-mono text-base font-semibold tabular sm:text-xl" style={{ color: r.fill }}>
+                {i === 1 ? "−" : ""}{fmt(r.v)}
+              </div>
+              <div className="font-mono text-[0.6rem] uppercase tracking-wider text-fg-3">{r.lbl}</div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+      <motion.div
+        className="mt-4 rounded-xl border border-rose/40 bg-rose-soft px-4 py-3 text-center"
+        initial={{ opacity: 0, scale: 0.96 }}
+        animate={active ? { opacity: 1, scale: 1 } : {}}
+        transition={{ delay: 1.4, duration: 0.5, ease }}
+      >
+        <div className="font-mono text-[0.6rem] uppercase tracking-widest text-fg-3">
+          {lang === "pt" ? "no ciclo 2022–2026" : "across the 2022–2026 cycle"}
+        </div>
+        <div className="display tabular text-[clamp(1.8rem,7vw,2.8rem)] font-semibold text-rose">≈ {fmt(2_240_000)}</div>
+      </motion.div>
+    </div>
+  );
+}
+
 /* ---------- 10. Ônibus Davinópolis ---------- */
 function Bus() {
   return (
@@ -440,6 +489,7 @@ export const visuals: Record<string, (p: VisualProps) => React.ReactNode> = {
   historico: History,
   capacidade: CapacityGrid,
   limpeza: Funnel,
+  "quantos-mortos": DeadCount,
   municipios: Bus,
   transicao: Transicao,
   gaps: GapsDensity,

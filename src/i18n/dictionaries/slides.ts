@@ -99,6 +99,15 @@ const pt = {
       fonte: "DATASUS/SIM · TSE cancelamentos 2022",
     },
     {
+      id: "quantos-mortos",
+      eyebrow: "A conta · quantos",
+      title: "Pelo menos 560 mil mortos aptos a votar",
+      lead: "O DATASUS não inventa mortes — só pode deixar de contá-las. Então o número de mortos reais que ficaram no cadastro, aptos a votar, é uma conta direta: as mortes menos os cancelamentos. Em 2022 foram pelo menos 560 mil; no ciclo até 2026, cerca de 2,2 milhões.",
+      takeaway: "Quantos desses votaram? É a única conta que falta — e só o governo pode fazer, em menos de uma hora.",
+      calc: "1.348.000 mortes de eleitores − 787.825 cancelamentos por óbito = 560.175 mortos que permaneceram aptos (2022). Acumulado 2022–2026 ≈ 2,24 milhões. Como o DATASUS subnotifica, o número real é maior. Sinais de uso medidos: 198.738 comparecimentos de idosos acima do padrão biológico; 1.089 votos além da população viva em 137 municípios.",
+      fonte: "DATASUS/SIM · TSE cancelamentos 2022 · TSE perfil de comparecimento 2022",
+    },
+    {
       id: "municipios",
       eyebrow: "Pilar 4 · municípios",
       title: "Davinópolis: mais votos que moradores",
@@ -264,6 +273,15 @@ const en: typeof pt = {
       takeaway: "Of every 10 voters who die, about 4 are still registered at year's end.",
       calc: "Voter deaths 2022 ≈ 1,348,000 (85% of 1.59 million, DATASUS/SIM). Death cancellations in 2022 = 787,825 (TSE). Gap = 560,175/year. Cancelled = 58.4%.",
       fonte: "DATASUS/SIM · TSE cancellations 2022",
+    },
+    {
+      id: "quantos-mortos",
+      eyebrow: "The count · how many",
+      title: "At least 560,000 dead eligible to vote",
+      lead: "DATASUS does not invent deaths — it can only miss them. So the number of real dead people left in the registry, eligible to vote, is a direct sum: deaths minus cancellations. In 2022 it was at least 560,000; across the cycle to 2026, about 2.2 million.",
+      takeaway: "How many of them voted? It is the only sum left — and only the government can run it, in under an hour.",
+      calc: "1,348,000 voter deaths − 787,825 death cancellations = 560,175 dead who stayed eligible (2022). Accumulated 2022–2026 ≈ 2.24 million. Since DATASUS underreports, the real number is higher. Measured signs of use: 198,738 elderly turnouts above the biological pattern; 1,089 votes beyond the living population in 137 municipalities.",
+      fonte: "DATASUS/SIM · TSE 2022 cancellations · TSE 2022 turnout profile",
     },
     {
       id: "municipios",

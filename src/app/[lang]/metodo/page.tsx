@@ -3,6 +3,7 @@ import { Callout } from "@/components/ui/callout";
 import { Reveal } from "@/components/ui/reveal";
 import { SourceTag } from "@/components/ui/source-tag";
 import { IbgeConfiabilidade } from "@/components/shared/ibge-confiabilidade";
+import { DatasusConfiabilidade } from "@/components/shared/datasus-confiabilidade";
 import { resolveLang, metaFor } from "@/i18n/server";
 import { t } from "@/i18n/config";
 import { Steps } from "@/components/metodo/steps";
@@ -100,6 +101,10 @@ export default async function MetodoPage({ params }: PageProps<"/[lang]/metodo">
 
       <Section id="ibge" className="border-t border-line">
         <IbgeConfiabilidade variant="metodo" />
+      </Section>
+
+      <Section id="datasus" className="border-t border-line">
+        <DatasusConfiabilidade />
       </Section>
 
       {/* Reproduzir */}

@@ -9,6 +9,8 @@ import { t } from "@/i18n/config";
 import { href } from "@/i18n/routes";
 import { prova } from "@/data/prova";
 import { ErrorBars } from "@/components/provas/error-bars";
+import { MagnitudeFunnel } from "@/components/provas/magnitude";
+import { DatasusConfiabilidade } from "@/components/shared/datasus-confiabilidade";
 import { cn } from "@/lib/utils";
 
 export const generateMetadata = metaFor("provas");
@@ -93,6 +95,42 @@ export default async function ProvasPage({ params }: PageProps<"/[lang]/provas">
             <SourceTag key={i} tier={f.tier} source={L(f.source)} date={f.date} href={f.href} />
           ))}
         </Sources>
+      </Section>
+
+      {/* DATASUS — a terceira régua */}
+      <Section className="border-t border-line">
+        <DatasusConfiabilidade />
+      </Section>
+
+      {/* QUANTOS — a conta mensurável */}
+      <Section className="border-t border-line">
+        <Reveal>
+          <Eyebrow tone="rose">{L(prova.magnitude.eyebrow)}</Eyebrow>
+          <Heading className="mt-3">{L(prova.magnitude.title)}</Heading>
+          <Lead className="mt-5">{L(prova.magnitude.lead)}</Lead>
+        </Reveal>
+        <div className="mt-10">
+          <MagnitudeFunnel />
+        </div>
+        <Reveal className="mt-8">
+          <div className="relative overflow-hidden rounded-3xl border border-rose/30 bg-rose-soft p-6 sm:p-10">
+            <h3 className="display-md text-2xl font-semibold text-fg sm:text-3xl">{L(prova.mortosVotaram.pergunta)}</h3>
+            <div className="mt-5 grid gap-5 lg:grid-cols-3">
+              <p className="text-[0.98rem] leading-relaxed text-fg">
+                <span className="mb-1 block font-mono text-[0.65rem] uppercase tracking-widest text-teal">{lang === "pt" ? "Provado" : "Proven"}</span>
+                {L(prova.mortosVotaram.provado)}
+              </p>
+              <p className="text-[0.98rem] leading-relaxed text-fg-2">
+                <span className="mb-1 block font-mono text-[0.65rem] uppercase tracking-widest text-amber">{lang === "pt" ? "O que falta" : "What is missing"}</span>
+                {L(prova.mortosVotaram.falta)}
+              </p>
+              <p className="text-[0.98rem] font-medium leading-relaxed text-fg">
+                <span className="mb-1 block font-mono text-[0.65rem] uppercase tracking-widest text-rose">{lang === "pt" ? "A pergunta certa" : "The right question"}</span>
+                {L(prova.mortosVotaram.porque)}
+              </p>
+            </div>
+          </div>
+        </Reveal>
       </Section>
 
       {/* GOVERNO PODE FECHAR EM 1 HORA */}
