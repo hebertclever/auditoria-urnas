@@ -2,7 +2,7 @@
 
 import { FileCheck2, TrendingDown, ShieldCheck } from "lucide-react";
 import { prova } from "@/data/prova";
-import { useLang } from "@/i18n/context";
+import { useLang, useFmt } from "@/i18n/context";
 import { t } from "@/i18n/config";
 import { Eyebrow, Heading, Lead } from "@/components/ui/section";
 import { Callout } from "@/components/ui/callout";
@@ -13,6 +13,7 @@ const icons = [FileCheck2, TrendingDown, ShieldCheck];
 
 export function DatasusConfiabilidade() {
   const { lang } = useLang();
+  const { fmt } = useFmt();
   const d = prova.datasus;
   const L = <T extends { pt: string; en: string }>(x: T) => t(x, lang);
 
@@ -50,6 +51,21 @@ export function DatasusConfiabilidade() {
           );
         })}
       </div>
+
+      <Reveal className="mt-6">
+        <div className="rounded-2xl border border-amber/30 bg-amber-soft p-5 sm:p-6">
+          <p className="mb-3 font-mono text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-amber">{L(d.concreto.title)}</p>
+          <div className="mb-3 flex flex-wrap gap-x-8 gap-y-2">
+            {d.concreto.stats.map((s, i) => (
+              <div key={i}>
+                <span className="display tabular text-2xl font-semibold text-amber sm:text-3xl">{fmt(s.value)}</span>
+                <span className="ml-2 text-sm text-fg-2">{L(s.label)}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-[0.98rem] leading-relaxed text-fg-2 [&_strong]:font-semibold [&_strong]:text-fg">{L(d.concreto.text)}</p>
+        </div>
+      </Reveal>
 
       <Reveal className="mt-6">
         <Callout tone="teal" title={lang === "pt" ? "As três réguas, a mesma direção" : "Three yardsticks, one direction"}>

@@ -204,7 +204,7 @@ const pt = {
       "Ressalva: o dado de 2022 pode incluir óbitos de anos anteriores processados com atraso (pandemia). Isso tornaria o gap de anos individuais maior e o acumulado menor; a ordem de grandeza não muda.",
     ],
     naoProva:
-      "Não prova que algum desses títulos foi usado para votar. Prova que a superfície existe e é grande: milhões de títulos de pessoas mortas aptas a votar, que o sistema não cancela no ritmo em que as mortes acontecem. Intenção não é demonstrada: pode ser ineficiência.",
+      "O TSE confirma o comparecimento dessas faixas — é o número oficial de votos, não uma inferência nossa. E o DATASUS dá o número concreto de mortos: ninguém entra na base de óbitos sem atestado assinado por médico. Está provado, então, que foram registrados votos em faixas cujo cadastro está cheio de pessoas comprovadamente mortas — e, em 137 municípios, houve mais votos do que pessoas vivas na faixa. O que os dados públicos ainda não ligam é o nome: qual voto saiu de um título de falecido e qual de um eleitor vivo. Esse vínculo nome a nome só o cruzamento do governo fecha, em menos de uma hora. Intenção não é demonstrada; pode ser ineficiência. Mas ineficiência dessa escala, sem correção verificável, é exatamente o que exige auditoria.",
   },
   p4: {
     short: "Votos > população",
@@ -548,7 +548,7 @@ const en: typeof pt = {
       "Caveat: the 2022 figure may include deaths from earlier years processed late (pandemic). That would make single-year gaps larger and the accumulated total smaller; the order of magnitude does not change.",
     ],
     naoProva:
-      "It does not prove that any of these registrations was used to vote. It proves that the attack surface exists and is large: millions of registrations of dead people eligible to vote, which the system does not cancel at the pace deaths occur. Intent is not demonstrated: it may be inefficiency.",
+      "The TSE confirms the turnout in these bands — it is the official vote count, not our inference. And DATASUS gives the concrete number of deaths: no one enters the death registry without a physician-signed certificate. So it is proven that votes were recorded in age bands whose registry is full of demonstrably dead people — and, in 137 municipalities, there were more votes than living people in the band. What public data still does not link is the name: which vote came from a deceased person's registration and which from a living voter. That name-by-name link is closed only by the government's cross-check, in under an hour. Intent is not demonstrated; it may be inefficiency. But inefficiency on this scale, with no verifiable fix, is exactly what demands an audit.",
   },
   p4: {
     short: "Votes > population",

@@ -147,6 +147,17 @@ export const prova = {
       { value: { pt: "96,1%", en: "96.1%" } as L, label: { pt: "já era a cobertura em 2011 — e vem subindo desde então", en: "was already the coverage in 2011 — and has risen since" } as L },
       { value: { pt: "93%", en: "93%" } as L, label: { pt: "dos municípios têm completude do SIM acima de 90%", en: "of municipalities have SIM completeness above 90%" } as L },
     ],
+    concreto: {
+      title: { pt: "O número concreto de mortos", en: "The concrete number of the dead" } as L,
+      stats: [
+        { value: 74_242, label: { pt: "mortes de centenários em 5 anos (DATASUS, 2020–2024)", en: "centenarian deaths in 5 years (DATASUS, 2020–2024)" } as L },
+        { value: 815_847, label: { pt: "mortes de pessoas com 70+ anos por ano (DATASUS)", en: "deaths of people aged 70+ per year (DATASUS)" } as L },
+      ],
+      text: {
+        pt: "O DATASUS não é vago: ele conta cada morte, nome a nome, com atestado assinado por médico. Foram 74.242 mortes de centenários em cinco anos. Mesmo assim, o cadastro mantém mais de 200 mil centenários aptos a votar — quase três vezes todas as mortes de centenários de meia década. Esses mortos existem, estão contados pelo Ministério da Saúde, e deveriam ter saído do cadastro.",
+        en: "DATASUS is not vague: it counts every death, name by name, with a physician-signed certificate. There were 74,242 centenarian deaths in five years. Even so, the registry keeps more than 200,000 centenarians eligible to vote — nearly three times every centenarian death of half a decade. These dead people exist, are counted by the Ministry of Health, and should have been removed from the registry.",
+      } as L,
+    },
     pontos: [
       {
         t: { pt: "Ninguém entra na base sem atestado de óbito.", en: "No one enters the registry without a death certificate." } as L,
