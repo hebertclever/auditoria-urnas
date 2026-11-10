@@ -12,6 +12,7 @@ import { ErrorBars } from "@/components/provas/error-bars";
 import { MagnitudeFunnel } from "@/components/provas/magnitude";
 import { Estimativa2026 } from "@/components/provas/estimativa-2026";
 import { Objecoes } from "@/components/provas/objecoes";
+import { CodigoNecessario } from "@/components/provas/codigo-necessario";
 import { objecoes } from "@/data/objecoes";
 import { DatasusConfiabilidade } from "@/components/shared/datasus-confiabilidade";
 import { cn } from "@/lib/utils";
@@ -178,6 +179,11 @@ export default async function ProvasPage({ params }: PageProps<"/[lang]/provas">
             <p>{L(prova.governo.ausencia)}</p>
           </Prose>
         </div>
+      </Section>
+
+      {/* POR QUE O CÓDIGO-FONTE PRECISA SER ABERTO */}
+      <Section className="border-t border-line">
+        <CodigoNecessario />
       </Section>
 
       {/* AÇÕES */}

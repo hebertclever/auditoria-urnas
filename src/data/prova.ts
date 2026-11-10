@@ -201,6 +201,44 @@ export const prova = {
     } as L,
   },
 
+  // 3b) POR QUE O CÓDIGO-FONTE PRECISA SER ABERTO
+  codigoNecessario: {
+    eyebrow: { pt: "A conclusão necessária", en: "The necessary conclusion" } as L,
+    title: { pt: "Por que o código-fonte da urna precisa ser aberto", en: "Why the machine's source code must be opened" } as L,
+    lead: {
+      pt: "Os dados públicos provam que há erro. Mas nenhum dado público diz de que tipo: falha de software ou inserção manual. Só o código em execução, o histórico de suas alterações e a correspondência com o binário que roda na urna respondem. Por isso a abertura é necessária.",
+      en: "Public data proves there is error. But no public data says what kind: a software fault or a manual insertion. Only the running code, its change history and its correspondence with the binary that runs on the machine can answer. That is why opening it is necessary.",
+    } as L,
+    passos: [
+      {
+        n: 1,
+        t: { pt: "Erro na base de dados — provado", en: "Error in the database — proven" } as L,
+        b: { pt: "Mortos reais, registrados pelo DATASUS, permaneceram aptos a votar às centenas de milhares; em escala, é impossível que estejam vivos. O erro está na base do TSE.", en: "Real dead people, recorded by DATASUS, remained eligible to vote by the hundreds of thousands; at scale, it is impossible for them to be alive. The error is in the TSE's database." } as L,
+      },
+      {
+        n: 2,
+        t: { pt: "Erro técnico sistemático da equipe — provado", en: "Systematic technical error by the team — proven" } as L,
+        b: { pt: "63 falhas em 2.852 linhas do kit oficial, todas na mesma direção: enfraquecer a verificação. A chance de isso ocorrer por acaso é astronômica (veja abaixo) — e um código de verificação em produção deveria ter zero falhas.", en: "63 flaws in 2,852 lines of the official kit, all in the same direction: weakening verification. The chance of that happening by accident is astronomical (see below) — and verification code in production should have zero flaws." } as L,
+      },
+      {
+        n: 3,
+        t: { pt: "A origem do erro — indeterminável por fora", en: "The origin of the error — undeterminable from outside" } as L,
+        b: { pt: "Um bug e uma inserção manual produzem os mesmos sintomas nos arquivos publicados. O que os distingue está no código-fonte, no histórico de quem alterou o quê e quando, e na correspondência entre o que foi inspecionado e o binário na urna. Sem isso, ninguém de fora verifica qual dos dois ocorreu — nem se uma “correção” anunciada é real.", en: "A bug and a manual insertion produce the same symptoms in the published files. What tells them apart is in the source code, in the history of who changed what and when, and in the correspondence between what was inspected and the binary on the machine. Without that, no outsider can verify which of the two occurred — or whether an announced “fix” is real." } as L,
+      },
+    ],
+    probLabel: { pt: "Probabilidade de 63 em 63 por acaso", en: "Probability of 63 out of 63 by chance" } as L,
+    formula: { pt: "0,5⁶³ ≈ 1,08 × 10⁻¹⁹", en: "0.5⁶³ ≈ 1.08 × 10⁻¹⁹" } as L,
+    equivale: { pt: "Isso é", en: "That is" } as L,
+    porUltimo: {
+      t: { pt: "Por que, então, ele vem por último?", en: "Why, then, does it come last?" } as L,
+      b: { pt: "Porque os degraus anteriores são mais rápidos, não dependem de autorização especial e, juntos, estabelecem a evidência que justifica a inspeção e indica onde olhar. Ordem de execução não é ordem de importância: o código-fonte é indispensável — é apenas o último a ser alcançado.", en: "Because the earlier rungs are faster, need no special authorization and, together, establish the evidence that justifies the inspection and shows where to look. Order of execution is not order of importance: the source code is indispensable — it is simply the last one reached." } as L,
+    },
+    conclusao: {
+      pt: "Erro na base de dados mais erro sistemático da equipe, com essa improbabilidade, tornam necessária a abertura do código-fonte — não por suspeita genérica, mas para separar erro de software de inserção manual. Enquanto isso não for feito, a pergunta fica sem resposta verificável.",
+      en: "Error in the database plus systematic error by the team, at this improbability, make opening the source code necessary — not out of generic suspicion, but to separate a software fault from a manual insertion. Until that is done, the question has no verifiable answer.",
+    } as L,
+  },
+
   // 4) AÇÕES CONCRETAS
   acoes: {
     eyebrow: { pt: "O que pedir", en: "What to request" } as L,
@@ -231,8 +269,8 @@ export const prova = {
         base: { pt: "Res. TSE 22.166/2006 (prevista desde 2006, nunca plenamente executada)", en: "TSE Res. 22.166/2006 (provided since 2006, never fully enforced)" } as L,
       },
       {
-        titulo: { pt: "Auditoria técnica independente do código", en: "Independent technical audit of the code" } as L,
-        texto: { pt: "Auditoria externa do kit de verificação (os 63 gaps) e da correspondência entre o código inspecionado e o binário que roda nas urnas — pedido feito pelas Forças Armadas no relatório EFASEV/2022 e nunca atendido.", en: "An external audit of the verification kit (the 63 gaps) and of the correspondence between the inspected source code and the binary that runs on the machines — a request made by the Armed Forces in the EFASEV/2022 report and never fulfilled." } as L,
+        titulo: { pt: "Inspeção do código-fonte — o degrau indispensável", en: "Source-code inspection — the indispensable rung" } as L,
+        texto: { pt: "Inspeção do código em execução, do histórico de alterações e da correspondência entre o código inspecionado e o binário que roda nas urnas — pedido feito pelas Forças Armadas no relatório EFASEV/2022 e nunca atendido. É indispensável: só ela separa erro de software de inserção manual.", en: "Inspection of the running code, its change history and the correspondence between the inspected code and the binary that runs on the machines — a request made by the Armed Forces in the EFASEV/2022 report and never fulfilled. It is indispensable: only it separates a software fault from a manual insertion." } as L,
         base: { pt: "Relatório EFASEV/2022 (Ministério da Defesa)", en: "EFASEV/2022 report (Ministry of Defence)" } as L,
       },
       {

@@ -7,20 +7,20 @@ import type { L } from "@/i18n/config";
 export const parlamentar = {
   hero: {
     eyebrow: { pt: "Guia prático de fiscalização", en: "Practical oversight guide" } as L,
-    title: { pt: "O que um parlamentar pode fazer — antes de tocar no código da urna", en: "What a legislator can do — before touching the machine's code" } as L,
+    title: { pt: "O que um parlamentar pode fazer — e por que o código da urna precisa ser aberto no fim", en: "What a legislator can do — and why the machine's code must be opened at the end" } as L,
     lead: {
-      pt: "O debate costuma pular direto para “abrir o código-fonte da urna”. Mas há uma escada inteira de fiscalização antes disso, feita com dados públicos e pedidos de informação, que já resolve a maior parte das perguntas desta auditoria. Abrir o código da urna é o último degrau — e o menos necessário para o que já está provado.",
-      en: "The debate usually jumps straight to “open the machine's source code”. But there is a whole ladder of oversight before that, built on public data and information requests, that already answers most of this audit's questions. Opening the machine's code is the last rung — and the least necessary for what is already proven.",
+      pt: "O debate costuma pular direto para “abrir o código-fonte da urna”. Aqui a ordem é outra: uma escada de fiscalização, feita com dados públicos e pedidos de informação, que estabelece que há erro e onde ele está. Mas só o código-fonte em execução diz de que tipo é o erro — falha de software ou inserção manual. Por isso o último degrau não é opcional: é o que encerra a investigação. Os anteriores existem para justificá-lo e orientá-lo — e para resolver, no caminho, tudo o que não depende dele.",
+      en: "The debate usually jumps straight to “open the machine's source code”. Here the order is different: an oversight ladder, built on public data and information requests, that establishes that there is error and where it lies. But only the running source code says what kind of error it is — a software fault or a manual insertion. So the last rung is not optional: it is what closes the investigation. The earlier ones exist to justify and guide it — and to settle, along the way, everything that does not depend on it.",
     } as L,
   },
 
   escadaTitle: { pt: "A escada da fiscalização", en: "The oversight ladder" } as L,
   escadaLead: {
-    pt: "Do mais fácil e imediato ao mais difícil. Os seis primeiros degraus não precisam do código-fonte da urna.",
-    en: "From the easiest and most immediate to the hardest. The first six rungs need no access to the machine's source code.",
+    pt: "Do mais fácil e imediato ao mais decisivo. Os seis primeiros degraus não exigem acesso ao código e já estabelecem que há erro e onde. O sétimo é indispensável: só ele distingue erro de software de inserção manual.",
+    en: "From the easiest and most immediate to the most decisive. The first six rungs need no access to the code and already establish that there is error and where. The seventh is indispensable: only it tells a software fault from a manual insertion.",
   } as L,
   semCodigo: { pt: "sem o código da urna", en: "no machine source needed" } as L,
-  comCodigo: { pt: "exige acesso formal ao código da urna", en: "requires formal access to machine source" } as L,
+  comCodigo: { pt: "indispensável · exige acesso formal ao código", en: "indispensable · requires formal access to the source code" } as L,
 
   escada: [
     {
@@ -55,8 +55,8 @@ export const parlamentar = {
     },
     {
       n: 7,
-      titulo: { pt: "Só então: o código-fonte da urna", en: "Only then: the machine's source code" } as L,
-      texto: { pt: "A inspeção formal do código da urna, com as melhorias de processo que a EFASEV/2022 pediu (tempo adequado e correspondência código-binário). É o degrau mais difícil — e o menos necessário para o que os degraus anteriores já demonstram.", en: "The formal inspection of the machine's source, with the process improvements the EFASEV/2022 report asked for (adequate time and code-to-binary correspondence). It is the hardest rung — and the least necessary for what the earlier rungs already demonstrate." } as L,
+      titulo: { pt: "O degrau indispensável: o código-fonte da urna", en: "The indispensable rung: the machine's source code" } as L,
+      texto: { pt: "A inspeção do código em execução, com as melhorias de processo que a EFASEV/2022 pediu (tempo adequado e correspondência código-binário), mais o histórico de alterações dos arquivos. É o único degrau que responde à pergunta que os anteriores deixam aberta: os erros são de software ou de inserção manual? É o mais difícil — e o mais decisivo. Os degraus 1 a 6 produzem a evidência que o justifica e indicam onde olhar.", en: "The inspection of the running code, with the process improvements the EFASEV/2022 report asked for (adequate time and code-to-binary correspondence), plus the change history of the files. It is the only rung that answers the question the earlier ones leave open: are the errors software faults or manual insertions? It is the hardest — and the most decisive. Rungs 1 to 6 produce the evidence that justifies it and show where to look." } as L,
       urna: true,
     },
   ],
@@ -105,7 +105,14 @@ export const parlamentar = {
       destino: { pt: "Comissão competente / contratação de perícia independente", en: "Relevant committee / independent expert engagement" } as L,
       base: { pt: "Poder de fiscalização do Legislativo; dados já públicos", en: "Legislative oversight power; already-public data" } as L,
       texto:
-        "Requeiro a realização de perícia técnica independente sobre o conjunto de scripts e especificações que o Tribunal Superior Eleitoral distribui publicamente para a verificação dos boletins de urna (arquivos abertos, já disponíveis para download), com o objetivo de:\n\n1. Confirmar ou refutar a existência das falhas apontadas em auditorias independentes, inclusive a inoperância da ferramenta de verificação do QR Code e a ausência de verificação de campos como a fase do boletim;\n2. Avaliar se o conjunto permite, de fato, a verificação externa e independente que se propõe a oferecer ao cidadão;\n3. Recomendar correções e um processo de verificação contínuo e auditável.\n\nA perícia recai sobre material já público e não requer acesso ao código-fonte dos sistemas internos das urnas.",
+        "Requeiro a realização de perícia técnica independente sobre o conjunto de scripts e especificações que o Tribunal Superior Eleitoral distribui publicamente para a verificação dos boletins de urna (arquivos abertos, já disponíveis para download), com o objetivo de:\n\n1. Confirmar ou refutar a existência das falhas apontadas em auditorias independentes, inclusive a inoperância da ferramenta de verificação do QR Code e a ausência de verificação de campos como a fase do boletim;\n2. Avaliar se o conjunto permite, de fato, a verificação externa e independente que se propõe a oferecer ao cidadão;\n3. Recomendar correções e um processo de verificação contínuo e auditável.\n\nA perícia recai sobre material já público e não requer acesso ao código-fonte dos sistemas internos das urnas. A inspeção desse código é objeto de requerimento próprio (modelo seguinte), por ser indispensável para distinguir erro de software de inserção manual.",
+    },
+    {
+      titulo: { pt: "Requerimento de inspeção do código-fonte e da correspondência código-binário", en: "Request for source-code inspection and code-to-binary correspondence" } as L,
+      destino: { pt: "Presidência do Tribunal Superior Eleitoral — com cópia à Comissão competente", en: "Presidency of the Superior Electoral Court — copied to the relevant committee" } as L,
+      base: { pt: "Poder de fiscalização do Legislativo · Res. TSE 23.751/2026 · Relatório EFASEV/2022 (Anexo G)", en: "Legislative oversight power · TSE Res. 23.751/2026 · EFASEV/2022 report (Annex G)" } as L,
+      texto:
+        "Requeiro ao Tribunal Superior Eleitoral, com fundamento no poder de fiscalização do Poder Legislativo, a realização de inspeção técnica do código-fonte dos sistemas eleitorais por equipe indicada por [COMISSÃO / ENTIDADE], sob termo de confidencialidade, abrangendo:\n\n1. O código-fonte dos sistemas de votação e apuração utilizados nas eleições de [ANO], com o histórico de alterações dos arquivos inspecionados (autoria, data e justificativa de cada alteração).\n2. A compilação acompanhada pelos inspetores, com o registro da origem das dependências e das redes acessadas durante a compilação (questão do Anexo G do relatório EFASEV/2022).\n3. A demonstração de correspondência entre o código inspecionado e o binário efetivamente instalado nas urnas, por compilação reprodutível e conferência de resumos criptográficos (hash).\n4. Tempo de inspeção compatível com a complexidade dos sistemas, conforme apontado no relatório EFASEV/2022.\n5. Esclarecimento formal, com base nesse exame, sobre se as falhas e divergências apontadas em auditorias públicas decorrem de erro de software ou de alteração manual.\n\nA finalidade é distinguir erro de software de inserção manual, o que não é possível a partir dos dados públicos.",
     },
   ],
 
@@ -118,6 +125,7 @@ export const parlamentar = {
       { pt: "Convocar audiência pública com IBGE, Saúde e TSE.", en: "Call a public hearing with IBGE, Health and the TSE." },
       { pt: "Representar ao TCU sobre a gestão do cadastro.", en: "Represent to the Audit Court on registry management." },
       { pt: "Contratar perícia independente do kit de verificação já público.", en: "Commission an independent audit of the already-public verification kit." },
+      { pt: "Requerer a inspeção do código-fonte e da correspondência código-binário — o degrau indispensável, por último.", en: "Request source-code inspection and code-to-binary correspondence — the indispensable rung, last." },
     ] as { pt: string; en: string }[],
   },
 
