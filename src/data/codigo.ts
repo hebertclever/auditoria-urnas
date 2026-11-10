@@ -144,8 +144,8 @@ export const probabilidade = {
   p: Math.pow(0.5, 63), // ≈ 1,08e-19
   umEm: { pt: "9,2 quintilhões", en: "9.2 quintillion" } as L,
   comparacao: {
-    pt: "cerca de 3.700 vezes mais raro que ganhar na Mega-Sena duas vezes seguidas — ou pegar de olhos fechados um grão de areia marcado entre todos os grãos de todas as praias da Terra",
-    en: "about 3,700 times rarer than winning the Mega-Sena lottery twice in a row — or picking a marked grain of sand blindfolded from every grain on every beach on Earth",
+    pt: "É como um contador que comete 63 erros na sua declaração de imposto — e todos os 63 reduzem o que ele deve. Nenhum vai na outra direção. Ou um árbitro que erra 63 lances — todos contra o mesmo time. Em termos de probabilidade: 3.700 vezes mais raro que ganhar na Mega-Sena duas vezes seguidas",
+    en: "Like an accountant who makes 63 errors on your tax return — and all 63 reduce what they owe. Not one goes the other way. Or a referee who gets 63 calls wrong — all against the same team. In probability terms: 3,700 times rarer than winning the Mega-Sena lottery twice in a row",
   } as L,
   ressalva: {
     pt: "Assume independência entre gaps, o que não é totalmente verdade: falhas em um componente podem causar falhas em outro. Mesmo relaxando essa premissa, a probabilidade segue astronômica. A pergunta não é se o padrão é significativo — é. A pergunta é se é intencional ou negligência estrutural.",
