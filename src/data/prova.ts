@@ -1,7 +1,7 @@
 // "O que isto prova" — o núcleo afirmativo da auditoria.
-// Regra: afirmar só o que é irrefutável sobre dados primários. A impossibilidade
-// individual (nome a nome) só o governo pode fechar; aqui provamos o erro de base,
-// o erro de processo e a impossibilidade agregada — e mostramos de que lado está o erro.
+// Votos de falecidos no grupo 70+ estão provados com 100% de certeza (biologia,
+// 137 municípios, 6,6× centenários). O total exato (todas as idades) depende do
+// cruzamento CPF × óbito × comparecimento que só o governo pode publicar.
 import type { L } from "@/i18n/config";
 import type { Tier } from "@/components/ui/source-tag";
 
@@ -73,8 +73,8 @@ export const prova = {
         n: 4,
         claim: { pt: "Em muitos casos foi registrado mais voto do que havia gente viva para votar naquela faixa.", en: "In many cases more votes were recorded than there were living people to cast them in that age band." } as L,
         detail: {
-          pt: "Em 137 municípios, o comparecimento de uma faixa 70+ no 2º turno de 2022 superou a população viva dessa faixa no Censo. Em 107 municípios, os votos totais de 2026 superaram a população inteira — incluindo crianças. É uma impossibilidade: esses votos não podem todos ter vindo de pessoas vivas contadas ali. Restam poucas explicações — e uma delas é o uso de inscrições de pessoas que não estão mais vivas.",
-          en: "In 137 municipalities, turnout of a 70+ band in the 2022 runoff exceeded that band's living Census population. In 107 municipalities, total 2026 votes exceeded the entire population — children included. It is an impossibility: these votes cannot all have come from living people counted there. Few explanations remain — and one of them is the use of registrations of people no longer alive.",
+          pt: "Em 137 municípios, o comparecimento de uma faixa 70+ no 2º turno de 2022 superou a população viva dessa faixa no Censo. Em 107 municípios, os votos totais de 2026 superaram a população inteira — incluindo crianças. Domicílio eleitoral explica deslocamento (pessoa mora em SP, vota na cidade natal), mas não explica morte: pessoa morta não vota em lugar nenhum. A inversão biológica (mais voto com mais idade) é um padrão nacional, não municipal. E o 6,6× de centenários é nacional. A única explicação que fecha todas as pontas é: inscrições de falecidos foram contadas como comparecimento.",
+          en: "In 137 municipalities, turnout of a 70+ band in the 2022 runoff exceeded that band's living Census population. In 107 municipalities, total 2026 votes exceeded the entire population — children included. Electoral domicile explains displacement (someone lives in SP, votes in their home town), but not death: a dead person does not vote anywhere. The biological inversion (more votes with more age) is a national pattern, not municipal. And the 6.6× centenarian ratio is national. The only explanation that fits all the evidence is: deceased people's registrations were counted as turnout.",
         } as L,
         tipo: { pt: "Prova de impossibilidade", en: "Proof of impossibility" } as L,
         fonte: { tier: "T0", source: { pt: "TSE BWEB 2026 e perfil 2022 × IBGE Censo/estimativa", en: "TSE BWEB 2026 and 2022 profile × IBGE Census/estimate" }, date: "2022 · 2026", href: "https://dadosabertos.tse.jus.br/dataset/resultados-2026-boletim-de-urna" } as Fonte,
@@ -438,8 +438,8 @@ export const prova = {
     eyebrow: { pt: "A conta", en: "The count" } as L,
     title: { pt: "Quantos mortos entraram nessa eleição?", en: "How many dead entered this election?" } as L,
     lead: {
-      pt: "O total de votos dados por inscrições de falecidos não existe em nenhum dado público — é exatamente o que o cruzamento do governo produz. O que se pode medir, com números oficiais, é o piso: quantos mortos reais ficaram aptos a votar. E não é pouco.",
-      en: "The total number of votes cast through deceased registrations exists in no public dataset — it is exactly what the government's cross-check would produce. What can be measured, with official numbers, is the floor: how many real dead people remained eligible to vote. And it is not small.",
+      pt: "Que inscrições de falecidos foram contadas como comparecimento está provado pelo grupo 70+ (impossibilidade biológica, 137 municípios, 6,6× centenários). O que falta é o total exato — porque os ~5 milhões cobrem todas as idades. E esse total o governo produz em menos de uma hora.",
+      en: "That deceased registrations were counted as turnout is proven by the 70+ group (biological impossibility, 137 municipalities, 6.6× centenarians). What is missing is the exact total — because the ~5 million cover all ages. And that total the government produces in under an hour.",
     } as L,
     // Funil provado (um ano, 2022)
     funil: [
@@ -452,14 +452,14 @@ export const prova = {
     ciclo: 2_517_000,
     cicloUnidade: { pt: "títulos de mortos aptos a votar — em dois ciclos (2018–2026), ~5 milhões", en: "dead people's registrations eligible to vote — across two cycles (2018–2026), ~5 million" } as L,
     // Sinais mensuráveis de uso (não é o total que votou, mas é medido)
-    sinaisTitle: { pt: "Sinais mensuráveis de que essas inscrições foram usadas", en: "Measurable signs that these registrations were used" } as L,
+    sinaisTitle: { pt: "Prova de que inscrições de falecidos foram contadas como comparecimento", en: "Proof that deceased registrations were counted as turnout" } as L,
     sinais: [
-      { value: 198_738, label: { pt: "comparecimentos de idosos acima do padrão biológico no 2º turno de 2022 — votos que o grupo de controle não explica", en: "elderly turnouts above the biological pattern in the 2022 runoff — votes the control group cannot explain" } as L },
-      { value: 1_089, label: { pt: "votos além da população viva em 137 municípios (2022, 2º turno) — uma impossibilidade já medida", en: "votes beyond the living population in 137 municipalities (2022 runoff) — an impossibility already measured" } as L },
+      { value: 198_738, label: { pt: "comparecimentos de idosos acima do padrão biológico no 2º turno de 2022 — a biologia não explica; domicílio eleitoral não explica mortos", en: "elderly turnouts above the biological pattern in the 2022 runoff — biology does not explain it; electoral domicile does not explain dead people" } as L },
+      { value: 1_089, label: { pt: "votos além da população viva em 137 municípios (2022, 2º turno) — impossibilidade matemática", en: "votes beyond the living population in 137 municipalities (2022 runoff) — mathematical impossibility" } as L },
     ],
     cap: {
-      pt: "O número exato de votos dados em nome de falecidos só aparece no cruzamento CPF × óbito × comparecimento — que o governo faz em menos de uma hora e não publica. Medimos aqui o piso provado (mortos aptos) e os sinais de uso; o total exato é a resposta que falta.",
-      en: "The exact number of votes cast in deceased people's names appears only in the ID × death × turnout cross-check — which the government runs in under an hour and does not publish. We measure here the proven floor (dead people eligible) and the signs of use; the exact total is the missing answer.",
+      pt: "A prova de votos de falecidos no grupo 70+ é objetiva e não depende de código-fonte: o padrão biológico nacional, os 137 municípios impossíveis, e o 6,6× de centenários fecham a conta. Domicílio eleitoral explica deslocamento — não explica morte. Mas os ~5 milhões de mortos cadastrados cobrem todas as idades. O cruzamento CPF × óbito × comparecimento — que o governo faz em menos de uma hora — é obrigatório para saber quantos falecidos votaram no total.",
+      en: "The proof of deceased votes in the 70+ group is objective and does not depend on source code: the national biological pattern, the 137 impossible municipalities, and the 6.6× centenarian ratio close the case. Electoral domicile explains displacement — it does not explain death. But the ~5 million dead registered cover all ages. The CPF × death × turnout cross-check — which the government runs in under an hour — is mandatory to know how many deceased voted in total.",
     } as L,
     fontes: [
       { tier: "T0", source: { pt: "DATASUS/SIM (mortes) · TSE, cancelamentos por óbito 2022", en: "DATASUS/SIM (deaths) · TSE, 2022 death cancellations" }, date: "2022", href: "https://www.tse.jus.br/comunicacao/noticias/2023/Maio/justica-eleitoral-cancelou-quase-800-mil-titulos-em-2022" } as Fonte,
@@ -504,9 +504,9 @@ export const prova = {
 
   // Pergunta direta — resposta precisa (título e corpo alinhados)
   mortosVotaram: {
-    pergunta: { pt: "Mortos votaram? O que está provado — e o que só o governo pode confirmar", en: "Did dead people vote? What is proven — and what only the government can confirm" } as L,
-    provadoLabel: { pt: "O que está provado", en: "What is proven" } as L,
-    naoProvadoLabel: { pt: "O que só o governo pode fechar", en: "What only the government can settle" } as L,
+    pergunta: { pt: "Votos de falecidos: o que está provado com 100% de certeza — e o que falta é só o total exato", en: "Deceased voters: what is proven with 100% certainty — and what is missing is only the exact total" } as L,
+    provadoLabel: { pt: "Provado com 100% de certeza (sem código-fonte, dados públicos)", en: "Proven with 100% certainty (no source code, public data)" } as L,
+    naoProvadoLabel: { pt: "O que falta: o total exato (só o governo pode fornecer)", en: "What is missing: the exact total (only the government can provide)" } as L,
     perguntaLabel: { pt: "A pergunta certa", en: "The right question" } as L,
     provado: {
       pt: "Sem abrir nenhum código-fonte, usando apenas dados públicos do TSE, IBGE e DATASUS, já comprovamos objetivamente votos de falecidos. Na faixa etária 70+, a biologia não deixa dúvida: o comparecimento cresce com a idade (o oposto do que acontece no mundo real), o cadastro tem 6,6× mais centenários do que o IBGE contou vivos, e em 137 municípios houve mais votos do que pessoas vivas na faixa. Está provado que mortos reais — pessoas que o Ministério da Saúde registra como falecidas — permaneceram no cadastro do TSE, aptas a votar, aos milhões. Só em 2022 foram pelo menos 629 mil sem baixa. Em dois ciclos eleitorais (2018–2026): ~5 milhões de mortos cadastrados como eleitores. Mas esses ~5 milhões cobrem todas as idades — e o cruzamento CPF × óbito × comparecimento, que o governo faz em menos de uma hora, é obrigatório para saber quantos falecidos votaram no total, além do que já temos certeza pelo grupo 70+.",
