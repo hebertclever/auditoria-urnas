@@ -71,12 +71,12 @@ export const graves: Grave[] = [
   {
     n: 4,
     ids: ["GAP-EVO-01"],
-    titulo: { pt: "Em 2022, a verificação era falsa", en: "In 2022, the verification was fake" },
+    titulo: { pt: "Em 2022, a chave de verificação era falsa", en: "In 2022, the verification key was fake" },
     leigo: {
-      pt: "Na versão de 2022, o script usava uma chave que estava dentro do próprio BU para verificar o BU. Quem forja o BU controla a chave que o “verifica”. Isso foi removido em 2024 — sem aviso, sem changelog.",
-      en: "In the 2022 version, the script used a key stored inside the BU itself to verify the BU. Whoever forges the BU controls the key that “verifies” it. This was removed in 2024 — no notice, no changelog.",
+      pt: "O script oficial bu_assinatura_tuplas.py (linhas 69-71) lia a chave de verificação de dentro do próprio BU: chave = bu_decoded[\"chaveAssinaturaVotosVotavel\"]. Não é erro de configuração: o programador escreveu três decisões de design — incluiu o campo no schema ASN.1 (bu.asn1:165), codificou o script para ler a chave ali, e não incluiu nenhuma validação de cadeia de confiança. Quem forja o BU coloca a chave que quiser, e a “verificação” sempre diz OK. Removido em silêncio em 2024 — sem aviso, sem changelog. Mesmo no v2, a função valida_certificado() existe mas nunca é chamada.",
+      en: "The official script bu_assinatura_tuplas.py (lines 69-71) read the verification key from inside the BU itself: chave = bu_decoded[\"chaveAssinaturaVotosVotavel\"]. Not a configuration error: the developer made three design decisions — included the field in the ASN.1 schema (bu.asn1:165), coded the script to read the key from there, and included no trust chain validation. Whoever forges the BU puts in whatever key they want, and the “verification” always says OK. Silently removed in 2024 — no notice, no changelog. Even in v2, the valida_certificado() function exists but is never called.",
     },
-    analogia: { pt: "Pedir para o réu ser seu próprio juiz.", en: "Asking the defendant to be their own judge." },
+    analogia: { pt: "Pedir para o réu trazer seu próprio juiz: quem forja o documento escolhe quem o “verifica”.", en: "Asking the defendant to bring their own judge: whoever forges the document picks who “verifies” it." },
     anim: "juiz",
   },
   {
