@@ -10,6 +10,7 @@ import { CountUp } from "@/components/ui/count-up";
 import { Callout } from "@/components/ui/callout";
 import { SourceTag, Sources } from "@/components/ui/source-tag";
 import { cn } from "@/lib/utils";
+import { useCompactMotion } from "@/lib/use-compact-motion";
 
 const toneText = { slate: "text-slate", teal: "text-teal", rose: "text-rose" } as const;
 
@@ -19,7 +20,9 @@ export function MagnitudeFunnel({ compact = false }: { compact?: boolean }) {
   const m = prova.magnitude;
   const L = <T extends { pt: string; en: string }>(x: T) => t(x, lang);
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-15% 0px" });
+  // Phones: everything is on screen as soon as it scrolls in — the key figure must not arrive three seconds late.
+  const phone = useCompactMotion();
+  const inView = useInView(ref, { once: true, margin: phone ? "0px 0px 10% 0px" : "-15% 0px" });
   const [key, setKey] = useState(0);
 
   const maxV = m.funil[0].value;
@@ -31,15 +34,16 @@ export function MagnitudeFunnel({ compact = false }: { compact?: boolean }) {
         <div key={key} className="flex flex-col gap-3">
           {m.funil.map((f, i) => {
             const w = 30 + (f.value / maxV) * 70; // 30%..100% largura
+            const wPhone = 66 + (f.value / maxV) * 34; // no celular a caixa menor ainda precisa caber a legenda
             const highlight = f.tone === "rose";
             return (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 14 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: i * 0.35, ease: [0.22, 1, 0.36, 1] }}
-                className="relative mx-auto w-full"
-                style={{ maxWidth: `${w}%` }}
+                transition={{ duration: phone ? 0.35 : 0.6, delay: i * (phone ? 0.06 : 0.35), ease: [0.22, 1, 0.36, 1] }}
+                className="relative mx-auto w-full max-w-(--w-phone) lg:max-w-(--w)"
+                style={{ "--w": `${w}%`, "--w-phone": `${wPhone}%` } as React.CSSProperties}
               >
                 <div
                   className={cn(
@@ -64,7 +68,7 @@ export function MagnitudeFunnel({ compact = false }: { compact?: boolean }) {
           <button
             type="button"
             onClick={() => setKey((k) => k + 1)}
-            className="mx-auto mt-1 inline-flex items-center gap-1.5 font-mono text-[0.7rem] uppercase tracking-wider text-fg-3 transition hover:text-fg"
+            className="mx-auto mt-1 hidden items-center gap-1.5 font-mono text-[0.7rem] uppercase tracking-wider text-fg-3 transition hover:text-fg lg:inline-flex"
           >
             <RotateCcw className="h-3 w-3" /> {dict.common.ui.replay}
           </button>

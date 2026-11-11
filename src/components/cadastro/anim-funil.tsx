@@ -5,14 +5,17 @@ import { useMemo } from "react";
 import { useFmt, useLang } from "@/i18n/context";
 import { limpeza } from "@/data/cadastro";
 import { AnimLabel, Chip, useAnimatedNumber } from "./figures";
+import { useCompactMotion } from "@/lib/use-compact-motion";
 
 const N = 40;
+const N_COMPACT = 14; // phones show three of these drawings at once; keep the endless loop light
 const PCT_CANCEL = 0.58;
 
 export function AnimFunil({ stage }: { stage: number }) {
   const { dict } = useLang();
   const a = dict.cadastro.p3.anim;
   const { fmtCompact, fmtInt, fmtPct } = useFmt();
+  const compact = useCompactMotion();
 
   const years = useAnimatedNumber(4, stage >= 2, 2.2);
   const yearShown = 2022 + Math.round(years);
@@ -76,7 +79,7 @@ export function AnimFunil({ stage }: { stage: number }) {
         </text>
 
         {/* particles */}
-        {particles.map((p, i) => {
+        {(compact ? particles.slice(0, N_COMPACT) : particles).map((p, i) => {
           const toCancel = p.cancel && stage >= 1;
           const toStack = !p.cancel && stage >= 1;
           const endX = toCancel ? 120 + p.jitter * 6 : toStack ? 280 + p.jitter * 6 : 200 + p.jitter;

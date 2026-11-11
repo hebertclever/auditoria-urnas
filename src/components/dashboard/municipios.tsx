@@ -43,12 +43,12 @@ export function MunicipiosPanel() {
       </SimpleOnly>
 
       <div className="mb-4 flex flex-col gap-2 rounded-2xl border border-line bg-bg-sunk p-4 sm:flex-row sm:items-center sm:justify-between">
-        <label className="flex flex-1 items-center gap-3 text-sm text-fg-2">
-          <span className="whitespace-nowrap">{d.slider}</span>
+        <label className="flex flex-1 flex-wrap items-center gap-x-3 gap-y-2 text-sm text-fg-2">
+          <span className="w-full whitespace-nowrap sm:w-auto">{d.slider}</span>
           <input
             type="range" min={0} max={60} step={5} value={margin}
             onChange={(e) => setMargin(Number(e.target.value))}
-            className="h-1.5 flex-1 cursor-pointer appearance-none rounded-full bg-line accent-amber"
+            className="h-1.5 min-w-0 flex-1 cursor-pointer appearance-none rounded-full bg-line accent-amber"
           />
           <span className="w-12 text-right font-mono font-semibold text-amber">+{margin}%</span>
         </label>

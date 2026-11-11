@@ -17,7 +17,7 @@ export function Hero() {
     <section className="relative overflow-hidden">
       <div className="grid-texture pointer-events-none absolute inset-0 -z-10" aria-hidden />
       <div className="glow-amber pointer-events-none absolute left-1/2 top-[-18rem] -z-10 h-[42rem] w-[70rem] -translate-x-1/2 opacity-70 blur-3xl" aria-hidden />
-      <Container className="grid items-end gap-12 pb-20 pt-20 sm:pt-28 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:pb-28">
+      <Container className="grid items-center gap-10 pb-14 pt-14 sm:pb-20 sm:pt-24 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:pb-28 lg:pt-28">
         <div>
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
             <Eyebrow tone="amber">{h.eyebrow}</Eyebrow>

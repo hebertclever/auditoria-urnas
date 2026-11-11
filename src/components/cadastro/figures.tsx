@@ -2,23 +2,26 @@
 
 import { animate, motion, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
+import { useCompactMotion } from "@/lib/use-compact-motion";
 
-/** Animate a number from 0 to `target` whenever `active` flips to true. */
+/** Animate a number from 0 to `target` whenever `active` flips to true. On phones the figure appears at once. */
 export function useAnimatedNumber(target: number, active: boolean, duration = 1.2) {
   const [v, setV] = useState(0);
   const reduced = useReducedMotion();
+  const compact = useCompactMotion();
+  const still = reduced || compact;
   useEffect(() => {
     // All state updates flow through animate()'s onUpdate callback (external-system sync),
     // so nothing is set synchronously in the effect body. Reduced motion / inactive use duration 0.
     const to = active ? target : 0;
     const c = animate(0, to, {
-      duration: active && !reduced ? duration : 0,
+      duration: active && !still ? duration : 0,
       ease: [0.16, 1, 0.3, 1],
       onUpdate: (x) => setV(x),
     });
     return () => c.stop();
-  }, [target, active, duration, reduced]);
-  return v;
+  }, [target, active, duration, still]);
+  return active && still ? target : v;
 }
 
 const spring = { type: "spring", stiffness: 300, damping: 22 } as const;

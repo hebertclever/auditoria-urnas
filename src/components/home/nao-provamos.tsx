@@ -20,7 +20,7 @@ export function NaoProvamos() {
             <Heading className="mt-3">{n.title}</Heading>
             <Link
               href={href(lang, "/provas/")}
-              className="group mt-6 inline-flex items-center gap-2 text-sm font-semibold text-amber"
+              className="group mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-amber"
             >
               {n.link}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />

@@ -139,6 +139,16 @@ body {
   backdrop-filter: saturate(160%) blur(18px);
   -webkit-backdrop-filter: saturate(160%) blur(18px);
 }
+/* On phones the bar must stay readable over any content, with or without backdrop blur. */
+@media (max-width: 1023px) {
+  .glass { background: color-mix(in srgb, var(--bg) 97%, transparent); }
+}
+
+/* A grid child's default min-width is its content, so a single wide table, chart or <pre>
+   stretches the whole page past a phone screen. Utilities still override this. */
+@layer base {
+  .grid > * { min-width: 0; }
+}
 
 /* Focus ring */
 :focus-visible {

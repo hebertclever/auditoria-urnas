@@ -50,7 +50,7 @@ export function DatasusConfiabilidade() {
 
   return (
     <div className="relative">
-      <div className="pointer-events-none absolute -right-24 top-10 -z-10 h-72 w-72 rounded-full glow-teal blur-3xl" />
+      <div className="pointer-events-none absolute right-0 top-10 -z-10 h-72 w-72 rounded-full glow-teal blur-3xl lg:-right-24" />
       <Eyebrow tone="teal">{L(d.eyebrow)}</Eyebrow>
       <Heading as="h2" className="mt-3">{L(d.title)}</Heading>
       <Lead className="mt-5">{L(d.lead)}</Lead>

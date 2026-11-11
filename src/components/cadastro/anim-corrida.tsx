@@ -24,13 +24,13 @@ export function AnimCorrida({ stage }: { stage: number }) {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-3">
         <AnimLabel>{dict.cadastro.ui.visualDe}</AnimLabel>
-        <div className="flex gap-1 rounded-full border border-line p-0.5">
+        <div className="flex shrink-0 gap-1 rounded-full border border-line p-0.5">
           {[a.t1, a.t2].map((l, i) => (
             <span
               key={l}
-              className={`rounded-full px-2.5 py-0.5 font-mono text-[0.65rem] font-semibold uppercase tracking-wider transition ${
+              className={`whitespace-nowrap rounded-full px-2.5 py-0.5 font-mono text-[0.65rem] font-semibold uppercase tracking-wider transition ${
                 (i === 1) === second ? "bg-fg text-bg" : "text-fg-3"
               }`}
             >
@@ -68,14 +68,14 @@ export function AnimCorrida({ stage }: { stage: number }) {
       <div className="grid grid-cols-2 gap-3">
         <div className="rounded-xl border border-line bg-bg p-3">
           <AnimLabel>{a.jovens}</AnimLabel>
-          <div className="mt-1 flex items-baseline gap-2">
+          <div className="mt-1 flex flex-wrap items-baseline gap-x-2">
             <span className="display tabular text-2xl font-semibold text-teal">{second ? fmtPct(youngPct, 2, true) : "—"}</span>
             <span className="text-xs text-fg-3">{a.variacao}</span>
           </div>
         </div>
         <div className="rounded-xl border border-amber/30 bg-amber-soft p-3">
           <AnimLabel>{a.idosos}</AnimLabel>
-          <div className="mt-1 flex items-baseline gap-2">
+          <div className="mt-1 flex flex-wrap items-baseline gap-x-2">
             <span className="display tabular text-2xl font-semibold text-amber">{second ? fmtPct(oldPct, 1, true) : "—"}</span>
             <span className="text-xs text-fg-3">{a.media}</span>
           </div>

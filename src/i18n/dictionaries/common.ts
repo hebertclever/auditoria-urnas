@@ -11,6 +11,7 @@ const pt = {
     metodo: "Método",
     toggleTheme: { toLight: "Ativar tema claro", toDark: "Ativar tema escuro" },
     toggleLang: { label: "Read in English", short: "EN" },
+    menu: { label: "Menu", open: "Abrir o menu de seções", close: "Fechar o menu" },
   },
   footer: {
     motto:
@@ -101,6 +102,7 @@ const en: typeof pt = {
     metodo: "Method",
     toggleTheme: { toLight: "Switch to light theme", toDark: "Switch to dark theme" },
     toggleLang: { label: "Ler em português", short: "PT" },
+    menu: { label: "Menu", open: "Open the sections menu", close: "Close the menu" },
   },
   footer: {
     motto:

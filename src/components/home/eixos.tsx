@@ -27,13 +27,15 @@ export function Eixos() {
             <Link
               href={c.href}
               className={cn(
-                "group relative flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-bg-elev p-7 transition-colors sm:p-9",
-                c.tone === "amber" ? "hover:border-amber/50" : "hover:border-rose/50",
+                "group relative flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-bg-elev p-6 transition sm:p-9",
+                // Touch screens have no hover: the card answers the finger instead, and the glow is simply there.
+                "active:scale-[0.985]",
+                c.tone === "amber" ? "hover:border-amber/50 active:border-amber/60" : "hover:border-rose/50 active:border-rose/60",
               )}
             >
               <div
                 className={cn(
-                  "pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-100",
+                  "pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-100 pointer-coarse:opacity-70",
                   c.tone === "amber" ? "glow-amber" : "bg-[radial-gradient(closest-side,var(--rose-soft),transparent)]",
                 )}
               />

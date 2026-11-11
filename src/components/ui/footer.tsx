@@ -19,19 +19,19 @@ export function Footer() {
         </div>
         <div className="text-sm">
           <p className="mb-3 font-mono text-xs uppercase tracking-widest text-fg-3">{f.eixos}</p>
-          <ul className="space-y-2 text-fg-2">
-            <li><Link className="hover:text-fg" href={href(lang, "/cadastro/")}>{f.cadastro}</Link></li>
-            <li><Link className="hover:text-fg" href={href(lang, "/codigo/")}>{f.codigo}</Link></li>
-            <li><Link className="hover:text-fg" href={href(lang, "/dados/")}>{f.dados}</Link></li>
+          <ul className="space-y-0 text-fg-2 sm:space-y-2">
+            <li><Link className="inline-flex min-h-10 items-center hover:text-fg sm:min-h-0" href={href(lang, "/cadastro/")}>{f.cadastro}</Link></li>
+            <li><Link className="inline-flex min-h-10 items-center hover:text-fg sm:min-h-0" href={href(lang, "/codigo/")}>{f.codigo}</Link></li>
+            <li><Link className="inline-flex min-h-10 items-center hover:text-fg sm:min-h-0" href={href(lang, "/dados/")}>{f.dados}</Link></li>
           </ul>
         </div>
         <div className="text-sm">
           <p className="mb-3 font-mono text-xs uppercase tracking-widest text-fg-3">{f.transparencia}</p>
-          <ul className="space-y-2 text-fg-2">
-            <li><Link className="hover:text-fg" href={href(lang, "/metodo/")}>{f.metodo}</Link></li>
-            <li><Link className="hover:text-fg" href={href(lang, "/metodo/#limites")}>{f.limites}</Link></li>
+          <ul className="space-y-0 text-fg-2 sm:space-y-2">
+            <li><Link className="inline-flex min-h-10 items-center hover:text-fg sm:min-h-0" href={href(lang, "/metodo/")}>{f.metodo}</Link></li>
+            <li><Link className="inline-flex min-h-10 items-center hover:text-fg sm:min-h-0" href={href(lang, "/metodo/#limites")}>{f.limites}</Link></li>
             <li>
-              <a className="hover:text-fg" href="https://github.com/hebertclever/auditoria-urnas" target="_blank" rel="noreferrer">
+              <a className="inline-flex min-h-10 items-center hover:text-fg sm:min-h-0" href="https://github.com/hebertclever/auditoria-urnas" target="_blank" rel="noreferrer">
                 {f.github}
               </a>
             </li>

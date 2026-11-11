@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { useMemo, useState } from "react";
+import { useId, useMemo, useState } from "react";
 import { useFmt, useLang } from "@/i18n/context";
 import { municipios } from "@/data/cadastro";
 import { AnimLabel, Chip, Person } from "./figures";
@@ -14,11 +14,12 @@ const DY = 24;
 const X0 = 36;
 const Y_SEATS = 64;
 
-export function AnimEstadio({ stage }: { stage: number }) {
+export function AnimEstadio({ stage, controls = true }: { stage: number; controls?: boolean }) {
   const { dict } = useLang();
   const a = dict.cadastro.p4.anim;
   const { fmtInt, fmtPct } = useFmt();
   const [margem, setMargem] = useState(0);
+  const sliderId = useId();
 
   const popAdj = Math.round(davi.pop * (1 + margem / 100));
   const seats = Math.round(popAdj / PER_SEAT);
@@ -111,22 +112,23 @@ export function AnimEstadio({ stage }: { stage: number }) {
       </svg>
 
       {/* slider */}
+      {controls && (
       <div className="rounded-2xl border border-line bg-bg p-4">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
-          <label htmlFor="ibge-margem" className="text-sm text-fg-2">
+          <label htmlFor={sliderId} className="text-sm text-fg-2">
             {a.slider} <span className="display tabular text-lg font-semibold text-amber">+{fmtPct(margem, 0)}</span>?
           </label>
           <span className="font-mono text-[0.65rem] uppercase tracking-widest text-fg-3">{a.assento}</span>
         </div>
         <input
-          id="ibge-margem"
+          id={sliderId}
           type="range"
           min={0}
           max={60}
           step={5}
           value={margem}
           onChange={(e) => setMargem(Number(e.target.value))}
-          className="mt-3 w-full accent-amber"
+          className="mt-3 h-11 w-full accent-amber sm:h-auto"
         />
         <div className="mt-3 grid grid-cols-3 gap-2 text-center">
           <div>
@@ -143,6 +145,7 @@ export function AnimEstadio({ stage }: { stage: number }) {
           </div>
         </div>
       </div>
+      )}
     </div>
   );
 }
