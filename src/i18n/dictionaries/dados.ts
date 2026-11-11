@@ -41,7 +41,7 @@ const pt = {
       {
         titulo: "Consistência histórica",
         objetivo: "Verificar se a inversão biológica aparece em outras eleições presidenciais com 2º turno.",
-        resultado: "Aparece em 2014, 2018 e 2022 — e piora: 58.913, 27.477 e 198.738 votos excedentes acima do baseline 70–74. O controle 40–59 fica perto de zero nos três anos.",
+        resultado: "Aparece em 2014, 2018 e 2022, com pico em 2022: 58.913, 27.477 e 198.738 comparecimentos acima do baseline 70–74. O controle 40–59 fica perto de zero nos três anos.",
       },
       {
         titulo: "Votos acima da população total",
@@ -51,7 +51,7 @@ const pt = {
       {
         titulo: "Limite biológico dos centenários",
         objetivo: "Construir uma cadeia que não dependa de domicílio eleitoral nem de premissas de sobrevivência.",
-        resultado: "Censo 2022: 37.814 centenários vivos. TSE 2026: 248.967 registrados. Razão de 6,6 vezes, comparação nacional, T0 contra T0. Treze municípios têm centenários no TSE e zero óbitos de centenários em cinco anos.",
+        resultado: "Censo 2022: 37.814 centenários vivos. TSE 2026: 297.977 registrados. Razão de 7,9 vezes, comparação nacional, T0 contra T0. Só pode ter 100 anos em 2026 quem tinha 95+ no Censo (202.992 pessoas): mesmo sem nenhuma morte, sobram 94.985 títulos. Treze municípios têm centenários no TSE e zero óbitos de centenários em cinco anos.",
       },
       {
         titulo: "Capacidade funcional",
@@ -179,7 +179,7 @@ const en: typeof pt = {
       {
         titulo: "Biological limit of centenarians",
         objetivo: "Build a chain that depends neither on electoral domicile nor on survival assumptions.",
-        resultado: "2022 Census: 37,814 centenarians alive. TSE 2026: 248,967 registered. A 6.6-fold ratio, national comparison, T0 against T0. Thirteen municipalities have centenarians in the TSE registry and zero centenarian deaths in five years.",
+        resultado: "2022 Census: 37,814 centenarians alive. TSE 2026: 297,977 registered. A 7.9-fold ratio, national comparison, T0 against T0. Only those aged 95+ in the Census (202,992 people) can be 100 in 2026: even with no deaths at all, 94,985 registrations are left over. Thirteen municipalities have centenarians in the TSE registry and zero centenarian deaths in five years.",
       },
       {
         titulo: "Functional capacity",

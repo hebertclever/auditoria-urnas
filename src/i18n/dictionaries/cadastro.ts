@@ -96,7 +96,7 @@ const pt = {
     eyebrow: "Pilar 2 · contagem contra contagem",
     title: "O impossível demográfico",
     lead:
-      "O IBGE bateu em todas as casas do país em 2022 e encontrou 37.814 pessoas com 100 anos ou mais. O TSE tem 248.967 pessoas dessa idade registradas como eleitoras. São 6,6 vezes mais — sem depender de nenhuma estimativa ou projeção.",
+      "O IBGE bateu em todas as casas do país em 2022 e encontrou 37.814 pessoas com 100 anos ou mais. O TSE tem 297.977 pessoas dessa idade registradas como eleitoras. São 7,9 vezes mais — sem depender de nenhuma estimativa ou projeção.",
     steps: [
       {
         t: "O prédio do Censo",
@@ -104,11 +104,11 @@ const pt = {
       },
       {
         t: "A lista do TSE",
-        b: "Agora olhe a lista de eleitores do TSE para a mesma idade: 248.967 nomes. Só 38 mil deles cabem nas janelas acesas. Os outros 211 mil estão na lista, mas ninguém os encontrou em casa.",
+        b: "Agora olhe a lista de eleitores do TSE para a mesma idade: 297.977 nomes. Só 38 mil deles cabem nas janelas acesas. Os outros 260 mil estão na lista, mas ninguém os encontrou em casa.",
       },
       {
         t: "Nenhum país do mundo",
-        b: "O Japão, líder mundial em longevidade, tem 7,5 centenários por 100 mil habitantes. O cadastro do TSE equivale a 123 por 100 mil — 16 vezes o Japão. O próprio Censo brasileiro (18,6) já é alto.",
+        b: "O Japão, líder mundial em longevidade, tem 7,5 centenários por 100 mil habitantes. O cadastro do TSE equivale a 147 por 100 mil — quase 20 vezes o Japão. O próprio Censo brasileiro (18,6) já é alto.",
       },
     ],
     anim: {
@@ -135,20 +135,20 @@ const pt = {
       items: [
         "É Censo contra cadastro, os dois dados primários — nenhuma premissa de sobrevivência no meio.",
         "É nacional: quem o Censo não achou em um município foi achado em outro. Domicílio eleitoral não muda o total do país.",
-        "Objeção “nasceram depois de 2022”: a faixa 95–99 tinha ~165 mil pessoas no Censo. Mesmo que todas vivessem até 2026 (impossível), somariam ~203 mil com os 37,8 mil — ainda abaixo de 249 mil.",
-        "Uma subcontagem do Censo teria de ser de 6,6 vezes para explicar o TSE. A cobertura do Censo é da ordem de 97%.",
+        "Objeção “nasceram depois de 2022”: a faixa 95–99 tinha ~165 mil pessoas no Censo. Mesmo que todas vivessem até 2026 (impossível), somariam ~203 mil com os 37,8 mil — quase 95 mil abaixo dos 298 mil do cadastro.",
+        "Uma subcontagem do Censo teria de ser de 7,9 vezes para explicar o TSE. A cobertura do Censo é da ordem de 97%.",
         "13 municípios têm 578 centenários no TSE e zero óbitos de centenários em 2020–2024. Com expectativa de vida de ~2 anos aos 100, esperar-se-iam centenas de mortes.",
-        "O DATASUS registrou 74.242 mortes de centenários em 5 anos (2020–2024). O cadastro tem quase o triplo disso em centenários aptos — mais mortos registrados do que todas as mortes de centenários de meia década.",
+        "O DATASUS registrou 74.242 mortes de centenários em 5 anos (2020–2024). O cadastro tem quatro vezes isso em centenários aptos.",
       ],
     },
     method: [
       "Censo 2022: SIDRA tabela 9514, grupo “100 anos ou mais”, soma dos 5.570 municípios.",
       "TSE: “Comparecimento e abstenção por perfil do eleitorado” 2026 (1º turno), campo aptos, faixa 100+, total nacional.",
       "Óbitos: DATASUS/SIM 2020–2024, 27 UFs, idade codificada ≥ 100; média de 14.848 mortes de centenários por ano.",
-      "Internacional: ONU World Population Prospects 2024. Brasil Censo = 37.814 ÷ 203 milhões; Brasil TSE = 248.967 ÷ ~213 milhões.",
+      "Internacional: ONU World Population Prospects 2024. Brasil Censo = 37.814 ÷ 203 milhões; Brasil TSE = 297.977 ÷ 203 milhões.",
     ],
     naoProva:
-      "Não prova que algum centenário falecido votou. Erros de data de nascimento existem nos dois lados: idosos nascidos antes de 1930 frequentemente não têm registro civil preciso, e o TSE pode ter herdado datas erradas. Mas erro de idade não cria pessoas: desloca-as entre faixas. O excedente de 211 mil permanece a explicar.",
+      "Não prova que algum centenário falecido votou. Erros de data de nascimento existem nos dois lados: idosos nascidos antes de 1930 frequentemente não têm registro civil preciso, e o TSE pode ter herdado datas erradas. Mas erro de idade não cria pessoas: desloca-as entre faixas. O excedente de 260 mil permanece a explicar.",
   },
   p3: {
     short: "Limpeza cadastral",
@@ -167,7 +167,7 @@ const pt = {
       },
       {
         t: "A pilha cresce",
-        b: "O que não é cancelado acumula. Em quatro anos, entre duas eleições presidenciais, a pilha chega a 2,5 milhões de títulos de pessoas mortas aptas a votar. Em dez anos, 5,6 milhões.",
+        b: "O que não é cancelado fica no cadastro. Se o ritmo de 2022 se repetisse por quatro anos, sem nenhuma correção posterior, seriam até 2,5 milhões de títulos entre duas eleições presidenciais. O estoque que dá para medir é menor — 606 mil títulos de 90 anos ou mais além dos vivos, em 2022 —, sinal de que parte é corrigida depois. Quanto, só o TSE sabe.",
       },
     ],
     anim: {
@@ -194,7 +194,7 @@ const pt = {
       title: "Por que isto fecha o círculo",
       items: [
         "Explica os Pilares 1 e 2: títulos de falecidos inflam os aptos e se concentram nas faixas mais velhas, onde há mais mortes.",
-        "Os 608 mil registros de 90+ a mais do que o Censo (2022) equivalem a pouco mais de um ano de gap.",
+        "Os 606 mil registros de 90+ a mais do que o Censo (2022) equivalem a cerca de um ano de gap.",
         "A norma existe desde 2006: a Resolução TSE 22.166 prevê o cruzamento com registros de óbito. O gap é de execução, não de regra.",
       ],
     },
@@ -205,7 +205,7 @@ const pt = {
       "Ressalva: o dado de 2022 pode incluir óbitos de anos anteriores processados com atraso (pandemia). Isso tornaria o gap de anos individuais maior e o acumulado menor; a ordem de grandeza não muda.",
     ],
     naoProva:
-      "O TSE confirma o comparecimento dessas faixas — é o número oficial de votos, não uma inferência nossa. E o DATASUS dá o número concreto de mortos: ninguém entra na base de óbitos sem atestado assinado por médico. Está provado, então, que foram registrados votos em faixas cujo cadastro está cheio de pessoas comprovadamente mortas — e, em 137 municípios, houve mais votos do que pessoas vivas na faixa. O que os dados públicos ainda não ligam é o nome: qual voto saiu de um título de falecido e qual de um eleitor vivo. Esse vínculo nome a nome só o cruzamento do governo fecha, em menos de uma hora. Intenção não é demonstrada; pode ser ineficiência. Mas ineficiência dessa escala, sem correção verificável, é exatamente o que exige auditoria.",
+      "O TSE confirma o comparecimento dessas faixas — é o número oficial de votos, não uma inferência nossa. E o DATASUS dá o número concreto de mortos: ninguém entra na base de óbitos sem atestado assinado por médico. Está provado, então, que foram registrados votos em faixas cujo cadastro está cheio de pessoas comprovadamente mortas — e, em 137 municípios, houve mais votos do que moradores da faixa no Censo. O que os dados públicos ainda não ligam é o nome: qual voto saiu de um título de falecido e qual de um eleitor vivo. Esse vínculo nome a nome só o cruzamento do governo fecha, em menos de uma hora. Intenção não é demonstrada; pode ser ineficiência. Mas ineficiência dessa escala, sem correção verificável, é exatamente o que exige auditoria.",
   },
   p4: {
     short: "Votos > população",
@@ -441,7 +441,7 @@ const en: typeof pt = {
     eyebrow: "Pillar 2 · count against count",
     title: "The demographic impossibility",
     lead:
-      "In 2022 IBGE knocked on every door in the country and found 37,814 people aged 100 or over. The TSE has 248,967 people of that age registered as voters. That is 6.6 times more — with no estimate or projection involved.",
+      "In 2022 IBGE knocked on every door in the country and found 37,814 people aged 100 or over. The TSE has 297,977 people of that age registered as voters. That is 7.9 times more — with no estimate or projection involved.",
     steps: [
       {
         t: "The Census building",
@@ -449,11 +449,11 @@ const en: typeof pt = {
       },
       {
         t: "The TSE list",
-        b: "Now look at the TSE's voter list for the same age: 248,967 names. Only 38 thousand of them fit in the lit windows. The other 211 thousand are on the list, but nobody found them at home.",
+        b: "Now look at the TSE's voter list for the same age: 297,977 names. Only 38 thousand of them fit in the lit windows. The other 260 thousand are on the list, but nobody found them at home.",
       },
       {
         t: "No country on Earth",
-        b: "Japan, the world leader in longevity, has 7.5 centenarians per 100,000 inhabitants. The TSE registry amounts to 123 per 100,000 — 16 times Japan. Brazil's own Census figure (18.6) is already high.",
+        b: "Japan, the world leader in longevity, has 7.5 centenarians per 100,000 inhabitants. The TSE registry amounts to 147 per 100,000 — almost 20 times Japan. Brazil's own Census figure (18.6) is already high.",
       },
     ],
     anim: {
@@ -480,20 +480,20 @@ const en: typeof pt = {
       items: [
         "It is Census against registry, both primary data — no survival assumption in between.",
         "It is national: whoever the Census missed in one municipality was found in another. Electoral domicile does not change the country's total.",
-        "Objection “they turned 100 after 2022”: the 95–99 group had ~165 thousand people in the Census. Even if all of them lived to 2026 (impossible), they would add up to ~203 thousand with the 37.8 thousand — still below 249 thousand.",
-        "A Census undercount would have to be 6.6-fold to explain the TSE. Census coverage is on the order of 97%.",
+        "Objection “they turned 100 after 2022”: the 95–99 group had ~165 thousand people in the Census. Even if all of them lived to 2026 (impossible), they would add up to ~203 thousand with the 37.8 thousand — almost 95 thousand short of the registry's 298 thousand.",
+        "A Census undercount would have to be 7.9-fold to explain the TSE. Census coverage is on the order of 97%.",
         "13 municipalities have 578 centenarians in the TSE and zero centenarian deaths in 2020–2024. With a life expectancy of ~2 years at 100, hundreds of deaths would be expected.",
-        "DATASUS recorded 74,242 centenarian deaths in 5 years (2020–2024). The registry holds nearly three times as many centenarians eligible to vote — more registered than every centenarian death in half a decade.",
+        "DATASUS recorded 74,242 centenarian deaths in 5 years (2020–2024). The registry holds four times as many centenarians eligible to vote.",
       ],
     },
     method: [
       "2022 Census: SIDRA table 9514, group “100 years and over”, sum of 5,570 municipalities.",
       "TSE: “Turnout and abstention by voter profile” 2026 (round 1), registered-voters field, 100+ group, national total.",
       "Deaths: DATASUS/SIM 2020–2024, 27 states, coded age ≥ 100; an average of 14,848 centenarian deaths per year.",
-      "International: UN World Population Prospects 2024. Brazil Census = 37,814 ÷ 203 million; Brazil TSE = 248,967 ÷ ~213 million.",
+      "International: UN World Population Prospects 2024. Brazil Census = 37,814 ÷ 203 million; Brazil TSE = 297,977 ÷ 203 million.",
     ],
     naoProva:
-      "It does not prove that any deceased centenarian voted. Birth-date errors exist on both sides: people born before 1930 often lack precise civil records, and the TSE may have inherited wrong dates. But an age error does not create people: it moves them between groups. The 211 thousand excess remains to be explained.",
+      "It does not prove that any deceased centenarian voted. Birth-date errors exist on both sides: people born before 1930 often lack precise civil records, and the TSE may have inherited wrong dates. But an age error does not create people: it moves them between groups. The 260 thousand excess remains to be explained.",
   },
   p3: {
     short: "Registry clean-up",
@@ -512,7 +512,7 @@ const en: typeof pt = {
       },
       {
         t: "The pile grows",
-        b: "What is not cancelled accumulates. In four years, between two presidential elections, the pile reaches 2.5 million registrations of dead people eligible to vote. In ten years, 5.6 million.",
+        b: "What is not cancelled stays in the registry. If the 2022 pace repeated for four years, with no later correction, it would be up to 2.5 million registrations between two presidential elections. The stock that can be measured is smaller — 606 thousand registrations aged 90 or over beyond the living, in 2022 — a sign that part is corrected later. How much, only the TSE knows.",
       },
     ],
     anim: {
@@ -539,7 +539,7 @@ const en: typeof pt = {
       title: "Why this closes the loop",
       items: [
         "It explains Pillars 1 and 2: registrations of the deceased inflate the registered count and concentrate in the oldest groups, where most deaths occur.",
-        "The 608 thousand registrations aged 90+ above the Census (2022) amount to little more than one year of gap.",
+        "The 606 thousand registrations aged 90+ above the Census (2022) amount to about one year of gap.",
         "The rule has existed since 2006: TSE Resolution 22.166 provides for cross-checking against death records. The gap is one of execution, not of rules.",
       ],
     },
@@ -550,7 +550,7 @@ const en: typeof pt = {
       "Caveat: the 2022 figure may include deaths from earlier years processed late (pandemic). That would make single-year gaps larger and the accumulated total smaller; the order of magnitude does not change.",
     ],
     naoProva:
-      "The TSE confirms the turnout in these bands — it is the official vote count, not our inference. And DATASUS gives the concrete number of deaths: no one enters the death registry without a physician-signed certificate. So it is proven that votes were recorded in age bands whose registry is full of demonstrably dead people — and, in 137 municipalities, there were more votes than living people in the band. What public data still does not link is the name: which vote came from a deceased person's registration and which from a living voter. That name-by-name link is closed only by the government's cross-check, in under an hour. Intent is not demonstrated; it may be inefficiency. But inefficiency on this scale, with no verifiable fix, is exactly what demands an audit.",
+      "The TSE confirms the turnout in these bands — it is the official vote count, not our inference. And DATASUS gives the concrete number of deaths: no one enters the death registry without a physician-signed certificate. So it is proven that votes were recorded in age bands whose registry is full of demonstrably dead people — and, in 137 municipalities, there were more votes than the band's residents in the Census. What public data still does not link is the name: which vote came from a deceased person's registration and which from a living voter. That name-by-name link is closed only by the government's cross-check, in under an hour. Intent is not demonstrated; it may be inefficiency. But inefficiency on this scale, with no verifiable fix, is exactly what demands an audit.",
   },
   p4: {
     short: "Votes > population",

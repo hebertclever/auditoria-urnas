@@ -63,7 +63,7 @@ const pt = {
     luz: "só o TSE enxerga",
     acUrna: "AC URNA",
     validoAte: "válido até 18/07/2026",
-    eleicao: "eleição 30/10",
+    eleicao: "eleição 25/10",
     expirado: "EXPIRADO −99 dias",
     aceito: "aceito sem olhar",
     bu: "BU",
@@ -162,7 +162,7 @@ const pt = {
   },
   porque: {
     eyebrow: "A pergunta inevitável",
-    title: "Por que o TSE publicaria um kit que não funciona?",
+    title: "Por que o TSE publicaria um material de conferência com tantas falhas?",
     intro: "Não sabemos a intenção — e não vamos fingir que sabemos. Dá para separar o que é fato (verificável no código e no histórico) do que é motivo (que só o TSE pode explicar). As duas respostas possíveis são graves, e ambas pedem explicação.",
     qas: [
       {
@@ -182,11 +182,11 @@ const pt = {
   },
   naoDizemos: {
     eyebrow: "Para ser exato",
-    title: "O que NÃO estamos dizendo",
+    title: "O que estamos dizendo — com exatidão",
     items: [
-      "Não estamos dizendo que houve fraude. Não encontramos prova de manipulação de votos.",
-      "Não estamos dizendo que o TSE é corrupto. Pode ser negligência, falta de recursos ou prioridade mal colocada.",
-      "Estamos dizendo que a verificação pública não funciona como deveria — e que conferir dados produzidos pelo próprio sistema auditado prova consistência, não integridade.",
+      "A conferência pública não funciona como deveria: 63 falhas, 8 delas críticas. E conferir dados produzidos pelo próprio sistema auditado prova consistência, não integridade.",
+      "Falha em material de segurança eleitoral exige explicação pública — seja descuido, falta de recursos ou prioridade mal colocada.",
+      "Se houve fraude, só investigação responde. É exatamente por isso que os meios de verificação precisam funcionar.",
     ],
     quote:
       "Não encontramos prova de fraude, mas o sistema não nos dá os meios para detectá-la se existir. Dizer “não achamos nada, logo está tudo bem” seria como dizer que não há crime porque as câmeras estavam desligadas.",
@@ -196,9 +196,12 @@ const pt = {
   },
   fontes: {
     zip: "TSE · ZIP oficial com scripts e specs (dados abertos)",
+    v21: "Pacote de 2026 (v2.1): baixado do site do TSE — SHA-256 b5ac413e…fbafd",
+    v1: "Pacote de 2022 (v1): idêntico, byte a byte, à cópia que o Internet Archive capturou do endereço oficial do TSE em 05/10/2022 — SHA-256 e7b4f640…c9cf",
+    v20: "Pacote de 2024 (v2.0): SHA-256 1e423054…a235, igual em repositórios independentes; o TSE o substituiu no mesmo endereço em 2026. Nenhum dos 63 achados cita código de terceiros.",
     res: "TSE · Resolução 23.751/2026, arts. 209–211",
     efasev: "Ministério da Defesa · Relatório EFASEV/2022",
-    versoes: "Versões v1 (2022), v2.0 (2024) e v2.1 (2026) preservadas localmente com SHA-256",
+    versoes: "As três versões estão preservadas com SHA-256; todos os arquivos citados nos 63 achados estão dentro desses pacotes do TSE",
   },
 };
 
@@ -266,7 +269,7 @@ const en: typeof pt = {
     luz: "only the TSE can see it",
     acUrna: "AC URNA",
     validoAte: "valid until 18 Jul 2026",
-    eleicao: "election 30 Oct",
+    eleicao: "election 25 Oct",
     expirado: "EXPIRED −99 days",
     aceito: "accepted unchecked",
     bu: "BU",
@@ -385,11 +388,11 @@ const en: typeof pt = {
   },
   naoDizemos: {
     eyebrow: "To be precise",
-    title: "What we are NOT saying",
+    title: "What we are saying — precisely",
     items: [
-      "We are not saying there was fraud. We found no proof of vote manipulation.",
-      "We are not saying the TSE is corrupt. It may be negligence, lack of resources or misplaced priorities.",
-      "We are saying that public verification does not work as it should — and that checking data produced by the very system under audit proves consistency, not integrity.",
+      "Public verification does not work as it should: 63 flaws, 8 of them critical. And checking data produced by the very system under audit proves consistency, not integrity.",
+      "A flaw in election-security material demands a public explanation — be it carelessness, lack of resources or misplaced priorities.",
+      "Whether there was fraud, only an investigation can tell. That is exactly why the means of verification must work.",
     ],
     quote:
       "We found no proof of fraud, but the system gives us no means to detect it if it exists. Saying “we found nothing, so all is well” is like saying there is no crime because the cameras were off.",
@@ -399,9 +402,12 @@ const en: typeof pt = {
   },
   fontes: {
     zip: "TSE · official ZIP with scripts and specs (open data)",
+    v21: "2026 package (v2.1): downloaded from the TSE website — SHA-256 b5ac413e…fbafd",
+    v1: "2022 package (v1): byte-for-byte identical to the copy the Internet Archive captured from the official TSE address on 5 Oct 2022 — SHA-256 e7b4f640…c9cf",
+    v20: "2024 package (v2.0): SHA-256 1e423054…a235, the same across independent repositories; the TSE replaced it at the same address in 2026. None of the 63 findings cites third-party code.",
     res: "TSE · Resolution 23.751/2026, arts. 209–211",
     efasev: "Ministry of Defence · EFASEV/2022 report",
-    versoes: "Versions v1 (2022), v2.0 (2024) and v2.1 (2026) preserved locally with SHA-256",
+    versoes: "All three versions are preserved with SHA-256; every file cited in the 63 findings is inside these TSE packages",
   },
 };
 

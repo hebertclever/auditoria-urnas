@@ -11,6 +11,9 @@ import { useLang } from "@/i18n/context";
 import { fontes } from "@/data/fontes";
 
 const RES_23751 = "https://www.tse.jus.br/legislacao/compilada/res/2026/resolucao-no-23-751-de-26-de-fevereiro-de-2026";
+const KIT_2026 = "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/formato-arquivos-de-bu-rdv-e-assinatura-digital";
+const KIT_2022_ARCHIVE =
+  "https://web.archive.org/web/20221005151626/https://www.tse.jus.br/eleicoes/eleicoes-2022/arquivos/formato-dos-arquivos-de-bu-rdv-e-assinatura-digital-17-9-22/@@download/file/formato-arquivos-bu-rdv-ass-digital.zip";
 
 export function ClosingSection() {
   const { lang, dict } = useLang();
@@ -83,6 +86,9 @@ export function ClosingSection() {
       <Reveal delay={0.2}>
         <Sources className="mt-10">
           {zip && <SourceTag tier="T0" source={f.zip} date="2026" href={zip.url} />}
+          <SourceTag tier="T0" source={f.v21} date="2026" href={KIT_2026} />
+          <SourceTag tier="T0" source={f.v1} date="2022" href={KIT_2022_ARCHIVE} />
+          <SourceTag tier="T0" source={f.v20} date="2024" />
           <SourceTag tier="T0" source={f.res} date="2026" href={RES_23751} />
           {efasev && <SourceTag tier="T0" source={f.efasev} date="2022" href={efasev.url} />}
           <SourceTag tier="T0" source={f.versoes} />

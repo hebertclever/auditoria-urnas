@@ -56,13 +56,15 @@ export const historicoInversao: { ano: AnoHist; faixas: { faixa: string; delta: 
 }));
 
 // Pilar 2 — centenários. Censo 2022 nacional (SIDRA 9514, soma municipal) = 37.814.
+// TSE 2026: arquivo BRASIL completo do perfil de comparecimento (3.034.230.075 bytes, 11.060.908 linhas, CRC conferido),
+// 1º turno, 27 UFs = 297.977 aptos de 100+ (298.239 com o exterior). O 248.967 usado antes vinha de uma extração truncada.
 export const centenarios = {
   censo2022: 37_814,
   popCenso2022: 203_062_512,
-  tse2026Aptos100: 248_967,
+  tse2026Aptos100: 297_977,
   comp100_2026_1T: 2_141,
-  comp100_2022_2T: 2_097,
-  aptos100_2022: 184_438,
+  comp100_2022_2T: 2_092,
+  aptos100_2022: 184_330,
   faixa9599Censo2022: 165_178,
   obitos100PorAno: [
     { ano: 2020, obitos: 14_187 },
@@ -77,7 +79,7 @@ export const centenarios = {
     { pais: { pt: "Itália", en: "Italy" } as L, valor: 4.0 },
     { pais: { pt: "Japão", en: "Japan" } as L, valor: 7.5 },
     { pais: { pt: "Brasil · Censo IBGE", en: "Brazil · IBGE Census" } as L, valor: 18.6 },
-    { pais: { pt: "Brasil · cadastro TSE", en: "Brazil · TSE registry" } as L, valor: 123 },
+    { pais: { pt: "Brasil · cadastro TSE", en: "Brazil · TSE registry" } as L, valor: 147 },
   ],
   municipiosZeroObitos: { qtd: 13, centenariosTSE: 578, exemplos: [
     { nome: "São João da Ponte", uf: "MG", cent: 244 },
@@ -85,17 +87,17 @@ export const centenarios = {
     { nome: "Fruta de Leite", uf: "MG", cent: 117 },
   ] },
 };
-export const centenariosRazao = centenarios.tse2026Aptos100 / centenarios.censo2022; // ≈ 6,6×
-export const centenariosExcedente = centenarios.tse2026Aptos100 - centenarios.censo2022; // 211.153
+export const centenariosRazao = centenarios.tse2026Aptos100 / centenarios.censo2022; // ≈ 7,9×
+export const centenariosExcedente = centenarios.tse2026Aptos100 - centenarios.censo2022; // 260.163
 export const centenariosPctFantasma = centenariosExcedente / centenarios.tse2026Aptos100; // ≈ 0,87
 
-// Fantasmas 90+ (Censo 2022 × aptos TSE 2022)
+// Fantasmas 90+ (Censo 2022 × aptos TSE 2022, 27 UFs — mesmo universo do Censo)
 export const fantasmas90 = [
-  { faixa: "90-94", aptos: 738_761, censo: 579_045 },
-  { faixa: "95-99", aptos: 466_940, censo: 164_974 },
-  { faixa: "100+", aptos: 184_438, censo: 37_726 },
+  { faixa: "90-94", aptos: 738_244, censo: 579_729 },
+  { faixa: "95-99", aptos: 466_703, censo: 165_178 },
+  { faixa: "100+", aptos: 184_330, censo: 37_814 },
 ].map((r) => ({ ...r, excesso: r.aptos - r.censo }));
-export const fantasmas90Total = fantasmas90.reduce((s, r) => s + r.excesso, 0); // 608.394
+export const fantasmas90Total = fantasmas90.reduce((s, r) => s + r.excesso, 0); // 606.556
 
 // Pilar 3 — gap de limpeza (2022, melhor ano com desagregação por motivo)
 // Mortes de ADULTOS (18+) são contagem EXATA do DATASUS/SIM (registros individuais, 7,67 mi de óbitos 2020–2024).

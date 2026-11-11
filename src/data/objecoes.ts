@@ -7,10 +7,31 @@ export const objecoes = {
   eyebrow: { pt: "Antecipando os desvios", en: "Anticipating the deflections" } as L,
   title: { pt: "Objeções — e por que elas não derrubam o achado", en: "Objections — and why they do not defeat the finding" } as L,
   lead: {
-    pt: "As críticas previsíveis têm resposta objetiva. Em nenhuma delas o problema desaparece: ele apenas muda de endereço — e todos os endereços levam à mesma conclusão: precisa de auditoria.",
-    en: "The predictable criticisms have objective answers. In none of them does the problem vanish: it only changes address — and every address leads to the same conclusion: an audit is needed.",
+    pt: "As críticas previsíveis têm resposta objetiva — e, onde a crítica tem razão, dizemos. Em nenhuma delas o problema desaparece: ele apenas muda de endereço — e todos os endereços levam à mesma conclusão: precisa de auditoria.",
+    en: "The predictable criticisms have objective answers — and where a criticism is right, we say so. In none of them does the problem vanish: it only changes address — and every address leads to the same conclusion: an audit is needed.",
   } as L,
   itens: [
+    {
+      objecao: { pt: "“Morto no cadastro não é morto votando.”", en: "“A dead person on the rolls is not a dead person voting.”" } as L,
+      resposta: {
+        pt: "Correto — e é por isso que pedimos o cruzamento. No país e em cada estado, o comparecimento dos idosos ficou abaixo do número de vivos em todas as faixas, e 99% dos títulos de centenários não registraram voto: os números agregados não mostram voto em nome de morto, e também não o excluem. Mas título de morto ativo é a matéria-prima do problema, e a Justiça Eleitoral já reconheceu que ela foi usada (Pescaria Brava/SC, eleição de 2016). Um cadastro com 260 mil centenários a mais do que o país é erro por si só — e a resposta sobre os votos está a uma hora de trabalho do governo.",
+        en: "Correct — and that is why we ask for the cross-check. Nationwide and in every state, elderly turnout stayed below the number of living people in every age band, and 99% of centenarian registrations recorded no vote: the aggregate numbers do not show votes in dead people's names, nor do they rule them out. But an active registration of a dead person is the raw material of the problem, and the Electoral Court has already recognised that it was used (Pescaria Brava, Santa Catarina, 2016 election). A registry with 260,000 more centenarians than the country has is an error in itself — and the answer about the votes is one hour of government work away.",
+      } as L,
+    },
+    {
+      objecao: { pt: "“Cidade pequena com mais eleitor que morador é normal: é o domicílio eleitoral.”", en: "“A small town with more voters than residents is normal: that is electoral domicile.”" } as L,
+      resposta: {
+        pt: "Em parte, sim: a lei permite votar onde se tem vínculo, e quando somamos por estado o excesso dos 137 municípios desaparece. Por isso não chamamos esses casos de “votos impossíveis”. Mas domicílio eleitoral não explica a conta do país inteiro: 297.977 centenários no cadastro para 37.814 no Censo é um total nacional, em que ninguém “mora em outra cidade”. E a própria Lei das Eleições manda revisar o eleitorado quando ele passa de 65% da população (art. 92) — gatilho que 730 municípios preenchem.",
+        en: "Partly, yes: the law allows voting where one has ties, and when we add up by state the excess in the 137 municipalities disappears. That is why we do not call those cases “impossible votes”. But electoral domicile does not explain the country-wide sum: 297,977 centenarians on the rolls against 37,814 in the Census is a national total, where nobody “lives in another town”. And the Elections Act itself orders a review of the electorate when it exceeds 65% of the population (art. 92) — a trigger 730 municipalities meet.",
+      } as L,
+    },
+    {
+      objecao: { pt: "“Idoso não é obrigado a votar; é natural que o comparecimento dele oscile.”", en: "“The elderly are not required to vote; it is natural for their turnout to fluctuate.”" } as L,
+      resposta: {
+        pt: "É verdade, e por isso tratamos o salto de 2022 como sinal a explicar, não como prova: 614 mil eleitores de 70 anos ou mais a mais no 2º turno do que no 1º (+10%), contra +3,9% em 2014 e +2,8% em 2018. Mobilização explica parte. O que pedimos é simples: que o TSE mostre, com o cruzamento que só ele pode fazer, que esses comparecimentos são de eleitores vivos.",
+        en: "True, and that is why we treat the 2022 jump as a signal to be explained, not as proof: 614,000 more voters aged 70 or over in the runoff than in the first round (+10%), against +3.9% in 2014 and +2.8% in 2018. Mobilisation explains part of it. What we ask is simple: that the TSE show, with the cross-check only it can run, that those turnouts belong to living voters.",
+      } as L,
+    },
     {
       objecao: { pt: "“Isso não muda o resultado da eleição.”", en: "“This does not change the election result.”" } as L,
       resposta: {
@@ -30,6 +51,20 @@ export const objecoes = {
       resposta: {
         pt: "O processo formal inspeciona o código-fonte em sala fechada, com tempo e acesso limitados, sob sigilo, e sem a correspondência entre o código inspecionado e o binário que roda na urna — a verificação que as Forças Armadas pediram no relatório EFASEV/2022 e não obtiveram. Uma análise independente de dados 100% públicos encontrou 63 falhas no kit de verificação e a divergência entre as bases oficiais. Se o processo oficial não surfou isso, o problema é o processo de auditoria — não a ausência de falhas.",
         en: "The formal process inspects source code in a closed room, with limited time and access, under confidentiality, and without the correspondence between the inspected code and the binary that runs on the machine — the verification the Armed Forces requested in the EFASEV/2022 report and did not obtain. An independent analysis of fully public data found 63 flaws in the verification kit and the divergence between the official databases. If the official process did not surface this, the problem is the audit process — not the absence of flaws.",
+      } as L,
+    },
+    {
+      objecao: { pt: "“Esses programas são só exemplos; não são a ferramenta oficial de auditoria.”", en: "“Those scripts are only examples; they are not the official audit tool.”" } as L,
+      resposta: {
+        pt: "O próprio README do TSE os chama de “exemplos de leitores”, que “podem servir como base para desenvolvimento de ferramentas mais sofisticadas”. Só que não existe outra coisa: é tudo o que o cidadão recebe para conferir os arquivos da urna. Se o exemplo oficial de conferência tem 63 falhas — e em 2022 conferia o boletim com uma chave tirada do próprio boletim —, o cidadão fica sem meio de conferir. Quem pode publicar uma ferramenta completa e auditável é o TSE.",
+        en: "The TSE's own README calls them “example readers” that “may serve as a basis for developing more sophisticated tools”. But there is nothing else: they are all the citizen is given to check the machine's files. If the official example of a check has 63 flaws — and in 2022 checked the bulletin with a key taken from the bulletin itself — the citizen is left with no means of checking. The one who can publish a complete, auditable tool is the TSE.",
+      } as L,
+    },
+    {
+      objecao: { pt: "“Os programas analisados nem são do TSE.”", en: "“The scripts you analysed are not even the TSE's.”" } as L,
+      resposta: {
+        pt: "São. O pacote de 2026 foi baixado do site do TSE (SHA-256 b5ac413e…fbafd). O de 2022 é idêntico, byte a byte, à cópia que o Internet Archive capturou do endereço oficial do TSE em 5 de outubro de 2022. O de 2024 tem o mesmo hash em repositórios independentes; o TSE o substituiu no mesmo endereço em 2026. Nenhum dos 63 achados cita código de terceiros — todos os arquivos estão dentro desses pacotes. Os links e os hashes estão nas fontes da página do código.",
+        en: "They are. The 2026 package was downloaded from the TSE website (SHA-256 b5ac413e…fbafd). The 2022 one is byte-for-byte identical to the copy the Internet Archive captured from the official TSE address on 5 October 2022. The 2024 one has the same hash across independent repositories; the TSE replaced it at the same address in 2026. None of the 63 findings cites third-party code — every file is inside those packages. The links and hashes are in the sources of the code page.",
       } as L,
     },
     {

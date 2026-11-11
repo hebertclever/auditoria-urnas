@@ -18,7 +18,7 @@ export function Bento() {
     { value: centenarios.tse2026Aptos100, label: b.centenarios, tone: "amber", big: true, cls: "sm:col-span-2" },
     { value: centenariosRazao, label: b.razao, tone: "amber", format: "x1" },
     { value: limpeza.gapAnual, label: b.gap, tone: "rose", format: "compact" },
-    { value: resumoControle.razao, label: b.controle, tone: "teal", format: "x0" },
+    { value: resumoControle.votosExtras70mais2T, label: b.controle, tone: "teal", format: "compact" },
     { value: municipios.totais.votosMaiorPop, label: b.municipios, tone: "neutral" },
     { value: kit.gaps, label: b.gaps, tone: "rose" },
   ];
@@ -31,7 +31,7 @@ export function Bento() {
       <Stagger className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" gap={0.07}>
         {tiles.map((tl, i) => (
           <motion.div key={i} variants={staggerItem} className={tl.cls}>
-            <StatTile value={tl.value} label={tl.label} tone={tl.tone} big={tl.big} format={tl.format} className="h-full" />
+            <StatTile value={tl.value} label={tl.label} tone={tl.tone} big={tl.big} row={!tl.big} format={tl.format} className="h-full" />
           </motion.div>
         ))}
       </Stagger>

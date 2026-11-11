@@ -27,9 +27,9 @@ export function MagnitudeBand() {
       <Reveal delay={0.1}>
         <Link
           href={href(lang, "/provas/")}
-          className="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-rose"
+          className="group mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-rose"
         >
-          {lang === "pt" ? "Ver a conta completa e os sinais de uso" : "See the full count and the signs of use"}
+          {lang === "pt" ? "Ver a conta completa e os sinais a explicar" : "See the full count and the signals to explain"}
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
         </Link>
       </Reveal>
