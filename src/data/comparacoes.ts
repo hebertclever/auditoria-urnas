@@ -82,10 +82,20 @@ export const comparacoes: Record<string, Comparacao> = {
     id: "votosExtras70",
     numero: 614_299,
     formato: "int",
-    rotulo: { pt: "comparecimentos a mais dos 70+ no 2º turno de 2022, em relação ao 1º", en: "more turnouts of voters 70+ in the 2022 runoff than in the first round" },
+    rotulo: { pt: "comparecimentos a mais dos 70+ no 2º turno de 2022, em relação ao 1º (+10%)", en: "more turnouts of voters 70+ in the 2022 runoff than in the first round (+10%)" },
     equivalente: {
       pt: "mais do que toda a população de Florianópolis indo votar no 2º turno sem ter ido no 1º",
       en: "more than the entire population of Florianópolis voting in the runoff without having voted in the first round",
+    },
+  },
+  votosExtras70_2026: {
+    id: "votosExtras70_2026",
+    numero: 1_294_921,
+    formato: "int",
+    rotulo: { pt: "comparecimentos a mais dos 70+ no 2º turno de 2026, em relação ao 1º (+14,8%) — dobro de 2022", en: "more turnouts of voters 70+ in the 2026 runoff than in the first round (+14.8%) — double the 2022 figure" },
+    equivalente: {
+      pt: "mais do que toda a população de Porto Alegre indo votar no 2º turno sem ter ido no 1º",
+      en: "more than the entire population of Porto Alegre voting in the runoff without having voted in the first round",
     },
   },
   razaoControle: {

@@ -31,7 +31,7 @@ const pt = {
       {
         titulo: "Escalas de agregação",
         objetivo: "Verificar se os 1.089 excessos municipais persistem quando agregados por estado, onde domicílio eleitoral ≠ residência tende a se cancelar.",
-        resultado: "Nenhuma UF tem comparecimento acima do Censo em qualquer faixa 70+. O sinal municipal se dilui. Mas a inversão biológica 1º→2º turno é independente da escala: 614.299 votos extras dos 70+ frente ao controle.",
+        resultado: "Nenhuma UF tem comparecimento acima do Censo em qualquer faixa 70+. O sinal municipal se dilui. Mas a inversão biológica 1º→2º turno é independente da escala: 1.294.921 votos extras dos 70+ em 2026 (614.299 em 2022); quanto mais velha a faixa, maior o salto.",
       },
       {
         titulo: "Grupo de controle",
@@ -159,7 +159,7 @@ const en: typeof pt = {
       {
         titulo: "Aggregation scales",
         objetivo: "Check whether the 1,089 municipal excesses persist when aggregated by state, where electoral domicile ≠ residence tends to cancel out.",
-        resultado: "No state has turnout above the Census in any 70+ age group. The municipal signal dilutes. But the round-1→round-2 biological inversion is scale-independent: 614,299 extra votes among 70+ relative to the control.",
+        resultado: "No state has turnout above the Census in any 70+ age group. The municipal signal dilutes. But the round-1→round-2 biological inversion is scale-independent: 1,294,921 extra 70+ votes in 2026 (614,299 in 2022); the older the band, the bigger the jump.",
       },
       {
         titulo: "Control group",

@@ -28,8 +28,8 @@ export const objecoes = {
     {
       objecao: { pt: "“Idoso não é obrigado a votar; é natural que o comparecimento dele oscile.”", en: "“The elderly are not required to vote; it is natural for their turnout to fluctuate.”" } as L,
       resposta: {
-        pt: "É verdade, e por isso tratamos o salto de 2022 como sinal a explicar, não como prova: 614 mil eleitores de 70 anos ou mais a mais no 2º turno do que no 1º (+10%), contra +3,9% em 2014 e +2,8% em 2018. Mobilização explica parte. O que pedimos é simples: que o TSE mostre, com o cruzamento que só ele pode fazer, que esses comparecimentos são de eleitores vivos.",
-        en: "True, and that is why we treat the 2022 jump as a signal to be explained, not as proof: 614,000 more voters aged 70 or over in the runoff than in the first round (+10%), against +3.9% in 2014 and +2.8% in 2018. Mobilisation explains part of it. What we ask is simple: that the TSE show, with the cross-check only it can run, that those turnouts belong to living voters.",
+        pt: "É verdade, e por isso tratamos o salto como sinal a explicar, não como prova. Mas o sinal piora a cada eleição: 614 mil a mais no 2º turno de 2022 (+10%), e 1.295 mil em 2026 (+14,8%) — mais que o dobro. Em 2014 e 2018 foi +3,9% e +2,8%. E quanto mais velha a faixa, maior o salto: de +9,4% aos 70–74 até +55% entre os centenários. Mobilização explica parte. O que pedimos é simples: que o TSE mostre, com o cruzamento que só ele pode fazer, que esses comparecimentos são de eleitores vivos.",
+        en: "True, and that is why we treat the jump as a signal to be explained, not as proof. But the signal worsens each election: 614,000 more in the 2022 runoff (+10%), and 1,295,000 in 2026 (+14.8%) — more than double. In 2014 and 2018 it was +3.9% and +2.8%. And the older the band, the bigger the jump: from +9.4% at 70–74 to +55% among centenarians. Mobilisation explains part of it. What we ask is simple: that the TSE show, with the cross-check only it can run, that those turnouts belong to living voters.",
       } as L,
     },
     {

@@ -28,6 +28,7 @@ export const resumoControle = {
   mediaDeltaIdosos70: 20.67,
   razao: 397,
   votosExtras70mais2T: 614_299,
+  votosExtras70mais2T_2026: 1_294_921,
   votosExtrasControle4059: 136_486,
   excessoAcimaBaseline7074: 198_738,
 };
@@ -63,6 +64,7 @@ export const centenarios = {
   popCenso2022: 203_062_512,
   tse2026Aptos100: 297_977,
   comp100_2026_1T: 2_141,
+  comp100_2026_2T: 3_307,
   comp100_2022_2T: 2_092,
   aptos100_2022: 184_330,
   faixa9599Censo2022: 165_178,

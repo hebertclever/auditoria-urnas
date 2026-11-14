@@ -19,7 +19,7 @@ export const prova = {
     bullets: [
       { pt: "O cadastro tem gente que não pode estar viva: 297.977 eleitores com 100 anos ou mais, contra 37.814 que o IBGE encontrou vivos. Mesmo que ninguém com 95 anos ou mais tivesse morrido desde o Censo, o Brasil teria no máximo 202.992.", en: "The registry holds people who cannot be alive: 297,977 voters aged 100 or over, against 37,814 IBGE found alive. Even if nobody aged 95 or over had died since the Census, Brazil would have at most 202,992." },
       { pt: "A baixa não acompanha as mortes: em 2022 morreram 1.491.608 adultos e o TSE cancelou 787.825 títulos por óbito — pouco mais de um para cada dois.", en: "Removals do not keep up with deaths: in 2022, 1,491,608 adults died and the TSE cancelled 787,825 registrations for death — barely more than one in two." },
-      { pt: "O material público para conferir as urnas tem 63 falhas, 8 delas críticas: a conferência do QR Code não funciona com o que vem no pacote e, em 2022, o programa conferia o boletim com uma chave tirada do próprio boletim.", en: "The public material for checking the machines has 63 flaws, 8 of them critical: the QR Code check does not work with what ships in the package and, in 2022, the script checked the bulletin with a key taken from the bulletin itself." },
+      { pt: "O material público para conferir as urnas tem 63 falhas, 8 delas críticas: a conferência do QR Code não funciona com o que vem no pacote e, em 2022, a verificação das assinaturas era falsa — o programa usava uma chave tirada do próprio boletim.", en: "The public material for checking the machines has 63 flaws, 8 of them critical: the QR Code check does not work with what ships in the package and, in 2022, the signature verification was fake — the script used a key taken from the bulletin itself." },
     ] as { pt: string; en: string }[],
     cta: { pt: "Ver as provas e o que exigir", en: "See the proofs and what to demand" } as L,
   },
@@ -36,7 +36,7 @@ export const prova = {
       { t: { pt: "Mortos no cadastro", en: "The dead on the rolls" } as L, b: { pt: "O TSE tem 297.977 eleitores com 100 anos ou mais. O IBGE, de porta em porta, encontrou 37.814. É uma lista de chamada com 79 nomes para uma sala de 10 alunos.", en: "The TSE lists 297,977 voters aged 100 or over. IBGE, going door to door, found 37,814. It is a roll call with 79 names for a class of 10." } as L },
       { t: { pt: "Nem a imortalidade explica", en: "Not even immortality explains it" } as L, b: { pt: "Só pode ter 100 anos em 2026 quem tinha 95 ou mais no Censo de 2022 — e o Censo contou 202.992 pessoas nessa idade. Mesmo que nenhuma tivesse morrido em quatro anos, sobrariam 94.985 títulos de centenários sem pessoa possível.", en: "Only someone aged 95 or over in the 2022 Census can be 100 in 2026 — and the Census counted 202,992 people that age. Even if none had died in four years, 94,985 centenarian registrations would be left with no possible person." } as L },
       { t: { pt: "Uma baixa para cada duas mortes", en: "One removal for every two deaths" } as L, b: { pt: "Em 2022 morreram 1.491.608 adultos, segundo o Ministério da Saúde. O TSE cancelou 787.825 títulos por óbito. É como um condomínio que tira da lista de moradores só metade dos que morreram — e continua mandando o boleto para os outros.", en: "In 2022, 1,491,608 adults died, according to the Ministry of Health. The TSE cancelled 787,825 registrations for death. It is like a condominium that removes only half of its deceased residents from the list — and keeps billing the rest." } as L },
-      { t: { pt: "Em 2022, a conferência era circular", en: "In 2022, the check was circular" } as L, b: { pt: "O programa oficial de 2022 conferia as assinaturas do boletim de urna com uma chave que vinha dentro do próprio boletim. É como conferir a assinatura de um cheque pelo cartão de assinatura grampeado no cheque: quem falsifica um, falsifica o outro. Em 2024 isso mudou — sem aviso.", en: "The official 2022 script checked the ballot-box bulletin's signatures with a key that came inside the bulletin itself. It is like checking the signature on a cheque against a signature card stapled to that cheque: whoever forges one forges the other. In 2024 this changed — with no notice." } as L },
+      { t: { pt: "Em 2022, a verificação era falsa", en: "In 2022, the verification was fake" } as L, b: { pt: "O programa oficial de 2022 conferia as assinaturas do boletim de urna com uma chave que vinha dentro do próprio boletim — a verificação era falsa: quem falsificasse o boletim colocaria ali a própria chave, e o programa responderia “assinatura OK”. É um cadeado vendido com a chave pendurada: a chave é verdadeira, mas a segurança é falsa. Em 2024 isso mudou — sem aviso.", en: "The official 2022 script checked the ballot-box bulletin’s signatures with a key that came from inside the bulletin itself — the verification was fake: anyone forging the bulletin would put their own key there, and the script would answer “signature OK”. It is a padlock sold with the key hanging from it: the key is real, but the security is fake. In 2024 this changed — with no notice." } as L },
       { t: { pt: "63 falhas no material de conferência", en: "63 flaws in the checking material" } as L, b: { pt: "Lemos as 2.852 linhas dos programas e especificações que o TSE publica para conferir os arquivos da urna: 63 falhas, 8 críticas. A conferência do QR Code não funciona com o que vem no pacote, e a assinatura de software não é conferida por nenhum programa. É um alarme de incêndio com defeitos que o deixam mudo: ninguém percebe até precisar dele.", en: "We read all 2,852 lines of the scripts and specifications the TSE publishes for checking the machine's files: 63 flaws, 8 critical. The QR Code check does not work with what ships in the package, and no script checks the software signature. It is a fire alarm whose defects keep it silent: nobody notices until it is needed." } as L },
       { t: { pt: "A urna usada não é examinada", en: "The machine that was used is not examined" } as L, b: { pt: "O teste de integridade é feito em urnas retiradas da seção na véspera e trocadas por outras. Nenhum teste de rotina examina, depois da votação, as urnas que de fato receberam os votos. É como uma blitz que só confere os carros que ficaram na garagem.", en: "The integrity test is run on machines withdrawn from their polling stations the day before and replaced by others. No routine test examines, after the vote, the machines that actually received the votes. It is like a roadside check that only inspects the cars left in the garage." } as L },
     ],
@@ -83,13 +83,13 @@ export const prova = {
       },
       {
         n: 5,
-        claim: { pt: "Entre os dois turnos de 2022, o comparecimento dos idosos saltou como em nenhuma outra faixa.", en: "Between the two rounds of 2022, elderly turnout jumped like no other age band." } as L,
+        claim: { pt: "Entre os dois turnos, o comparecimento dos idosos salta como em nenhuma outra faixa — e a cada eleição o salto piora.", en: "Between the two rounds, elderly turnout jumps like no other age band — and each election the jump gets worse." } as L,
         detail: {
-          pt: "Do 1º para o 2º turno de 2022, compareceram 614 mil eleitores de 70 anos ou mais a mais (+10%), enquanto as faixas de 21 a 69 anos ficaram praticamente paradas (+0,05%). Em 2014 e 2018 o salto dos idosos foi de +3,9% e +2,8%. Voto facultativo e mobilização explicam uma parte: quem não é obrigado a votar oscila mais. Mas é um movimento que o TSE consegue explicar com um cruzamento simples — e ainda não explicou.",
-          en: "From the first to the second round of 2022, 614,000 more voters aged 70 or over turned out (+10%), while ages 21 to 69 barely moved (+0.05%). In 2014 and 2018 the elderly jump was +3.9% and +2.8%. Optional voting and mobilisation explain part of it: those not required to vote fluctuate more. But it is a movement the TSE can explain with a simple cross-check — and has not yet explained.",
+          pt: "Do 1º para o 2º turno de 2022, compareceram 614 mil eleitores de 70 anos ou mais a mais (+10%), enquanto as faixas de 21 a 69 ficaram praticamente paradas (+0,05%). Em 2026, o padrão se repetiu com mais que o dobro da intensidade: 1.295 mil a mais (+14,8%), enquanto os menores de 70 subiram apenas 1,4%. Quanto mais velha a faixa, maior o salto: de +9,4% aos 70–74 até +55% entre os centenários. Em 2014 e 2018 o salto dos idosos foi de +3,9% e +2,8%. Voto facultativo e mobilização explicam uma parte: quem não é obrigado a votar oscila mais. Mas o padrão se repete, piora a cada eleição e o TSE consegue explicar com um cruzamento simples — e ainda não explicou.",
+          en: "From the first to the second round of 2022, 614,000 more voters aged 70 or over turned out (+10%), while ages 21 to 69 barely moved (+0.05%). In 2026, the pattern repeated with more than double the intensity: 1,295,000 more (+14.8%), while under-70s rose only 1.4%. The older the band, the bigger the jump: from +9.4% at 70–74 to +55% among centenarians. In 2014 and 2018 the elderly jump was +3.9% and +2.8%. Optional voting and mobilisation explain part of it: those not required to vote fluctuate more. But the pattern repeats, worsens each election, and the TSE can explain it with a simple cross-check — and has not yet explained.",
         } as L,
         tipo: { pt: "Anomalia a explicar", en: "Anomaly to be explained" } as L,
-        fonte: { tier: "T0", source: { pt: "TSE perfil de comparecimento 2014/2018/2022", en: "TSE turnout profile 2014/2018/2022" }, date: "2014–2022", href: "https://dadosabertos.tse.jus.br/dataset/comparecimento-e-abstencao-2022" } as Fonte,
+        fonte: { tier: "T0", source: { pt: "TSE perfil de comparecimento 2014/2018/2022/2026", en: "TSE turnout profile 2014/2018/2022/2026" }, date: "2014–2026", href: "https://dadosabertos.tse.jus.br/dataset/comparecimento-e-abstencao-2026" } as Fonte,
       },
       {
         n: 6,
@@ -456,8 +456,9 @@ export const prova = {
     // Sinais medidos que pedem explicação (não medem voto em nome de falecido)
     sinaisTitle: { pt: "Sinais que o TSE precisa explicar", en: "Signals the TSE needs to explain" } as L,
     sinais: [
-      { value: 614_299, label: { pt: "comparecimentos de 70+ a mais no 2º turno de 2022 do que no 1º (+10%); em 2014 e 2018 o salto foi de 3,9% e 2,8%", en: "more turnouts of voters 70+ in the 2022 runoff than in the first round (+10%); in 2014 and 2018 the jump was 3.9% and 2.8%" } as L },
-      { value: 1_089, label: { pt: "comparecimentos acima dos moradores da mesma faixa em 137 municípios (2022, 2º turno); domicílio eleitoral explica parte — só o cruzamento separa", en: "turnouts above the same band's residents in 137 municipalities (2022 runoff); electoral domicile explains part — only the cross-check can separate them" } as L },
+      { value: 1_294_921, label: { pt: "comparecimentos de 70+ a mais no 2º turno de 2026 do que no 1º (+14,8%) — mais que o dobro de 2022 (+10%); quanto mais velha a faixa, maior o salto", en: "more turnouts of voters 70+ in the 2026 runoff than in the first round (+14.8%) — more than double 2022 (+10%); the older the band, the larger the jump" } as L },
+      { value: 614_299, label: { pt: "a mais no 2º turno de 2022 do que no 1º (+10%); em 2014 e 2018 o salto foi de 3,9% e 2,8%", en: "more in the 2022 runoff than in the first round (+10%); in 2014 and 2018 the jump was 3.9% and 2.8%" } as L },
+      { value: 1_089, label: { pt: "comparecimentos acima dos moradores da mesma faixa em 137 municípios (2022, 2º turno); domicílio eleitoral explica parte — só o cruzamento separa", en: "turnouts above the same band’s residents in 137 municipalities (2022 runoff); electoral domicile explains part — only the cross-check can separate them" } as L },
     ],
     cap: {
       pt: "Nenhum desses números diz, sozinho, que alguém votou no lugar de um morto: somando o país, e também estado por estado, o comparecimento dos idosos ficou abaixo dos vivos em todas as faixas, e 99% dos títulos de centenários não registraram voto. O que eles dizem é que a porta está aberta — e a Justiça Eleitoral já reconheceu um caso em que ela foi usada: em Pescaria Brava (SC), na eleição de 2016, houve voto em nome de uma eleitora falecida. Quantas vezes isso aconteceu em 2022 e 2026 é a conta CPF × óbito × comparecimento, que o governo faz em menos de uma hora. E se o ritmo de 2022 se repetisse por quatro anos sem nenhuma correção posterior, seriam até 2,5 milhões de títulos por ciclo eleitoral — isso é um teto, não uma medição.",
@@ -470,38 +471,38 @@ export const prova = {
     ],
   },
 
-  // 2026 — o 2º turno ainda não foi publicado
+  // 2026 — o 2º turno confirmou o padrão
   estimativa2026: {
     eyebrow: { pt: "A eleição de 2026", en: "The 2026 election" } as L,
-    title: { pt: "E 2026? O 2º turno ainda não foi publicado", en: "And 2026? The runoff has not been published yet" } as L,
+    title: { pt: "Em 2026, o padrão se confirmou — com o dobro da intensidade", en: "In 2026, the pattern was confirmed — with double the intensity" } as L,
     porque: {
-      pt: "O TSE gera o arquivo de comparecimento e abstenção uma vez e o disponibiliza. A versão de 2026 foi gerada em 21 de outubro de 2026 — quatro dias antes do 2º turno, que ocorreu em 25 de outubro. Por isso o dado oficial de 2026 traz apenas o 1º turno. O perfil consolidado do 2º turno costuma sair semanas depois, após o fechamento das estatísticas da eleição. Até lá, a inversão de 2026 não pode ser medida — mas pode ser projetada a partir do padrão de 2014, 2018 e 2022. Conferimos de novo em 10/11/2026: o arquivo continua com data de 21/10 e só com o 1º turno.",
-      en: "The TSE generates the turnout-and-abstention file once and publishes it. The 2026 version was generated on 21 October 2026 — four days before the runoff, which took place on 25 October. That is why the official 2026 data contains only the first round. The consolidated second-round profile usually comes out weeks later, after the election statistics are closed. Until then, the 2026 inversion cannot be measured — but it can be projected from the 2014, 2018 and 2022 pattern. We checked again on 10 Nov 2026: the file is still dated 21 Oct and holds the first round only.",
+      pt: "O TSE publicou o perfil do 2º turno de 2026 em 13 de novembro de 2026. A projeção desta auditoria, feita com dados de 2014–2022, estimava um excesso de 59 a 316 mil. O dado real superou a estimativa mais extrema: 1.295 mil comparecimentos a mais dos 70+, um aumento de 14,8% — mais que o dobro dos 614 mil de 2022 (+10%). E o padrão da escada invertida se repetiu: quanto mais velha a faixa, maior o salto — de +9,4% aos 70–74 até +55% entre os centenários. Nas faixas de 21 a 69, o aumento foi de apenas 1,4%.",
+      en: "The TSE published the 2026 runoff turnout profile on 13 November 2026. This audit’s projection, based on 2014–2022 data, estimated an excess of 59,000 to 316,000. The real figure exceeded the most extreme estimate: 1,295,000 more 70+ turnouts, a 14.8% increase — more than double the 614,000 of 2022 (+10%). And the inverted staircase pattern repeated: the older the band, the bigger the jump — from +9.4% at 70–74 to +55% among centenarians. In the 21-to-69 bands, the increase was only 1.4%.",
     } as L,
     turnoutNota: {
-      pt: "Comparecimento por idade no 1º turno de 2026 (dado oficial). A queda com a idade é normal e esperada; a anomalia não está aqui — está no aumento entre turnos, que só aparece com o 2º turno.",
-      en: "Turnout by age in the 2026 first round (official data). The decline with age is normal and expected; the anomaly is not here — it is in the increase between rounds, which only appears with the runoff.",
+      pt: "Comparecimento por idade no 1º e no 2º turno de 2026 (dado oficial, publicado 13/11/2026). A queda com a idade é esperada; a anomalia é o aumento entre turnos — quanto mais velha a faixa, maior o salto.",
+      en: "Turnout by age in the 2026 first and second rounds (official data, published 13 Nov 2026). The decline with age is expected; the anomaly is the increase between rounds — the older the band, the bigger the jump.",
     } as L,
-    // 2026 1T real (perfil de comparecimento BRASIL completo, 11.060.908 linhas, NR_TURNO=1, 27 UFs)
-    turnout1T: [
-      { faixa: "70-74", turnout: 68.9, comp: 4_785_687 },
-      { faixa: "75-79", turnout: 52.3, comp: 2_487_406 },
-      { faixa: "80-84", turnout: 37.2, comp: 1_019_734 },
-      { faixa: "85-89", turnout: 24.3, comp: 356_147 },
-      { faixa: "90-94", turnout: 13.5, comp: 89_530 },
-      { faixa: "95-99", turnout: 4.3, comp: 14_661 },
-      { faixa: "100+", turnout: 0.7, comp: 2_141 },
+    // 2026 1T + 2T real (perfil de comparecimento BRASIL completo, 22.121.816 linhas, 27 UFs)
+    turnout: [
+      { faixa: "70-74", turnout1T: 68.9, comp1T: 4_785_608, turnout2T: 75.3, comp2T: 5_235_213, aptos: 6_948_245 },
+      { faixa: "75-79", turnout1T: 52.3, comp1T: 2_487_337, turnout2T: 61.1, comp2T: 2_905_511, aptos: 4_757_020 },
+      { faixa: "80-84", turnout1T: 37.2, comp1T: 1_019_705, turnout2T: 46.5, comp2T: 1_276_824, aptos: 2_744_129 },
+      { faixa: "85-89", turnout1T: 24.3, comp1T: 356_121, turnout2T: 32.7, comp2T: 478_644, aptos: 1_464_715 },
+      { faixa: "90-94", turnout1T: 13.5, comp1T: 89_517, turnout2T: 19.3, comp2T: 128_336, aptos: 664_482 },
+      { faixa: "95-99", turnout1T: 4.3, comp1T: 14_654, turnout2T: 6.6, comp2T: 22_161, aptos: 337_136 },
+      { faixa: "100+", turnout1T: 0.7, comp1T: 2_133, turnout2T: 1.1, comp2T: 3_307, aptos: 297_977 },
     ],
-    projMin: 59_000,
-    projMax: 316_000,
-    projTitle: { pt: "Projeção para o 2º turno de 2026", en: "Projection for the 2026 runoff" } as L,
-    projTexto: {
-      pt: "Se o 2º turno de 2026 seguir o padrão das eleições anteriores, o excesso de comparecimento dos idosos — acima do ritmo da faixa 70–74 — ficaria entre cerca de 59 mil (padrão mais brando, de 2018) e 316 mil (padrão mais extremo, de 2022). É projeção, não medição: desaparece no dia em que o TSE publicar o perfil real do 2º turno. E a conta que não depende de projeção — os títulos de centenários sem pessoa viva possível — vale para 2026.",
-      en: "If the 2026 runoff follows the pattern of previous elections, the excess elderly turnout — above the pace of the 70–74 band — would land between about 59,000 (the milder 2018 pattern) and 316,000 (the more extreme 2022 pattern). It is a projection, not a measurement: it vanishes the day the TSE publishes the real runoff profile. And the figure that needs no projection — the centenarian registrations with no possible living person — holds for 2026.",
+    salto70mais2026: 1_294_921,
+    salto70mais2022: 614_299,
+    resultTitle: { pt: "O resultado real — e a projeção que subestimou", en: "The real result — and the projection that underestimated" } as L,
+    resultTexto: {
+      pt: "A projeção desta auditoria estimava entre 59 mil e 316 mil. O dado real foi 1.295 mil — quatro vezes o teto da projeção. O padrão não só se confirmou: piorou. O mecanismo, o tamanho e a direção são os mesmos de 2022 — escalados para cima.",
+      en: "This audit’s projection estimated between 59,000 and 316,000. The real figure was 1,295,000 — four times the projection’s ceiling. The pattern was not just confirmed: it worsened. The mechanism, size and direction are the same as 2022 — scaled up.",
     } as L,
     fontes: [
-      { tier: "T0", source: { pt: "TSE · perfil de comparecimento e abstenção 2026 (gerado 21/10/2026, só 1º turno)", en: "TSE · 2026 turnout and abstention profile (generated 21 Oct 2026, 1st round only)" }, date: "21/10/2026", href: "https://dadosabertos.tse.jus.br/dataset/comparecimento-e-abstencao-2026" } as Fonte,
-      { tier: "T0", source: { pt: "TSE · perfil 2014/2018/2022 (padrão histórico da projeção)", en: "TSE · 2014/2018/2022 profiles (historical projection pattern)" }, date: "2014–2022", href: "https://dadosabertos.tse.jus.br/dataset/comparecimento-e-abstencao-2022" } as Fonte,
+      { tier: "T0", source: { pt: "TSE · perfil de comparecimento e abstenção 2026 (com 2º turno, publicado 13/11/2026)", en: "TSE · 2026 turnout and abstention profile (with runoff, published 13 Nov 2026)" }, date: "13/11/2026", href: "https://dadosabertos.tse.jus.br/dataset/comparecimento-e-abstencao-2026" } as Fonte,
+      { tier: "T0", source: { pt: "TSE · perfil 2014/2018/2022 (padrão histórico)", en: "TSE · 2014/2018/2022 profiles (historical pattern)" }, date: "2014–2022", href: "https://dadosabertos.tse.jus.br/dataset/comparecimento-e-abstencao-2022" } as Fonte,
     ],
   },
 
