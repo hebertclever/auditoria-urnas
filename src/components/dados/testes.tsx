@@ -6,13 +6,15 @@ import {
   agregacaoUF,
   capacidade,
   centenarios,
-  deltaPorFaixa2022,
+  deltaPorFaixa,
   fantasmas90,
   fantasmas90Total,
   historicoInversao,
   limpeza,
   municipios,
+  salto,
   FAIXAS_IDOSOS,
+  type AnoTurnos,
 } from "@/data/cadastro";
 import { cn } from "@/lib/utils";
 
@@ -36,36 +38,22 @@ function Num({ children, tone }: { children: React.ReactNode; tone?: "amber" | "
   );
 }
 
+function Ano({ children }: { children: React.ReactNode }) {
+  return <p className="font-mono text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-fg-3">{children}</p>;
+}
+
 export function Testes({ lang, dict }: Props) {
   const d = dict.dados.testes;
   const tb = d.tabelas;
   const { fmt, fmtPct, fmtX } = makeFormatters(lang);
 
-  const tables: React.ReactNode[] = [
-    // T1 — agregação por UF
-    <Table key="t1">
-      <thead>
-        <tr><th>{tb.faixa}</th><th>{tb.censo}</th><th>{tb.comp2T}</th><th>{tb.razao}</th></tr>
-      </thead>
-      <tbody>
-        {agregacaoUF.nacional.map((r) => (
-          <tr key={r.faixa}>
-            <td className="font-mono">{r.faixa}</td>
-            <td><Num>{fmt(r.censo)}</Num></td>
-            <td><Num>{fmt(r.comp2T)}</Num></td>
-            <td><Num tone="teal">{fmtPct((r.comp2T / r.censo) * 100, 0)}</Num></td>
-          </tr>
-        ))}
-      </tbody>
-    </Table>,
-
-    // T2 — grupo de controle (22 faixas)
-    <Table key="t2">
+  const tabelaFaixas = (ano: AnoTurnos) => (
+    <Table>
       <thead>
         <tr><th>{tb.faixa}</th><th>{tb.comp1T}</th><th>{tb.comp2T}</th><th>{tb.delta}</th><th>{tb.turnout1T}</th><th>{tb.turnout2T}</th></tr>
       </thead>
       <tbody>
-        {deltaPorFaixa2022.map((r) => {
+        {deltaPorFaixa[ano].map((r) => {
           const old = IDOSOS.has(r.faixa_label);
           return (
             <tr key={r.faixa_code} className={cn(old && "bg-amber-soft/40")}>
@@ -82,7 +70,53 @@ export function Testes({ lang, dict }: Props) {
           );
         })}
       </tbody>
-    </Table>,
+    </Table>
+  );
+
+  const tables: React.ReactNode[] = [
+    // T1 — agregação por UF (2022, mesmo ano do Censo) e teto sem premissa (2026)
+    <div key="t1" className="flex flex-col gap-3">
+      <Ano>2022</Ano>
+      <Table>
+        <thead>
+          <tr><th>{tb.faixa}</th><th>{tb.censo}</th><th>{tb.comp2T}</th><th>{tb.razao}</th></tr>
+        </thead>
+        <tbody>
+          {agregacaoUF.nacional.map((r) => (
+            <tr key={r.faixa}>
+              <td className="font-mono">{r.faixa}</td>
+              <td><Num>{fmt(r.censo)}</Num></td>
+              <td><Num>{fmt(r.comp2T)}</Num></td>
+              <td><Num tone="teal">{fmtPct((r.comp2T / r.censo) * 100, 0)}</Num></td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+      <Ano>2026</Ano>
+      <Table>
+        <thead>
+          <tr><th>{tb.faixa}</th><th>{tb.teto}</th><th>{tb.comp2T2026}</th><th>{tb.razao}</th></tr>
+        </thead>
+        <tbody>
+          {salto.teto_2026.nacional.map((r) => (
+            <tr key={r.faixa}>
+              <td className="font-mono">{r.faixa}</td>
+              <td><Num>{fmt(r.teto_censo_faixa_e_anterior)}</Num></td>
+              <td><Num>{fmt(r.comp_2t_2026)}</Num></td>
+              <td><Num tone="teal">{fmtPct(r.comp2t_sobre_teto * 100, 0)}</Num></td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    </div>,
+
+    // T2 — grupo de controle (22 faixas), 2026 e 2022
+    <div key="t2" className="flex flex-col gap-3">
+      <Ano>2026</Ano>
+      {tabelaFaixas("2026")}
+      <Ano>2022</Ano>
+      {tabelaFaixas("2022")}
+    </div>,
 
     // T3 — histórico
     <Table key="t3">
@@ -105,6 +139,10 @@ export function Testes({ lang, dict }: Props) {
         <tr className="bg-bg-sunk">
           <td className="font-medium text-fg">{tb.excesso}</td>
           {historicoInversao.map((h) => <td key={h.ano}><Num tone="amber">{fmt(h.excesso)}</Num></td>)}
+        </tr>
+        <tr className="bg-bg-sunk">
+          <td className="font-medium text-fg">{tb.salto}</td>
+          {historicoInversao.map((h) => <td key={h.ano}><Num tone="amber">+{fmt(h.deltaAbs)} ({fmtPct(h.deltaPct, 1, true)})</Num></td>)}
         </tr>
       </tbody>
     </Table>,
@@ -157,6 +195,7 @@ export function Testes({ lang, dict }: Props) {
           <tr><td>{tb.razao}</td><td><Num tone="rose">{fmtX(centenarios.tse2026Aptos100 / centenarios.censo2022, 1)}</Num></td></tr>
           <tr><td>{lang === "pt" ? "Comparecimento 100+, 2º turno 2022" : "Turnout 100+, round 2, 2022"}</td><td><Num>{fmt(centenarios.comp100_2022_2T)}</Num></td></tr>
           <tr><td>{lang === "pt" ? "Comparecimento 100+, 1º turno 2026" : "Turnout 100+, round 1, 2026"}</td><td><Num>{fmt(centenarios.comp100_2026_1T)}</Num></td></tr>
+          <tr><td>{lang === "pt" ? "Comparecimento 100+, 2º turno 2026" : "Turnout 100+, round 2, 2026"}</td><td><Num>{fmt(centenarios.comp100_2026_2T)}</Num></td></tr>
         </tbody>
       </Table>
       <div className="grid gap-3 md:grid-cols-2">
@@ -205,10 +244,10 @@ export function Testes({ lang, dict }: Props) {
       </Table>
       <div className="flex flex-col gap-3">
         <Table>
-          <thead><tr><th>{tb.faixa}</th><th>{tb.turnout2T}</th><th>{tb.delta}</th></tr></thead>
+          <thead><tr><th>{tb.faixa}</th><th>{tb.turnout2T} · 2026</th><th>{tb.retorno}</th></tr></thead>
           <tbody>
-            {capacidade.turnout2022_2T.map((r) => (
-              <tr key={r.faixa}><td className="font-mono">{r.faixa}</td><td><Num>{fmtPct(r.turnout, 1)}</Num></td><td><Num tone="amber">{fmtPct(r.delta, 1, true)}</Num></td></tr>
+            {capacidade.turnout2026_2T.map((r) => (
+              <tr key={r.faixa}><td className="font-mono">{r.faixa}</td><td><Num>{fmtPct(r.turnout, 1)}</Num></td><td><Num tone="amber">{fmtPct(r.retorno, 1)}</Num></td></tr>
             ))}
           </tbody>
         </Table>
@@ -251,7 +290,8 @@ export function Testes({ lang, dict }: Props) {
           <thead><tr><th>{tb.indicador}</th><th>{tb.valor}</th></tr></thead>
           <tbody>
             <tr><td>{lang === "pt" ? "Mortes totais 2022 (SIM)" : "Total deaths 2022 (SIM)"}</td><td><Num>{fmt(limpeza.mortesTotais2022)}</Num></td></tr>
-            <tr><td>{lang === "pt" ? "Mortes de eleitores (85%)" : "Voter deaths (85%)"}</td><td><Num>{fmt(limpeza.mortesEleitores2022)}</Num></td></tr>
+            <tr><td>{lang === "pt" ? "Mortes de adultos (18+), DATASUS" : "Adult deaths (18+), DATASUS"}</td><td><Num>{fmt(limpeza.mortesAdultos2022)}</Num></td></tr>
+            <tr><td>{lang === "pt" ? "Mortes de eleitores (~95% dos adultos)" : "Voter deaths (~95% of adults)"}</td><td><Num>{fmt(limpeza.mortesEleitores2022)}</Num></td></tr>
             <tr><td>{lang === "pt" ? "Gap anual" : "Annual gap"}</td><td><Num tone="rose">{fmt(limpeza.gapAnual)}</Num></td></tr>
             <tr><td>{lang === "pt" ? "Taxa de cancelamento" : "Cancellation rate"}</td><td><Num>{fmtPct(limpeza.taxaCancelamento * 100, 1)}</Num></td></tr>
           </tbody>

@@ -111,6 +111,14 @@ const pt = {
       pergunta: "A pergunta não é se o padrão é significativo — é. A pergunta é se é intencional ou negligência estrutural.",
       ressalvaTitle: "Ressalva honesta",
     },
+    profissional: {
+      title: "O mesmo teste, em três profissões",
+      lead: "Troque o programador por três profissionais que todo mundo conhece. Em nenhum dos casos alguém precisa provar má-fé para exigir uma conferência independente.",
+      perfil: "Quem é",
+      erro: "O que aconteceu",
+      depois: "O que se faz",
+      confere: "Quem confere",
+    },
     categorias: {
       title: "Teste 3 · que tipo de falha?",
       normais: {
@@ -316,6 +324,14 @@ const en: typeof pt = {
       compara: "That is",
       pergunta: "The question is not whether the pattern is significant — it is. The question is whether it is intentional or structural negligence.",
       ressalvaTitle: "Honest caveat",
+    },
+    profissional: {
+      title: "The same test, in three professions",
+      lead: "Swap the programmer for three professionals everyone knows. In none of the cases does anyone need to prove bad faith in order to demand an independent check.",
+      perfil: "Who",
+      erro: "What happened",
+      depois: "What is done",
+      confere: "Who checks",
     },
     categorias: {
       title: "Test 3 · what kind of flaw?",

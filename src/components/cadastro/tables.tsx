@@ -2,7 +2,7 @@
 
 import { useFmt, useLang } from "@/i18n/context";
 import { t } from "@/i18n/config";
-import { agregacaoUF, capacidade, limpeza, municipios } from "@/data/cadastro";
+import { agregacaoUF, capacidade, limpeza, municipios, salto } from "@/data/cadastro";
 
 function Wrap({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -45,6 +45,46 @@ export function TabelaMunicipios() {
             <td className="text-right font-semibold text-amber">{fmtPct(m.aptosPop * 100, 0)}</td>
           </tr>
         ))}
+      </tbody>
+    </Wrap>
+  );
+}
+
+/** Voto facultativo × obrigatório, 1º→2º turno de 2026 (colunas do próprio arquivo do TSE). */
+export function TabelaFacultativo() {
+  const { dict } = useLang();
+  const { fmtInt, fmtPct } = useFmt();
+  const tb = dict.cadastro.p1.fac;
+  const nomes: Record<string, string> = {
+    "16-17": tb.grupos.jovens,
+    "18-69 facultativo": tb.grupos.analfabetos,
+    "18-69 obrigatório": tb.grupos.obrigatorio,
+    "70+": tb.grupos.idosos,
+  };
+  return (
+    <Wrap title={tb.title}>
+      <thead>
+        <tr>
+          <th>{tb.grupo}</th>
+          <th className="text-right">{dict.cadastro.p1.anim.t1}</th>
+          <th className="text-right">{dict.cadastro.p1.anim.t2}</th>
+          <th className="text-right">{tb.aumento}</th>
+          <th className="text-right">{tb.retorno}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {salto.facultativo["2026"].map((r) => {
+          const idoso = r.grupo === "70+";
+          return (
+            <tr key={r.grupo}>
+              <td className="font-medium text-fg">{nomes[r.grupo]}</td>
+              <td className="text-right">{fmtInt(r.comp_1t)}</td>
+              <td className="text-right">{fmtInt(r.comp_2t)}</td>
+              <td className={idoso ? "text-right font-semibold text-amber" : "text-right"}>{fmtPct(r.delta_pct, 1, true)}</td>
+              <td className={idoso ? "text-right font-semibold text-amber" : "text-right"}>{fmtPct(r.retorno_pct, 0)}</td>
+            </tr>
+          );
+        })}
       </tbody>
     </Wrap>
   );

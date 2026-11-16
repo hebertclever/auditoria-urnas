@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import { ArrowRight, Landmark, ScrollText, Vote } from "lucide-react";
 import { useFmt, useLang } from "@/i18n/context";
 import { href } from "@/i18n/routes";
-import { centenarios, deltaPorFaixa2022, historicoInversao } from "@/data/cadastro";
+import { centenarios, deltaPorFaixa2026, historicoInversao } from "@/data/cadastro";
 import { cn } from "@/lib/utils";
 
 export type VisualProps = { active: boolean; tech: boolean };
@@ -174,8 +174,9 @@ function CountryBars() {
 const ELDER = new Set(["70-74", "75-79", "80-84", "85-89", "90-94", "95-99", "100+"]);
 function AgeInversion() {
   const show = ["40-44", "50-54", "60-64", "65-69", "70-74", "75-79", "80-84", "85-89", "90-94", "95-99", "100+"];
-  const rows = show.map((l) => deltaPorFaixa2022.find((d) => d.faixa_label === l)!).filter(Boolean);
-  const max = 35;
+  const { lang } = useLang();
+  const rows = show.map((l) => deltaPorFaixa2026.find((d) => d.faixa_label === l)!).filter(Boolean);
+  const max = 62;
   const h = 150;
   return (
     <div>
@@ -198,7 +199,9 @@ function AgeInversion() {
           );
         })}
       </svg>
-      <Caption><span className="text-teal">21–69 ≈ +0%</span> · <span className="text-amber">70+ sobe com a idade</span></Caption>
+      <Caption>
+        <span className="text-teal">{lang === "pt" ? "2026 · 21–69: +1,5%" : "2026 · ages 21–69: +1.5%"}</span> · <span className="text-amber">{lang === "pt" ? "70+: +14,8%" : "70+: +14.8%"}</span>
+      </Caption>
     </div>
   );
 }
@@ -206,16 +209,16 @@ function AgeInversion() {
 /* ---------- 7. Histórico ---------- */
 function History() {
   const { fmt } = useFmt();
-  const max = 198_738;
+  const max = Math.max(...historicoInversao.map((h) => h.excesso));
   return (
-    <div className="flex items-end justify-center gap-6">
+    <div className="flex items-end justify-center gap-3 sm:gap-6">
       {historicoInversao.map((hh, i) => {
         const bh = Math.max(14, (hh.excesso / max) * 150);
         return (
           <div key={hh.ano} className="flex flex-col items-center gap-2">
             <span className="font-mono text-xs tabular text-fg-2">{fmt(hh.excesso)}</span>
             <motion.div
-              className={cn("w-16 rounded-t-lg", hh.ano === "2022" ? "bg-amber" : "bg-slate")}
+              className={cn("w-12 rounded-t-lg sm:w-16", hh.ano === "2026" ? "bg-amber" : "bg-slate")}
               initial={{ height: 0 }} animate={{ height: bh }} transition={{ duration: 0.8, delay: i * 0.12, ease }}
               style={{ height: bh }}
             />
@@ -392,6 +395,7 @@ function GapsDensity() {
 
 /* ---------- 13. 63 moedas ---------- */
 function Coins() {
+  const { lang } = useLang();
   const coins = Array.from({ length: 63 });
   return (
     <div className="w-full max-w-[380px]">
@@ -408,7 +412,7 @@ function Coins() {
           </motion.div>
         ))}
       </div>
-      <Caption>todas dão “cara” · 1 em 9,2 quintilhões</Caption>
+      <Caption>{lang === "pt" ? "63 moedas, o mesmo lado · 1 em 9,2 quintilhões" : "63 coins, the same side · 1 in 9.2 quintillion"}</Caption>
     </div>
   );
 }

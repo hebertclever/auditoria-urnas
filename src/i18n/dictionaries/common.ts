@@ -9,6 +9,7 @@ const pt = {
     slides: "Slides",
     dados: "Dados",
     metodo: "Método",
+    backup: "Backup",
     toggleTheme: { toLight: "Ativar tema claro", toDark: "Ativar tema escuro" },
     toggleLang: { label: "Read in English", short: "EN" },
     menu: { label: "Menu", open: "Abrir o menu de seções", close: "Fechar o menu" },
@@ -24,6 +25,7 @@ const pt = {
     dados: "Dados e tabelas",
     metodo: "Método e fontes",
     limites: "O que não provamos",
+    backup: "Backup das fontes (Wayback Machine)",
     github: "Código-fonte deste site",
   },
   ui: {
@@ -100,6 +102,7 @@ const en: typeof pt = {
     slides: "Slides",
     dados: "Data",
     metodo: "Method",
+    backup: "Backup",
     toggleTheme: { toLight: "Switch to light theme", toDark: "Switch to dark theme" },
     toggleLang: { label: "Ler em português", short: "PT" },
     menu: { label: "Menu", open: "Open the sections menu", close: "Close the menu" },
@@ -115,6 +118,7 @@ const en: typeof pt = {
     dados: "Data and tables",
     metodo: "Method and sources",
     limites: "What we did not prove",
+    backup: "Source backups (Wayback Machine)",
     github: "Source code of this site",
   },
   ui: {

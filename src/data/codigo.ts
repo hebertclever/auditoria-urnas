@@ -144,13 +144,62 @@ export const probabilidade = {
   p: Math.pow(0.5, 63), // ≈ 1,08e-19
   umEm: { pt: "9,2 quintilhões", en: "9.2 quintillion" } as L,
   comparacao: {
-    pt: "É como um contador que comete 63 erros na sua declaração de imposto — e todos os 63 reduzem o que ele deve. Nenhum vai na outra direção. Ou um árbitro que erra 63 lances — todos contra o mesmo time. Em termos de probabilidade: 3.700 vezes mais raro que ganhar na Mega-Sena duas vezes seguidas",
-    en: "Like an accountant who makes 63 errors on your tax return — and all 63 reduce what they owe. Not one goes the other way. Or a referee who gets 63 calls wrong — all against the same team. In probability terms: 3,700 times rarer than winning the Mega-Sena lottery twice in a row",
+    pt: "É como um contador que comete 63 erros na sua declaração de imposto — e nenhum deles faz você pagar a mais. Ou um árbitro que marca 63 lances duvidosos — e nenhum a favor do mesmo time. Em termos de probabilidade, se cada falha fosse um cara ou coroa: mais difícil do que pegar, de olhos fechados e na primeira tentativa, um grão de areia marcado entre todos os grãos de todas as praias da Terra",
+    en: "Like an accountant who makes 63 errors on your tax return — and not one of them makes you pay more. Or a referee who makes 63 doubtful calls — and not one in favour of the same team. In probability terms, if each flaw were a coin toss: harder than picking, blindfolded and at the first try, one marked grain of sand out of every grain on every beach on Earth",
   } as L,
   ressalva: {
-    pt: "Assume independência entre gaps, o que não é totalmente verdade: falhas em um componente podem causar falhas em outro. Mesmo relaxando essa premissa, a probabilidade segue astronômica. A pergunta não é se o padrão é significativo — é. A pergunta é se é intencional ou negligência estrutural.",
-    en: "Assumes independence between gaps, which is not entirely true: a flaw in one component can cause flaws in another. Even relaxing that assumption, the probability stays astronomical. The question is not whether the pattern is significant — it is. The question is whether it is intentional or structural negligence.",
+    pt: "A conta trata cada falha como um cara ou coroa independente — e não é bem assim. Catorze das 63 são falhas menores (entre elas, erros de digitação e de documentação). E uma falha que trava a conferência costuma aparecer no primeiro teste e ser corrigida, enquanto a que deixa passar só aparece quando alguém procura. Contando só as 27 falhas críticas e altas, todas para o mesmo lado, a chance seria de 1 em 134 milhões — quase três vezes mais difícil do que acertar a Mega-Sena com um único jogo. O número exato importa menos do que a pergunta que ele levanta: quem testou este material antes de publicar?",
+    en: "The sum treats each flaw as an independent coin toss — and that is not quite so. Fourteen of the 63 are minor flaws (among them typos and documentation errors). And a flaw that blocks the check tends to show up in the first test and get fixed, while one that lets things through only shows up when someone goes looking. Counting only the 27 critical and high flaws, all on the same side, the chance would be 1 in 134 million — almost three times harder than winning Brazil's Mega-Sena lottery with a single ticket. The exact number matters less than the question it raises: who tested this material before publishing it?",
   } as L,
+};
+
+// O mesmo teste em três profissões que todo mundo conhece — e a pergunta "quem conferiu?".
+// Fatos sobre os pacotes: listagem integral dos arquivos e busca textual nos três pacotes oficiais (v1/2022, v2.0/2024,
+// v2.1/2026), inclusive nos READMEs: nenhum nome de autor ou responsável, nenhum teste automatizado, nenhuma nota de mudança.
+// Carreira: Lei 11.416/2006, arts. 7º e 8º, I (ingresso por concurso; nível superior para Analista Judiciário).
+export type CasoProfissional = { id: "contador" | "arbitro" | "engenheiro"; quem: L; perfil: L; erro: L; depois: L; confere: L };
+export const profissional = {
+  casos: [
+    {
+      id: "contador",
+      quem: { pt: "O contador", en: "The accountant" },
+      perfil: { pt: "Formado, registrado no conselho, concursado, cinco anos de casa. Cuida da declaração de imposto de uma grande empresa.", en: "Qualified, registered with the professional board, hired by public exam, five years on the job. Handles the tax return of a large company." },
+      erro: { pt: "A declaração sai com 63 erros. Nenhum deles faz a empresa pagar imposto a mais.", en: "The return goes out with 63 errors. Not one of them makes the company pay more tax." },
+      depois: { pt: "A declaração cai na malha fina e os livros são abertos. Ninguém precisou acusar o contador de nada: só não dá para aceitar o resultado sem conferir.", en: "The return is flagged for audit and the books are opened. Nobody had to accuse the accountant of anything: the result simply cannot be accepted unchecked." },
+      confere: { pt: "Receita Federal · auditor independente", en: "Tax authority · independent auditor" },
+    },
+    {
+      id: "arbitro",
+      quem: { pt: "O árbitro", en: "The referee" },
+      perfil: { pt: "Do quadro da federação, anos de carreira, escalado para uma final.", en: "On the federation's roster, years of career, appointed to a final." },
+      erro: { pt: "Marca 63 lances duvidosos. Nenhum a favor do mesmo time.", en: "Makes 63 doubtful calls. Not one in favour of the same team." },
+      depois: { pt: "O jogo vai para o VAR. Pedir o VAR não é chamar o juiz de ladrão — é o mínimo.", en: "The match goes to the video referee. Asking for a review is not calling the referee a cheat — it is the bare minimum." },
+      confere: { pt: "VAR · comissão de arbitragem", en: "Video review · referees' committee" },
+    },
+    {
+      id: "engenheiro",
+      quem: { pt: "O engenheiro", en: "The engineer" },
+      perfil: { pt: "Com registro no CREA, assina o projeto de um prédio e a ART — o documento que diz quem responde pela obra.", en: "Licensed, signs the design of a building and the liability record — the document that says who answers for the work." },
+      erro: { pt: "A revisão encontra 63 erros de cálculo. Nenhum deles põe ferro ou concreto a mais.", en: "The review finds 63 calculation errors. Not one of them adds steel or concrete." },
+      depois: { pt: "A obra é embargada até a perícia. Ninguém espera o prédio cair para conferir.", en: "Construction is halted until an expert examination. Nobody waits for the building to fall before checking." },
+      confere: { pt: "CREA · prefeitura · perito", en: "Licensing board · city hall · expert" },
+    },
+  ] as CasoProfissional[],
+  tse: {
+    quem: { pt: "E no material do TSE?", en: "And in the TSE's material?" } as L,
+    perfil: { pt: "A Justiça Eleitoral tem carreira própria de analistas de tecnologia da informação: cargo de nível superior, preenchido por concurso público. São profissionais formados — com os mesmos requisitos do contador e do engenheiro dos exemplos.", en: "The Electoral Justice has its own career of information-technology analysts: a degree-level position filled by public examination. They are qualified professionals — with the same requirements as the accountant and the engineer in the examples." } as L,
+    erro: { pt: "63 falhas em 2.852 linhas. Nenhuma erra para o lado de conferir demais; as 27 mais graves afrouxam a conferência.", en: "63 flaws in 2,852 lines. Not one errs on the side of checking too much; the 27 most serious ones loosen the check." } as L,
+    depois: { pt: "Quem escreveu? Quem revisou? Quem testou? Quem aprovou a publicação? Os três pacotes (2022, 2024 e 2026) não respondem: não trazem nome de autor nem de responsável técnico, não trazem um único teste automatizado e não trazem nota do que mudou de uma versão para a outra.", en: "Who wrote it? Who reviewed it? Who tested it? Who approved its publication? The three packages (2022, 2024 and 2026) do not say: they carry no author or technical lead, not a single automated test, and no note of what changed from one version to the next." } as L,
+    confere: { pt: "Ninguém de fora, até agora. É isso que a perícia independente do kit e a abertura do código pedem.", en: "No outsider, so far. That is what an independent examination of the kit and the opening of the code call for." } as L,
+  },
+  fecho: {
+    pt: "Em qualquer profissão, erro que só vai para um lado dispara uma conferência independente. Não é acusação: é procedimento. Se alguém se aproveitou das falhas, isso é outra etapa — e se apura com investigação.",
+    en: "In any profession, errors that only go one way trigger an independent check. It is not an accusation: it is procedure. Whether anyone took advantage of the flaws is another step — and it takes an investigation.",
+  } as L,
+  fontes: [
+    { tier: "T0" as const, source: { pt: "Pacotes oficiais do TSE de 2022, 2024 e 2026 — lista de arquivos e busca textual, inclusive nos READMEs", en: "Official TSE packages of 2022, 2024 and 2026 — file listing and text search, READMEs included" } as L, date: "15/11/2026", href: "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/formato-arquivos-de-bu-rdv-e-assinatura-digital" },
+    { tier: "T0" as const, source: { pt: "Lei 11.416/2006, arts. 7º e 8º — carreiras do Judiciário da União: concurso público e nível superior para analista", en: "Law 11.416/2006, arts. 7 and 8 — federal judiciary careers: public examination and a degree for analysts" } as L, date: "2006", href: "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11416.htm" },
+  ],
 };
 
 export const verificavel: { item: L; status: "sim" | "parcial" | "nao"; obs: L }[] = [

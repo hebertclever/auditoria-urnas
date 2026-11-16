@@ -24,24 +24,24 @@ const pt = {
   testes: {
     eyebrow: "Sete testes",
     title: "Como a prova estatística foi fortalecida",
-    lead: "Em 09/11/2026 rodamos sete testes independentes para atacar cada fraqueza apontada na reconferência (ADR-053). Os resultados, com os números-chave, estão abaixo.",
+    lead: "Em 09/11/2026 rodamos sete testes independentes para atacar cada fraqueza apontada na reconferência (ADR-053). Em 15/11/2026 refizemos os testes 1, 2, 3, 5 e 6 com o 2º turno de 2026, que o TSE publicou em 13/11. Os resultados, com os números-chave, estão abaixo.",
     objetivo: "Objetivo",
     resultado: "Resultado",
     items: [
       {
         titulo: "Escalas de agregação",
         objetivo: "Verificar se os 1.089 excessos municipais persistem quando agregados por estado, onde domicílio eleitoral ≠ residência tende a se cancelar.",
-        resultado: "Nenhuma UF tem comparecimento acima do Censo em qualquer faixa 70+. O sinal municipal se dilui. Mas a inversão biológica 1º→2º turno é independente da escala: 1.294.921 votos extras dos 70+ em 2026 (614.299 em 2022); quanto mais velha a faixa, maior o salto.",
+        resultado: "Nenhuma UF tem comparecimento acima do Censo em qualquer faixa 70+ (2022). O sinal municipal se dilui. Para 2026 não há Censo do mesmo ano; com o teto sem premissa (Censo 2022 da faixa mais a da faixa anterior, mortalidade zero), nenhuma das 189 células UF × faixa passa do teto e só 3 municípios passam, por 1 voto cada.",
       },
       {
         titulo: "Grupo de controle",
         objetivo: "Comparar a variação de comparecimento 1º→2º turno de todas as 22 faixas etárias, não só dos idosos.",
-        resultado: "Faixas 21–69: média de +0,05%, amplitude de 2,6 pontos. Faixas 70+: média de +20,67%, monotonicamente crescente até 95–99 (+33,7%). Razão de 397 vezes.",
+        resultado: "2022: faixas 21–69, média de +0,05%; faixas 70+, média de +20,67% (soma: +614.299, +10,0%). 2026: faixas 21–69, média de +1,51%; faixas 70+, média de +33,68% (soma: +1.295.980, +14,8%). A razão entre as médias, 397 em 2022, cai para 22 em 2026 só porque os adultos subiram 1,5% em vez de ficarem parados — por isso deixou de ser a medida principal. Controle do voto facultativo em 2026: analfabetos de 18 a 69 anos, +6,2%; jovens de 16 e 17, +0,8%; voto obrigatório, +1,3%.",
       },
       {
         titulo: "Consistência histórica",
-        objetivo: "Verificar se a inversão biológica aparece em outras eleições presidenciais com 2º turno.",
-        resultado: "Aparece em 2014, 2018 e 2022, com pico em 2022: 58.913, 27.477 e 198.738 comparecimentos acima do baseline 70–74. O controle 40–59 fica perto de zero nos três anos.",
+        objetivo: "Verificar se o salto dos idosos entre os turnos aparece em outras eleições presidenciais com 2º turno.",
+        resultado: "Aparece em 2014, 2018, 2022 e 2026, com pico em 2026: 58.913, 27.477, 198.738 e 472.721 comparecimentos de 75+ acima do ritmo da faixa 70–74. O salto de todos os 70+ foi de +3,9%, +2,8%, +10,0% e +14,8%. A projeção publicada antes do dado oficial (59 a 316 mil) ficou abaixo do real.",
       },
       {
         titulo: "Votos acima da população total",
@@ -51,12 +51,12 @@ const pt = {
       {
         titulo: "Limite biológico dos centenários",
         objetivo: "Construir uma cadeia que não dependa de domicílio eleitoral nem de premissas de sobrevivência.",
-        resultado: "Censo 2022: 37.814 centenários vivos. TSE 2026: 297.977 registrados. Razão de 7,9 vezes, comparação nacional, T0 contra T0. Só pode ter 100 anos em 2026 quem tinha 95+ no Censo (202.992 pessoas): mesmo sem nenhuma morte, sobram 94.985 títulos. Treze municípios têm centenários no TSE e zero óbitos de centenários em cinco anos.",
+        resultado: "Censo 2022: 37.814 centenários vivos. TSE 2026: 297.977 registrados. Razão de 7,9 vezes, comparação nacional, T0 contra T0. Só pode ter 100 anos em 2026 quem tinha 95+ no Censo (202.992 pessoas): mesmo sem nenhuma morte, sobram 94.985 títulos. No 2º turno de 2026 compareceram 3.307 eleitores de 100 anos ou mais (2.133 no 1º): 98,9% dos títulos de centenários não registraram voto. Treze municípios têm centenários no TSE e zero óbitos de centenários em cinco anos.",
       },
       {
         titulo: "Capacidade funcional",
         objetivo: "Confrontar dados de saúde (PNS 2019, Censo 2022) com o comparecimento por faixa etária.",
-        resultado: "43,2% dos brasileiros 75+ têm limitação para atividades como ir a lugares distantes ou usar transporte. Mesmo assim, o aumento de comparecimento entre turnos cresce com a idade. O nível absoluto é plausível; a inversão não.",
+        resultado: "43,2% dos brasileiros 75+ têm limitação para atividades como ir a lugares distantes ou usar transporte. No 2º turno de 2026 votaram 46,9% dos eleitores registrados de 75 anos ou mais (32,3% em 2022). O nível é plausível e a volta às urnas no 2º turno cai com a idade (21% aos 70–74 anos, 2% aos 95–99), como a saúde prevê; o que pede explicação é a subida de quase 15 pontos em quatro anos.",
       },
       {
         titulo: "Gap de limpeza cadastral",
@@ -106,6 +106,10 @@ const pt = {
       deficiencia: "Pessoas com deficiência, Censo 2022",
       controleLabel: "controle",
       idososLabel: "idosos",
+      teto: "Teto: Censo 2022, faixa + anterior",
+      comp2T2026: "Comp. 2º turno 2026",
+      retorno: "Voltaram no 2º turno, de cada 100 ausentes no 1º",
+      salto: "Eleitores de 70+ a mais no 2º turno",
     },
   },
   arquivos: {
@@ -118,7 +122,9 @@ const pt = {
     github: "Abrir pasta de dados no GitHub",
     items: {
       delta: "Variação 1º→2º turno por faixa etária, 2022 (22 faixas)",
-      historico: "Inversão biológica 2014 · 2018 · 2022",
+      delta2026: "Variação 1º→2º turno por faixa etária, 2026 (22 faixas)",
+      historico: "Salto dos 70+ entre os turnos: 2014 · 2018 · 2022 · 2026",
+      salto: "Salto de 2026 em detalhe: por UF e município, voto facultativo, escolaridade, teto do Censo e as duas versões do arquivo do TSE",
       gaps: "63 gaps do kit de verificação",
       municipios: "20 municípios com votos acima da população e análise de sensibilidade",
       centenarios: "Centenários: Censo × TSE, óbitos, comparação internacional",
@@ -152,24 +158,24 @@ const en: typeof pt = {
   testes: {
     eyebrow: "Seven tests",
     title: "How the statistical proof was strengthened",
-    lead: "On 9 Nov 2026 we ran seven independent tests to attack each weakness raised in the re-check (ADR-053). The results, with key numbers, are below.",
+    lead: "On 9 Nov 2026 we ran seven independent tests to attack each weakness raised in the re-check (ADR-053). On 15 Nov 2026 we re-ran tests 1, 2, 3, 5 and 6 with the 2026 runoff, which the TSE published on 13 Nov. The results, with key numbers, are below.",
     objetivo: "Goal",
     resultado: "Result",
     items: [
       {
         titulo: "Aggregation scales",
         objetivo: "Check whether the 1,089 municipal excesses persist when aggregated by state, where electoral domicile ≠ residence tends to cancel out.",
-        resultado: "No state has turnout above the Census in any 70+ age group. The municipal signal dilutes. But the round-1→round-2 biological inversion is scale-independent: 1,294,921 extra 70+ votes in 2026 (614,299 in 2022); the older the band, the bigger the jump.",
+        resultado: "No state has turnout above the Census in any 70+ age group (2022). The municipal signal dilutes. For 2026 there is no same-year Census; with the no-assumption ceiling (2022 Census of the band plus the previous band, zero mortality), none of the 189 state × band cells exceeds the ceiling and only 3 municipalities do, by 1 vote each.",
       },
       {
         titulo: "Control group",
         objetivo: "Compare the round-1→round-2 turnout change across all 22 age groups, not only the elderly.",
-        resultado: "Ages 21–69: mean +0.05%, range of 2.6 points. Ages 70+: mean +20.67%, monotonically increasing up to 95–99 (+33.7%). A 397-fold ratio.",
+        resultado: "2022: ages 21–69, mean +0.05%; ages 70+, mean +20.67% (sum: +614,299, +10.0%). 2026: ages 21–69, mean +1.51%; ages 70+, mean +33.68% (sum: +1,295,980, +14.8%). The ratio of the means, 397 in 2022, falls to 22 in 2026 only because adults rose 1.5% instead of standing still — which is why it is no longer the headline measure. Optional-voting control in 2026: illiterate voters aged 18 to 69, +6.2%; ages 16 and 17, +0.8%; compulsory voters, +1.3%.",
       },
       {
         titulo: "Historical consistency",
-        objetivo: "Check whether the biological inversion appears in other presidential elections with a runoff.",
-        resultado: "It appears in 2014, 2018 and 2022 — and worsens: 58,913, 27,477 and 198,738 excess votes above the 70–74 baseline. The 40–59 control stays near zero in all three years.",
+        objetivo: "Check whether the elderly jump between rounds appears in other presidential elections with a runoff.",
+        resultado: "It appears in 2014, 2018, 2022 and 2026, peaking in 2026: 58,913, 27,477, 198,738 and 472,721 turnouts of 75+ above the pace of the 70–74 band. The jump of all 70+ was +3.9%, +2.8%, +10.0% and +14.8%. The projection published before the official data (59,000 to 316,000) fell short of the real figure.",
       },
       {
         titulo: "Votes above total population",
@@ -179,12 +185,12 @@ const en: typeof pt = {
       {
         titulo: "Biological limit of centenarians",
         objetivo: "Build a chain that depends neither on electoral domicile nor on survival assumptions.",
-        resultado: "2022 Census: 37,814 centenarians alive. TSE 2026: 297,977 registered. A 7.9-fold ratio, national comparison, T0 against T0. Only those aged 95+ in the Census (202,992 people) can be 100 in 2026: even with no deaths at all, 94,985 registrations are left over. Thirteen municipalities have centenarians in the TSE registry and zero centenarian deaths in five years.",
+        resultado: "2022 Census: 37,814 centenarians alive. TSE 2026: 297,977 registered. A 7.9-fold ratio, national comparison, T0 against T0. Only those aged 95+ in the Census (202,992 people) can be 100 in 2026: even with no deaths at all, 94,985 registrations are left over. In the 2026 runoff, 3,307 voters aged 100 or over turned out (2,133 in round 1): 98.9% of centenarian registrations recorded no vote. Thirteen municipalities have centenarians in the TSE registry and zero centenarian deaths in five years.",
       },
       {
         titulo: "Functional capacity",
         objetivo: "Confront health data (PNS 2019, 2022 Census) with turnout by age group.",
-        resultado: "43.2% of Brazilians 75+ have limitations in activities such as travelling to distant places or using transport. Even so, the turnout increase between rounds grows with age. The absolute level is plausible; the inversion is not.",
+        resultado: "43.2% of Brazilians 75+ have limitations in activities such as travelling to distant places or using transport. In the 2026 runoff, 46.9% of registered voters aged 75 or over voted (32.3% in 2022). The level is plausible and the return to the polls in the runoff falls with age (21% at 70–74, 2% at 95–99), as health predicts; what calls for an explanation is the rise of almost 15 points in four years.",
       },
       {
         titulo: "Registry clean-up gap",
@@ -234,6 +240,10 @@ const en: typeof pt = {
       deficiencia: "People with disabilities, 2022 Census",
       controleLabel: "control",
       idososLabel: "elderly",
+      teto: "Ceiling: 2022 Census, band + previous",
+      comp2T2026: "Turnout, 2026 runoff",
+      retorno: "Returned for round 2, per 100 absent in round 1",
+      salto: "More 70+ voters in the runoff",
     },
   },
   arquivos: {
@@ -246,7 +256,9 @@ const en: typeof pt = {
     github: "Open data folder on GitHub",
     items: {
       delta: "Round-1→round-2 change by age group, 2022 (22 groups)",
-      historico: "Biological inversion 2014 · 2018 · 2022",
+      delta2026: "Round-1→round-2 change by age group, 2026 (22 groups)",
+      historico: "The 70+ jump between rounds: 2014 · 2018 · 2022 · 2026",
+      salto: "The 2026 jump in detail: by state and municipality, optional voting, schooling, Census ceiling and the two versions of the TSE file",
       gaps: "63 gaps in the verification kit",
       municipios: "20 municipalities with votes above population, plus sensitivity analysis",
       centenarios: "Centenarians: Census × TSE, deaths, international comparison",

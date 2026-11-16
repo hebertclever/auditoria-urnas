@@ -3,8 +3,10 @@
 
 import type { L } from "@/i18n/config";
 import controle from "./teste2_grupo_controle.json";
+import controle2026 from "./teste2_grupo_controle_2026.json";
 import historico from "./teste3_historico_inversao.json";
 import ufJson from "./teste1_agregacao_uf.json";
+import saltoJson from "./salto_2t_2026.json";
 
 // Teste 1 — Censo 2022 × TSE 2022/2T por UF (27 UFs × 7 faixas 70+)
 export type UFFaixa = { uf_code: string; uf: string; faixa: string; census: number; comp_2t: number; aptos: number; diff: number; ratio: number };
@@ -18,22 +20,33 @@ export const porUFTotais: Record<"70+" | "90+" | "95+" | "100+", UFTotal[]> = {
 };
 
 export type FaixaDelta = (typeof controle)[number];
+export type AnoTurnos = "2022" | "2026";
 export const deltaPorFaixa2022: FaixaDelta[] = controle;
+// 2026: arquivo BRASIL publicado pelo TSE em 13/11/2026 (22.121.816 linhas, 1º e 2º turno), lido direto do ZIP.
+export const deltaPorFaixa2026: FaixaDelta[] = controle2026;
+export const deltaPorFaixa: Record<AnoTurnos, FaixaDelta[]> = { "2022": controle, "2026": controle2026 };
 
 export const FAIXAS_IDOSOS = ["70-74", "75-79", "80-84", "85-89", "90-94", "95-99", "100+"] as const;
 export const FAIXAS_CONTROLE = ["21-24", "25-29", "30-34", "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", "65-69"] as const;
 
+// Números de 2022 pelo método publicado em 09/11/2026 (médias simples das variações por faixa).
+// A razão 397 só vale para 2022: divide por +0,05%. Em 2026 o mesmo cálculo dá 22, porque os adultos subiram 1,5%.
 export const resumoControle = {
   mediaDeltaControle2169: 0.05,
   mediaDeltaIdosos70: 20.67,
   razao: 397,
   votosExtras70mais2T: 614_299,
-  votosExtras70mais2T_2026: 1_294_921,
   votosExtrasControle4059: 136_486,
   excessoAcimaBaseline7074: 198_738,
 };
 
-type AnoHist = "2014" | "2018" | "2022";
+// Salto do 1º para o 2º turno, 2022 e 2026 — arquivo BRASIL inteiro (27 UFs + exterior), mesmo universo da
+// série 2014–2022. Gerado no repositório da auditoria: resultados/segundo_turno_2026-11-15/gera_json_site.py.
+export const salto = saltoJson;
+export type SaltoResumo = (typeof saltoJson.resumo)["2026"];
+export const saltoResumo: Record<AnoTurnos, SaltoResumo> = saltoJson.resumo;
+
+type AnoHist = "2014" | "2018" | "2022" | "2026";
 const H = historico.summary as Record<AnoHist | "2012", { bands_70plus: Record<string, { delta_pct: number }> }>;
 const mapFaixa: Record<string, string> = {
   "70 a 74 anos": "70-74",
@@ -44,26 +57,30 @@ const mapFaixa: Record<string, string> = {
   "95 a 99 anos": "95-99",
   "100 anos ou mais": "100+",
 };
-export const historicoInversao: { ano: AnoHist; faixas: { faixa: string; delta: number }[]; excesso: number }[] = (
-  [
-    ["2014", 58_913],
-    ["2018", 27_477],
-    ["2022", 198_738],
-  ] as [AnoHist, number][]
-).map(([ano, excesso]) => ({
-  ano,
-  excesso,
-  faixas: Object.entries(H[ano].bands_70plus).map(([k, v]) => ({ faixa: mapFaixa[k], delta: v.delta_pct })),
-}));
+// excesso = comparecimentos de 75+ acima do que haveria se cada faixa crescesse no ritmo da faixa 70–74.
+// deltaAbs/deltaPct = aumento do comparecimento de todos os 70+ entre o 1º e o 2º turno.
+export const historicoInversao: { ano: AnoHist; faixas: { faixa: string; delta: number }[]; excesso: number; deltaAbs: number; deltaPct: number }[] =
+  saltoJson.serie.map((s) => {
+    const ano = s.ano as AnoHist;
+    return {
+      ano,
+      excesso: s.excesso_ritmo_7074,
+      deltaAbs: s.delta70_abs,
+      deltaPct: s.delta70_pct,
+      faixas: Object.entries(H[ano].bands_70plus).map(([k, v]) => ({ faixa: mapFaixa[k], delta: v.delta_pct })),
+    };
+  });
 
 // Pilar 2 — centenários. Censo 2022 nacional (SIDRA 9514, soma municipal) = 37.814.
 // TSE 2026: arquivo BRASIL completo do perfil de comparecimento (3.034.230.075 bytes, 11.060.908 linhas, CRC conferido),
 // 1º turno, 27 UFs = 297.977 aptos de 100+ (298.239 com o exterior). O 248.967 usado antes vinha de uma extração truncada.
+// Comparecimento de 100+ em 2026 (27 UFs), versão do arquivo publicada em 13/11/2026: 2.133 no 1º turno e 3.307 no 2º.
+// Na versão anterior do mesmo arquivo (13/10/2026, só 1º turno) o 1º turno tinha 2.141.
 export const centenarios = {
   censo2022: 37_814,
   popCenso2022: 203_062_512,
   tse2026Aptos100: 297_977,
-  comp100_2026_1T: 2_141,
+  comp100_2026_1T: 2_133,
   comp100_2026_2T: 3_307,
   comp100_2022_2T: 2_092,
   aptos100_2022: 184_330,
@@ -204,11 +221,20 @@ export const capacidade = {
     const r = controle.find((c) => c.faixa_label === f)!;
     return { faixa: f, turnout: r.turnout_2t_pct, delta: r.delta_pct };
   }),
+  // 2026: nível no 2º turno e "retorno" = aumento entre turnos ÷ abstenções do 1º turno (saldo líquido).
+  turnout2026_2T: FAIXAS_IDOSOS.map((f) => {
+    const r = controle2026.find((c) => c.faixa_label === f)!;
+    const ret = saltoJson.retorno_abstencao["2026"].find((x) => x.faixa === f)!;
+    return { faixa: f, turnout: r.turnout_2t_pct, delta: r.delta_pct, retorno: ret.retorno_pct };
+  }),
+  // Comparecimento de todos os 75+ sobre os aptos, 2º turno
+  turnout75: { r2022: saltoJson.turnout75["2022"].turnout_2t_pct, r2026: saltoJson.turnout75["2026"].turnout_2t_pct },
   internacional80mais: [
     { lugar: { pt: "Japão · Aomori 2026", en: "Japan · Aomori 2026" } as L, pct: 33.3 },
     { lugar: { pt: "Japão · Gunma 2024", en: "Japan · Gunma 2024" } as L, pct: 47.8 },
     { lugar: { pt: "Alemanha · NRW (voto postal)", en: "Germany · NRW (postal voting)" } as L, pct: 84.6 },
     { lugar: { pt: "Brasil 2022 2T (80-84, sobre aptos)", en: "Brazil 2022 R2 (80-84, over registered)" } as L, pct: 31.6 },
+    { lugar: { pt: "Brasil 2026 2T (80-84, sobre aptos)", en: "Brazil 2026 R2 (80-84, over registered)" } as L, pct: 46.5 },
   ],
 };
 
@@ -222,4 +248,12 @@ export const agregacaoUF = {
     { faixa: "100+", censo: 37_814, comp2T: 2_092 },
   ],
   municipal: { municipios: 137, celulas: 152, diferencas: 1_089 },
+  // 2026 não tem Censo do mesmo ano. Teto sem premissa: quem está na faixa X em out/2026 estava na faixa X−5 ou X
+  // no Censo de ago/2022 (mortalidade zero). País e 27 UFs × 7 faixas: nenhuma célula acima. Municípios: 3, por 1 voto cada.
+  teto2026: {
+    ufCelulasAcima: saltoJson.teto_2026.uf_celulas_acima,
+    ufCelulasTestadas: saltoJson.teto_2026.uf_celulas_testadas_por_turno,
+    municipios: saltoJson.teto_2026.municipal_2t.municipios,
+    diferencas: saltoJson.teto_2026.municipal_2t.soma_diferencas,
+  },
 };

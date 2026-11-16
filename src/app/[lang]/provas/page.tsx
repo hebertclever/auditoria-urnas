@@ -154,7 +154,7 @@ export default async function ProvasPage({ params }: PageProps<"/[lang]/provas">
         </Reveal>
       </Section>
 
-      {/* 2026 — estimativa e por que não há 2º turno */}
+      {/* 2026 — o 2º turno publicado em 13/11/2026 e as duas versões do arquivo */}
       <Section className="border-t border-line">
         <Reveal>
           <Eyebrow tone="teal">{L(prova.estimativa2026.eyebrow)}</Eyebrow>

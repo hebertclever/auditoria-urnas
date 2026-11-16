@@ -11,8 +11,8 @@ import { resolveLang, metaFor } from "@/i18n/server";
 import { t } from "@/i18n/config";
 import { Scrolly } from "@/components/cadastro/scrolly";
 import { MethodDetails, PillarHeader, PillarIndex, WhyList } from "@/components/cadastro/pillar";
-import { ChartCapacidade, ChartCentenarios, ChartHistorico, ChartInversao, ChartLimpeza, ChartSensibilidade } from "@/components/cadastro/charts";
-import { TabelaAcumulado, TabelaAgregacao, TabelaInternacional, TabelaMunicipios } from "@/components/cadastro/tables";
+import { ChartCapacidade, ChartCentenarios, ChartHistorico, ChartInversao, ChartLimpeza, ChartRetorno, ChartSensibilidade } from "@/components/cadastro/charts";
+import { TabelaAcumulado, TabelaAgregacao, TabelaFacultativo, TabelaInternacional, TabelaMunicipios } from "@/components/cadastro/tables";
 import { MotionItem } from "@/components/cadastro/motion-item";
 import {
   centenarios,
@@ -21,7 +21,7 @@ import {
   historicoInversao,
   limpeza,
   municipios,
-  resumoControle,
+  saltoResumo,
 } from "@/data/cadastro";
 
 export const generateMetadata = metaFor("cadastro");
@@ -74,7 +74,7 @@ export default async function CadastroPage({ params }: PageProps<"/[lang]/cadast
             <MotionItem variants={staggerItem}><StatTile value={centenarios.tse2026Aptos100} label={d.hero.stats.tse} tone="amber" /></MotionItem>
             <MotionItem variants={staggerItem}><StatTile value={centenariosRazao} format="dec1" suffix="×" label={d.hero.stats.razao} tone="amber" /></MotionItem>
             <MotionItem variants={staggerItem}><StatTile value={limpeza.gapAnual} format="compact" label={d.hero.stats.gap} tone="rose" /></MotionItem>
-            <MotionItem variants={staggerItem}><StatTile value={resumoControle.razao} suffix="×" label={d.hero.stats.controle} tone="teal" /></MotionItem>
+            <MotionItem variants={staggerItem}><StatTile value={saltoResumo["2026"].delta70_abs} format="compact" label={d.hero.stats.controle} tone="teal" /></MotionItem>
           </Stagger>
           <Reveal delay={0.2} className="mt-10 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
             <p className="max-w-2xl text-sm leading-relaxed text-fg-2">{d.hero.note}</p>
@@ -85,18 +85,20 @@ export default async function CadastroPage({ params }: PageProps<"/[lang]/cadast
 
       {/* PILAR 1 */}
       <Section id="inversao">
-        <PillarHeader eyebrow={d.p1.eyebrow} stars={5} starsLabel={u.forca} title={d.p1.title} lead={d.p1.lead} />
+        <PillarHeader eyebrow={d.p1.eyebrow} stars={2} starsLabel={u.forca} title={d.p1.title} lead={d.p1.lead} />
         <Scrolly steps={d.p1.steps} visual="corrida" />
         <div className="mt-6 grid gap-6">
           <Reveal><ChartInversao /></Reveal>
           <Reveal><ChartHistorico /></Reveal>
-          <Stagger className="grid grid-cols-3 gap-3">
+          <Stagger className="grid grid-cols-2 gap-3 lg:grid-cols-4">
             {historicoInversao.map((h) => (
               <MotionItem key={h.ano} variants={staggerItem}>
-                <StatTile value={h.excesso} label={`${h.ano} · ${d.p1.hist.excesso}`} tone={h.ano === "2022" ? "amber" : "neutral"} />
+                <StatTile value={h.excesso} label={`${h.ano} · ${d.p1.hist.excesso}`} tone={h.ano === "2026" ? "amber" : "neutral"} />
               </MotionItem>
             ))}
           </Stagger>
+          <Reveal><ChartRetorno /></Reveal>
+          <Reveal><TabelaFacultativo /></Reveal>
           <div className="grid gap-6 lg:grid-cols-2">
             <WhyList title={d.p1.why.title} items={d.p1.why.items} />
             <div className="grid gap-6">
@@ -105,7 +107,8 @@ export default async function CadastroPage({ params }: PageProps<"/[lang]/cadast
             </div>
           </div>
           <Sources>
-            <SourceTag tier="T0" source={isPt ? "TSE · Comparecimento e abstenção por perfil, 2022" : "TSE · Turnout and abstention by profile, 2022"} date="2022" href={SRC.tse2022} />
+            <SourceTag tier="T0" source={isPt ? "TSE · Comparecimento e abstenção por perfil, 2026 (dois turnos, publicado em 13/11/2026)" : "TSE · Turnout and abstention by profile, 2026 (both rounds, published 13 Nov 2026)"} date="13/11/2026" href={SRC.tse2026} />
+            <SourceTag tier="T0" source={isPt ? "TSE · idem, 2022" : "TSE · same, 2022"} date="2022" href={SRC.tse2022} />
             <SourceTag tier="T0" source={isPt ? "TSE · idem, 2018" : "TSE · same, 2018"} date="2018" href={SRC.tse2018} />
             <SourceTag tier="T0" source={isPt ? "TSE · idem, 2014" : "TSE · same, 2014"} date="2014" href={SRC.tse2014} />
           </Sources>
@@ -114,7 +117,7 @@ export default async function CadastroPage({ params }: PageProps<"/[lang]/cadast
 
       {/* PILAR 2 */}
       <Section id="centenarios" className="border-t border-line">
-        <PillarHeader eyebrow={d.p2.eyebrow} stars={4} starsLabel={u.forca} title={d.p2.title} lead={d.p2.lead} />
+        <PillarHeader eyebrow={d.p2.eyebrow} stars={5} starsLabel={u.forca} title={d.p2.title} lead={d.p2.lead} />
         <Scrolly steps={d.p2.steps} visual="condominio" />
         <div className="mt-6 grid gap-6">
           <Stagger className="grid grid-cols-1 gap-3 sm:grid-cols-3">
@@ -196,7 +199,7 @@ export default async function CadastroPage({ params }: PageProps<"/[lang]/cadast
 
       {/* PILAR 5 */}
       <Section id="capacidade" className="border-t border-line">
-        <PillarHeader eyebrow={d.p5.eyebrow} stars={3} starsLabel={u.forca} title={d.p5.title} lead={d.p5.lead} />
+        <PillarHeader eyebrow={d.p5.eyebrow} stars={2} starsLabel={u.forca} title={d.p5.title} lead={d.p5.lead} />
         <Scrolly steps={d.p5.steps} visual="capacidade" />
         <div className="mt-6 grid gap-6">
           <Reveal><ChartCapacidade /></Reveal>
@@ -211,7 +214,7 @@ export default async function CadastroPage({ params }: PageProps<"/[lang]/cadast
           <Sources>
             <SourceTag tier="T0" source={isPt ? "IBGE · PNS 2019, SIDRA 8375 (AVD por idade)" : "IBGE · PNS 2019, SIDRA 8375 (ADL by age)"} date="2019" href={SRC.sidra8375} />
             <SourceTag tier="T1" source="Lima, Souza Jr. & Teixeira · Rev. Bras. Geriatr. Gerontol." date="2024" href={SRC.lima} />
-            <SourceTag tier="T0" source={isPt ? "TSE · Comparecimento e abstenção por perfil, 2022" : "TSE · Turnout and abstention by profile, 2022"} date="2022" href={SRC.tse2022} />
+            <SourceTag tier="T0" source={isPt ? "TSE · Comparecimento e abstenção por perfil, 2022 e 2026" : "TSE · Turnout and abstention by profile, 2022 and 2026"} date="2026" href={SRC.tse2026} />
             <SourceTag tier="T2" source={isPt ? "Pref. Aomori · comparecimento por idade" : "Aomori Prefecture · turnout by age"} date="2026" href={SRC.aomori} />
           </Sources>
         </div>

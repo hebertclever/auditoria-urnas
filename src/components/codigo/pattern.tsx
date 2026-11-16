@@ -8,8 +8,69 @@ import { Reveal } from "@/components/ui/reveal";
 import { cn } from "@/lib/utils";
 import { useLang, useFmt } from "@/i18n/context";
 import { t } from "@/i18n/config";
-import { kit, probabilidade } from "@/data/codigo";
+import { Calculator, Flag, HardHat, Landmark } from "lucide-react";
+import { kit, probabilidade, profissional } from "@/data/codigo";
+import { SourceTag, Sources } from "@/components/ui/source-tag";
 import { AnimFrame, ease } from "./shared";
+
+const ICONE = { contador: Calculator, arbitro: Flag, engenheiro: HardHat } as const;
+
+function Linha({ rot, children, forte }: { rot: string; children: React.ReactNode; forte?: boolean }) {
+  return (
+    <div>
+      <p className="font-mono text-[0.62rem] uppercase tracking-[0.16em] text-fg-3">{rot}</p>
+      <p className={cn("mt-0.5 text-[0.92rem] leading-relaxed", forte ? "font-medium text-fg" : "text-fg-2")}>{children}</p>
+    </div>
+  );
+}
+
+/** O teste da direção, contado com três profissões — e a pergunta "quem conferiu?" aplicada ao material do TSE. */
+function Profissionais() {
+  const { lang, dict } = useLang();
+  const d = dict.codigo.padrao.profissional;
+  const L = <T extends { pt: string; en: string }>(x: T) => t(x, lang);
+  return (
+    <div>
+      <p className="display-md text-lg font-semibold text-fg sm:text-xl">{d.title}</p>
+      <p className="mt-2 max-w-2xl text-[0.98rem] leading-relaxed text-fg-2">{d.lead}</p>
+      <div className="mt-5 grid gap-4 lg:grid-cols-3">
+        {profissional.casos.map((c) => {
+          const Icon = ICONE[c.id];
+          return (
+            <div key={c.id} className="flex flex-col gap-3 rounded-3xl border border-line bg-bg-elev p-5 sm:p-6">
+              <div className="flex items-center gap-2.5">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-teal-soft text-teal"><Icon className="h-4.5 w-4.5" /></span>
+                <p className="display-md text-lg font-semibold text-fg">{L(c.quem)}</p>
+              </div>
+              <Linha rot={d.perfil}>{L(c.perfil)}</Linha>
+              <Linha rot={d.erro} forte>{L(c.erro)}</Linha>
+              <Linha rot={d.depois}>{L(c.depois)}</Linha>
+              <p className="mt-auto rounded-xl border border-teal/30 bg-teal-soft px-3 py-2 font-mono text-[0.7rem] text-teal">{d.confere}: {L(c.confere)}</p>
+            </div>
+          );
+        })}
+      </div>
+      <div className="mt-4 rounded-3xl border border-rose/40 bg-rose-soft p-5 sm:p-7">
+        <div className="flex items-center gap-2.5">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-bg text-rose"><Landmark className="h-4.5 w-4.5" /></span>
+          <p className="display-md text-lg font-semibold text-fg sm:text-xl">{L(profissional.tse.quem)}</p>
+        </div>
+        <div className="mt-4 grid gap-4 lg:grid-cols-3">
+          <Linha rot={d.perfil}>{L(profissional.tse.perfil)}</Linha>
+          <Linha rot={d.erro} forte>{L(profissional.tse.erro)}</Linha>
+          <Linha rot={d.depois} forte>{L(profissional.tse.depois)}</Linha>
+        </div>
+        <p className="mt-4 rounded-xl border border-rose/40 bg-bg px-3 py-2 font-mono text-[0.72rem] text-rose">{d.confere}: {L(profissional.tse.confere)}</p>
+      </div>
+      <p className="mt-4 max-w-3xl text-[0.98rem] font-medium leading-relaxed text-fg">{L(profissional.fecho)}</p>
+      <Sources className="mt-4">
+        {profissional.fontes.map((f, i) => (
+          <SourceTag key={i} tier={f.tier} source={L(f.source)} date={f.date} href={f.href} />
+        ))}
+      </Sources>
+    </div>
+  );
+}
 
 function DensityBars() {
   const { dict } = useLang();
@@ -136,6 +197,10 @@ export function PatternSection() {
         <Callout tone="neutral" title={d.moedas.ressalvaTitle} className="mt-4">
           {t(probabilidade.ressalva, lang)}
         </Callout>
+      </Reveal>
+
+      <Reveal delay={0.1} className="mt-12">
+        <Profissionais />
       </Reveal>
 
       <Reveal delay={0.1} className="mt-12">

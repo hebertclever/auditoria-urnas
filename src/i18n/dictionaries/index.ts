@@ -9,6 +9,7 @@ import { dashboard } from "./dashboard";
 import { slides } from "./slides";
 import { provas } from "./provas";
 import { parlamentar } from "./parlamentar";
+import { backup } from "./backup";
 
 export function getDictionary(lang: Locale) {
   return {
@@ -22,6 +23,7 @@ export function getDictionary(lang: Locale) {
     slides: slides[lang],
     provas: provas[lang],
     parlamentar: parlamentar[lang],
+    backup: backup[lang],
   };
 }
 

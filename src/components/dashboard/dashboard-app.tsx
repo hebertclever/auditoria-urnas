@@ -5,6 +5,7 @@ import { useLang } from "@/i18n/context";
 import { ModeProvider, ModeToggle } from "./mode";
 import { Kpis } from "./kpis";
 import { FaixaExplorer } from "./faixa";
+import { SaltoPanel } from "./salto";
 import { UFExplorer } from "./uf";
 import { MunicipiosPanel } from "./municipios";
 import { InfladoPanel } from "./inflado";
@@ -44,6 +45,7 @@ export function DashboardApp() {
             <Kpis />
           </section>
           <FaixaExplorer />
+          <SaltoPanel />
           <UFExplorer />
           <MunicipiosPanel />
           <InfladoPanel />

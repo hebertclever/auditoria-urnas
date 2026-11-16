@@ -2,22 +2,46 @@
 
 import { scaleBand, scaleLinear } from "d3-scale";
 import { motion, useInView } from "motion/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { BarChart, type Bar } from "@/components/charts/bar-chart";
 import { useMeasure } from "@/components/charts/use-measure";
 import { useFmt, useLang } from "@/i18n/context";
 import { t } from "@/i18n/config";
-import { capacidade, centenarios, deltaPorFaixa2022, historicoInversao, limpeza, municipios, resumoControle } from "@/data/cadastro";
+import { capacidade, centenarios, deltaPorFaixa, historicoInversao, limpeza, municipios, salto, saltoResumo, type AnoTurnos } from "@/data/cadastro";
+import { cn } from "@/lib/utils";
 
-function Frame({ title, note, children }: { title: string; note?: string; children: React.ReactNode }) {
+function Frame({ title, note, aside, children }: { title: string; note?: string; aside?: React.ReactNode; children: React.ReactNode }) {
   return (
     <figure className="rounded-3xl border border-line bg-bg-elev p-5 sm:p-7">
-      <figcaption className="mb-4">
-        <p className="display-md text-base font-semibold text-fg sm:text-lg">{title}</p>
-        {note && <p className="mt-1 text-xs leading-relaxed text-fg-3 sm:text-sm">{note}</p>}
+      <figcaption className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div className="min-w-0">
+          <p className="display-md text-base font-semibold text-fg sm:text-lg">{title}</p>
+          {note && <p className="mt-1 text-xs leading-relaxed text-fg-3 sm:text-sm">{note}</p>}
+        </div>
+        {aside && <div className="shrink-0">{aside}</div>}
       </figcaption>
       {children}
     </figure>
+  );
+}
+
+const ANOS_TURNOS: AnoTurnos[] = ["2022", "2026"];
+
+function YearTabs({ value, onChange, label }: { value: AnoTurnos; onChange: (y: AnoTurnos) => void; label: string }) {
+  return (
+    <div className="inline-flex gap-1 rounded-full bg-bg-sunk p-1" role="group" aria-label={label}>
+      {ANOS_TURNOS.map((y) => (
+        <button
+          key={y}
+          type="button"
+          aria-pressed={value === y}
+          onClick={() => onChange(y)}
+          className={cn("min-h-9 rounded-full px-3.5 font-mono text-xs font-semibold transition", value === y ? "bg-fg text-bg" : "text-fg-2 hover:text-fg")}
+        >
+          {y}
+        </button>
+      ))}
+    </div>
   );
 }
 
@@ -25,22 +49,47 @@ export function ChartInversao() {
   const { dict } = useLang();
   const { fmtPct } = useFmt();
   const c = dict.cadastro.p1.chart;
-  const firstOld = deltaPorFaixa2022.findIndex((d) => d.faixa_label === "70-74");
-  const data: Bar[] = deltaPorFaixa2022.map((d, i) => ({ label: d.faixa_label, value: d.delta_pct, tone: i >= firstOld ? "amber" : "teal" }));
+  const [year, setYear] = useState<AnoTurnos>("2026");
+  const rows = deltaPorFaixa[year];
+  const firstOld = rows.findIndex((d) => d.faixa_label === "70-74");
+  const data: Bar[] = rows.map((d, i) => ({ label: d.faixa_label, value: d.delta_pct, tone: i >= firstOld ? "amber" : "teal" }));
   const fmtAxis = (v: number) => fmtPct(v, 0, true);
+  const base = saltoResumo[year].media_controle_2169;
   return (
-    <Frame title={c.title} note={c.note}>
+    <Frame title={c.title} note={`${c.note} (${fmtPct(base, 2, true)}).`} aside={<YearTabs value={year} onChange={setYear} label={c.ano} />}>
       <div className="hidden lg:block">
-        <BarChart data={data} height={340} format={fmtAxis} baseline={resumoControle.mediaDeltaControle2169} baselineLabel={c.baseline} highlightRange={[firstOld, data.length - 1]} />
+        <BarChart key={year} data={data} height={340} format={fmtAxis} baseline={base} highlightRange={[firstOld, data.length - 1]} />
       </div>
       <div className="lg:hidden">
-        <BarChart data={data} height={280} format={fmtAxis} baseline={resumoControle.mediaDeltaControle2169} baselineLabel={c.baseline} highlightRange={[firstOld, data.length - 1]} showValues={false} labelEvery={3} />
+        <BarChart key={year} data={data} height={280} format={fmtAxis} baseline={base} highlightRange={[firstOld, data.length - 1]} showValues={false} labelEvery={3} />
       </div>
     </Frame>
   );
 }
 
-const yearTone: Record<string, string> = { "2014": "var(--slate)", "2018": "var(--fg-3)", "2022": "var(--amber)" };
+/** Dos que faltaram ao 1º turno, quantos apareceram no 2º (saldo líquido), por faixa. */
+export function ChartRetorno() {
+  const { dict } = useLang();
+  const { fmtPct } = useFmt();
+  const c = dict.cadastro.p1.retorno;
+  const [year, setYear] = useState<AnoTurnos>("2026");
+  const rows = salto.retorno_abstencao[year];
+  const firstOld = rows.findIndex((d) => d.faixa === "70-74");
+  const data: Bar[] = rows.map((d, i) => ({ label: d.faixa, value: d.retorno_pct, tone: i >= firstOld ? "amber" : "teal" }));
+  const fmtAxis = (v: number) => fmtPct(v, v > 0 && v < 1 ? 1 : 0);
+  return (
+    <Frame title={c.title} note={c.note} aside={<YearTabs value={year} onChange={setYear} label={dict.cadastro.p1.chart.ano} />}>
+      <div className="hidden lg:block">
+        <BarChart key={year} data={data} height={320} format={fmtAxis} highlightRange={[firstOld, data.length - 1]} />
+      </div>
+      <div className="lg:hidden">
+        <BarChart key={year} data={data} height={270} format={fmtAxis} highlightRange={[firstOld, data.length - 1]} showValues={false} labelEvery={3} />
+      </div>
+    </Frame>
+  );
+}
+
+const yearTone: Record<string, string> = { "2014": "var(--slate)", "2018": "var(--fg-3)", "2022": "var(--amber)", "2026": "var(--rose)" };
 
 export function ChartHistorico() {
   const { dict } = useLang();
@@ -57,9 +106,9 @@ export function ChartHistorico() {
   const w = Math.max(width, 10);
   const iw = Math.max(w - m.left - m.right, 10);
   const ih = height - m.top - m.bottom;
-  const x0 = scaleBand<string>().domain(faixas).range([0, iw]).paddingInner(0.3);
-  const x1 = scaleBand<string>().domain(anos).range([0, x0.bandwidth()]).paddingInner(0.12);
-  const y = scaleLinear().domain([-2, 36]).range([ih, 0]);
+  const x0 = scaleBand<string>().domain(faixas).range([0, iw]).paddingInner(0.22);
+  const x1 = scaleBand<string>().domain(anos).range([0, x0.bandwidth()]).paddingInner(0.1);
+  const y = scaleLinear().domain([-2, 60]).range([ih, 0]);
   const zero = y(0);
 
   return (
@@ -76,7 +125,7 @@ export function ChartHistorico() {
           {width > 0 && (
             <svg width={w} height={height} className="overflow-visible" role="img" aria-label={c.title}>
               <g transform={`translate(${m.left},${m.top})`}>
-                {y.ticks(5).map((tk) => (
+                {y.ticks(6).map((tk) => (
                   <g key={tk} transform={`translate(0,${y(tk)})`}>
                     <line x1={0} x2={iw} stroke="var(--line)" strokeDasharray={tk === 0 ? undefined : "2 4"} />
                     <text x={-8} dy="0.32em" textAnchor="end" fontSize={11} fill="var(--fg-3)" className="font-mono tabular">{fmtPct(tk, 0, true)}</text>
@@ -92,7 +141,7 @@ export function ChartHistorico() {
                         key={`${h.ano}-${f.faixa}`}
                         x={bx}
                         width={x1.bandwidth()}
-                        rx={3}
+                        rx={Math.min(3, x1.bandwidth() / 3)}
                         fill={yearTone[h.ano]}
                         initial={{ y: zero, height: 0 }}
                         animate={inView ? { y: top, height: hgt } : {}}
@@ -159,9 +208,9 @@ export function ChartCapacidade() {
   const { dict } = useLang();
   const { fmtPct } = useFmt();
   const c = dict.cadastro.p5.chart;
-  const bands = capacidade.turnout2022_2T;
+  const bands = capacidade.turnout2026_2T;
   const turnout: Bar[] = bands.map((b) => ({ label: b.faixa, value: b.turnout, tone: "teal" }));
-  const delta: Bar[] = bands.map((b) => ({ label: b.faixa, value: b.delta, tone: "amber" }));
+  const delta: Bar[] = bands.map((b) => ({ label: b.faixa, value: b.retorno, tone: "amber" }));
   return (
     <figure className="rounded-3xl border border-line bg-bg-elev p-5 sm:p-7">
       <div className="grid gap-6 md:grid-cols-2">
@@ -171,7 +220,7 @@ export function ChartCapacidade() {
         </div>
         <div>
           <p className="display-md mb-3 text-base font-semibold text-fg">{c.delta}</p>
-          <BarChart data={delta} height={260} format={(v) => fmtPct(v, 0, true)} />
+          <BarChart data={delta} height={260} format={(v) => fmtPct(v, v > 0 && v < 1 ? 1 : 0)} />
         </div>
       </div>
       <figcaption className="mt-4 text-xs leading-relaxed text-fg-3 sm:text-sm">{c.note}</figcaption>

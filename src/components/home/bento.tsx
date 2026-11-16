@@ -7,7 +7,7 @@ import { Stagger, staggerItem } from "@/components/ui/reveal";
 import { motion } from "motion/react";
 import { useLang } from "@/i18n/context";
 import type { StatFormat } from "@/lib/format";
-import { centenarios, centenariosRazao, limpeza, municipios, resumoControle } from "@/data/cadastro";
+import { centenarios, centenariosRazao, limpeza, municipios, saltoResumo } from "@/data/cadastro";
 import { kit } from "@/data/codigo";
 
 export function Bento() {
@@ -18,7 +18,7 @@ export function Bento() {
     { value: centenarios.tse2026Aptos100, label: b.centenarios, tone: "amber", big: true, cls: "sm:col-span-2" },
     { value: centenariosRazao, label: b.razao, tone: "amber", format: "x1" },
     { value: limpeza.gapAnual, label: b.gap, tone: "rose", format: "compact" },
-    { value: resumoControle.votosExtras70mais2T, label: b.controle, tone: "teal", format: "compact" },
+    { value: saltoResumo["2026"].delta70_abs, label: b.controle, tone: "teal", format: "compact" },
     { value: municipios.totais.votosMaiorPop, label: b.municipios, tone: "neutral" },
     { value: kit.gaps, label: b.gaps, tone: "rose" },
   ];

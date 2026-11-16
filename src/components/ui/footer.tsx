@@ -30,6 +30,7 @@ export function Footer() {
           <ul className="space-y-0 text-fg-2 sm:space-y-2">
             <li><Link className="inline-flex min-h-10 items-center hover:text-fg sm:min-h-0" href={href(lang, "/metodo/")}>{f.metodo}</Link></li>
             <li><Link className="inline-flex min-h-10 items-center hover:text-fg sm:min-h-0" href={href(lang, "/metodo/#limites")}>{f.limites}</Link></li>
+            <li><Link className="inline-flex min-h-10 items-center hover:text-fg sm:min-h-0" href={href(lang, "/backup/")}>{f.backup}</Link></li>
             <li>
               <a className="inline-flex min-h-10 items-center hover:text-fg sm:min-h-0" href="https://github.com/hebertclever/auditoria-urnas" target="_blank" rel="noreferrer">
                 {f.github}

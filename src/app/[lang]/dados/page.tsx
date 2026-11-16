@@ -5,7 +5,7 @@ import { GapsTable } from "@/components/dados/gaps-table";
 import { Testes } from "@/components/dados/testes";
 import { CopyJsonList } from "@/components/dados/copy-json";
 import { getGaps, kit } from "@/data/codigo";
-import { centenarios, deltaPorFaixa2022, fantasmas90, historicoInversao, limpeza, municipios } from "@/data/cadastro";
+import { centenarios, deltaPorFaixa2022, deltaPorFaixa2026, fantasmas90, historicoInversao, limpeza, municipios, salto } from "@/data/cadastro";
 
 export const generateMetadata = metaFor("dados");
 
@@ -15,8 +15,10 @@ export default async function DadosPage({ params }: PageProps<"/[lang]/dados">) 
   const gaps = getGaps(lang);
 
   const files = [
+    { key: "delta_1t_2t_2026", label: d.arquivos.items.delta2026, data: deltaPorFaixa2026 },
     { key: "delta_1t_2t_2022", label: d.arquivos.items.delta, data: deltaPorFaixa2022 },
-    { key: "inversao_2014_2018_2022", label: d.arquivos.items.historico, data: historicoInversao },
+    { key: "salto_70mais_2014_2026", label: d.arquivos.items.historico, data: historicoInversao },
+    { key: "salto_2t_2026", label: d.arquivos.items.salto, data: salto },
     { key: "gaps63", label: d.arquivos.items.gaps, data: gaps },
     { key: "municipios_votos_pop", label: d.arquivos.items.municipios, data: { top20: municipios.top20, sensibilidade: municipios.sensibilidade, totais: municipios.totais } },
     { key: "centenarios", label: d.arquivos.items.centenarios, data: { ...centenarios, fantasmas90 } },

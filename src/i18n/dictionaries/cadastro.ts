@@ -4,7 +4,7 @@ const pt = {
   meta: {
     title: "O cadastro fantasma",
     description:
-      "Cinco pilares de evidência, com dados T0, de que centenas de milhares de títulos de falecidos seguem ativos no cadastro eleitoral.",
+      "Cinco pilares, com dados T0, sobre os títulos de falecidos que seguem ativos no cadastro eleitoral — e o salto dos idosos entre os turnos.",
   },
   ui: {
     pilar: "Pilar",
@@ -20,34 +20,34 @@ const pt = {
     eyebrow: "Eixo 1 · Cadastro eleitoral",
     title: "O cadastro fantasma",
     lead:
-      "Dados oficiais do IBGE, do TSE e do Ministério da Saúde apontam para a mesma conclusão: centenas de milhares de títulos de pessoas falecidas continuam ativos no cadastro eleitoral brasileiro. O padrão é estrutural, aparece em todas as eleições e piora com o tempo.",
+      "Dados oficiais do IBGE, do TSE e do Ministério da Saúde apontam para a mesma conclusão: centenas de milhares de títulos de pessoas falecidas continuam ativos no cadastro eleitoral brasileiro. O problema é estrutural: aparece em 2022 e em 2026, e só entre os centenários o cadastro ganhou 113 mil nomes em quatro anos.",
     stats: {
       tse: "centenários registrados como eleitores no TSE (2026), contra 37.814 encontrados vivos pelo Censo 2022",
       razao: "mais centenários no cadastro do TSE do que o IBGE contou, porta a porta, no Censo",
       gap: "títulos de eleitores falecidos que ficam sem cancelamento a cada ano (gap de 44%)",
-      controle: "o aumento de comparecimento dos idosos entre os turnos, comparado ao dos adultos (2022)",
+      controle: "eleitores de 70 anos ou mais a mais no 2º turno de 2026 do que no 1º (+14,8%) — o maior salto da série",
     },
     note:
       "Os cinco pilares abaixo são independentes: usam fontes e comparações diferentes. Derrubar um não derruba os outros. Cada pilar diz o que prova — e o que não prova.",
   },
   p1: {
-    short: "Inversão biológica",
-    eyebrow: "Pilar 1 · evidência mais forte",
-    title: "A inversão biológica",
+    short: "Salto entre turnos",
+    eyebrow: "Pilar 1 · o sinal entre os turnos",
+    title: "O salto dos idosos entre os turnos",
     lead:
-      "Entre o 1º e o 2º turno, o comparecimento muda pouco — e, se muda, deveria mudar menos entre os mais idosos, que têm mais dificuldade de sair de casa. Os dados do TSE mostram o contrário: quanto mais velha a faixa etária, maior o aumento de comparecimento.",
+      "Do 1º para o 2º turno de 2026, 1,3 milhão de eleitores de 70 anos ou mais apareceram a mais nas urnas: +14,8%, contra +1,4% no resto do eleitorado. É o maior salto das quatro eleições presidenciais com esse dado (2014 a 2026) — mais que o dobro do de 2022 — e, quanto mais velha a faixa, maior o aumento em relação ao 1º turno.",
     steps: [
       {
         t: "Primeiro turno",
-        b: "Imagine duas filas no dia da eleição: uma de adultos entre 21 e 69 anos e outra de idosos com 70 anos ou mais. Contamos quantos de cada fila compareceram no 1º turno de 2022.",
+        b: "Imagine duas filas no dia 4 de outubro de 2026: uma de adultos entre 21 e 69 anos, outra de idosos com 70 anos ou mais, para quem o voto é facultativo. Na fila dos idosos votaram 8,77 milhões de pessoas.",
       },
       {
         t: "Segundo turno",
-        b: "Quatro semanas depois, as mesmas pessoas podem votar de novo. A fila dos adultos fica praticamente igual: +0,05%. A fila dos idosos cresce +20,7% em média — e +33,7% entre quem tem 95 a 99 anos.",
+        b: "Três semanas depois, a fila dos adultos cresce 1,5%. A dos idosos cresce 14,8%: 1.295.980 comparecimentos a mais. Para cada 20 idosos que votaram no 1º turno, o 2º turno teve 23.",
       },
       {
-        t: "397 vezes",
-        b: "O aumento dos idosos é 397 vezes maior que o do grupo de controle. E cresce de forma regular com a idade: 70–74 (+6,8%), 75–79 (+12%), 80–84 (+17%), 85–89 (+22%), 90–94 (+28%), 95–99 (+34%). A biologia prevê a curva oposta.",
+        t: "44% do aumento",
+        b: "Os eleitores de 70 anos ou mais eram 7% de quem votou no 1º turno — e responderam por 44% de todo o aumento de comparecimento entre os turnos. Em 2022 a concentração foi ainda maior: sem eles, o comparecimento do país teria caído do 1º para o 2º turno.",
       },
     ],
     anim: {
@@ -56,40 +56,57 @@ const pt = {
       t1: "1º turno",
       t2: "2º turno",
       variacao: "variação",
-      media: "média das faixas 70+",
-      razao: "vezes o grupo de controle",
-      controle: "grupo de controle",
+      media: "todas as faixas 70+",
+      razao: "de todo o aumento entre os turnos veio dos 70+",
+      controle: "7% dos votantes",
     },
     chart: {
-      title: "Variação do comparecimento do 1º para o 2º turno, por faixa etária (2022)",
-      note: "Verde-azulado: faixas de 16 a 69 anos (controle). Âmbar: 70 anos ou mais. Linha tracejada: média do controle, +0,05%.",
-      baseline: "controle +0,05%",
+      title: "Variação do comparecimento do 1º para o 2º turno, por faixa etária",
+      note: "Verde-azulado: faixas de 16 a 69 anos. Âmbar: 70 anos ou mais. Linha tracejada: média das faixas de 21 a 69 anos",
+      ano: "Eleição",
+    },
+    retorno: {
+      title: "De cada 100 que faltaram ao 1º turno, quantos apareceram no 2º",
+      note: "Aumento do comparecimento entre os turnos dividido pelas abstenções do 1º turno, por faixa etária. É um saldo: quem veio a mais menos quem deixou de vir. O pico está nos 70–74 anos; daí em diante a proporção cai a cada faixa.",
     },
     hist: {
-      title: "O padrão aparece em 2014, 2018 e 2022 — e piora",
+      title: "2014, 2018, 2022 e 2026: o maior salto é o de 2026",
       note: "Variação do 1º para o 2º turno nas faixas 70+, por eleição presidencial com segundo turno. 2012 e 2016 foram eleições municipais (2º turno só em algumas cidades) e não entram.",
-      excesso: "votos acima do que a faixa 70–74 permitiria",
+      excesso: "comparecimentos de 75+ acima do ritmo da faixa 70–74",
       legenda: "Eleição",
     },
+    fac: {
+      title: "Quem tem voto facultativo se comportou de forma parecida (2026)",
+      grupo: "Grupo",
+      aumento: "Aumento 1º→2º turno",
+      retorno: "Voltaram, de cada 100 que faltaram ao 1º",
+      grupos: {
+        jovens: "16 e 17 anos · facultativo",
+        analfabetos: "18 a 69 anos, analfabetos · facultativo",
+        obrigatorio: "18 a 69 anos · obrigatório",
+        idosos: "70 anos ou mais · facultativo",
+      },
+    },
     why: {
-      title: "Por que este é o pilar mais forte",
+      title: "O que este pilar mostra",
       items: [
-        "Compara o TSE com o próprio TSE: mesmas pessoas, mesmo cadastro, dois turnos. Não depende do IBGE nem de estimativa.",
-        "Tem grupo de controle interno: as faixas de 21 a 69 anos não mostram o padrão.",
-        "É monotônico: cada faixa mais velha aumenta mais que a anterior.",
-        "É estrutural: aparece em 2014, 2018 e 2022 — e o excesso de 2022 (198,7 mil votos) é 3,4 vezes o de 2014.",
-        "Não é afetado por domicílio eleitoral: a pessoa vota no mesmo lugar nos dois turnos.",
-        "Contradiz a capacidade funcional medida pelo IBGE (Pilar 5).",
+        "Compara o TSE com o próprio TSE: mesmo cadastro, dois turnos, três semanas de intervalo. Não depende do IBGE nem de estimativa.",
+        "É o maior salto da série: +3,9% em 2014, +2,8% em 2018, +10,0% em 2022 e +14,8% em 2026.",
+        "Está no país inteiro: em 2026 o comparecimento dos 70+ subiu em 5.490 dos 5.571 municípios e em 25 dos 27 estados.",
+        "Começa exatamente onde o voto deixa de ser obrigatório: +2,3% aos 65–69 anos, +9,4% aos 70–74.",
+        "Concentra-se nos idosos de menor escolaridade: +40% entre os analfabetos de 70 anos ou mais, +4,5% entre os que têm ensino superior.",
+        "Os outros eleitores de voto facultativo fizeram algo parecido: entre os analfabetos de 18 a 69 anos, voltaram no 2º turno 14 de cada 100 que tinham faltado ao 1º; entre os idosos, 15.",
       ],
     },
     method: [
-      "Fonte: arquivos oficiais “Comparecimento e abstenção por perfil do eleitorado” do TSE (2014, 2018, 2022), lidos integralmente — 8,8 milhões de linhas em 2022, com CRC e SHA-256 conferidos.",
+      "Fonte: arquivos oficiais “Comparecimento e abstenção por perfil do eleitorado” do TSE (2014, 2018, 2022 e 2026), lidos integralmente. O de 2026 com os dois turnos foi publicado em 13/11/2026: 22.121.816 linhas, SHA-256 conferido, aptos = comparecimento + abstenção em todas.",
       "Para cada faixa etária somamos o comparecimento nacional no 1º e no 2º turno. Variação = (2º − 1º) ÷ 1º.",
-      "Grupo de controle: faixas de 21 a 69 anos. Baseline dos idosos: a faixa 70–74, a mais jovem entre eles.",
-      "Votos excedentes = quanto cada faixa acima de 74 anos teve a mais do que teria se crescesse como a faixa 70–74.",
+      "Volta às urnas = (2º − 1º) ÷ abstenções do 1º turno. É um saldo líquido: o arquivo não diz quem votou só em um dos turnos.",
+      "Voto facultativo e obrigatório: colunas QT_COMPAREC_FACULTATIVO e QT_COMPAREC_OBRIGATORIO do próprio arquivo. Entre 18 e 69 anos, o voto facultativo é o dos analfabetos.",
+      "Excedente = quanto cada faixa acima de 74 anos teve a mais do que teria se crescesse como a faixa 70–74: 58.913 (2014), 27.477 (2018), 198.738 (2022) e 472.721 (2026).",
     ],
     naoProva:
-      "Este pilar não identifica nenhuma pessoa, nem prova que alguém votou com título de falecido. Prova que o comportamento agregado dos idosos entre os turnos é anômalo e cresce com a idade — algo que mobilização, voto facultativo ou transporte organizado não explicam, porque teriam de ser progressivamente mais fortes quanto mais velha a faixa.",
+      "Este pilar não identifica nenhuma pessoa nem prova voto em nome de falecido. O salto é real e está medido; a causa, não. Mobilização de eleitores de voto facultativo para o 2º turno é uma explicação possível, e os testes acima são compatíveis com ela: a volta às urnas cai com a idade depois dos 74 anos, e os analfabetos de 18 a 69 anos — também de voto facultativo — tiveram comportamento parecido. O que nenhum número agregado diz é quem são esses 1,3 milhão de eleitores. Só o TSE pode dizer, nome a nome — inclusive quantos deles foram identificados pela biometria.",
   },
   p2: {
     short: "Centenários",
@@ -272,10 +289,10 @@ const pt = {
   },
   p5: {
     short: "Capacidade funcional",
-    eyebrow: "Pilar 5 · a contradição",
+    eyebrow: "Pilar 5 · a régua da saúde",
     title: "Quem consegue ir votar?",
     lead:
-      "A Pesquisa Nacional de Saúde do IBGE mede o que os idosos conseguem fazer sozinhos. 43% dos brasileiros com 75 anos ou mais têm dificuldade para ir a lugares distantes ou usar transporte. Mesmo assim, são justamente os mais velhos que mais aumentam o comparecimento entre os turnos.",
+      "A Pesquisa Nacional de Saúde do IBGE mede o que os idosos conseguem fazer sozinhos: 43% dos brasileiros com 75 anos ou mais têm dificuldade para ir a lugares distantes ou usar transporte. É contra essa régua que o comparecimento dos mais velhos precisa ser lido — e ele subiu: no 2º turno de 2026 votaram 47% dos eleitores registrados com 75 anos ou mais; em 2022 tinham sido 32%.",
     steps: [
       {
         t: "Cem pessoas com 75 anos ou mais",
@@ -286,19 +303,19 @@ const pt = {
         b: "Segundo a PNS 2019, 43,2% têm limitação para atividades como ir a lugares distantes, usar transporte ou lidar com dinheiro. 6% dos 80+ estiveram acamados nas duas semanas anteriores à pesquisa.",
       },
       {
-        t: "Mas o aumento cresce com a idade",
-        b: "Se a mobilidade cai com a idade, o efeito de uma segunda ida às urnas deveria ser menor nos mais velhos. É maior: +6,8% aos 70–74, +33,7% aos 95–99.",
+        t: "A volta às urnas cai com a idade",
+        b: "Entre os que faltaram ao 1º turno de 2026, apareceram no 2º turno 21 de cada 100 aos 70–74 anos, 15 aos 80–84 e 2 aos 95–99. A curva desce com a idade, como a saúde prevê. O que subiu foi o nível: 47% dos eleitores de 75 anos ou mais votaram no 2º turno de 2026, contra 32% em 2022.",
       },
     ],
     anim: {
       pessoas: "pessoas com 75 anos ou mais",
       limitadas: "com limitação para sair sozinhas (PNS 2019)",
-      aumento: "aumento do 1º para o 2º turno (2022)",
+      aumento: "de cada 100 que faltaram ao 1º turno, vieram no 2º (2026)",
     },
     chart: {
-      turnout: "Comparecimento no 2º turno de 2022, sobre os aptos",
-      delta: "Aumento do 1º para o 2º turno (2022)",
-      note: "À esquerda, o nível cai com a idade, como esperado. À direita, o aumento sobe com a idade — o oposto do esperado.",
+      turnout: "Comparecimento no 2º turno de 2026, sobre os aptos",
+      delta: "De cada 100 que faltaram ao 1º turno, vieram no 2º (2026)",
+      note: "No primeiro gráfico, o nível cai com a idade, como esperado. No segundo, a volta às urnas no 2º turno: também cai com a idade a partir dos 75 anos.",
     },
     table: {
       title: "Comparecimento de eleitores com 80 anos ou mais: comparação internacional",
@@ -308,24 +325,25 @@ const pt = {
     why: {
       title: "O que a saúde dos idosos nos diz",
       items: [
-        "O nível absoluto de comparecimento (31,6% aos 80–84) é plausível frente à capacidade funcional.",
-        "O que não é plausível é o aumento entre turnos crescer com a idade — exatamente onde a limitação funcional é maior.",
+        "O nível de comparecimento cabe na capacidade funcional em todas as faixas: 46% aos 80–84 anos, onde entre 30% e 39% têm muita dificuldade ou não conseguem realizar atividades (Censo 2022).",
+        "A volta às urnas no 2º turno segue a saúde: é maior aos 70–74 anos e cai a cada faixa mais velha.",
+        "O que mudou foi o nível: entre os eleitores de 75 anos ou mais, o comparecimento no 2º turno passou de 32% em 2022 para 47% em 2026 — quase 15 pontos em quatro anos.",
         "No Japão, o comparecimento dos 80+ fica entre 33% e 48%; na Alemanha chega a 85%, mas com voto postal amplo. No Brasil o voto é presencial.",
       ],
     },
     method: [
       "PNS 2019 (IBGE): limitação AIVD em 43,2% dos 75+; ABVD em 18,5%; acamamento em 6,0% dos 80+ (Lima et al., 2024, n = 22.728).",
       "Censo 2022: deficiência (muita dificuldade ou impossibilidade) em 30–39% dos 80–84, ~48% dos 85–89 e mais de 60% dos 100+.",
-      "Comparecimento: TSE 2022, 2º turno, por faixa, sobre aptos; variação 1º→2º turno do Pilar 1.",
+      "Comparecimento: TSE 2022 e 2026, 2º turno, por faixa, sobre os aptos. Volta às urnas = aumento entre os turnos ÷ abstenções do 1º turno (Pilar 1).",
     ],
     naoProva:
-      "Não prova que pessoas incapazes “votaram”. Mostra que a curva do aumento entre turnos é incompatível com a curva de capacidade funcional da mesma população. A contradição está no agregado — e a explicação mais simples está no cadastro, não nas pessoas.",
+      "Este pilar não aponta irregularidade: o nível de comparecimento e a volta às urnas no 2º turno são compatíveis com a saúde medida pelo IBGE. Ele fica como régua do que é plausível — e registra uma subida de quase 15 pontos, em quatro anos, no comparecimento dos mais velhos, que só o TSE pode detalhar.",
   },
   fraco: {
     eyebrow: "Sinal fraco · mostrado por honestidade",
     title: "O que não usamos como pilar",
     body:
-      "Em 137 municípios, o comparecimento de uma faixa etária no 2º turno de 2022 superou a população residente dessa faixa no Censo: 1.089 diferenças. Reproduzimos o número — mas, ao somar por estado, nenhuma UF apresenta comparecimento acima do Censo em nenhuma faixa. O sinal dilui. Domicílio eleitoral (votar onde não se mora) explica parte dele. Por isso essas diferenças não são pilar, e abandonamos o rótulo “votos impossíveis” de versões anteriores.",
+      "Em 137 municípios, o comparecimento de uma faixa etária no 2º turno de 2022 superou a população residente dessa faixa no Censo: 1.089 diferenças. Reproduzimos o número — mas, ao somar por estado, nenhuma UF apresenta comparecimento acima do Censo em nenhuma faixa. O sinal dilui. Domicílio eleitoral (votar onde não se mora) explica parte dele. Por isso essas diferenças não são pilar, e abandonamos o rótulo “votos impossíveis” de versões anteriores. Para 2026 não há Censo do mesmo ano; com o teto que não depende de premissa — só pode ter de 70 a 74 anos em 2026 quem tinha de 65 a 74 no Censo de 2022, e assim por diante —, nenhum estado passa do teto e só três municípios passam, por um voto cada.",
     table: {
       faixa: "Faixa",
       censo: "Censo 2022 (vivos)",
@@ -337,7 +355,7 @@ const pt = {
     title: "Onde a auditoria está",
     encontrado: "Gap encontrado",
     encontradoBody:
-      "O cadastro eleitoral tem centenas de milhares de títulos que não correspondem a pessoas vivas, por falha estrutural de cancelamento. Cinco linhas de evidência independentes convergem.",
+      "O cadastro eleitoral tem centenas de milhares de títulos que não correspondem a pessoas vivas, por falha estrutural de cancelamento. Três linhas de evidência independentes convergem: a contagem de centenários, a baixa por óbito em metade das mortes e os municípios com mais títulos que habitantes.",
     naoAchado: "Ainda não achado",
     naoAchadoBody:
       "Um caso individual, com nome e documento, de título de falecido usado para votar. Fechar esse elo exige cruzar CPF de óbito com registro de comparecimento — dados que a LGPD mantém fora do acesso público.",
@@ -349,7 +367,7 @@ const en: typeof pt = {
   meta: {
     title: "The phantom registry",
     description:
-      "Five pillars of evidence, built on primary data, that hundreds of thousands of deceased people remain registered to vote.",
+      "Five pillars, built on primary data, on the registrations of deceased people still active in the voter rolls — and the elderly jump between rounds.",
   },
   ui: {
     pilar: "Pillar",
@@ -365,34 +383,34 @@ const en: typeof pt = {
     eyebrow: "Track 1 · Voter registry",
     title: "The phantom registry",
     lead:
-      "Official data from IBGE (the statistics institute), the TSE (the electoral court) and the Ministry of Health point to the same conclusion: hundreds of thousands of registrations belonging to deceased people remain active in Brazil's voter rolls. The pattern is structural, shows up in every election, and gets worse over time.",
+      "Official data from IBGE (the statistics institute), the TSE (the electoral court) and the Ministry of Health point to the same conclusion: hundreds of thousands of registrations belonging to deceased people remain active in Brazil's voter rolls. The problem is structural: it shows in 2022 and in 2026, and among centenarians alone the registry gained 113,000 names in four years.",
     stats: {
       tse: "centenarians registered as voters by the TSE (2026), against 37,814 found alive by the 2022 Census",
       razao: "more centenarians in the TSE registry than IBGE counted, door to door, in the Census",
       gap: "registrations of deceased voters left uncancelled every year (a 44% gap)",
-      controle: "the rise in elderly turnout between rounds, compared with adults (2022)",
+      controle: "more voters aged 70 or over in the 2026 runoff than in the first round (+14.8%) — the largest jump in the series",
     },
     note:
       "The five pillars below are independent: they use different sources and comparisons. Knocking one down does not knock down the others. Each pillar states what it proves — and what it does not.",
   },
   p1: {
-    short: "Biological inversion",
-    eyebrow: "Pillar 1 · strongest evidence",
-    title: "The biological inversion",
+    short: "Jump between rounds",
+    eyebrow: "Pillar 1 · the signal between rounds",
+    title: "The elderly jump between rounds",
     lead:
-      "Between the first and second rounds, turnout changes little — and if it changes, it should change less among the oldest, who find it hardest to leave home. TSE data show the opposite: the older the age group, the bigger the increase in turnout.",
+      "From the first to the second round of 2026, 1.3 million more voters aged 70 or over showed up at the polls: +14.8%, against +1.4% in the rest of the electorate. It is the largest jump of the four presidential elections with this data (2014 to 2026) — more than double that of 2022 — and the older the age group, the bigger the increase relative to the first round.",
     steps: [
       {
         t: "First round",
-        b: "Picture two queues on election day: one of adults aged 21 to 69 and one of people aged 70 and over. We count how many from each queue showed up in the first round of 2022.",
+        b: "Picture two queues on 4 October 2026: one of adults aged 21 to 69, the other of people aged 70 and over, for whom voting is optional. In the elderly queue, 8.77 million people voted.",
       },
       {
         t: "Second round",
-        b: "Four weeks later the same people can vote again. The adult queue stays practically the same: +0.05%. The elderly queue grows +20.7% on average — and +33.7% among those aged 95 to 99.",
+        b: "Three weeks later the adult queue grows 1.5%. The elderly queue grows 14.8%: 1,295,980 more turnouts. For every 20 elderly voters in the first round, the runoff had 23.",
       },
       {
-        t: "397 times",
-        b: "The increase among the elderly is 397 times that of the control group. And it climbs steadily with age: 70–74 (+6.8%), 75–79 (+12%), 80–84 (+17%), 85–89 (+22%), 90–94 (+28%), 95–99 (+34%). Biology predicts the opposite curve.",
+        t: "44% of the increase",
+        b: "Voters aged 70 or over were 7% of those who voted in the first round — and accounted for 44% of the entire increase in turnout between rounds. In 2022 the concentration was even greater: without them, the country's turnout would have fallen from the first round to the second.",
       },
     ],
     anim: {
@@ -401,40 +419,57 @@ const en: typeof pt = {
       t1: "Round 1",
       t2: "Round 2",
       variacao: "change",
-      media: "average of the 70+ groups",
-      razao: "times the control group",
-      controle: "control group",
+      media: "all 70+ groups",
+      razao: "of the whole increase between rounds came from the 70+",
+      controle: "7% of voters",
     },
     chart: {
-      title: "Change in turnout from round 1 to round 2, by age group (2022)",
-      note: "Teal: ages 16 to 69 (control). Amber: 70 and over. Dashed line: control average, +0.05%.",
-      baseline: "control +0.05%",
+      title: "Change in turnout from round 1 to round 2, by age group",
+      note: "Teal: ages 16 to 69. Amber: 70 and over. Dashed line: average of the 21-to-69 groups",
+      ano: "Election",
+    },
+    retorno: {
+      title: "Of every 100 who skipped round 1, how many showed up in round 2",
+      note: "Increase in turnout between rounds divided by round-1 abstentions, by age group. It is a net figure: those who came minus those who stopped coming. The peak is at ages 70–74; from there the share falls with every group.",
     },
     hist: {
-      title: "The pattern appears in 2014, 2018 and 2022 — and worsens",
+      title: "2014, 2018, 2022 and 2026: the largest jump is 2026's",
       note: "Round 1 to round 2 change in the 70+ groups, for each presidential election with a runoff. 2012 and 2016 were municipal elections (runoffs only in some cities) and are excluded.",
-      excesso: "votes above what the 70–74 group would allow",
+      excesso: "turnouts of 75+ above the pace of the 70–74 group",
       legenda: "Election",
     },
+    fac: {
+      title: "Other optional voters behaved in a similar way (2026)",
+      grupo: "Group",
+      aumento: "Increase R1→R2",
+      retorno: "Returned, per 100 who skipped round 1",
+      grupos: {
+        jovens: "Ages 16 and 17 · optional",
+        analfabetos: "Ages 18 to 69, illiterate · optional",
+        obrigatorio: "Ages 18 to 69 · compulsory",
+        idosos: "Aged 70 or over · optional",
+      },
+    },
     why: {
-      title: "Why this is the strongest pillar",
+      title: "What this pillar shows",
       items: [
-        "It compares the TSE with the TSE itself: same people, same registry, two rounds. It depends neither on IBGE nor on estimates.",
-        "It has a built-in control group: ages 21 to 69 show no such pattern.",
-        "It is monotonic: each older group rises more than the previous one.",
-        "It is structural: present in 2014, 2018 and 2022 — and the 2022 excess (198.7 thousand votes) is 3.4 times that of 2014.",
-        "It is unaffected by electoral domicile: a person votes in the same place in both rounds.",
-        "It contradicts the functional capacity measured by IBGE (Pillar 5).",
+        "It compares the TSE with the TSE itself: same registry, two rounds, three weeks apart. It depends neither on IBGE nor on estimates.",
+        "It is the largest jump in the series: +3.9% in 2014, +2.8% in 2018, +10.0% in 2022 and +14.8% in 2026.",
+        "It is nationwide: in 2026, turnout of the 70+ rose in 5,490 of 5,571 municipalities and in 25 of the 27 states.",
+        "It starts exactly where voting stops being compulsory: +2.3% at ages 65–69, +9.4% at 70–74.",
+        "It is concentrated among the least-schooled elderly: +40% among illiterate voters aged 70 or over, +4.5% among those with a university degree.",
+        "Other optional voters did something similar: among illiterate voters aged 18 to 69, 14 of every 100 who had skipped round 1 came back for round 2; among the elderly, 15.",
       ],
     },
     method: [
-      "Source: the TSE's official “Turnout and abstention by voter profile” files (2014, 2018, 2022), read in full — 8.8 million rows in 2022, with CRC and SHA-256 verified.",
+      "Source: the TSE's official “Turnout and abstention by voter profile” files (2014, 2018, 2022 and 2026), read in full. The 2026 file with both rounds was published on 13 Nov 2026: 22,121,816 rows, SHA-256 verified, registered = turnout + abstention in every row.",
       "For each age group we sum national turnout in rounds 1 and 2. Change = (R2 − R1) ÷ R1.",
-      "Control group: ages 21 to 69. Elderly baseline: the 70–74 group, the youngest among them.",
-      "Excess votes = how many more each group above 74 had than it would if it had grown like the 70–74 group.",
+      "Return to the polls = (R2 − R1) ÷ round-1 abstentions. It is a net figure: the file does not say who voted in only one of the rounds.",
+      "Optional and compulsory voting: columns QT_COMPAREC_FACULTATIVO and QT_COMPAREC_OBRIGATORIO of the file itself. Between ages 18 and 69, optional voting is that of illiterate voters.",
+      "Excess = how many more each group above 74 had than it would if it had grown like the 70–74 group: 58,913 (2014), 27,477 (2018), 198,738 (2022) and 472,721 (2026).",
     ],
     naoProva:
-      "This pillar identifies no individual and does not prove that anyone voted with a dead person's registration. It proves that the aggregate behaviour of the elderly between rounds is anomalous and grows with age — something mobilisation, optional voting or organised transport cannot explain, since each would have to be progressively stronger the older the group.",
+      "This pillar identifies no individual and does not prove a vote in a dead person's name. The jump is real and measured; its cause is not. Mobilisation of optional voters for the runoff is a possible explanation, and the tests above are compatible with it: the return to the polls falls with age after 74, and illiterate voters aged 18 to 69 — also optional voters — behaved in a similar way. What no aggregate number says is who those 1.3 million voters are. Only the TSE can tell, name by name — including how many of them were identified by biometrics.",
   },
   p2: {
     short: "Centenarians",
@@ -617,10 +652,10 @@ const en: typeof pt = {
   },
   p5: {
     short: "Functional capacity",
-    eyebrow: "Pillar 5 · the contradiction",
+    eyebrow: "Pillar 5 · the health yardstick",
     title: "Who can actually go and vote?",
     lead:
-      "IBGE's National Health Survey measures what elderly people can do on their own. 43% of Brazilians aged 75 and over have difficulty travelling to distant places or using transport. Yet it is precisely the oldest who increase their turnout the most between rounds.",
+      "IBGE's National Health Survey measures what elderly people can do on their own: 43% of Brazilians aged 75 and over have difficulty travelling to distant places or using transport. That is the yardstick against which the turnout of the oldest must be read — and it has risen: in the 2026 runoff, 47% of registered voters aged 75 and over voted; in 2022 it had been 32%.",
     steps: [
       {
         t: "One hundred people aged 75 and over",
@@ -631,19 +666,19 @@ const en: typeof pt = {
         b: "According to the 2019 PNS, 43.2% have limitations in activities such as travelling to distant places, using transport or handling money. 6% of those 80+ had been bedridden in the two weeks before the survey.",
       },
       {
-        t: "Yet the increase grows with age",
-        b: "If mobility falls with age, the effect of a second trip to the polls should be smaller among the oldest. It is larger: +6.8% at 70–74, +33.7% at 95–99.",
+        t: "The return to the polls falls with age",
+        b: "Among those who skipped the first round of 2026, 21 of every 100 showed up for the runoff at ages 70–74, 15 at 80–84 and 2 at 95–99. The curve falls with age, as health predicts. What rose was the level: 47% of voters aged 75 and over voted in the 2026 runoff, against 32% in 2022.",
       },
     ],
     anim: {
       pessoas: "people aged 75 and over",
       limitadas: "with limitations to go out alone (PNS 2019)",
-      aumento: "increase from round 1 to round 2 (2022)",
+      aumento: "of every 100 who skipped round 1, came for round 2 (2026)",
     },
     chart: {
-      turnout: "Turnout in the 2022 runoff, over registered voters",
-      delta: "Increase from round 1 to round 2 (2022)",
-      note: "On the left, the level falls with age, as expected. On the right, the increase rises with age — the opposite of what is expected.",
+      turnout: "Turnout in the 2026 runoff, over registered voters",
+      delta: "Of every 100 who skipped round 1, came for round 2 (2026)",
+      note: "In the first chart, the level falls with age, as expected. In the second, the return to the polls in the runoff: it also falls with age from 75 onwards.",
     },
     table: {
       title: "Turnout of voters aged 80 and over: international comparison",
@@ -653,24 +688,25 @@ const en: typeof pt = {
     why: {
       title: "What the health of the elderly tells us",
       items: [
-        "The absolute turnout level (31.6% at 80–84) is plausible given functional capacity.",
-        "What is not plausible is the increase between rounds growing with age — exactly where functional limitation is greatest.",
+        "The turnout level fits within functional capacity in every group: 46% at ages 80–84, where between 30% and 39% have great difficulty or cannot perform activities (2022 Census).",
+        "The return to the polls in the runoff follows health: it is highest at ages 70–74 and falls with every older group.",
+        "What changed was the level: among voters aged 75 and over, runoff turnout went from 32% in 2022 to 47% in 2026 — almost 15 points in four years.",
         "In Japan, turnout of those 80+ is between 33% and 48%; in Germany it reaches 85%, but with widespread postal voting. In Brazil voting is in person.",
       ],
     },
     method: [
       "PNS 2019 (IBGE): IADL limitation in 43.2% of those 75+; ADL in 18.5%; bedridden status in 6.0% of those 80+ (Lima et al., 2024, n = 22,728).",
       "2022 Census: disability (great difficulty or inability) in 30–39% of those 80–84, ~48% of those 85–89 and over 60% of those 100+.",
-      "Turnout: TSE 2022, runoff, by age group, over registered voters; round 1 to round 2 change from Pillar 1.",
+      "Turnout: TSE 2022 and 2026, runoff, by age group, over registered voters. Return to the polls = increase between rounds ÷ round-1 abstentions (Pillar 1).",
     ],
     naoProva:
-      "It does not prove that incapacitated people “voted”. It shows that the curve of the increase between rounds is incompatible with the functional-capacity curve of the same population. The contradiction lies in the aggregate — and the simplest explanation lies in the registry, not in the people.",
+      "This pillar points to no irregularity: the turnout level and the return to the polls in the runoff are compatible with the health IBGE measures. It stands as a yardstick of what is plausible — and records a rise of almost 15 points in four years in the turnout of the oldest, which only the TSE can detail.",
   },
   fraco: {
     eyebrow: "Weak signal · shown for honesty",
     title: "What we did not use as a pillar",
     body:
-      "In 137 municipalities, turnout of one age group in the 2022 runoff exceeded the resident population of that group in the Census: 1,089 differences. We reproduced the number — but when summed by state, no state shows turnout above the Census in any age group. The signal dilutes. Electoral domicile (voting where one does not live) explains part of it. That is why these differences are not a pillar, and why we dropped the “impossible votes” label used in earlier versions.",
+      "In 137 municipalities, turnout of one age group in the 2022 runoff exceeded the resident population of that group in the Census: 1,089 differences. We reproduced the number — but when summed by state, no state shows turnout above the Census in any age group. The signal dilutes. Electoral domicile (voting where one does not live) explains part of it. That is why these differences are not a pillar, and why we dropped the “impossible votes” label used in earlier versions. For 2026 there is no same-year Census; using the ceiling that needs no assumption — only someone aged 65 to 74 in the 2022 Census can be 70 to 74 in 2026, and so on — no state exceeds the ceiling and only three municipalities do, by one vote each.",
     table: {
       faixa: "Age group",
       censo: "2022 Census (alive)",
@@ -682,7 +718,7 @@ const en: typeof pt = {
     title: "Where the audit stands",
     encontrado: "Gap found",
     encontradoBody:
-      "The voter registry holds hundreds of thousands of registrations that do not correspond to living people, owing to a structural failure to cancel them. Five independent lines of evidence converge.",
+      "The voter registry holds hundreds of thousands of registrations that do not correspond to living people, owing to a structural failure to cancel them. Three independent lines of evidence converge: the centenarian count, death removals covering half the deaths, and municipalities with more registrations than inhabitants.",
     naoAchado: "Not yet found",
     naoAchadoBody:
       "An individual case, with a name and a document, of a dead person's registration used to vote. Closing that link requires matching death-record IDs with turnout records — data that Brazil's privacy law keeps out of public reach.",

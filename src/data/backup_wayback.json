@@ -1,0 +1,301 @@
+{
+ "consultado_em_utc": "2026-11-16T02:04:18Z",
+ "concluido_em_utc": "2026-11-16T02:20:10Z",
+ "pedidos_feitos": 17,
+ "itens": [
+  {
+   "id": "perfil2026zip",
+   "grupo": "tseDados",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/perfil_comparecimento_abstencao/perfil_comparecimento_abstencao_2026.zip",
+   "primeira": "20261105181603",
+   "ultima": "20261114040055",
+   "pedido_hoje": null,
+   "situacao": "ok",
+   "versoes": [
+    {
+     "ts": "20261105181603",
+     "bytes": 229213668,
+     "sha256": "abd1af8ff28a80b4e861edafd9f544a8f3f667e1c2e146911d083bf7cc34f023",
+     "sha1_b32": "E52MFR7OSKLEFRSBRD7UPXXJ6IETUJW4",
+     "gerado_tse": "13/10/2026 16:46:32",
+     "linhas": 11060908,
+     "turnos": "1",
+     "comp_1t": 125277230,
+     "conferida": true
+    },
+    {
+     "ts": "20261114040055",
+     "bytes": 450543068,
+     "sha256": "3dc81301a6b09eda45f1f6933d4e3afc95b95a3690c4f08c1f17104eee2c8ef5",
+     "sha1_b32": "4HCIDX6WWGJHLSNWX2P3ID2P6PCFZ6WL",
+     "gerado_tse": "13/11/2026 18:20:58",
+     "linhas": 22121816,
+     "turnos": "1+2",
+     "comp_1t": 125276442,
+     "comp_2t": 128237676,
+     "conferida": true
+    }
+   ],
+   "incompleta": {
+    "ts": "20261116020122",
+    "motivo": "captura cortada pelo limite de tempo do serviço (resumo diferente do arquivo íntegro)"
+   }
+  },
+  {
+   "id": "perfil2026pagina",
+   "grupo": "tseDados",
+   "url": "https://dadosabertos.tse.jus.br/dataset/comparecimento-e-abstencao-2026",
+   "primeira": "20261026165850",
+   "ultima": "20261116015927",
+   "pedido_hoje": null,
+   "situacao": "ok"
+  },
+  {
+   "id": "perfil2022zip",
+   "grupo": "tseDados",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/perfil_comparecimento_abstencao/perfil_comparecimento_abstencao_2022.zip",
+   "primeira": null,
+   "ultima": null,
+   "pedido_hoje": "success",
+   "situacao": "incompleta",
+   "incompleta": {
+    "ts": "20261116021025",
+    "motivo": "captura cortada pelo limite de tempo do serviço (50,7 MB de 201 MB); cópia local com SHA-256 fb4e03d95a9e8f4981cbe32aeca9e77facf9e5f83e7b882f0f8c1610f350a7df"
+   }
+  },
+  {
+   "id": "perfil2022pagina",
+   "grupo": "tseDados",
+   "url": "https://dadosabertos.tse.jus.br/dataset/comparecimento-e-abstencao-2022",
+   "primeira": "20221106003723",
+   "ultima": "20261116021144",
+   "pedido_hoje": "success",
+   "situacao": "ok"
+  },
+  {
+   "id": "perfil2018pagina",
+   "grupo": "tseDados",
+   "url": "https://dadosabertos.tse.jus.br/dataset/comparecimento-e-abstencao-2018",
+   "primeira": "20220527181908",
+   "ultima": "20261116021120",
+   "pedido_hoje": "success",
+   "situacao": "ok"
+  },
+  {
+   "id": "perfil2014pagina",
+   "grupo": "tseDados",
+   "url": "https://dadosabertos.tse.jus.br/dataset/comparecimento-e-abstencao-2014",
+   "primeira": "20220527191658",
+   "ultima": "20261116021143",
+   "pedido_hoje": "success",
+   "situacao": "ok"
+  },
+  {
+   "id": "bu2026",
+   "grupo": "tseDados",
+   "url": "https://dadosabertos.tse.jus.br/dataset/resultados-2026-boletim-de-urna",
+   "primeira": "20261007145005",
+   "ultima": "20261106004611",
+   "pedido_hoje": null,
+   "situacao": "ok"
+  },
+  {
+   "id": "transmitidos2026",
+   "grupo": "tseDados",
+   "url": "https://dadosabertos.tse.jus.br/dataset/resultados-2026-arquivos-transmitidos-para-totalizacao",
+   "primeira": "20261011072417",
+   "ultima": "20261106005640",
+   "pedido_hoje": null,
+   "situacao": "ok"
+  },
+  {
+   "id": "resultados2026",
+   "grupo": "tseDados",
+   "url": "https://dadosabertos.tse.jus.br/dataset/resultados-2026",
+   "primeira": "20261009150924",
+   "ultima": "20261104071603",
+   "pedido_hoje": null,
+   "situacao": "ok"
+  },
+  {
+   "id": "dadosabertos",
+   "grupo": "tseDados",
+   "url": "https://dadosabertos.tse.jus.br/",
+   "primeira": null,
+   "ultima": "20261102003139",
+   "pedido_hoje": null,
+   "situacao": "ok"
+  },
+  {
+   "id": "kit2026",
+   "grupo": "tseKit",
+   "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/formato-arquivos-de-bu-rdv-e-assinatura-digital",
+   "primeira": null,
+   "ultima": null,
+   "pedido_hoje": "error",
+   "situacao": "bloqueado"
+  },
+  {
+   "id": "kit2022zip",
+   "grupo": "tseKit",
+   "url": "https://www.tse.jus.br/eleicoes/eleicoes-2022/arquivos/formato-dos-arquivos-de-bu-rdv-e-assinatura-digital-17-9-22/@@download/file/formato-arquivos-bu-rdv-ass-digital.zip",
+   "primeira": "20221005151626",
+   "ultima": "20221005151626",
+   "pedido_hoje": null,
+   "situacao": "ok",
+   "versoes": [
+    {
+     "ts": "20221005151626",
+     "bytes": 2223891,
+     "sha256": "e7b4f640c2bf18646549ce27293bf6ea9c3d31d75b8251033bcad8c16ecfc9cf",
+     "sha1_b32": "JOII2PGPQ7S3QGMEKPFVEUKKHLYETXXE",
+     "conferida": true
+    }
+   ]
+  },
+  {
+   "id": "segurancaUrna",
+   "grupo": "tseNormas",
+   "url": "https://www.tse.jus.br/eleicoes/urna-eletronica/seguranca-da-urna",
+   "primeira": "20180518001859",
+   "ultima": "20210926225213",
+   "pedido_hoje": "error",
+   "situacao": "bloqueado"
+  },
+  {
+   "id": "res23673",
+   "grupo": "tseNormas",
+   "url": "https://www.tse.jus.br/legislacao/compilada/res/2021/resolucao-no-23-673-de-14-de-dezembro-de-2021",
+   "primeira": null,
+   "ultima": null,
+   "pedido_hoje": "error",
+   "situacao": "bloqueado"
+  },
+  {
+   "id": "res23659",
+   "grupo": "tseNormas",
+   "url": "https://www.tse.jus.br/legislacao/compilada/res/2021/resolucao-no-23-659-de-26-de-outubro-de-2021",
+   "primeira": "20211203220400",
+   "ultima": "20261110224811",
+   "pedido_hoje": null,
+   "situacao": "ok"
+  },
+  {
+   "id": "res22166",
+   "grupo": "tseNormas",
+   "url": "https://www.tse.jus.br/legislacao/compilada/res/2006/resolucao-no-22-166-de-9-de-marco-de-2006",
+   "primeira": "20230929233842",
+   "ultima": "20260421132748",
+   "pedido_hoje": "error",
+   "situacao": "bloqueado"
+  },
+  {
+   "id": "cancelamentos2022",
+   "grupo": "tseNormas",
+   "url": "https://www.tse.jus.br/comunicacao/noticias/2023/Maio/justica-eleitoral-cancelou-quase-800-mil-titulos-em-2022",
+   "primeira": "20230520112012",
+   "ultima": "20250708041028",
+   "pedido_hoje": "error",
+   "situacao": "bloqueado"
+  },
+  {
+   "id": "baiaTraicao",
+   "grupo": "tseNormas",
+   "url": "https://www.tse.jus.br/comunicacao/noticias/2024/Novembro/tse-nega-pedido-de-revisao-do-eleitorado-de-baia-da-traicao-pb",
+   "primeira": "20241123015349",
+   "ultima": "20241123015349",
+   "pedido_hoje": "error",
+   "situacao": "bloqueado"
+  },
+  {
+   "id": "pescariaBrava",
+   "grupo": "tseNormas",
+   "url": "https://sjur-servicos.tse.jus.br/sjur-servicos/rest/download/pdf/273855",
+   "primeira": "20240415000444",
+   "ultima": "20240415000444",
+   "pedido_hoje": "error",
+   "situacao": "indisponivel"
+  },
+  {
+   "id": "sidra9514",
+   "grupo": "ibge",
+   "url": "https://sidra.ibge.gov.br/tabela/9514",
+   "primeira": "20231202143952",
+   "ultima": "20261111213931",
+   "pedido_hoje": null,
+   "situacao": "ok"
+  },
+  {
+   "id": "sidra6579",
+   "grupo": "ibge",
+   "url": "https://sidra.ibge.gov.br/tabela/6579",
+   "primeira": "20181101195024",
+   "ultima": "20261104204059",
+   "pedido_hoje": null,
+   "situacao": "ok"
+  },
+  {
+   "id": "sidra8375",
+   "grupo": "ibge",
+   "url": "https://sidra.ibge.gov.br/tabela/8375",
+   "primeira": "20220705043505",
+   "ultima": "20261116021502",
+   "pedido_hoje": "success",
+   "situacao": "ok"
+  },
+  {
+   "id": "ibgePPE",
+   "grupo": "ibge",
+   "url": "https://biblioteca.ibge.gov.br/visualizacao/livros/liv102110.pdf",
+   "primeira": "20241028031022",
+   "ultima": "20261116021523",
+   "pedido_hoje": "success",
+   "situacao": "ok"
+  },
+  {
+   "id": "ibgeDPE",
+   "grupo": "ibge",
+   "url": "https://www.ibge.gov.br/np_download/novoportal/documentos_institucionais/Esclarecimentos_prestados_pela_DPE_estimativas_das_populacoes_municipais_20260917.pdf",
+   "primeira": null,
+   "ultima": "20261116021551",
+   "pedido_hoje": "success",
+   "situacao": "ok"
+  },
+  {
+   "id": "datasus",
+   "grupo": "saude",
+   "url": "https://datasus.saude.gov.br/transferencia-de-arquivos/",
+   "primeira": "20200115102720",
+   "ultima": "20261106004738",
+   "pedido_hoje": null,
+   "situacao": "ok"
+  },
+  {
+   "id": "sim2011",
+   "grupo": "saude",
+   "url": "http://tabnet.datasus.gov.br/cgi/sim/Consolida_Sim_2011.pdf",
+   "primeira": "20131030174310",
+   "ultima": "20261116021626",
+   "pedido_hoje": "success",
+   "situacao": "ok"
+  },
+  {
+   "id": "efasev",
+   "grupo": "outros",
+   "url": "https://www.gov.br/defesa/pt-br/acesso-a-informacao/atuacao-das-forcas-armadas-em-apoio-ao-tse-no-aprimoramento-da-seguranca-e-transparencia-do-processo-eleitoral/documentos/oficio-do-ministro-da-defesa-e-relatorio-das-forcas-armadas.pdf",
+   "primeira": null,
+   "ultima": "20261116021638",
+   "pedido_hoje": "success",
+   "situacao": "ok"
+  },
+  {
+   "id": "lei9504",
+   "grupo": "outros",
+   "url": "https://www2.camara.leg.br/legin/fed/lei/1997/lei-9504-30-setembro-1997-365408-normaatualizada-pl.html",
+   "primeira": "20131027194751",
+   "ultima": "20260812053529",
+   "pedido_hoje": "error",
+   "situacao": "bloqueado"
+  }
+ ]
+}

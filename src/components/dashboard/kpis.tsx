@@ -5,7 +5,7 @@ import type { StatFormat } from "@/lib/format";
 import { useLang } from "@/i18n/context";
 import { EquivCallout, PanelAudit, SimpleOnly } from "./ui";
 import { comparacoes } from "@/data/comparacoes";
-import { centenarios, centenariosRazao, limpeza, resumoControle, municipios } from "@/data/cadastro";
+import { centenarios, centenariosRazao, limpeza, saltoResumo, municipios } from "@/data/cadastro";
 import type { AuditarProps } from "@/components/shared/auditar";
 
 const SRC = {
@@ -57,17 +57,19 @@ export function Kpis() {
       aud: {
         titulo: { pt: "Gap de cancelamento anual", en: "Annual cancellation gap" },
         fonte: { tier: "T0", source: { pt: "DATASUS/SIM · TSE cancelamentos 2022", en: "DATASUS/SIM · TSE 2022 cancellations" }, href: SRC.cancel2022 },
-        metodo: { pt: "Mortes de adultos em 2022 = 1.491.608 (DATASUS, contagem exata); ~95% com título ≈ 1,42 mi de eleitores. O TSE cancelou 787.825 títulos por óbito. Gap = 629.203/ano.", en: "Voter deaths in 2022 ≈ 1.35M (85% of SIM's 1.59M). The TSE cancelled 787,825 registrations for death. Gap = 629,203/year." },
+        metodo: { pt: "Mortes de adultos em 2022 = 1.491.608 (DATASUS, contagem exata); ~95% com título ≈ 1,42 mi de eleitores. O TSE cancelou 787.825 títulos por óbito. Gap = 629.203/ano.", en: "Adult deaths in 2022 = 1,491,608 (DATASUS, exact count); ~95% registered ≈ 1.42M voters. The TSE cancelled 787,825 registrations for death. Gap = 629,203/year." },
         dados: limpeza.cancelamentos2022,
       },
     },
     {
-      value: resumoControle.razao, format: "x0", tone: "teal", label: k.controle, equivId: "razaoControle",
+      value: saltoResumo["2026"].delta70_abs, format: "compact", tone: "teal", label: k.controle, equivId: "votosExtras70_2026",
       aud: {
-        titulo: { pt: "Idosos ÷ controle (Δ 1T→2T)", en: "Elderly ÷ control (Δ R1→R2)" },
-        fonte: { tier: "T0", source: { pt: "TSE perfil de comparecimento 2022", en: "TSE turnout profile 2022" }, href: SRC.tse2022 },
-        metodo: { pt: "Aumento médio de comparecimento 1T→2T: faixas 21–69 = +0,05%; faixas 70+ = +20,67%. 20,67 ÷ 0,05 ≈ 397.", en: "Mean turnout increase R1→R2: ages 21–69 = +0.05%; ages 70+ = +20.67%. 20.67 ÷ 0.05 ≈ 397." },
-        dados: { controle_21_69: 0.05, idosos_70: 20.67, razao: 397 },
+        titulo: { pt: "Salto dos 70+ entre os turnos (2026)", en: "70+ jump between rounds (2026)" },
+        fonte: { tier: "T0", source: { pt: "TSE perfil de comparecimento 2026 (dois turnos, publicado em 13/11/2026)", en: "TSE turnout profile 2026 (both rounds, published 13 Nov 2026)" }, href: SRC.tse2026 },
+        arquivo: "perfil_comparecimento_abstencao_2026_BRASIL.csv (22.121.816 linhas)",
+        metodo: { pt: "Comparecimento das faixas de 70 anos ou mais: 8.765.254 no 1º turno e 10.061.234 no 2º. Diferença: 1.295.980 (+14,8%). As faixas de 21 a 69 anos subiram 1,5%. Em 2022 a diferença foi de 614.299 (+10,0%).", en: "Turnout of the 70+ groups: 8,765,254 in round 1 and 10,061,234 in round 2. Difference: 1,295,980 (+14.8%). Ages 21 to 69 rose 1.5%. In 2022 the difference was 614,299 (+10.0%)." },
+        comando: "g = df.groupby(['NR_TURNO','DS_FAIXA_ETARIA']).QT_COMPARECIMENTO.sum()\nsalto_70 = g[2][FAIXAS_70].sum() - g[1][FAIXAS_70].sum()   # 1.295.980",
+        dados: { "2026": saltoResumo["2026"], "2022": saltoResumo["2022"] },
       },
     },
     {

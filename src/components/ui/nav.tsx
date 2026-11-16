@@ -41,6 +41,7 @@ export function Nav() {
     { href: href(lang, "/slides/"), key: "/slides", label: n.slides },
     { href: href(lang, "/dados/"), key: "/dados", label: n.dados },
     { href: href(lang, "/metodo/"), key: "/metodo", label: n.metodo },
+    { href: href(lang, "/backup/"), key: "/backup", label: n.backup },
   ];
   const isActive = (key: string) => path.startsWith(`/${lang}${key}`);
 
@@ -53,7 +54,7 @@ export function Nav() {
       onClick={() => {
         try { localStorage.setItem("lang", other); } catch {}
       }}
-      className="inline-flex h-10 items-center gap-1.5 rounded-full border border-line px-3 font-mono text-xs font-semibold uppercase tracking-wider text-fg-2 transition hover:border-line-strong hover:text-fg lg:h-9"
+      className="inline-flex h-10 items-center gap-1.5 rounded-full border border-line px-3 font-mono text-xs font-semibold uppercase tracking-wider text-fg-2 transition hover:border-line-strong hover:text-fg xl:h-9"
     >
       <Languages className="h-3.5 w-3.5" />
       {n.toggleLang.short}
@@ -73,28 +74,28 @@ export function Nav() {
           <span className="hidden min-[440px]:inline">{dict.common.brand.b}</span>
         </Link>
 
-        {/* Wide screens: every section on one line. */}
-        <nav className="no-scrollbar hidden items-center gap-0.5 overflow-x-auto lg:flex">
+        {/* Wide screens (≥1280px): every section on one line. Nine links do not fit below that, so narrower laptops get the menu button. */}
+        <nav className="no-scrollbar hidden items-center gap-0.5 overflow-x-auto xl:flex">
           {links.map((l) => (
             <Link
               key={l.key}
               href={l.href}
               className={cn(
-                "whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium transition xl:px-3.5",
+                "whitespace-nowrap rounded-full px-2.5 py-1.5 text-sm font-medium transition",
                 isActive(l.key) ? "bg-fg text-bg" : "text-fg-2 hover:bg-bg-sunk hover:text-fg",
               )}
             >
               {l.label}
             </Link>
           ))}
-          <div className="ml-2">{langLink}</div>
+          <div className="ml-1.5">{langLink}</div>
           <div className="ml-1">
             <ThemeToggle />
           </div>
         </nav>
 
         {/* Phones and tablets: language, theme and one menu button — nothing hidden off-screen. */}
-        <div className="flex items-center gap-1.5 lg:hidden">
+        <div className="flex items-center gap-1.5 xl:hidden">
           {langLink}
           <ThemeToggle />
           <button
@@ -120,7 +121,7 @@ export function Nav() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18, ease: "easeOut" }}
-            className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-line bg-bg lg:hidden"
+            className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-line bg-bg xl:hidden"
           >
             <ul className="mx-auto max-w-6xl px-3 py-2 sm:px-6">
               {links.map((l) => (

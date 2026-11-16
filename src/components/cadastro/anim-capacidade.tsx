@@ -13,8 +13,9 @@ export function AnimCapacidade({ stage }: { stage: number }) {
   const a = dict.cadastro.p5.anim;
   const { fmtPct, fmtInt } = useFmt();
   const n = useAnimatedNumber(LIMITED, stage >= 1, 1.4);
-  const bands = capacidade.turnout2022_2T.filter((b) => b.faixa !== "100+");
-  const maxDelta = Math.max(...bands.map((b) => b.delta));
+  // 2026: dos que faltaram ao 1º turno, quantos apareceram no 2º (saldo líquido), por faixa.
+  const bands = capacidade.turnout2026_2T.filter((b) => b.faixa !== "100+");
+  const maxDelta = Math.max(...bands.map((b) => b.retorno));
 
   return (
     <div className="flex flex-col gap-4">
@@ -53,18 +54,18 @@ export function AnimCapacidade({ stage }: { stage: number }) {
                   <motion.div
                     className="h-full rounded-full bg-amber"
                     initial={{ width: 0 }}
-                    animate={{ width: stage >= 2 ? `${(b.delta / maxDelta) * 100}%` : "0%" }}
+                    animate={{ width: stage >= 2 ? `${(b.retorno / maxDelta) * 100}%` : "0%" }}
                     transition={{ type: "spring", stiffness: 90, damping: 18, delay: i * 0.1 }}
                     style={{ boxShadow: "0 0 10px var(--glow-amber)" }}
                   />
                 </div>
-                <span className="text-right font-mono text-[0.68rem] tabular text-amber">{stage >= 2 ? fmtPct(b.delta, 1, true) : ""}</span>
+                <span className="text-right font-mono text-[0.68rem] tabular text-amber">{stage >= 2 ? fmtPct(b.retorno, 1) : ""}</span>
               </li>
             ))}
           </ul>
           {stage >= 2 && (
             <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="mt-3">
-              <Chip tone="amber">↑ {fmtPct(bands[0].delta, 1, true)} → {fmtPct(bands[bands.length - 1].delta, 1, true)}</Chip>
+              <Chip tone="amber">↓ {fmtPct(bands[0].retorno, 1)} → {fmtPct(bands[bands.length - 1].retorno, 1)}</Chip>
             </motion.div>
           )}
         </div>

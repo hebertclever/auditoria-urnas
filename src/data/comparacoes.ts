@@ -1,6 +1,6 @@
 // Comparações concretas para o público brasileiro. Cada item: número auditado → equivalente físico.
 // Referências: Maracanã 78.838 lugares (capacidade oficial pós-2013); Censo 2022: Florianópolis 537.211,
-// Belo Horizonte 2.315.560, Curitiba 1.773.718, Sorocaba 723.574; Mega-Sena 1/50.063.860 (C(60,6));
+// Belo Horizonte 2.315.560, Curitiba 1.773.718, Sorocaba 723.574, Guarulhos 1.291.771 (SIDRA 4714); Mega-Sena 1/50.063.860 (C(60,6));
 // grãos de areia nas praias da Terra ≈ 7,5 × 10^18 (estimativa Univ. do Havaí, amplamente citada).
 import type { L } from "@/i18n/config";
 
@@ -90,19 +90,20 @@ export const comparacoes: Record<string, Comparacao> = {
   },
   votosExtras70_2026: {
     id: "votosExtras70_2026",
-    numero: 1_294_921,
+    numero: 1_295_980,
     formato: "int",
-    rotulo: { pt: "comparecimentos a mais dos 70+ no 2º turno de 2026, em relação ao 1º (+14,8%) — dobro de 2022", en: "more turnouts of voters 70+ in the 2026 runoff than in the first round (+14.8%) — double the 2022 figure" },
+    rotulo: { pt: "comparecimentos a mais dos 70+ no 2º turno de 2026, em relação ao 1º (+14,8%)", en: "more turnouts of voters 70+ in the 2026 runoff than in the first round (+14.8%)" },
     equivalente: {
-      pt: "mais do que toda a população de Porto Alegre indo votar no 2º turno sem ter ido no 1º",
-      en: "more than the entire population of Porto Alegre voting in the runoff without having voted in the first round",
+      pt: "mais do que toda a população de Guarulhos (1,29 milhão), a segunda maior cidade do estado de São Paulo, indo votar no 2º turno sem ter ido no 1º",
+      en: "more than the entire population of Guarulhos (1.29 million), the second-largest city in São Paulo state, voting in the runoff without having voted in the first round",
     },
+    detalhe: { pt: "Em 2022 foram 614 mil; em 2018, 126 mil; em 2014, 154 mil.", en: "In 2022 it was 614,000; in 2018, 126,000; in 2014, 154,000." },
   },
   razaoControle: {
     id: "razaoControle",
     numero: 397,
     formato: "x",
-    rotulo: { pt: "vezes: aumento dos 70+ frente ao dos 21–69 entre os turnos", en: "times: increase of voters 70+ versus ages 21–69 between rounds" },
+    rotulo: { pt: "vezes: aumento médio das faixas 70+ frente ao das faixas 21–69 entre os turnos de 2022", en: "times: mean increase of the 70+ bands versus the 21–69 bands between the 2022 rounds" },
     equivalente: {
       pt: "numa sala de 1.000 adultos, chega 1 pessoa a mais no 2º turno; numa sala de 1.000 idosos de 95–99 anos, chegam 337 a mais",
       en: "in a room of 1,000 adults, 1 more person shows up in round 2; in a room of 1,000 people aged 95–99, 337 more show up",
@@ -160,8 +161,8 @@ export const comparacoes: Record<string, Comparacao> = {
     formato: "pct",
     rotulo: { pt: "dos brasileiros com 75+ têm dificuldade para ir sozinhos a lugares distantes", en: "of Brazilians aged 75+ have difficulty travelling alone to distant places" },
     equivalente: {
-      pt: "quase metade dessa faixa tem dificuldade para sair sozinha — e é justamente ela que mais aumenta o comparecimento entre os turnos",
-      en: "nearly half of this group has difficulty going out alone — and it is precisely this group whose turnout rises most between rounds",
+      pt: "quase metade dessa faixa tem dificuldade para sair sozinha — e, no 2º turno de 2026, 47% dos eleitores registrados dessa idade votaram (32% em 2022)",
+      en: "nearly half of this group has difficulty going out alone — and, in the 2026 runoff, 47% of registered voters of that age voted (32% in 2022)",
     },
   },
   cancelamento58: {
