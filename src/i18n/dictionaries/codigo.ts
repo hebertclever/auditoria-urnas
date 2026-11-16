@@ -166,6 +166,7 @@ const pt = {
     cols: { arquivo: "Arquivo", linhas: "Linhas", gaps: "Gaps", densidade: "Densidade" },
     densFmt: "1 gap a cada",
     linhas: "linhas",
+    linha: "linha",
     interversao: "Inter-versão",
   },
   porque: {
@@ -380,6 +381,7 @@ const en: typeof pt = {
     cols: { arquivo: "File", linhas: "Lines", gaps: "Gaps", densidade: "Density" },
     densFmt: "1 gap every",
     linhas: "lines",
+    linha: "line",
     interversao: "Cross-version",
   },
   porque: {

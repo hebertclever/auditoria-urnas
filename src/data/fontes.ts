@@ -21,8 +21,8 @@ export const fontes: Fonte[] = [
   {
     nome: { pt: "TSE · Comparecimento e abstenção por perfil", en: "TSE · Turnout and abstention by voter profile" },
     tier: "T0",
-    dado: { pt: "Aptos, comparecimento e abstenção por município, zona e faixa etária, 1º e 2º turnos", en: "Registered, turnout and abstention by municipality, zone and age group, rounds 1 and 2" },
-    periodo: { pt: "2014, 2018, 2022 e 2026 (2º turno de 2026 publicado em 13/11/2026)", en: "2014, 2018, 2022 and 2026 (2026 runoff published 13 Nov 2026)" },
+    dado: { pt: "Aptos, comparecimento e abstenção por município, zona e faixa etária, 1º e 2º turnos de 2014, 2018, 2022 e 2026 (2º turno de 2026 publicado em 13/11/2026)", en: "Registered, turnout and abstention by municipality, zone and age group, rounds 1 and 2 of 2014, 2018, 2022 and 2026 (2026 runoff published 13 Nov 2026)" },
+    periodo: { pt: "2014–2026", en: "2014–2026" },
     url: "https://dadosabertos.tse.jus.br/dataset/comparecimento-e-abstencao-2026",
   },
   {

@@ -25,7 +25,7 @@ const IDOSOS = new Set<string>(FAIXAS_IDOSOS);
 function Table({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
     <div className={cn("overflow-x-auto rounded-2xl border border-line bg-bg-sunk/40", className)}>
-      <table className="data-table w-full text-[0.82rem]">{children}</table>
+      <table className="data-table dense w-full text-[0.82rem]">{children}</table>
     </div>
   );
 }
@@ -57,7 +57,7 @@ export function Testes({ lang, dict }: Props) {
           const old = IDOSOS.has(r.faixa_label);
           return (
             <tr key={r.faixa_code} className={cn(old && "bg-amber-soft/40")}>
-              <td className="font-mono">
+              <td className="whitespace-nowrap font-mono">
                 {r.faixa_label}
                 <span className="ml-2 text-[0.65rem] uppercase tracking-wider text-fg-3">{old ? tb.idososLabel : r.faixa_label >= "21" && r.faixa_label <= "65-69" ? tb.controleLabel : ""}</span>
               </td>
@@ -84,7 +84,7 @@ export function Testes({ lang, dict }: Props) {
         <tbody>
           {agregacaoUF.nacional.map((r) => (
             <tr key={r.faixa}>
-              <td className="font-mono">{r.faixa}</td>
+              <td className="whitespace-nowrap font-mono">{r.faixa}</td>
               <td><Num>{fmt(r.censo)}</Num></td>
               <td><Num>{fmt(r.comp2T)}</Num></td>
               <td><Num tone="teal">{fmtPct((r.comp2T / r.censo) * 100, 0)}</Num></td>
@@ -100,7 +100,7 @@ export function Testes({ lang, dict }: Props) {
         <tbody>
           {salto.teto_2026.nacional.map((r) => (
             <tr key={r.faixa}>
-              <td className="font-mono">{r.faixa}</td>
+              <td className="whitespace-nowrap font-mono">{r.faixa}</td>
               <td><Num>{fmt(r.teto_censo_faixa_e_anterior)}</Num></td>
               <td><Num>{fmt(r.comp_2t_2026)}</Num></td>
               <td><Num tone="teal">{fmtPct(r.comp2t_sobre_teto * 100, 0)}</Num></td>
@@ -129,7 +129,7 @@ export function Testes({ lang, dict }: Props) {
       <tbody>
         {FAIXAS_IDOSOS.map((f) => (
           <tr key={f}>
-            <td className="font-mono">{f}</td>
+            <td className="whitespace-nowrap font-mono">{f}</td>
             {historicoInversao.map((h) => {
               const v = h.faixas.find((x) => x.faixa === f)?.delta ?? 0;
               return <td key={h.ano}><Num tone={v > 5 ? "amber" : undefined}>{fmtPct(v, 1, true)}</Num></td>;
@@ -156,8 +156,8 @@ export function Testes({ lang, dict }: Props) {
         <tbody>
           {municipios.top20.map((m) => (
             <tr key={m.nome}>
-              <td className="whitespace-nowrap text-fg">{m.nome}</td>
-              <td className="font-mono">{m.uf}</td>
+              <td className="text-fg">{m.nome}</td>
+              <td className="whitespace-nowrap font-mono">{m.uf}</td>
               <td><Num>{fmt(m.pop)}</Num></td>
               <td><Num>{fmt(m.aptos)}</Num></td>
               <td><Num>{fmt(m.votos)}</Num></td>
@@ -174,7 +174,7 @@ export function Testes({ lang, dict }: Props) {
         <tbody>
           {municipios.sensibilidade.map((s) => (
             <tr key={s.margem}>
-              <td className="font-mono">+{s.margem}%</td>
+              <td className="whitespace-nowrap font-mono">+{s.margem}%</td>
               <td><Num tone={s.restantes >= 9 ? "amber" : undefined}>{s.restantes}/20</Num></td>
               <td><Num>{fmt(s.excesso)}</Num></td>
             </tr>
@@ -203,7 +203,7 @@ export function Testes({ lang, dict }: Props) {
           <thead><tr><th>{tb.ano}</th><th>{tb.obitos}</th></tr></thead>
           <tbody>
             {centenarios.obitos100PorAno.map((o) => (
-              <tr key={o.ano}><td className="font-mono">{o.ano}</td><td><Num>{fmt(o.obitos)}</Num></td></tr>
+              <tr key={o.ano}><td className="whitespace-nowrap font-mono">{o.ano}</td><td><Num>{fmt(o.obitos)}</Num></td></tr>
             ))}
           </tbody>
         </Table>
@@ -220,7 +220,7 @@ export function Testes({ lang, dict }: Props) {
         <thead><tr><th>{tb.faixa}</th><th>{tb.tse}</th><th>{tb.censoCol}</th><th>{tb.fantasmas}</th></tr></thead>
         <tbody>
           {fantasmas90.map((f) => (
-            <tr key={f.faixa}><td className="font-mono">{f.faixa}</td><td><Num>{fmt(f.aptos)}</Num></td><td><Num>{fmt(f.censo)}</Num></td><td><Num tone="amber">+{fmt(f.excesso)}</Num></td></tr>
+            <tr key={f.faixa}><td className="whitespace-nowrap font-mono">{f.faixa}</td><td><Num>{fmt(f.aptos)}</Num></td><td><Num>{fmt(f.censo)}</Num></td><td><Num tone="amber">+{fmt(f.excesso)}</Num></td></tr>
           ))}
           <tr className="bg-bg-sunk"><td className="font-medium text-fg">90+</td><td /><td /><td><Num tone="amber">+{fmt(fantasmas90Total)}</Num></td></tr>
         </tbody>
@@ -247,7 +247,7 @@ export function Testes({ lang, dict }: Props) {
           <thead><tr><th>{tb.faixa}</th><th>{tb.turnout2T} · 2026</th><th>{tb.retorno}</th></tr></thead>
           <tbody>
             {capacidade.turnout2026_2T.map((r) => (
-              <tr key={r.faixa}><td className="font-mono">{r.faixa}</td><td><Num>{fmtPct(r.turnout, 1)}</Num></td><td><Num tone="amber">{fmtPct(r.retorno, 1)}</Num></td></tr>
+              <tr key={r.faixa}><td className="whitespace-nowrap font-mono">{r.faixa}</td><td><Num>{fmtPct(r.turnout, 1)}</Num></td><td><Num tone="amber">{fmtPct(r.retorno, 1)}</Num></td></tr>
             ))}
           </tbody>
         </Table>

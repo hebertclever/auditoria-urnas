@@ -58,7 +58,7 @@ export function TimelineSection() {
               <p className="font-mono text-[0.7rem] uppercase tracking-widest text-fg-3">{c.title}</p>
             </div>
             <div className="overflow-x-auto">
-              <table className="data-table w-full min-w-[520px] text-sm">
+              <table className="data-table dense w-full min-w-[430px] text-sm">
                 <thead>
                   <tr>
                     <th>{c.cols.arquivo}</th>
@@ -75,7 +75,7 @@ export function TimelineSection() {
                       <td className="tabular text-right font-mono text-xs font-semibold text-rose">{x.gaps}</td>
                       <td>
                         <div className="flex items-center gap-2">
-                          <div className="h-1.5 w-24 overflow-hidden rounded-full bg-bg-sunk">
+                          <div className="h-1.5 w-12 shrink-0 overflow-hidden rounded-full bg-bg-sunk">
                             <motion.div
                               className="h-full rounded-full bg-rose"
                               initial={{ width: 0 }}
@@ -83,8 +83,8 @@ export function TimelineSection() {
                               transition={{ duration: 0.9, delay: 0.3 + i * 0.08, ease }}
                             />
                           </div>
-                          <span className="tabular whitespace-nowrap font-mono text-[0.68rem] text-fg-3">
-                            {c.densFmt} {Math.round(x.densidade)} {c.linhas}
+                          <span className="tabular font-mono text-[0.68rem] text-fg-3">
+                            {c.densFmt} {Math.round(x.densidade)} {Math.round(x.densidade) === 1 ? c.linha : c.linhas}
                           </span>
                         </div>
                       </td>

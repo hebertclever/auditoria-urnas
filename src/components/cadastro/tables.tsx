@@ -3,13 +3,16 @@
 import { useFmt, useLang } from "@/i18n/context";
 import { t } from "@/i18n/config";
 import { agregacaoUF, capacidade, limpeza, municipios, salto } from "@/data/cadastro";
+import { cn } from "@/lib/utils";
 
-function Wrap({ title, children }: { title: string; children: React.ReactNode }) {
+// `min` é a largura mínima da tabela (rola de lado dentro do cartão quando não cabe).
+// Tabelas de duas colunas passam "" para caber inteiras em qualquer tela; `dense` aperta o espaço lateral.
+function Wrap({ title, children, min = "min-w-[560px]", dense }: { title: string; children: React.ReactNode; min?: string; dense?: boolean }) {
   return (
     <div className="rounded-3xl border border-line bg-bg-elev p-2 sm:p-4">
       <p className="display-md px-3 pb-3 pt-3 text-base font-semibold text-fg sm:text-lg">{title}</p>
       <div className="overflow-x-auto">
-        <table className="data-table w-full min-w-[560px] text-sm tabular">{children}</table>
+        <table className={cn("data-table w-full text-sm tabular", dense && "dense", min)}>{children}</table>
       </div>
     </div>
   );
@@ -21,7 +24,7 @@ export function TabelaMunicipios() {
   const u = dict.common.ui;
   const tb = dict.cadastro.p4.table;
   return (
-    <Wrap title={tb.title}>
+    <Wrap title={tb.title} min="min-w-[460px]" dense>
       <thead>
         <tr>
           <th>{u.municipio}</th>
@@ -95,7 +98,7 @@ export function TabelaAcumulado() {
   const { fmtInt } = useFmt();
   const tb = dict.cadastro.p3.table;
   return (
-    <Wrap title={tb.title}>
+    <Wrap title={tb.title} min="">
       <thead>
         <tr>
           <th>{tb.periodo}</th>
@@ -119,7 +122,7 @@ export function TabelaInternacional() {
   const { fmtPct } = useFmt();
   const tb = dict.cadastro.p5.table;
   return (
-    <Wrap title={tb.title}>
+    <Wrap title={tb.title} min="">
       <thead>
         <tr>
           <th>{tb.lugar}</th>
@@ -143,7 +146,7 @@ export function TabelaAgregacao() {
   const { fmtInt, fmtPct } = useFmt();
   const tb = dict.cadastro.fraco.table;
   return (
-    <Wrap title={dict.cadastro.fraco.title}>
+    <Wrap title={dict.cadastro.fraco.title} min="min-w-[440px]">
       <thead>
         <tr>
           <th>{tb.faixa}</th>

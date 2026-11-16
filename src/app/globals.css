@@ -171,7 +171,17 @@ body {
   padding: 0.75rem 0.9rem;
   border-bottom: 1px solid var(--line-strong);
   text-align: left;
-  white-space: nowrap;
+  vertical-align: bottom;
+}
+/* O alinhamento pedido na célula do cabeçalho vale sobre o padrão acima. */
+.data-table th.text-right { text-align: right; }
+.data-table th.text-center { text-align: center; }
+/* Tabelas de muitas colunas em caixa estreita: menos espaço lateral por célula. */
+.data-table.dense th,
+.data-table.dense td { padding-left: 0.55rem; padding-right: 0.55rem; }
+@media (max-width: 640px) {
+  .data-table.dense th,
+  .data-table.dense td { padding-left: 0.45rem; padding-right: 0.45rem; }
 }
 .data-table td {
   padding: 0.7rem 0.9rem;
