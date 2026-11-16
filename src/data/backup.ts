@@ -126,8 +126,8 @@ export const backup = {
       conferida: { pt: "conferida byte a byte com o arquivo que analisamos", en: "checked byte for byte against the file we analysed" } as L,
     },
     diferenca: {
-      pt: "No 1º turno, a segunda versão tem 788 comparecimentos a menos do que a primeira, em 35 municípios — 216 deles em Belo Horizonte. O número de eleitores aptos é idêntico nas duas. O TSE não publicou nota dizendo o que mudou.",
-      en: "In round 1, the second version has 788 fewer turnouts than the first, in 35 municipalities — 216 of them in Belo Horizonte. The number of registered voters is identical in both. The TSE published no note saying what changed.",
+      pt: "No 1º turno, a segunda versão tem 788 comparecimentos a menos do que a primeira, em 31 municípios e 4 cidades de votação no exterior — 216 deles em Belo Horizonte. O número de eleitores aptos é idêntico nas duas. O TSE não publicou nota dizendo o que mudou.",
+      en: "In round 1, the second version has 788 fewer turnouts than the first, in 31 municipalities and 4 voting cities abroad — 216 of them in Belo Horizonte. The number of registered voters is identical in both. The TSE published no note saying what changed.",
     } as L,
     pergunta: {
       pt: "Qual das duas é a correta? De fora, não há como saber. A soma dos boletins de urna do 1º turno (125.275.835) fica mais perto da segunda versão, o que sugere uma correção. Mas o que foi corrigido, em quais seções e por quê, só o TSE pode dizer — e é uma das perguntas do nosso modelo de requerimento. Numa base oficial de quem compareceu para votar, duas versões divergentes precisam de explicação.",
