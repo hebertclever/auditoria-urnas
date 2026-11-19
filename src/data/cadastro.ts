@@ -81,7 +81,7 @@ export const centenarios = {
   popCenso2022: 203_062_512,
   tse2026Aptos100: 297_977,
   comp100_2026_1T: 2_133,
-  comp100_2026_2T: 3_313, // arquivo BRASIL COMPLETO (inclui exterior); 3.307 é 27 UFs
+  comp100_2026_2T: 3_307, // 27 UFs, mesmo universo dos 297.977 aptos; com o exterior, 3.313
   comp100_2022_2T: 2_092,
   aptos100_2022: 184_330,
   faixa9599Censo2022: 165_178,
@@ -111,7 +111,47 @@ export const centenarios = {
     { nome: "Fruta de Leite", uf: "MG", cent: 117 },
   ] },
 };
+// INSS — benefícios mantidos ativos, set/2026 (dados abertos, MANTIDOS_ATIVOS_202609, SHA-256 dae5db10…c623f915).
+// Idade exata de quem recebe (dt_nascimento_titular) em 06/10/2026: 72.501 benefícios de pessoas com 100+.
+// Benefício não é pessoa: alguém pode receber dois — por isso a razão TSE/INSS é um piso.
+// Idades extremas no mesmo arquivo e no mesmo método (ADR-URNA-072): 4.153 com 110+, 181 com 120+, 33 com 123+.
+export const inss = {
+  totalBeneficios: 42_502_098,
+  centenariosBeneficios: 72_501,
+  centenariosMulheres: 51_360, // 70,8% dos 72.501
+  idades: { mais110: 4_153, mais120: 181, mais123: 33 },
+};
+
+// Perfil do eleitorado do TSE (27 UFs, só o arquivo BRASIL — o ZIP também traz um arquivo por UF com as mesmas linhas).
+// Sexo: 2026. Biometria: 2022 e 2026. Conferido em resultados/verificacao_dupla_contagem_2026-11-18/ (ADR-URNA-072).
+export const perfilEleitorado = {
+  biometria: {
+    pais: { r2022: 75.8, r2026: 89.4 },
+    // cobertura (%) e títulos sem biometria por faixa, 27 UFs
+    faixas: [
+      { faixa: "65-69", r2022: 81.1, r2026: 92.7, sem2022: 1_504_282, sem2026: 659_082 },
+      { faixa: "70-74", r2022: 78.0, r2026: 90.9, sem2022: 1_292_615, sem2026: 632_343 },
+      { faixa: "75-79", r2022: 65.3, r2026: 85.6, sem2022: 1_336_656, sem2026: 684_590 },
+      { faixa: "80-84", r2022: 54.4, r2026: 75.5, sem2022: 1_105_642, sem2026: 673_555 },
+      { faixa: "85-89", r2022: 42.5, r2026: 65.9, sem2022: 766_374, sem2026: 499_340 },
+      { faixa: "90-94", r2022: 26.6, r2026: 53.2, sem2022: 541_814, sem2026: 311_011 },
+      { faixa: "95-99", r2022: 9.8, r2026: 27.8, sem2022: 421_112, sem2026: 243_402 },
+      { faixa: "100+", r2022: 6.2, r2026: 8.0, sem2022: 172_945, sem2026: 274_143 },
+    ],
+    semBiometria100: { r2022: 172_945, r2026: 274_143 },
+    pctSemBiometria100: 92.0,
+  },
+  homensPct2026: [
+    { faixa: "90-94", pct: 38.4 },
+    { faixa: "95-99", pct: 42.9 },
+    { faixa: "100+", pct: 51.3 },
+  ],
+};
+
 export const centenariosRazao = centenarios.tse2026Aptos100 / centenarios.censo2022; // ≈ 7,9×
+const por100k = centenarios.internacionalPor100k;
+export const centenariosRazaoJapao = por100k[por100k.length - 1].valor / por100k.find((x) => x.pais.pt === "Japão")!.valor; // ≈ 1,7×
+export const centenariosRazaoINSS = centenarios.tse2026Aptos100 / inss.centenariosBeneficios; // ≈ 4,1×
 export const centenariosExcedente = centenarios.tse2026Aptos100 - centenarios.censo2022; // 260.163
 export const centenariosPctFantasma = centenariosExcedente / centenarios.tse2026Aptos100; // ≈ 0,87
 

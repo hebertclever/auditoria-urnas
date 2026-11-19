@@ -12,7 +12,7 @@ const pt = {
   axioma: {
     eyebrow: "Axioma",
     title: "Ceticismo é o método, não a conclusão",
-    p1: "Fontes oficiais — IBGE, TSE, DATASUS — são o ponto de partida obrigatório, nunca a palavra final. Todo índice tem uma metodologia; toda metodologia tem escolhas: o que é medido, o que fica de fora, quem serve de referência. Essas escolhas podem esconder um viés, proposital ou não.",
+    p1: "Fontes oficiais — IBGE, TSE, DATASUS, INSS — são o ponto de partida obrigatório, nunca a palavra final. Todo índice tem uma metodologia; toda metodologia tem escolhas: o que é medido, o que fica de fora, quem serve de referência. Essas escolhas podem esconder um viés, proposital ou não.",
     p2: "Este não é um projeto para “provar que o governo mente”. É uma auditoria: pode ser que tudo esteja correto. A tarefa é verificar, não confirmar uma opinião prévia. Governos são formados por humanos; uma democracia saudável permite — e exige — que cidadãos auditem seus representantes.",
     stepsTitle: "O que fazemos com cada número",
     steps: [
@@ -37,7 +37,7 @@ const pt = {
   tiers: {
     title: "Tiers de fonte",
     items: [
-      { tier: "T0", nome: "Fonte primária oficial", desc: "Metodologia completa publicada.", exemplos: "IBGE (Censo, SIDRA, PNS), TSE (dados abertos, resoluções), DATASUS/SIM, Receita, Tesouro." },
+      { tier: "T0", nome: "Fonte primária oficial", desc: "Metodologia completa publicada.", exemplos: "IBGE (Censo, SIDRA, PNS), TSE (dados abertos, resoluções), DATASUS/SIM, INSS (dados abertos), Receita, Tesouro." },
       { tier: "T1", nome: "Análise acadêmica revisada", desc: "Revisão por pares ou instituto independente com método auditável.", exemplos: "FGV/IBRE, IPEA, DIEESE, Insper, teses, SciELO." },
       { tier: "T2", nome: "Jornalismo de dados com fonte", desc: "Metodologia clara e fontes citadas; relatórios com dados abertos.", exemplos: "Agência Tatu, notícias do TSE replicadas pela imprensa." },
       { tier: "T3", nome: "Opinião sem dados", desc: "Notícia sem fonte, redes sociais. Entra só como hipótese a testar.", exemplos: "Relatos, posts, entrevistas sem documento." },
@@ -69,6 +69,16 @@ const pt = {
           title: "Baixe os óbitos do SIM/DATASUS",
           body: "Arquivos DO{UF}{ANO}.dbc; converta com pyreaddbc. O campo IDADE codifica a unidade no primeiro dígito (4 = anos; ≥ 500 = 100+).",
           cmd: "ftp://ftp.datasus.gov.br/dissemin/publicos/SIM/CID10/DORES/DOSP2024.dbc",
+        },
+        {
+          title: "Baixe os benefícios ativos do INSS",
+          body: "No portal de dados abertos do INSS, “Benefícios mantidos”, arquivo MANTIDOS_ATIVOS_202609.zip (42,5 milhões de linhas; SHA-256 dae5db10…c623f915). O cabeçalho usa vírgula e as linhas, ponto e vírgula. A data de nascimento é a de quem recebe o benefício. Conte quem tinha 100 anos completos em 06/10/2026.",
+          cmd: 'import csv, io, zipfile\nfrom datetime import date\nz = zipfile.ZipFile("MANTIDOS_ATIVOS_202609.zip")\nf = io.TextIOWrapper(z.open(z.namelist()[0]), encoding="utf-8")\ncols = f.readline().strip().split(",")      # cabeçalho com vírgula\ni = cols.index("dt_nascimento_titular")\nn = 0\nfor linha in csv.reader(f, delimiter=";"):  # linhas com ponto e vírgula\n    try:\n        d, m, a = map(int, linha[i].split("/"))\n        n += date(a, m, d) <= date(1926, 10, 6)\n    except (ValueError, IndexError):\n        pass                                  # datas inválidas\nprint(n)  # 72501',
+        },
+        {
+          title: "Biometria: baixe o perfil do eleitorado e some só o arquivo BRASIL",
+          body: "O ZIP traz perfil_eleitorado_2026_BRASIL.csv e um arquivo por UF com as mesmas linhas. Somar todos conta cada eleitor duas vezes — foi o nosso erro de 18/11/2026. Some só o BRASIL e confira o total contra o eleitorado oficial: 158.745.463 em 2026 (156.454.011 em 2022). Uma cópia idêntica, byte a byte, está no Internet Archive (captura de 20/08/2026).",
+          cmd: 'curl -O https://cdn.tse.jus.br/estatistica/sead/odsele/perfil_eleitorado/perfil_eleitorado_2026.zip\nsha256sum perfil_eleitorado_2026.zip   # 0952e9d9…648b\n\nimport pandas as pd\ndf = pd.read_csv("perfil_eleitorado_2026_BRASIL.csv", sep=";", encoding="latin-1",\n                 usecols=["SG_UF", "DS_FAIXA_ETARIA", "QT_ELEITORES", "QT_ELEITORES_BIOMETRIA"])\ng = df[df.SG_UF != "ZZ"].groupby("DS_FAIXA_ETARIA")[["QT_ELEITORES", "QT_ELEITORES_BIOMETRIA"]].sum()\ng["pct_bio"] = 100 * g.QT_ELEITORES_BIOMETRIA / g.QT_ELEITORES\nprint(g)',
         },
       ],
     },
@@ -127,6 +137,11 @@ const pt = {
     title: "O que já corrigimos em público",
     lead: "Erros anteriores ficam visíveis, com a versão antiga e a nova. Isso faz parte do método.",
     items: [
+      { antes: "“Mortos votaram. Está provado (P < 10⁻¹⁵⁵⁰)” — home, provas, objeções e dados (18/11/2026)", depois: "“Títulos de pessoas que não podem estar vivas estavam aptos, e 92% dos de centenários sem biometria; se algum registrou voto, só o cruzamento nominal responde”", por: "Erro nosso, em duas camadas. A conta usou 596.478 centenários, o dobro do real: o arquivo do perfil do eleitorado traz a planilha do Brasil e as 28 dos estados com as mesmas linhas, e somamos todas — lido só o BRASIL, são 297.977 nas 27 UFs, o mesmo número do arquivo de comparecimento. E, mesmo com o número certo, a conta supunha que o título de um morto comparece tanto quanto o de um vivo, que era justamente o que se queria provar. Se nenhum morto tivesse votado, os 3.307 comparecimentos de centenários exigiriam que de 2 a 9 em cada 100 centenários vivos fossem votar — o que é possível. Os totais continuam sem separar zero de milhares." },
+      { antes: "INSS: 46.575 centenários “titulares vivos”; TSE 12,8 vezes o INSS (18/11/2026)", depois: "72.501 benefícios pagos a pessoas com 100 anos ou mais; TSE 4,1 vezes o INSS", por: "Erro nosso: o 12,8× dividia o número dobrado (596.478). E o 46.575 descontava as pensões por morte supondo que a data de nascimento fosse a do falecido; no arquivo, ela é a de quem recebe — as pensões de filhos têm beneficiários com menos de 21 anos. Os pensionistas centenários são viúvas e viúvos vivos. Como uma pessoa pode receber dois benefícios, 4,1× é um piso." },
+      { antes: "Centenários por 100 mil habitantes: Japão 7,5; EUA 3,0; França 3,5; Itália 4,0 — “quase 20 vezes o Japão” e o destaque “19,6×” no /cadastro (até 18/11/2026)", depois: "Japão 88; EUA 32; França 46; Itália 38 — “quase o dobro do país mais longevo”; destaque: 1,7×", por: "Erro nosso: as taxas estavam cerca de dez vezes abaixo das contagens oficiais de cada país (Japão: 107.677 centenários em set/2026). A fonte citada, a ONU, também dá números maiores. Com as taxas certas, o Censo brasileiro (18,6) fica abaixo do Japão, como esperado, e o cadastro do TSE (147) continua acima de todos." },
+      { antes: "“O perfil do eleitorado de 2026 e a nota do TCU não têm cópia no Internet Archive” (página Backup, 18/11/2026)", depois: "Têm: o ZIP do perfil do eleitorado foi capturado em 20/08/2026 e a página do TCU em 2025", por: "Erro nosso: concluímos a partir de pedidos de captura que falharam, sem consultar o índice do arquivo. Baixamos do Internet Archive as cópias do perfil do eleitorado de 2022 e 2026: o SHA-256 é idêntico ao das nossas." },
+      { antes: "Comparecimento de centenários no 2º turno de 2026: 3.313 (18/11/2026)", depois: "3.307", por: "3.313 inclui os eleitores no exterior. Para centenários, o site usa as 27 UFs: 297.977 aptos, 2.133 comparecimentos no 1º turno e 3.307 no 2º — o mesmo universo nos três números." },
       { antes: "Projeção para o 2º turno de 2026: excedente de 59 a 316 mil (publicada até 13/11/2026)", depois: "Dado real: 472.721 comparecimentos de 75+ acima do ritmo da faixa 70–74; salto de todos os 70+: 1.295.980 (+14,8%)", por: "O TSE publicou o 2º turno em 13/11/2026. A projeção deu lugar ao dado medido no arquivo oficial (22.121.816 linhas) e ficou abaixo dele." },
       { antes: "“O dado real foi 1.295 mil — quatro vezes o teto da projeção”; salto de 1.294.921 (publicado de 14 a 15/11/2026)", depois: "“O excedente real foi 472.721 — 50% acima do teto de 316 mil”; salto de todos os 70+: 1.295.980", por: "Erro nosso: comparamos o salto total dos 70+ com uma projeção que media só o excedente acima do ritmo da faixa 70–74 — duas medidas diferentes. Na definição da projeção, o real é 472.721. E 1.294.921 era o salto só das 27 UFs; a série histórica (614.299 em 2022) inclui os eleitores no exterior, e no mesmo universo o número de 2026 é 1.295.980." },
       { antes: "“A cada eleição o salto piora” e “mais do que toda a população de Porto Alegre” (14 a 15/11/2026)", depois: "“O salto de 2026 é o maior da série” e “mais do que toda a população de Guarulhos”", por: "Erro nosso: o salto de 2018 (+2,8%) foi menor que o de 2014 (+3,9%) — ele não piora a cada eleição; cresceu nas duas últimas. E Porto Alegre tem 1.332.845 habitantes no Censo 2022, mais do que os 1.295.980 do salto; Guarulhos tem 1.291.771." },
@@ -162,7 +177,7 @@ const en: typeof pt = {
   axioma: {
     eyebrow: "Axiom",
     title: "Skepticism is the method, not the conclusion",
-    p1: "Official sources — IBGE, TSE, DATASUS — are the mandatory starting point, never the final word. Every index has a methodology; every methodology involves choices: what is measured, what is left out, who serves as the reference. Those choices can hide a bias, deliberate or not.",
+    p1: "Official sources — IBGE, TSE, DATASUS, INSS — are the mandatory starting point, never the final word. Every index has a methodology; every methodology involves choices: what is measured, what is left out, who serves as the reference. Those choices can hide a bias, deliberate or not.",
     p2: "This is not a project to “prove the government lies”. It is an audit: everything may well be correct. The task is to verify, not to confirm a prior opinion. Governments are made of humans; a healthy democracy allows — and requires — citizens to audit their representatives.",
     stepsTitle: "What we do with every number",
     steps: [
@@ -187,7 +202,7 @@ const en: typeof pt = {
   tiers: {
     title: "Source tiers",
     items: [
-      { tier: "T0", nome: "Primary official source", desc: "Complete published methodology.", exemplos: "IBGE (Census, SIDRA, PNS), TSE (open data, resolutions), DATASUS/SIM, Federal Revenue, Treasury." },
+      { tier: "T0", nome: "Primary official source", desc: "Complete published methodology.", exemplos: "IBGE (Census, SIDRA, PNS), TSE (open data, resolutions), DATASUS/SIM, INSS (open data), Federal Revenue, Treasury." },
       { tier: "T1", nome: "Peer-reviewed analysis", desc: "Peer review or independent institute with an auditable method.", exemplos: "FGV/IBRE, IPEA, DIEESE, Insper, theses, SciELO." },
       { tier: "T2", nome: "Data journalism with sources", desc: "Clear methodology and cited sources; reports with open data.", exemplos: "Agência Tatu, TSE press releases carried by the media." },
       { tier: "T3", nome: "Opinion without data", desc: "Unsourced news, social media. Enters only as a hypothesis to test.", exemplos: "Testimonies, posts, interviews without documents." },
@@ -219,6 +234,16 @@ const en: typeof pt = {
           title: "Download deaths from SIM/DATASUS",
           body: "Files DO{UF}{YEAR}.dbc; convert with pyreaddbc. The IDADE field encodes the unit in its first digit (4 = years; ≥ 500 = 100+).",
           cmd: "ftp://ftp.datasus.gov.br/dissemin/publicos/SIM/CID10/DORES/DOSP2024.dbc",
+        },
+        {
+          title: "Download the INSS active benefits",
+          body: "On the INSS open-data portal, “Benefícios mantidos” (benefits in force), file MANTIDOS_ATIVOS_202609.zip (42.5 million rows; SHA-256 dae5db10…c623f915). The header uses commas and the rows use semicolons. The date of birth is that of the person receiving the benefit. Count those who were 100 or older on 6 Oct 2026.",
+          cmd: 'import csv, io, zipfile\nfrom datetime import date\nz = zipfile.ZipFile("MANTIDOS_ATIVOS_202609.zip")\nf = io.TextIOWrapper(z.open(z.namelist()[0]), encoding="utf-8")\ncols = f.readline().strip().split(",")      # header with commas\ni = cols.index("dt_nascimento_titular")\nn = 0\nfor linha in csv.reader(f, delimiter=";"):  # rows with semicolons\n    try:\n        d, m, a = map(int, linha[i].split("/"))\n        n += date(a, m, d) <= date(1926, 10, 6)\n    except (ValueError, IndexError):\n        pass                                  # invalid dates\nprint(n)  # 72501',
+        },
+        {
+          title: "Biometrics: download the voter profile and sum only the BRASIL file",
+          body: "The ZIP holds perfil_eleitorado_2026_BRASIL.csv and one file per state with the same rows. Summing them all counts every voter twice — that was our error of 18 Nov 2026. Sum only BRASIL and check the total against the official electorate: 158,745,463 in 2026 (156,454,011 in 2022). A byte-for-byte identical copy is at the Internet Archive (captured 20 Aug 2026).",
+          cmd: 'curl -O https://cdn.tse.jus.br/estatistica/sead/odsele/perfil_eleitorado/perfil_eleitorado_2026.zip\nsha256sum perfil_eleitorado_2026.zip   # 0952e9d9…648b\n\nimport pandas as pd\ndf = pd.read_csv("perfil_eleitorado_2026_BRASIL.csv", sep=";", encoding="latin-1",\n                 usecols=["SG_UF", "DS_FAIXA_ETARIA", "QT_ELEITORES", "QT_ELEITORES_BIOMETRIA"])\ng = df[df.SG_UF != "ZZ"].groupby("DS_FAIXA_ETARIA")[["QT_ELEITORES", "QT_ELEITORES_BIOMETRIA"]].sum()\ng["pct_bio"] = 100 * g.QT_ELEITORES_BIOMETRIA / g.QT_ELEITORES\nprint(g)',
         },
       ],
     },
@@ -277,6 +302,11 @@ const en: typeof pt = {
     title: "What we have already corrected in public",
     lead: "Earlier errors stay visible, with the old and the new version. That is part of the method.",
     items: [
+      { antes: "“Dead people voted. It is proven (P < 10⁻¹⁵⁵⁰)” — home, proofs, objections and data (18 Nov 2026)", depois: "“Registrations of people who cannot be alive were eligible, and 92% of centenarian ones lack biometrics; whether any recorded a vote, only the name-by-name cross-check can tell”", por: "Our error, in two layers. The sum used 596,478 centenarians, twice the real figure: the voter-profile file holds the national sheet and the 28 state sheets with the same rows, and we summed them all — reading only BRASIL, there are 297,977 across the 27 states, the same number as in the turnout file. And even with the right number, the sum assumed that a dead person's registration turns out as often as a living one's, which was exactly what it set out to prove. If no dead person had voted, the 3,307 centenarian turnouts would only require 2 to 9 in every 100 living centenarians to vote — which is possible. The totals still cannot tell zero from thousands." },
+      { antes: "INSS: 46,575 “living titleholder” centenarians; TSE 12.8 times the INSS (18 Nov 2026)", depois: "72,501 benefits paid to people aged 100 or over; TSE 4.1 times the INSS", por: "Our error: the 12.8× divided the doubled number (596,478). And the 46,575 discounted survivor pensions on the assumption that the date of birth was the deceased's; in the file it is the recipient's — pensions paid to children have beneficiaries under 21. Centenarian pensioners are living widows and widowers. Since one person may receive two benefits, 4.1× is a floor." },
+      { antes: "Centenarians per 100,000 inhabitants: Japan 7.5; USA 3.0; France 3.5; Italy 4.0 — “almost 20 times Japan” and the “19.6×” highlight on /cadastro (until 18 Nov 2026)", depois: "Japan 88; USA 32; France 46; Italy 38 — “almost double the most long-lived country”; highlight: 1.7×", por: "Our error: the rates were about ten times below each country's official counts (Japan: 107,677 centenarians in Sep 2026). The source we cited, the UN, also gives higher figures. With the right rates, Brazil's Census (18.6) sits below Japan, as expected, and the TSE registry (147) remains above them all." },
+      { antes: "“The 2026 voter profile and the TCU note have no copy at the Internet Archive” (Backup page, 18 Nov 2026)", depois: "They do: the voter-profile ZIP was captured on 20 Aug 2026 and the TCU page in 2025", por: "Our error: we concluded this from capture requests that failed, without checking the archive's index. We downloaded the 2022 and 2026 voter-profile copies from the Internet Archive: their SHA-256 is identical to ours." },
+      { antes: "Centenarian turnout in the 2026 runoff: 3,313 (18 Nov 2026)", depois: "3,307", por: "3,313 includes voters abroad. For centenarians the site uses the 27 states: 297,977 registered, 2,133 turnouts in round 1 and 3,307 in round 2 — the same universe in all three numbers." },
       { antes: "Projection for the 2026 runoff: an excess of 59,000 to 316,000 (published until 13 Nov 2026)", depois: "Real figure: 472,721 turnouts of 75+ above the pace of the 70–74 band; jump of all 70+: 1,295,980 (+14.8%)", por: "The TSE published the runoff on 13 Nov 2026. The projection gave way to the figure measured in the official file (22,121,816 rows) and fell short of it." },
       { antes: "“The real figure was 1,295,000 — four times the projection's ceiling”; a jump of 1,294,921 (published 14–15 Nov 2026)", depois: "“The real excess was 472,721 — 50% above the 316,000 ceiling”; jump of all 70+: 1,295,980", por: "Our error: we compared the total jump of the 70+ with a projection that measured only the excess above the pace of the 70–74 band — two different measures. Under the projection's definition, the real figure is 472,721. And 1,294,921 was the jump for the 27 states only; the historical series (614,299 in 2022) includes voters abroad, and in the same universe the 2026 number is 1,295,980." },
       { antes: "“Each election the jump gets worse” and “more than the entire population of Porto Alegre” (14–15 Nov 2026)", depois: "“The 2026 jump is the largest in the series” and “more than the entire population of Guarulhos”", por: "Our error: the 2018 jump (+2.8%) was smaller than 2014's (+3.9%) — it does not worsen every election; it grew in the last two. And Porto Alegre has 1,332,845 inhabitants in the 2022 Census, more than the 1,295,980 of the jump; Guarulhos has 1,291,771." },

@@ -16,6 +16,8 @@ import { CodigoNecessario } from "@/components/provas/codigo-necessario";
 import { AuditoriaAmostral } from "@/components/provas/auditoria-amostral";
 import { objecoes } from "@/data/objecoes";
 import { DatasusConfiabilidade } from "@/components/shared/datasus-confiabilidade";
+import { InssRegua } from "@/components/shared/inss-regua";
+import { BiometriaCentenarios } from "@/components/shared/biometria-centenarios";
 import { cn } from "@/lib/utils";
 
 export const generateMetadata = metaFor("provas");
@@ -121,6 +123,16 @@ export default async function ProvasPage({ params }: PageProps<"/[lang]/provas">
       {/* DATASUS — a terceira régua */}
       <Section className="border-t border-line">
         <DatasusConfiabilidade />
+      </Section>
+
+      {/* INSS — a quarta régua, a de quem paga */}
+      <Section className="border-t border-line">
+        <InssRegua />
+      </Section>
+
+      {/* BIOMETRIA — a digital que não chegou aos centenários */}
+      <Section className="border-t border-line">
+        <BiometriaCentenarios />
       </Section>
 
       {/* QUANTOS — a conta mensurável */}

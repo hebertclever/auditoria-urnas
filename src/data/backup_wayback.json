@@ -300,32 +300,80 @@
   {
    "id": "perfilEleitorado2026",
    "grupo": "tseDados",
-   "url": "https://dadosabertos.tse.jus.br/dataset/perfil-do-eleitorado-2026",
-   "primeira": null,
-   "ultima": null,
-   "pedido_hoje": "error",
-   "situacao": "sem_captura",
-   "nota": "Contém os 297.977 centenários. TSE retorna 523 ao Wayback. SHA-256 do ZIP local: 0952e9d9577be19380b444bfcc6a9a99397005e8dc839de9d5ec49914d75648b"
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/perfil_eleitorado/perfil_eleitorado_2026.zip",
+   "primeira": "20260820202426",
+   "ultima": "20260820202426",
+   "pedido_hoje": null,
+   "situacao": "ok",
+   "versoes": [
+    {
+     "ts": "20260820202426",
+     "bytes": 408490728,
+     "sha256": "0952e9d9577be19380b444bfcc6a9a99397005e8dc839de9d5ec49914d75648b",
+     "sha1_b32": "BUO7QDESTWTQZCX6Q4VJJ3ZSYHGSWXGA",
+     "gerado_tse": "14/07/2026 18:03:33",
+     "conferida": true
+    }
+   ],
+   "nota": "Conferido em 18/11/2026: índice CDX + cópia baixada do Internet Archive com SHA-256 idêntico ao local. Só o arquivo BRASIL: 158.745.463 eleitores; 297.977 centenários nas 27 UFs."
+  },
+  {
+   "id": "perfilEleitorado2022",
+   "grupo": "tseDados",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/perfil_eleitorado/perfil_eleitorado_2022.zip",
+   "primeira": "20260820205240",
+   "ultima": "20260820205240",
+   "pedido_hoje": null,
+   "situacao": "ok",
+   "versoes": [
+    {
+     "ts": "20260820205240",
+     "bytes": 76699889,
+     "sha256": "4bccad7e39ec13ea22a0ce4612d6147b4f06ee2c672cd5978112943951fb87e8",
+     "sha1_b32": "Q6IDWORPVTBFZOPQLEGH5GVEL6EK5DDI",
+     "conferida": true
+    }
+   ],
+   "nota": "Conferido em 18/11/2026: índice CDX + cópia baixada do Internet Archive com SHA-256 idêntico ao local. Só o arquivo BRASIL: 156.454.011 eleitores (o eleitorado oficial de 2022)."
   },
   {
    "id": "inssDadosAbertos",
    "grupo": "outros",
    "url": "https://dadosabertos.inss.gov.br/",
-   "primeira": "20261119000000",
-   "ultima": "20261119000000",
+   "primeira": "20260512222434",
+   "ultima": "20261119001434",
    "pedido_hoje": null,
    "situacao": "ok",
-   "nota": "Portal de dados abertos do INSS. 42,5M benefícios com data de nascimento do titular."
+   "nota": "Portal de dados abertos do INSS (página inicial). Índice CDX consultado em 18/11/2026."
+  },
+  {
+   "id": "inssBeneficios",
+   "grupo": "outros",
+   "url": "https://dadosabertos.inss.gov.br/dataset/beneficios-mantidos-plano-de-dados-abertos-jun-2023-a-dez-2027",
+   "primeira": "20261118045702",
+   "ultima": "20261118045702",
+   "pedido_hoje": null,
+   "situacao": "ok",
+   "nota": "Página do conjunto de dados dos benefícios mantidos. O arquivo de set/2026 (MANTIDOS_ATIVOS_202609, 7,9 GB descompactado) tem cópia local com SHA-256 dae5db1057bf56997c858faecfe7775d24d19bab827be52491163942c623f915."
+  },
+  {
+   "id": "inssProvaVida",
+   "grupo": "outros",
+   "url": "https://www.gov.br/inss/pt-br/noticias/prova-de-vida-do-inss-e-feita-por-cruzamento-de-dados",
+   "primeira": "20260607055813",
+   "ultima": "20260607055813",
+   "pedido_hoje": null,
+   "situacao": "ok"
   },
   {
    "id": "tcuAcordao1606",
    "grupo": "outros",
    "url": "https://portal.tcu.gov.br/imprensa/noticias/falhas-na-base-de-dados-de-pessoas-falecidas-geram-r-4-bi-em-pagamentos-indevidos",
-   "primeira": null,
-   "ultima": null,
-   "pedido_hoje": "error",
-   "situacao": "sem_captura",
-   "nota": "TCU Acórdão 1606/2025: R$4,4B pagos a mortos."
+   "primeira": "20250725171848",
+   "ultima": "20251014041023",
+   "pedido_hoje": null,
+   "situacao": "ok",
+   "nota": "Nota oficial do TCU sobre o Acórdão 1606/2025 – Plenário (TC 018.882/2024-2). Texto lido na captura de 14/10/2025."
   }
  ]
 }

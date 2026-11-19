@@ -4,6 +4,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { SourceTag } from "@/components/ui/source-tag";
 import { IbgeConfiabilidade } from "@/components/shared/ibge-confiabilidade";
 import { DatasusConfiabilidade } from "@/components/shared/datasus-confiabilidade";
+import { InssRegua } from "@/components/shared/inss-regua";
 import { resolveLang, metaFor } from "@/i18n/server";
 import { t } from "@/i18n/config";
 import { Steps } from "@/components/metodo/steps";
@@ -105,6 +106,10 @@ export default async function MetodoPage({ params }: PageProps<"/[lang]/metodo">
 
       <Section id="datasus" className="border-t border-line">
         <DatasusConfiabilidade />
+      </Section>
+
+      <Section id="inss" className="border-t border-line">
+        <InssRegua />
       </Section>
 
       {/* Reproduzir */}

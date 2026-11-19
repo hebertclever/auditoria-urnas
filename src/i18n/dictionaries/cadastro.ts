@@ -20,7 +20,7 @@ const pt = {
     eyebrow: "Eixo 1 · Cadastro eleitoral",
     title: "O cadastro fantasma",
     lead:
-      "Dados oficiais do IBGE, do TSE e do Ministério da Saúde apontam para a mesma conclusão: centenas de milhares de títulos de pessoas falecidas continuam ativos no cadastro eleitoral brasileiro. O problema é estrutural: aparece em 2022 e em 2026, e só entre os centenários o cadastro ganhou 113 mil nomes em quatro anos.",
+      "Dados oficiais do IBGE, do TSE, do Ministério da Saúde e do INSS apontam para a mesma conclusão: centenas de milhares de títulos de pessoas falecidas continuam ativos no cadastro eleitoral brasileiro. O problema é estrutural: aparece em 2022 e em 2026, e só entre os centenários o cadastro ganhou 113 mil nomes em quatro anos.",
     stats: {
       tse: "centenários registrados como eleitores no TSE (2026), contra 37.814 encontrados vivos pelo Censo 2022",
       razao: "mais centenários no cadastro do TSE do que o IBGE contou, porta a porta, no Censo",
@@ -140,7 +140,7 @@ const pt = {
     },
     chart: {
       title: "Centenários por 100 mil habitantes",
-      note: "Fontes: ONU World Population Prospects (países), IBGE Censo 2022 e TSE perfil de comparecimento 2026.",
+      note: "Fontes: contagens oficiais de cada país (Japão: Min. Saúde; EUA: Census Bureau; França: INSEE; Itália: ISTAT), IBGE Censo 2022 e TSE perfil de comparecimento 2026.",
     },
     stats: {
       fantasma: "dos centenários do cadastro não correspondem a pessoas que o Censo encontrou vivas",
@@ -156,6 +156,8 @@ const pt = {
         "Uma subcontagem do Censo teria de ser de 7,9 vezes para explicar o TSE. A cobertura do Censo é da ordem de 97%.",
         "13 municípios têm 578 centenários no TSE e zero óbitos de centenários em 2020–2024. Com expectativa de vida de ~2 anos aos 100, esperar-se-iam centenas de mortes.",
         "O DATASUS registrou 74.242 mortes de centenários em 5 anos (2020–2024). O cadastro tem quatro vezes isso em centenários aptos.",
+        "O INSS (previdência) paga 72.501 benefícios a pessoas com 100 anos ou mais e precisa confirmar, todo ano, que cada beneficiário está vivo. O TSE tem 297.977 centenários aptos — 4,1 vezes mais. Numa folha de pagamento, centenário fantasma é dinheiro perdido todo mês: o incentivo é limpar, não manter.",
+        "A biometria quase não alcançou esses títulos: de 2022 a 2026, a cobertura dos centenários foi de 6,2% para 8,0%, enquanto a dos 90–94 anos subiu de 26,6% para 53,2%. E os títulos de centenários sem biometria aumentaram 58,5%, enquanto em todas as outras faixas de idosos caíram.",
       ],
     },
     method: [
@@ -163,6 +165,8 @@ const pt = {
       "TSE: “Comparecimento e abstenção por perfil do eleitorado” 2026 (1º turno), campo aptos, faixa 100+, total nacional.",
       "Óbitos: DATASUS/SIM 2020–2024, 27 UFs, idade codificada ≥ 100; média de 14.848 mortes de centenários por ano.",
       "Internacional: contagens oficiais de cada país (Japão: Min. Saúde set/2026, 107.677/123M = 88/100k; EUA: Census Bureau; França: INSEE; Itália: ISTAT). Brasil Censo = 37.814 ÷ 203 milhões; Brasil TSE = 297.977 ÷ 203 milhões.",
+      "INSS: benefícios mantidos ativos em set/2026 (dados abertos, 42,5 milhões de registros), idade exata de quem recebe em 06/10/2026: 72.501 benefícios de pessoas com 100 anos ou mais. Benefício não é pessoa — alguém pode receber dois —, o que só aumenta a distância para o TSE.",
+      "Biometria: “Perfil do eleitorado” 2022 e 2026 do TSE, colunas QT_ELEITORES e QT_ELEITORES_BIOMETRIA, 27 UFs. O ZIP traz o arquivo BRASIL e um por UF com as mesmas linhas: some um ou outro, nunca os dois.",
     ],
     naoProva:
       "Não prova que algum centenário falecido votou. Erros de data de nascimento existem nos dois lados: idosos nascidos antes de 1930 frequentemente não têm registro civil preciso, e o TSE pode ter herdado datas erradas. Mas erro de idade não cria pessoas: desloca-as entre faixas. O excedente de 260 mil permanece a explicar.",
@@ -355,7 +359,7 @@ const pt = {
     title: "Onde a auditoria está",
     encontrado: "Gap encontrado",
     encontradoBody:
-      "O cadastro eleitoral tem centenas de milhares de títulos que não correspondem a pessoas vivas, por falha estrutural de cancelamento. Três linhas de evidência independentes convergem: a contagem de centenários, a baixa por óbito em metade das mortes e os municípios com mais títulos que habitantes.",
+      "O cadastro eleitoral tem centenas de milhares de títulos que não correspondem a pessoas vivas, por falha estrutural de cancelamento. Quatro linhas de evidência independentes convergem: a contagem de centenários do Censo, a folha de benefícios do INSS, a baixa por óbito em metade das mortes e os municípios com mais títulos que habitantes. E a biometria quase não alcançou os títulos de centenários: 92% estão sem digital.",
     naoAchado: "Ainda não achado",
     naoAchadoBody:
       "Um caso individual, com nome e documento, de título de falecido usado para votar. Fechar esse elo exige cruzar CPF de óbito com registro de comparecimento — dados que a LGPD mantém fora do acesso público.",
@@ -383,7 +387,7 @@ const en: typeof pt = {
     eyebrow: "Track 1 · Voter registry",
     title: "The phantom registry",
     lead:
-      "Official data from IBGE (the statistics institute), the TSE (the electoral court) and the Ministry of Health point to the same conclusion: hundreds of thousands of registrations belonging to deceased people remain active in Brazil's voter rolls. The problem is structural: it shows in 2022 and in 2026, and among centenarians alone the registry gained 113,000 names in four years.",
+      "Official data from IBGE (the statistics institute), the TSE (the electoral court), the Ministry of Health and the INSS (social security) point to the same conclusion: hundreds of thousands of registrations belonging to deceased people remain active in Brazil's voter rolls. The problem is structural: it shows in 2022 and in 2026, and among centenarians alone the registry gained 113,000 names in four years.",
     stats: {
       tse: "centenarians registered as voters by the TSE (2026), against 37,814 found alive by the 2022 Census",
       razao: "more centenarians in the TSE registry than IBGE counted, door to door, in the Census",
@@ -503,7 +507,7 @@ const en: typeof pt = {
     },
     chart: {
       title: "Centenarians per 100,000 inhabitants",
-      note: "Sources: UN World Population Prospects (countries), IBGE 2022 Census and TSE 2026 turnout profile.",
+      note: "Sources: official country counts (Japan: Min. of Health; USA: Census Bureau; France: INSEE; Italy: ISTAT), IBGE 2022 Census and TSE 2026 turnout profile.",
     },
     stats: {
       fantasma: "of the centenarians in the registry do not match people the Census found alive",
@@ -519,6 +523,8 @@ const en: typeof pt = {
         "A Census undercount would have to be 7.9-fold to explain the TSE. Census coverage is on the order of 97%.",
         "13 municipalities have 578 centenarians in the TSE and zero centenarian deaths in 2020–2024. With a life expectancy of ~2 years at 100, hundreds of deaths would be expected.",
         "DATASUS recorded 74,242 centenarian deaths in 5 years (2020–2024). The registry holds four times as many centenarians eligible to vote.",
+        "The INSS (social security) pays 72,501 benefits to people aged 100 or over and must confirm, every year, that each beneficiary is alive. The TSE has 297,977 centenarians eligible to vote — 4.1 times more. On a payroll, a phantom centenarian is money lost every month: the incentive is to clean, not to keep.",
+        "Biometrics barely reached these registrations: from 2022 to 2026, centenarian coverage went from 6.2% to 8.0%, while that of ages 90–94 rose from 26.6% to 53.2%. And centenarian registrations without biometrics grew 58.5%, while in every other elderly band they fell.",
       ],
     },
     method: [
@@ -526,6 +532,8 @@ const en: typeof pt = {
       "TSE: “Turnout and abstention by voter profile” 2026 (round 1), registered-voters field, 100+ group, national total.",
       "Deaths: DATASUS/SIM 2020–2024, 27 states, coded age ≥ 100; an average of 14,848 centenarian deaths per year.",
       "International: official counts by country (Japan: Min. of Health Sep 2026, 107,677/123M = 88 per 100k; USA: Census Bureau; France: INSEE; Italy: ISTAT). Brazil Census = 37,814 ÷ 203 million; Brazil TSE = 297,977 ÷ 203 million.",
+      "INSS: benefits active in Sep 2026 (open data, 42.5 million records), exact age of the recipient on 6 Oct 2026: 72,501 benefits of people aged 100 or over. A benefit is not a person — someone may receive two — which only widens the gap to the TSE.",
+      "Biometrics: TSE “Voter profile” 2022 and 2026, columns QT_ELEITORES and QT_ELEITORES_BIOMETRIA, 27 states. The ZIP holds the BRASIL file and one per state with the same rows: sum one or the other, never both.",
     ],
     naoProva:
       "It does not prove that any deceased centenarian voted. Birth-date errors exist on both sides: people born before 1930 often lack precise civil records, and the TSE may have inherited wrong dates. But an age error does not create people: it moves them between groups. The 260 thousand excess remains to be explained.",
@@ -718,7 +726,7 @@ const en: typeof pt = {
     title: "Where the audit stands",
     encontrado: "Gap found",
     encontradoBody:
-      "The voter registry holds hundreds of thousands of registrations that do not correspond to living people, owing to a structural failure to cancel them. Three independent lines of evidence converge: the centenarian count, death removals covering half the deaths, and municipalities with more registrations than inhabitants.",
+      "The voter registry holds hundreds of thousands of registrations that do not correspond to living people, owing to a structural failure to cancel them. Four independent lines of evidence converge: the Census centenarian count, the INSS benefits payroll, death removals covering half the deaths, and municipalities with more registrations than inhabitants. And biometrics barely reached centenarian registrations: 92% have no fingerprint.",
     naoAchado: "Not yet found",
     naoAchadoBody:
       "An individual case, with a name and a document, of a dead person's registration used to vote. Closing that link requires matching death-record IDs with turnout records — data that Brazil's privacy law keeps out of public reach.",

@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import { ArrowRight, Landmark, ScrollText, Vote } from "lucide-react";
 import { useFmt, useLang } from "@/i18n/context";
 import { href } from "@/i18n/routes";
-import { centenarios, deltaPorFaixa2026, historicoInversao } from "@/data/cadastro";
+import { centenarios, deltaPorFaixa2026, historicoInversao, inss, perfilEleitorado } from "@/data/cadastro";
 import { cn } from "@/lib/utils";
 
 export type VisualProps = { active: boolean; tech: boolean };
@@ -148,11 +148,11 @@ function CountryBars() {
   const rows = [
     ...centenarios.internacionalPor100k.map((r) => ({ label: r.pais[lang], v: r.valor })),
   ];
-  const max = 140;
+  const max = Math.max(...rows.map((r) => r.v));
   return (
     <div className="w-full max-w-[420px] space-y-2">
       {rows.map((r, i) => {
-        const tse = r.v === 140;
+        const tse = i === rows.length - 1;
         return (
           <div key={i} className="flex items-center gap-2">
             <span className="w-28 shrink-0 truncate text-right text-xs text-fg-2">{r.label}</span>
@@ -162,10 +162,69 @@ function CountryBars() {
                 initial={{ width: 0 }} animate={{ width: `${(r.v / max) * 100}%` }} transition={{ duration: 0.8, delay: i * 0.08, ease }}
               />
             </div>
-            <span className={cn("w-10 shrink-0 font-mono text-xs tabular", tse ? "text-amber" : "text-fg-3")}>{r.v}</span>
+            <span className={cn("w-10 shrink-0 font-mono text-xs tabular", tse ? "text-amber" : "text-fg-3")}>{r.v.toLocaleString(lang === "pt" ? "pt-BR" : "en-US")}</span>
           </div>
         );
       })}
+    </div>
+  );
+}
+
+/* ---------- 5b. Quem paga: Censo × INSS × TSE ---------- */
+function PayrollBars() {
+  const { lang } = useLang();
+  const { fmt } = useFmt();
+  const rows = [
+    { label: lang === "pt" ? "Censo IBGE" : "IBGE Census", v: centenarios.censo2022 },
+    { label: lang === "pt" ? "INSS (paga)" : "INSS (pays)", v: inss.centenariosBeneficios },
+    { label: lang === "pt" ? "TSE (títulos)" : "TSE (registrations)", v: centenarios.tse2026Aptos100 },
+  ];
+  const max = Math.max(...rows.map((r) => r.v));
+  return (
+    <div className="w-full max-w-[420px] space-y-3">
+      {rows.map((r, i) => {
+        const tse = i === rows.length - 1;
+        return (
+          <div key={i} className="flex items-center gap-2">
+            <span className="w-28 shrink-0 truncate text-right text-xs text-fg-2">{r.label}</span>
+            <div className="h-6 flex-1 overflow-hidden rounded bg-bg-sunk">
+              <motion.div
+                className={cn("h-full rounded", tse ? "bg-amber" : "bg-slate")}
+                initial={{ width: 0 }} animate={{ width: `${(r.v / max) * 100}%` }} transition={{ duration: 0.8, delay: i * 0.12, ease }}
+              />
+            </div>
+            <span className={cn("w-16 shrink-0 font-mono text-xs tabular", tse ? "text-amber" : "text-fg-3")}>{fmt(r.v)}</span>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+/* ---------- 5c. Biometria por idade ---------- */
+function BioBars() {
+  const { lang } = useLang();
+  const loc = lang === "pt" ? "pt-BR" : "en-US";
+  const rows = perfilEleitorado.biometria.faixas.filter((f) => ["70-74", "80-84", "90-94", "95-99", "100+"].includes(f.faixa));
+  return (
+    <div className="w-full max-w-[420px] space-y-2.5">
+      {rows.map((r, i) => {
+        const cent = r.faixa === "100+";
+        return (
+          <div key={r.faixa} className="flex items-center gap-2">
+            <span className="w-14 shrink-0 text-right font-mono text-xs text-fg-2">{r.faixa}</span>
+            <div className="relative h-5 flex-1 overflow-hidden rounded bg-bg-sunk">
+              <div className="absolute inset-y-0 left-0 rounded bg-slate/40" style={{ width: `${r.r2022}%` }} />
+              <motion.div
+                className={cn("relative h-full rounded", cent ? "bg-amber" : "bg-teal")}
+                initial={{ width: `${r.r2022}%` }} animate={{ width: `${r.r2026}%` }} transition={{ duration: 0.9, delay: 0.3 + i * 0.1, ease }}
+              />
+            </div>
+            <span className={cn("w-12 shrink-0 font-mono text-xs tabular", cent ? "text-amber" : "text-fg-3")}>{r.r2026.toLocaleString(loc)}%</span>
+          </div>
+        );
+      })}
+      <p className="pt-1 text-center font-mono text-[0.65rem] text-fg-3">{lang === "pt" ? "cobertura biométrica 2022 → 2026" : "biometric coverage 2022 → 2026"}</p>
     </div>
   );
 }
@@ -499,6 +558,8 @@ export const visuals: Record<string, (p: VisualProps) => React.ReactNode> = {
   "centenarios-choque": Centenarios,
   "centenarios-razao": RoomRatio,
   "centenarios-mundo": CountryBars,
+  "quem-paga": PayrollBars,
+  biometria: BioBars,
   inversao: AgeInversion,
   historico: History,
   capacidade: CapacityGrid,

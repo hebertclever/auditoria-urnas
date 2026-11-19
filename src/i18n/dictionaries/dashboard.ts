@@ -91,7 +91,7 @@ const pt = {
     intl: "Centenários por 100 mil habitantes, no mundo",
     linear: "Escala normal",
     log: "Escala comprimida",
-    por100k: "Fontes: ONU (países), IBGE Censo 2022 e cadastro do TSE 2026.",
+    por100k: "Fontes: contagens oficiais de cada país (Japão: Min. Saúde; EUA: Census Bureau; França: INSEE; Itália: ISTAT), IBGE Censo 2022 e cadastro do TSE 2026. Para comparar: o INSS paga 72.501 benefícios a centenários; o TSE tem 297.977 aptos.",
   },
   limpeza: {
     title: "A limpeza que não acontece",
@@ -221,7 +221,7 @@ const en: typeof pt = {
     intl: "Centenarians per 100,000 inhabitants, worldwide",
     linear: "Normal scale",
     log: "Compressed scale",
-    por100k: "Sources: UN (countries), IBGE 2022 Census and the TSE 2026 registry.",
+    por100k: "Sources: official counts by country (Japan: Min. of Health; USA: Census Bureau; France: INSEE; Italy: ISTAT), IBGE 2022 Census and the TSE 2026 registry. For comparison: the INSS pays 72,501 benefits to centenarians; the TSE has 297,977 registered.",
   },
   limpeza: {
     title: "The cleanup that never happens",

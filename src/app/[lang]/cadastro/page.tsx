@@ -18,6 +18,7 @@ import {
   centenarios,
   centenariosPctFantasma,
   centenariosRazao,
+  centenariosRazaoJapao,
   historicoInversao,
   limpeza,
   municipios,
@@ -39,7 +40,9 @@ const SRC = {
   res22166: "https://www.tse.jus.br/legislacao/compilada/res/2006/resolucao-no-22-166-de-9-de-marco-de-2006",
   res23659: "https://www.tse.jus.br/legislacao/compilada/res/2021/resolucao-no-23-659-de-26-de-outubro-de-2021",
   bweb2026: "https://dadosabertos.tse.jus.br/dataset/resultados-2026-boletim-de-urna",
-  unwpp: "https://population.un.org/wpp/",
+  inss: "https://dadosabertos.inss.gov.br/dataset/beneficios-mantidos-plano-de-dados-abertos-jun-2023-a-dez-2027",
+  perfilEleitorado: "https://cdn.tse.jus.br/estatistica/sead/odsele/perfil_eleitorado/perfil_eleitorado_2026.zip",
+  japao: "https://www.nippon.com/en/japan-data/h01786/",
   lima: "https://www.scielo.br/j/rbgg/a/BYxNrspkzg8KkZFBfhp8cyf/?lang=pt",
   aomori: "https://www.pref.aomori.lg.jp/soshiki/senkan/files2/voter_turnout_by_agegroup2026.pdf",
 };
@@ -122,7 +125,7 @@ export default async function CadastroPage({ params }: PageProps<"/[lang]/cadast
         <div className="mt-6 grid gap-6">
           <Stagger className="grid grid-cols-1 gap-3 sm:grid-cols-3">
             <MotionItem variants={staggerItem}><StatTile value={centenariosPctFantasma * 100} format="pct0" label={d.p2.stats.fantasma} tone="rose" /></MotionItem>
-            <MotionItem variants={staggerItem}><StatTile value={147 / 7.5} format="dec1" suffix="×" label={d.p2.stats.japao} tone="amber" /></MotionItem>
+            <MotionItem variants={staggerItem}><StatTile value={centenariosRazaoJapao} format="dec1" suffix="×" label={d.p2.stats.japao} tone="amber" /></MotionItem>
             <MotionItem variants={staggerItem}><StatTile value={centenarios.municipiosZeroObitos.qtd} label={d.p2.stats.zero} tone="neutral" /></MotionItem>
           </Stagger>
           <Reveal><ChartCentenarios /></Reveal>
@@ -137,7 +140,9 @@ export default async function CadastroPage({ params }: PageProps<"/[lang]/cadast
             <SourceTag tier="T0" source={isPt ? "IBGE · Censo 2022, SIDRA 9514" : "IBGE · 2022 Census, SIDRA 9514"} date="2022" href={SRC.sidra9514} />
             <SourceTag tier="T0" source={isPt ? "TSE · Comparecimento e abstenção por perfil, 2026" : "TSE · Turnout and abstention by profile, 2026"} date="2026" href={SRC.tse2026} />
             <SourceTag tier="T0" source="DATASUS · SIM 2020–2024" date="2024" href={SRC.sim} />
-            <SourceTag tier="T1" source={isPt ? "ONU · World Population Prospects" : "UN · World Population Prospects"} date="2024" href={SRC.unwpp} />
+            <SourceTag tier="T0" source={isPt ? "INSS · benefícios mantidos ativos (dados abertos)" : "INSS · active benefits (open data)"} date="2026" href={SRC.inss} />
+            <SourceTag tier="T0" source={isPt ? "TSE · Perfil do eleitorado 2022 e 2026 (biometria, 27 UFs)" : "TSE · Voter profile 2022 and 2026 (biometrics, 27 states)"} date="2026" href={SRC.perfilEleitorado} />
+            <SourceTag tier="T2" source={isPt ? "Nippon.com · dados do Ministério da Saúde do Japão (107.677 centenários)" : "Nippon.com · Japan Ministry of Health data (107,677 centenarians)"} date="2026" href={SRC.japao} />
           </Sources>
         </div>
       </Section>

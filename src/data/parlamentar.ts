@@ -26,7 +26,7 @@ export const parlamentar = {
     {
       n: 1,
       titulo: { pt: "Refazer os cruzamentos com dados públicos", en: "Redo the cross-checks with public data" } as L,
-      texto: { pt: "Tudo nesta auditoria usa arquivos abertos do TSE, do IBGE e do DATASUS. A assessoria técnica pode reproduzir cada número hoje, sem pedir autorização a ninguém.", en: "Everything in this audit uses open files from the TSE, IBGE and DATASUS. Technical staff can reproduce every number today, without asking anyone's permission." } as L,
+      texto: { pt: "Tudo nesta auditoria usa arquivos abertos do TSE, do IBGE, do DATASUS e do INSS. A assessoria técnica pode reproduzir cada número hoje, sem pedir autorização a ninguém.", en: "Everything in this audit uses open files from the TSE, IBGE, DATASUS and the INSS. Technical staff can reproduce every number today, without asking anyone's permission." } as L,
     },
     {
       n: 2,
@@ -36,7 +36,7 @@ export const parlamentar = {
     {
       n: 3,
       titulo: { pt: "Convocar audiência pública", en: "Call a public hearing" } as L,
-      texto: { pt: "Chamar IBGE, Ministério da Saúde e TSE à mesma mesa para explicarem, ao vivo e com os números à frente, por que as três bases não batem.", en: "Bring the IBGE, Ministry of Health and TSE to the same table to explain, live and with the numbers in front of them, why the three databases do not match." } as L,
+      texto: { pt: "Chamar IBGE, Ministério da Saúde, INSS e TSE à mesma mesa para explicarem, ao vivo e com os números à frente, por que o cadastro eleitoral não bate com as outras três bases — inclusive com a folha do INSS, que tem quatro vezes menos centenários.", en: "Bring the IBGE, Ministry of Health, INSS and TSE to the same table to explain, live and with the numbers in front of them, why the voter registry does not match the other three databases — including the INSS payroll, which has four times fewer centenarians." } as L,
     },
     {
       n: 4,
@@ -91,14 +91,14 @@ export const parlamentar = {
       destino: { pt: "Comissão competente (CCJ / Fiscalização e Controle)", en: "Relevant committee (Constitution & Justice / Oversight)" } as L,
       base: { pt: "Regimento Interno da Casa Legislativa", en: "Internal rules of the legislative chamber" } as L,
       texto:
-        "Requeiro, nos termos regimentais, a realização de audiência pública para debater a divergência entre as bases oficiais de população e o cadastro eleitoral, com o convite aos seguintes expositores:\n\n- Representante técnico do IBGE (Diretoria de Pesquisas);\n- Representante técnico do Ministério da Saúde (DATASUS/SIM);\n- Representante técnico do Tribunal Superior Eleitoral (gestão do cadastro).\n\nObjeto: esclarecer, com os dados à mesa, (a) por que o cadastro eleitoral registra número de centenários e de eleitores muito idosos incompatível com a contagem do Censo; (b) o prazo médio entre o óbito e o cancelamento do título; (c) as medidas de integração automática do cadastro com a base de óbitos; e (d) a viabilidade de publicação periódica do cruzamento óbitos × comparecimento.",
+        "Requeiro, nos termos regimentais, a realização de audiência pública para debater a divergência entre as bases oficiais de população e o cadastro eleitoral, com o convite aos seguintes expositores:\n\n- Representante técnico do IBGE (Diretoria de Pesquisas);\n- Representante técnico do Ministério da Saúde (DATASUS/SIM);\n- Representante técnico do INSS (manutenção de benefícios e prova de vida);\n- Representante técnico do Tribunal Superior Eleitoral (gestão do cadastro).\n\nObjeto: esclarecer, com os dados à mesa, (a) por que o cadastro eleitoral registra número de centenários e de eleitores muito idosos incompatível com a contagem do Censo e quatro vezes maior que o número de benefícios pagos pelo INSS a pessoas dessa idade; (b) o prazo médio entre o óbito e o cancelamento do título; (c) as medidas de integração automática do cadastro com a base de óbitos; (d) por que 92% dos títulos de eleitores com 100 anos ou mais não têm biometria; e (e) a viabilidade de publicação periódica do cruzamento óbitos × comparecimento.",
     },
     {
       titulo: { pt: "Representação ao Tribunal de Contas (TCU)", en: "Representation to the Audit Court (TCU)" } as L,
       destino: { pt: "Tribunal de Contas da União", en: "Federal Audit Court" } as L,
       base: { pt: "Lei 8.443/1992 (Lei Orgânica do TCU)", en: "Law 8.443/1992 (TCU Organic Law)" } as L,
       texto:
-        "Represento ao Tribunal de Contas da União para que avalie a gestão administrativa do cadastro eleitoral quanto à atualização por óbito, considerando:\n\n1. Que, segundo dados do próprio TSE e do DATASUS, em 2022, cerca de 44% das mortes de eleitores não tiveram a baixa por óbito registrada no mesmo ano (787.825 cancelamentos por falecimento para 1.491.608 óbitos de adultos);\n2. Que a Resolução TSE nº 22.166/2006 prevê o cruzamento automático do cadastro com registros de óbito desde 2006;\n3. Que o cadastro registra número de eleitores muito idosos incompatível com a contagem populacional do IBGE.\n\nRequeiro auditoria sobre a eficácia e a tempestividade da rotina de atualização do cadastro por óbito, bem como sobre a integração com o SIRC — matéria administrativa que independe do sigilo do código dos sistemas eleitorais.",
+        "Represento ao Tribunal de Contas da União para que avalie a gestão administrativa do cadastro eleitoral quanto à atualização por óbito, considerando:\n\n1. Que, segundo dados do próprio TSE e do DATASUS, em 2022, cerca de 44% das mortes de eleitores não tiveram a baixa por óbito registrada no mesmo ano (787.825 cancelamentos por falecimento para 1.491.608 óbitos de adultos);\n2. Que a Resolução TSE nº 22.166/2006 prevê o cruzamento automático do cadastro com registros de óbito desde 2006;\n3. Que o cadastro registra número de eleitores muito idosos incompatível com a contagem populacional do IBGE — 297.977 eleitores com 100 anos ou mais, contra 37.814 centenários no Censo 2022 e 72.501 benefícios pagos pelo INSS a pessoas dessa idade, órgão que confirma anualmente que seus beneficiários estão vivos;\n4. Que este Tribunal, no Acórdão nº 1606/2025 – Plenário (TC 018.882/2024-2), identificou 13,1 milhões de óbitos ausentes do Sistema Nacional de Informações de Registro Civil (Sirc) e pagamentos federais a 275,8 mil pessoas já falecidas.\n\nRequeiro auditoria sobre a eficácia e a tempestividade da rotina de atualização do cadastro por óbito, bem como sobre a integração com o SIRC — matéria administrativa que independe do sigilo do código dos sistemas eleitorais.",
     },
     {
       titulo: { pt: "Requerimento de perícia do kit de verificação", en: "Request for examination of the verification kit" } as L,

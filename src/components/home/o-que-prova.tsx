@@ -22,7 +22,7 @@ export function OQueProva() {
         <Heading className="mt-3 max-w-3xl">{L(h.title)}</Heading>
         <Lead className="mt-5">{L(h.lead)}</Lead>
       </Reveal>
-      <Stagger className="mt-10 grid gap-3 md:grid-cols-3" gap={0.08}>
+      <Stagger className="mt-10 grid gap-3 md:grid-cols-2" gap={0.08}>
         {h.bullets.map((b, i) => (
           <motion.div
             key={i}
