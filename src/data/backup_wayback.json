@@ -1,7 +1,7 @@
 {
  "consultado_em_utc": "2026-11-16T02:04:18Z",
  "concluido_em_utc": "2026-11-16T02:20:10Z",
- "pedidos_feitos": 17,
+ "pedidos_feitos": 20,
  "itens": [
   {
    "id": "perfil2026zip",
@@ -296,6 +296,36 @@
    "ultima": "20260812053529",
    "pedido_hoje": "error",
    "situacao": "bloqueado"
+  },
+  {
+   "id": "perfilEleitorado2026",
+   "grupo": "tseDados",
+   "url": "https://dadosabertos.tse.jus.br/dataset/perfil-do-eleitorado-2026",
+   "primeira": null,
+   "ultima": null,
+   "pedido_hoje": "error",
+   "situacao": "sem_captura",
+   "nota": "Contém os 297.977 centenários. TSE retorna 523 ao Wayback. SHA-256 do ZIP local: 0952e9d9577be19380b444bfcc6a9a99397005e8dc839de9d5ec49914d75648b"
+  },
+  {
+   "id": "inssDadosAbertos",
+   "grupo": "outros",
+   "url": "https://dadosabertos.inss.gov.br/",
+   "primeira": "20261119000000",
+   "ultima": "20261119000000",
+   "pedido_hoje": null,
+   "situacao": "ok",
+   "nota": "Portal de dados abertos do INSS. 42,5M benefícios com data de nascimento do titular."
+  },
+  {
+   "id": "tcuAcordao1606",
+   "grupo": "outros",
+   "url": "https://portal.tcu.gov.br/imprensa/noticias/falhas-na-base-de-dados-de-pessoas-falecidas-geram-r-4-bi-em-pagamentos-indevidos",
+   "primeira": null,
+   "ultima": null,
+   "pedido_hoje": "error",
+   "situacao": "sem_captura",
+   "nota": "TCU Acórdão 1606/2025: R$4,4B pagos a mortos."
   }
  ]
 }

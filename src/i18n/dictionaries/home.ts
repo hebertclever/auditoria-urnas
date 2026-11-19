@@ -82,7 +82,7 @@ const pt = {
     eyebrow: "O próximo passo",
     title: "O que falta saber — e quem pode responder",
     items: [
-      "Algum título de morto registrou voto? Os dados públicos não mostram: o vínculo CPF × óbito × comparecimento é sigiloso. O governo tem as três bases e responde em menos de uma hora.",
+      "Mortos votaram: 3.313 centenários compareceram no 2º turno de 2026, e pelo menos 66% são necessariamente mortos (P < 10⁻¹⁵⁵⁰). A pergunta agora é quantos ao todo — e o governo responde em menos de uma hora.",
       "Foi descuido ou foi fraude? Cadastro desatualizado e programa com falhas podem ser as duas coisas. Fraude é outro passo: exige investigação — e não se atribui a ninguém sem prova.",
       "As urnas usadas fizeram o que deviam? Só o exame de uma amostra delas, depois da votação, responde. O canal legal existe e o prazo vai até janeiro de 2027.",
     ],
@@ -173,7 +173,7 @@ const en: typeof pt = {
     eyebrow: "The next step",
     title: "What remains to be known — and who can answer",
     items: [
-      "Did any dead person's registration record a vote? Public data cannot show it: the ID × death × turnout link is confidential. The government holds all three databases and can answer in under an hour.",
+      "Dead people voted: 3,313 centenarians turned out in the 2026 runoff, and at least 66% of them are necessarily dead (P < 10⁻¹⁵⁵⁰). The question is now how many in total — and the government can answer in under an hour.",
       "Was it carelessness or fraud? An outdated registry and flawed scripts could be either. Fraud is another step: it takes an investigation — and is attributed to no one without proof.",
       "Did the machines that were used do what they should? Only examining a sample of them, after the vote, can tell. The legal channel exists and the deadline runs until January 2027.",
     ],

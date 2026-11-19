@@ -51,7 +51,7 @@ const pt = {
       {
         titulo: "Limite biológico dos centenários",
         objetivo: "Construir uma cadeia que não dependa de domicílio eleitoral nem de premissas de sobrevivência.",
-        resultado: "Censo 2022: 37.814 centenários vivos. TSE 2026: 297.977 registrados. Razão de 7,9 vezes, comparação nacional, T0 contra T0. Só pode ter 100 anos em 2026 quem tinha 95+ no Censo (202.992 pessoas): mesmo sem nenhuma morte, sobram 94.985 títulos. No 2º turno de 2026 compareceram 3.307 eleitores de 100 anos ou mais (2.133 no 1º): 98,9% dos títulos de centenários não registraram voto. Treze municípios têm centenários no TSE e zero óbitos de centenários em cinco anos.",
+        resultado: "Censo 2022: 37.814 centenários vivos. TSE 2026: 297.977 registrados. Razão de 7,9 vezes, comparação nacional, T0 contra T0. Só pode ter 100 anos em 2026 quem tinha 95+ no Censo (202.992 pessoas): mesmo sem nenhuma morte, sobram 94.985 títulos. No 2º turno de 2026 compareceram 3.313 eleitores de 100 anos ou mais (2.133 no 1º, arquivo BRASIL COMPLETO): 98,9% dos títulos de centenários não registraram voto. Treze municípios têm centenários no TSE e zero óbitos de centenários em cinco anos. E com pelo menos 66% de mortos entre os centenários, a probabilidade de que nenhum dos 3.313 que votaram seja morto é inferior a 10⁻¹⁵⁵⁰: mortos votaram (TCM, ADR-070).",
       },
       {
         titulo: "Capacidade funcional",
@@ -185,7 +185,7 @@ const en: typeof pt = {
       {
         titulo: "Biological limit of centenarians",
         objetivo: "Build a chain that depends neither on electoral domicile nor on survival assumptions.",
-        resultado: "2022 Census: 37,814 centenarians alive. TSE 2026: 297,977 registered. A 7.9-fold ratio, national comparison, T0 against T0. Only those aged 95+ in the Census (202,992 people) can be 100 in 2026: even with no deaths at all, 94,985 registrations are left over. In the 2026 runoff, 3,307 voters aged 100 or over turned out (2,133 in round 1): 98.9% of centenarian registrations recorded no vote. Thirteen municipalities have centenarians in the TSE registry and zero centenarian deaths in five years.",
+        resultado: "2022 Census: 37,814 centenarians alive. TSE 2026: 297,977 registered. A 7.9-fold ratio, national comparison, T0 against T0. Only those aged 95+ in the Census (202,992 people) can be 100 in 2026: even with no deaths at all, 94,985 registrations are left over. In the 2026 runoff, 3,313 voters aged 100 or over turned out (2,133 in round 1, full BRASIL file): 98.9% of centenarian registrations recorded no vote. Thirteen municipalities have centenarians in the TSE registry and zero centenarian deaths in five years. With at least 66% dead among centenarians, the probability that none of the 3,313 who voted is dead is less than 10⁻¹⁵⁵⁰: dead people voted (TCM, ADR-070).",
       },
       {
         titulo: "Functional capacity",

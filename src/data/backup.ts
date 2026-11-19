@@ -44,6 +44,9 @@ export const backupTitulos: Record<string, L> = {
   sim2011: { pt: "DATASUS · consolidação do SIM 2011 (PDF)", en: "DATASUS · 2011 SIM consolidation (PDF)" },
   efasev: { pt: "Ministério da Defesa · relatório das Forças Armadas, EFASEV/2022 (PDF)", en: "Ministry of Defence · Armed Forces report, EFASEV/2022 (PDF)" },
   lei9504: { pt: "Câmara dos Deputados · Lei 9.504/1997, texto atualizado", en: "Chamber of Deputies · Law 9.504/1997, updated text" },
+  perfilEleitorado2026: { pt: "TSE · perfil do eleitorado 2026 (contém os 297.977 centenários)", en: "TSE · voter profile 2026 (holds the 297,977 centenarians)" },
+  inssDadosAbertos: { pt: "INSS · portal de dados abertos (benefícios por titular)", en: "INSS · open-data portal (benefits by titleholder)" },
+  tcuAcordao1606: { pt: "TCU · Acórdão 1606/2025 (R$4,4B pagos a mortos)", en: "TCU · Ruling 1606/2025 (R$4.4B paid to the dead)" },
 };
 
 export const backupGrupos: { id: GrupoBackup; titulo: L }[] = [
@@ -173,8 +176,8 @@ export const backup = {
   naoGuardado: {
     title: { pt: "O que não conseguimos guardar", en: "What we could not store" } as L,
     texto: {
-      pt: "O site www.tse.jus.br recusa o robô do Internet Archive. Por isso não existe cópia independente da página do pacote de programas de 2026 nem da Resolução 23.673/2021, e outras páginas do TSE só têm cópias antigas. O arquivo de comparecimento de 2022, de 201 MB, também não coube no limite de tempo do serviço. Desses, mantemos cópia local com o SHA-256 publicado: pacote de 2026, b5ac413e…fbafd; comparecimento de 2022, fb4e03d9…a7df. O bloqueio pode ser só uma proteção genérica contra robôs — mas o efeito é que documentos eleitorais oficiais ficam sem cópia independente.",
-      en: "The site www.tse.jus.br refuses the Internet Archive's robot. As a result there is no independent copy of the page of the 2026 scripts package or of Resolution 23.673/2021, and other TSE pages only have old copies. The 2022 turnout file, at 201 MB, did not fit within the service's time limit either. For these we keep a local copy with the SHA-256 published: 2026 package, b5ac413e…fbafd; 2022 turnout file, fb4e03d9…a7df. The block may be just a generic protection against robots — but the effect is that official electoral documents are left with no independent copy.",
+      pt: "O site www.tse.jus.br recusa o robô do Internet Archive. Por isso não existe cópia independente da página do pacote de programas de 2026 nem da Resolução 23.673/2021, e outras páginas do TSE só têm cópias antigas. O perfil do eleitorado de 2026 — a fonte dos 297.977 centenários — também não tem captura (o TSE retorna erro 523). O arquivo de comparecimento de 2022, de 201 MB, também não coube no limite de tempo do serviço. O Acórdão TCU 1606/2025 igualmente não tem captura. Desses, mantemos cópia local com o SHA-256 publicado: pacote de 2026, b5ac413e…fbafd; comparecimento de 2022, fb4e03d9…a7df; perfil do eleitorado de 2026, 0952e9d9…648b. O bloqueio pode ser só uma proteção genérica contra robôs — mas o efeito é que documentos eleitorais oficiais ficam sem cópia independente.",
+      en: "The site www.tse.jus.br refuses the Internet Archive's robot. As a result there is no independent copy of the page of the 2026 scripts package or of Resolution 23.673/2021, and other TSE pages only have old copies. The 2026 voter profile — the source of the 297,977 centenarians — also has no capture (the TSE returns error 523). The 2022 turnout file, at 201 MB, did not fit within the service's time limit either. TCU Ruling 1606/2025 also has no capture. For these we keep a local copy with the SHA-256 published: 2026 package, b5ac413e…fbafd; 2022 turnout file, fb4e03d9…a7df; 2026 voter profile, 0952e9d9…648b. The block may be just a generic protection against robots — but the effect is that official electoral documents are left with no independent copy.",
     } as L,
   },
   fontes: [

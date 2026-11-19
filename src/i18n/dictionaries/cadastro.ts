@@ -125,7 +125,7 @@ const pt = {
       },
       {
         t: "Nenhum país do mundo",
-        b: "O Japão, líder mundial em longevidade, tem 7,5 centenários por 100 mil habitantes. O cadastro do TSE equivale a 147 por 100 mil — quase 20 vezes o Japão. O próprio Censo brasileiro (18,6) já é alto.",
+        b: "O Japão, líder mundial em longevidade, tem 88 centenários por 100 mil habitantes. O Censo brasileiro tem 18,6 — esperado para o nível de saúde do país. Mas o cadastro do TSE equivale a 147 por 100 mil: quase o dobro do país mais longevo do mundo.",
       },
     ],
     anim: {
@@ -162,7 +162,7 @@ const pt = {
       "Censo 2022: SIDRA tabela 9514, grupo “100 anos ou mais”, soma dos 5.570 municípios.",
       "TSE: “Comparecimento e abstenção por perfil do eleitorado” 2026 (1º turno), campo aptos, faixa 100+, total nacional.",
       "Óbitos: DATASUS/SIM 2020–2024, 27 UFs, idade codificada ≥ 100; média de 14.848 mortes de centenários por ano.",
-      "Internacional: ONU World Population Prospects 2024. Brasil Censo = 37.814 ÷ 203 milhões; Brasil TSE = 297.977 ÷ 203 milhões.",
+      "Internacional: contagens oficiais de cada país (Japão: Min. Saúde set/2026, 107.677/123M = 88/100k; EUA: Census Bureau; França: INSEE; Itália: ISTAT). Brasil Censo = 37.814 ÷ 203 milhões; Brasil TSE = 297.977 ÷ 203 milhões.",
     ],
     naoProva:
       "Não prova que algum centenário falecido votou. Erros de data de nascimento existem nos dois lados: idosos nascidos antes de 1930 frequentemente não têm registro civil preciso, e o TSE pode ter herdado datas erradas. Mas erro de idade não cria pessoas: desloca-as entre faixas. O excedente de 260 mil permanece a explicar.",
@@ -488,7 +488,7 @@ const en: typeof pt = {
       },
       {
         t: "No country on Earth",
-        b: "Japan, the world leader in longevity, has 7.5 centenarians per 100,000 inhabitants. The TSE registry amounts to 147 per 100,000 — almost 20 times Japan. Brazil's own Census figure (18.6) is already high.",
+        b: "Japan, the world leader in longevity, has 88 centenarians per 100,000 inhabitants. Brazil's Census figure is 18.6 — expected for the country's health profile. But the TSE registry amounts to 147 per 100,000: nearly double the most long-lived country on Earth.",
       },
     ],
     anim: {
@@ -525,7 +525,7 @@ const en: typeof pt = {
       "2022 Census: SIDRA table 9514, group “100 years and over”, sum of 5,570 municipalities.",
       "TSE: “Turnout and abstention by voter profile” 2026 (round 1), registered-voters field, 100+ group, national total.",
       "Deaths: DATASUS/SIM 2020–2024, 27 states, coded age ≥ 100; an average of 14,848 centenarian deaths per year.",
-      "International: UN World Population Prospects 2024. Brazil Census = 37,814 ÷ 203 million; Brazil TSE = 297,977 ÷ 203 million.",
+      "International: official counts by country (Japan: Min. of Health Sep 2026, 107,677/123M = 88 per 100k; USA: Census Bureau; France: INSEE; Italy: ISTAT). Brazil Census = 37,814 ÷ 203 million; Brazil TSE = 297,977 ÷ 203 million.",
     ],
     naoProva:
       "It does not prove that any deceased centenarian voted. Birth-date errors exist on both sides: people born before 1930 often lack precise civil records, and the TSE may have inherited wrong dates. But an age error does not create people: it moves them between groups. The 260 thousand excess remains to be explained.",

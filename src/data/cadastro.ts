@@ -81,7 +81,7 @@ export const centenarios = {
   popCenso2022: 203_062_512,
   tse2026Aptos100: 297_977,
   comp100_2026_1T: 2_133,
-  comp100_2026_2T: 3_307,
+  comp100_2026_2T: 3_313, // arquivo BRASIL COMPLETO (inclui exterior); 3.307 é 27 UFs
   comp100_2022_2T: 2_092,
   aptos100_2022: 184_330,
   faixa9599Censo2022: 165_178,
@@ -92,11 +92,16 @@ export const centenarios = {
     { ano: 2023, obitos: 14_022 },
     { ano: 2024, obitos: 14_899 },
   ],
+  // Fonte: contagem oficial de cada país (Min.Saúde Japão set/2026: 107.677/123M;
+  // US Census Bureau 2020 adj.: ~106K/332M; INSEE França 2024: ~31K/68M;
+  // ISTAT Itália 2024: ~22.500/59M). Brasil: Censo 2022 e TSE 2026.
+  // Nota: o Brasil-IBGE ficar ABAIXO do Japão é esperado — Japão lidera em longevidade.
+  // O que é anômalo é o cadastro TSE: 147/100k, quase o dobro do país mais longevo do mundo.
   internacionalPor100k: [
-    { pais: { pt: "EUA", en: "USA" } as L, valor: 3.0 },
-    { pais: { pt: "França", en: "France" } as L, valor: 3.5 },
-    { pais: { pt: "Itália", en: "Italy" } as L, valor: 4.0 },
-    { pais: { pt: "Japão", en: "Japan" } as L, valor: 7.5 },
+    { pais: { pt: "EUA", en: "USA" } as L, valor: 32 },
+    { pais: { pt: "França", en: "France" } as L, valor: 46 },
+    { pais: { pt: "Itália", en: "Italy" } as L, valor: 38 },
+    { pais: { pt: "Japão", en: "Japan" } as L, valor: 88 },
     { pais: { pt: "Brasil · Censo IBGE", en: "Brazil · IBGE Census" } as L, valor: 18.6 },
     { pais: { pt: "Brasil · cadastro TSE", en: "Brazil · TSE registry" } as L, valor: 147 },
   ],
