@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { ArrowRight, Gavel, Hourglass } from "lucide-react";
+import { ArrowRight, Database, Gavel, Hourglass } from "lucide-react";
 import { lei } from "@/data/lei";
 import { useLang } from "@/i18n/context";
 import { t } from "@/i18n/config";
@@ -121,7 +121,34 @@ export function LeiRevisao({ compact = false }: { compact?: boolean }) {
             <p>{L(lei.cumulativo)}</p>
           </div>
 
-          <div className="mt-6 grid gap-4 lg:grid-cols-2">
+          {/* Recusa por orçamento × o Estado já tem os dados (ADR-URNA-074) */}
+          <Reveal className="mt-10">
+            <h3 id="dados" className="display-md max-w-3xl scroll-mt-24 text-xl font-semibold text-fg sm:text-2xl">{L(lei.dados.title)}</h3>
+            <p className="mt-3 max-w-3xl text-[0.98rem] leading-relaxed text-fg-2">{L(lei.dados.lead)}</p>
+          </Reveal>
+          <div className="mt-5 grid gap-3 md:grid-cols-2">
+            {lei.dados.itens.map((d, i) => (
+              <Reveal key={i} delay={(i % 2) * 0.05}>
+                <div className="flex h-full flex-col rounded-2xl border border-line bg-bg-elev p-5">
+                  <p className="flex items-center gap-2 font-medium text-fg">
+                    <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-teal-soft text-teal">
+                      <Database className="h-3.5 w-3.5" />
+                    </span>
+                    {L(d.t)}
+                  </p>
+                  <p className="mt-2 text-[0.93rem] leading-relaxed text-fg-2">{L(d.b)}</p>
+                  <SourceTag className="mt-auto pt-3" tier={d.fonte.tier} source={L(d.fonte.source)} date={d.fonte.date} href={d.fonte.href} />
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal className="mt-4">
+            <Callout tone="teal">
+              <p className="text-[1.02rem] font-medium text-fg">{L(lei.dados.fecho)}</p>
+            </Callout>
+          </Reveal>
+
+          <div className="mt-10 grid gap-4 lg:grid-cols-2">
             <Reveal>
               <div className="flex h-full flex-col rounded-2xl border border-line bg-bg-elev p-5 sm:p-6">
                 <span className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-rose-soft text-rose">

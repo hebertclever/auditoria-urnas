@@ -133,7 +133,7 @@ export function BarChart({
                       </motion.text>
                     )}
                     {i % labelEvery === 0 && (
-                      <text x={bx + bw / 2} y={ih + 18} textAnchor="middle" fontSize={bw < 26 ? 9.5 : 11} fill="var(--fg-3)" className="font-mono">
+                      <text x={bx + bw / 2} y={ih + 18} textAnchor="middle" fontSize={bw < 26 || x.step() * labelEvery < 44 ? 9.5 : 11} fill="var(--fg-3)" className="font-mono">
                         {d.label}
                       </text>
                     )}

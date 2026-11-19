@@ -54,6 +54,9 @@ export const backupTitulos: Record<string, L> = {
   codigoEleitoral: { pt: "Planalto · Código Eleitoral, texto compilado (art. 71: baixa por óbito)", en: "Planalto · Electoral Code, consolidated text (art. 71: death removal)" },
   temasRevisao: { pt: "TSE · Temas Selecionados: revisão de eleitorado (jurisprudência)", en: "TSE · Selected Topics: electorate review (case law)" },
   eleitorEmDia: { pt: "TSE · notícia: Eleitor em dia (70+ fora do cancelamento por ausência)", en: "TSE · news: Voter up to date (70+ exempt from cancellation for absence)" },
+  lei13444: { pt: "Planalto · Lei 13.444/2017 (a base da Identificação Civil Nacional fica com o TSE)", en: "Planalto · Law 13.444/2017 (the National Civil Identification database is held by the TSE)" },
+  lei8212: { pt: "Planalto · Lei 8.212/1991, texto compilado (art. 68: óbitos ao Sirc em 1 dia útil)", en: "Planalto · Law 8.212/1991, consolidated text (art. 68: deaths sent to the Sirc within 1 business day)" },
+  prt567: { pt: "TSE · Portaria 567/2022 (art. 8º: cruzamento com o registro civil)", en: "TSE · Ordinance 567/2022 (art. 8: cross-check with the civil registry)" },
 };
 
 export const backupGrupos: { id: GrupoBackup; titulo: L }[] = [

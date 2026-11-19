@@ -414,6 +414,36 @@
    "pedido_hoje": null,
    "situacao": "ok",
    "nota": "Notícia de 15/01/2026: maiores de 70 anos estão fora do cancelamento por ausência a três eleições. Cópia local com SHA-256 e6699666…521e."
+  },
+  {
+   "id": "lei13444",
+   "grupo": "outros",
+   "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13444.htm",
+   "primeira": "20170515081805",
+   "ultima": "20261016053830",
+   "pedido_hoje": null,
+   "situacao": "ok",
+   "nota": "Captura conferida em 19/11/2026 (art. 2º lido no texto arquivado). Cópia local com SHA-256 e17bbdd5…1e5a."
+  },
+  {
+   "id": "lei8212",
+   "grupo": "outros",
+   "url": "https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm",
+   "primeira": "20010305214910",
+   "ultima": "20261018183513",
+   "pedido_hoje": null,
+   "situacao": "ok",
+   "nota": "Captura conferida em 19/11/2026 (art. 68 lido no texto arquivado). As capturas de novembro de 2026 já trazem a página genérica do Planalto. Cópia local com SHA-256 0674c2c9…ba0a."
+  },
+  {
+   "id": "prt567",
+   "grupo": "tseNormas",
+   "url": "https://www.tse.jus.br/legislacao/compilada/prt/2022/portaria-no-567-de-09-de-junho-de-2022",
+   "primeira": "20230328030842",
+   "ultima": "20260420164219",
+   "pedido_hoje": null,
+   "situacao": "ok",
+   "nota": "Captura conferida em 19/11/2026 (art. 8º lido no texto arquivado). Cópia local com SHA-256 2f8633e0…f12d."
   }
  ]
 }

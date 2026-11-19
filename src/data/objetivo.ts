@@ -15,6 +15,23 @@ export const objetivo = {
     pt: "Esta auditoria não existe para apontar culpados. Existe para que a eleição possa ser conferida por qualquer pessoa. Cada anomalia que encontramos indica uma correção concreta no processo — e a última delas, a que separa falha de software de inserção manual, é abrir o código-fonte da urna.",
     en: "This audit does not exist to point fingers. It exists so that anyone can check the election. Every anomaly we found points to a concrete fix in the process — and the last one, the one that separates a software fault from a manual insertion, is opening the voting machine's source code.",
   } as L,
+  // Pedido do autor (19/11/2026, ADR-URNA-074 item 3): suspeita legítima não é acusação; só a transparência a resolve.
+  suspeita: {
+    title: { pt: "Suspeitar não é acusar", en: "To suspect is not to accuse" } as L,
+    text: {
+      pt: "Não afirmamos que houve fraude. Afirmamos que os dados levantam suspeitas legítimas — de erro, de falta de compreensão técnica e também de fraude — que merecem investigação e resposta. O tribunal nega a revisão do eleitorado por falta de orçamento quando a lei põe sob sua guarda a base que reúne o registro civil do país; cita a própria lei com uma palavra que não está nela; e publicou um programa de conferência cuja verificação de assinatura, em 2022, era falsa. Isso preocupa em quem cuida da tecnologia mais importante da nossa democracia: a urna eletrônica.",
+      en: "We do not claim there was fraud. We claim the data raise legitimate suspicions — of error, of a lack of technical understanding and also of fraud — that deserve investigation and an answer. The court denies electorate reviews for lack of budget while the law places in its custody the database that brings together the country's civil registry; it quotes the law with a word that is not in it; and it published a checking script whose signature verification, in 2022, was fake. That is worrying in whoever looks after the most important technology of our democracy: the electronic voting machine.",
+    } as L,
+  },
+  transparencia: {
+    title: { pt: "O TSE pode tirar essas dúvidas? Pode — com três coisas", en: "Can the TSE settle these doubts? It can — with three things" } as L,
+    text: {
+      pt: "O código-fonte aberto, o hash que prova que o programa da urna é aquele código e a declaração de tudo o que mudou entre uma versão e outra. A própria lei já prevê as três — programas-fonte apresentados, cópias lacradas e aviso de qualquer alteração —, mas só para fiscais credenciados, dentro do TSE. É essa falta de transparência que transforma cada erro numa dúvida sobre a eleição. Ela precisa ser corrigida.",
+      en: "Open source code, the hash proving that the program on the machine is that code, and a statement of everything that changed between one version and the next. The law itself already provides for all three — source programs presented, sealed copies and notice of any change — but only for accredited inspectors, inside the TSE. It is this lack of transparency that turns every error into a doubt about the election. It must be fixed.",
+    } as L,
+    fonte: { pt: "Lei 9.504/1997, art. 66, §§ 2º e 4º (redação da Lei 10.740/2003) — texto do Planalto, captura de 27/10/2026", en: "Law 9.504/1997, art. 66, §§ 2 and 4 (as amended by Law 10.740/2003) — Planalto text, capture of 27 Oct 2026" } as L,
+    href: "https://web.archive.org/web/20261027174519/https://www.planalto.gov.br/ccivil_03/leis/l9504.htm",
+  },
   achadoLabel: { pt: "O que encontramos", en: "What we found" } as L,
   correcaoLabel: { pt: "O que precisa mudar", en: "What must change" } as L,
   itens: [

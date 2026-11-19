@@ -18,6 +18,7 @@ function DatasusCharts() {
   const { fmt, fmtCompact } = useFmt();
   const totais: Bar[] = limpeza.mortesSerie.map((r) => ({ label: String(r.ano), value: r.mortes, tone: "slate" }));
   const cent: Bar[] = centenarios.obitos100PorAno.map((r) => ({ label: String(r.ano), value: r.obitos, tone: "teal" }));
+  const somaCent = centenarios.obitos100PorAno.reduce((s, r) => s + r.obitos, 0); // 63.455 (2020–2024)
   return (
     <div className="grid gap-5 md:grid-cols-2">
       <div className="rounded-2xl border border-line bg-bg-elev p-4 sm:p-5">
@@ -34,7 +35,9 @@ function DatasusCharts() {
           {lang === "pt" ? "Mortes de centenários, por ano" : "Centenarian deaths, per year"}
         </h3>
         <p className="mb-2 text-xs text-fg-3">
-          {lang === "pt" ? `DATASUS/SIM — 5 anos somam ${fmt(74_242)}, contra +200 mil no cadastro.` : `DATASUS/SIM — 5 years total ${fmt(74_242)}, against 200k+ in the registry.`}
+          {lang === "pt"
+            ? `DATASUS/SIM — 5 anos somam ${fmt(somaCent)}, contra ${fmt(centenarios.tse2026Aptos100)} títulos no cadastro.`
+            : `DATASUS/SIM — 5 years total ${fmt(somaCent)}, against ${fmt(centenarios.tse2026Aptos100)} registrations on the rolls.`}
         </p>
         <BarChart data={cent} height={220} format={(v) => fmt(v)} minZero showValues />
       </div>

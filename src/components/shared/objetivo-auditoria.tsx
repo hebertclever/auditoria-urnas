@@ -8,6 +8,7 @@ import { t } from "@/i18n/config";
 import { href } from "@/i18n/routes";
 import { Eyebrow, Heading, Lead } from "@/components/ui/section";
 import { Callout } from "@/components/ui/callout";
+import { SourceTag } from "@/components/ui/source-tag";
 import { Reveal } from "@/components/ui/reveal";
 import { cn } from "@/lib/utils";
 
@@ -33,6 +34,12 @@ export function ObjetivoAuditoria() {
         <Eyebrow tone="teal">{L(objetivo.eyebrow)}</Eyebrow>
         <Heading as="h2" className="mt-3 max-w-4xl">{L(objetivo.title)}</Heading>
         <Lead className="mt-5">{L(objetivo.lead)}</Lead>
+      </Reveal>
+
+      <Reveal className="mt-6">
+        <Callout tone="amber" title={L(objetivo.suspeita.title)}>
+          <p className="text-[1.02rem]">{L(objetivo.suspeita.text)}</p>
+        </Callout>
       </Reveal>
 
       <div className="mt-8 hidden gap-4 px-5 font-mono text-[0.65rem] uppercase tracking-[0.16em] text-fg-3 md:grid md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1.15fr)]">
@@ -76,6 +83,14 @@ export function ObjetivoAuditoria() {
       </ol>
 
       <Reveal className="mt-6">
+        <div className="rounded-2xl border border-amber/40 bg-amber-soft p-5 sm:p-6">
+          <p className="display-md text-lg font-semibold leading-snug text-fg sm:text-xl">{L(objetivo.transparencia.title)}</p>
+          <p className="mt-2 text-[0.98rem] leading-relaxed text-fg-2">{L(objetivo.transparencia.text)}</p>
+          <SourceTag className="mt-3" tier="T0" source={L(objetivo.transparencia.fonte)} date="1997 · 2003" href={objetivo.transparencia.href} />
+        </div>
+      </Reveal>
+
+      <Reveal className="mt-4">
         <Callout tone="teal">
           <p className="text-[1.02rem] font-medium text-fg">{L(objetivo.fecho)}</p>
           <Link

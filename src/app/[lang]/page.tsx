@@ -9,11 +9,12 @@ import { Section } from "@/components/ui/section";
 import { QuatroReguas } from "@/components/shared/quatro-reguas";
 import { LeiRevisao } from "@/components/shared/lei-revisao";
 import { ObjetivoAuditoria } from "@/components/shared/objetivo-auditoria";
+import { Angulos } from "@/components/shared/angulos";
 import { metaFor } from "@/i18n/server";
 
 export const generateMetadata = metaFor("home");
 
-// Ordem (ADR-URNA-073): exemplo leigo e INSS no topo → as quatro réguas → os números → a lei não cumprida →
+// Ordem (ADR-URNA-073 e 077): exemplo leigo e INSS no topo → as quatro réguas → os números → as chances → a lei não cumprida →
 // os dois eixos → o que está provado → para que serve (abrir o código e consertar o processo) → a conta → limites.
 export default function HomePage() {
   return (
@@ -23,6 +24,9 @@ export default function HomePage() {
         <QuatroReguas />
       </Section>
       <Bento />
+      <Section id="chances" className="border-t border-line">
+        <Angulos compact />
+      </Section>
       <Section id="lei" className="border-t border-line">
         <LeiRevisao compact />
       </Section>

@@ -15,6 +15,11 @@ const URL = {
   temas: "https://web.archive.org/web/20251225054552/https://temasselecionados.tse.jus.br/temas-selecionados/eleitor-do-alistamento-ao-voto/revisao-de-eleitorado/generalidades",
   baia: "https://www.tse.jus.br/comunicacao/noticias/2024/Novembro/tse-nega-pedido-de-revisao-do-eleitorado-de-baia-da-traicao-pb",
   eleitorEmDia: "https://www.tse.jus.br/comunicacao/noticias/2026/Janeiro/eleitor-em-dia-confira-se-o-titulo-esta-cancelado-e-regularize-sua-situacao",
+  // O Estado já tem os dados (ADR-URNA-074): capturas no Internet Archive; cópias com SHA-256 em urnas/fontes/custo_baixo_bases_do_estado_2026-11-19/.
+  lei8212: "https://web.archive.org/web/20261018183513/https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm",
+  lei13444: "https://web.archive.org/web/20261016053830/http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13444.htm",
+  prt567: "https://www.tse.jus.br/legislacao/compilada/prt/2022/portaria-no-567-de-09-de-junho-de-2022",
+  inssProvaVida: "https://www.gov.br/inss/pt-br/noticias/prova-de-vida-do-inss-e-feita-por-cruzamento-de-dados",
 };
 
 export const lei = {
@@ -97,13 +102,60 @@ export const lei = {
 
   // Um pedido com os três critérios, negado.
   piaui: {
-    pt: "Em 2021, o Tribunal Regional Eleitoral do Piauí encaminhou o pedido de revisão de José de Freitas, com relatório de inspeção apontando os três requisitos do art. 92. O TSE negou — entre os motivos, a “ausência de previsão orçamentária específica” (Ac. de 29/4/2021 na RvE 060029495).",
-    en: "In 2021, the Regional Electoral Court of Piauí forwarded the request to review José de Freitas, with an inspection report pointing to the three requirements of art. 92. The TSE denied it — among the reasons, the “absence of a specific budget provision” (ruling of 29 Apr 2021, RvE 060029495).",
+    pt: "Em 2021, o Tribunal Regional Eleitoral do Piauí encaminhou o pedido de revisão de José de Freitas, com relatório de inspeção apontando os três requisitos do art. 92. O TSE negou — entre os motivos, a “ausência de previsão orçamentária específica, ainda que passível a realocação de recursos existentes sob rubrica diversa” (Ac. de 29/4/2021 na RvE 060029495). Ou seja: registrou que o dinheiro podia ser remanejado, e negou assim mesmo.",
+    en: "In 2021, the Regional Electoral Court of Piauí forwarded the request to review José de Freitas, with an inspection report pointing to the three requirements of art. 92. The TSE denied it — among the reasons, the “absence of a specific budget provision, even though existing funds under another heading could be reallocated” (ruling of 29 Apr 2021, RvE 060029495). In other words: it recorded that the money could be moved, and denied it anyway.",
   } as L,
   cumulativo: {
     pt: "Os incisos I e II tratam do salto de transferências de título e da proporção de jovens e idosos. O TSE exige os três critérios ao mesmo tempo; os 730 municípios passam, por definição, do critério do IBGE — o da lei (65%) e o da resolução (80%).",
     en: "Items I and II deal with a jump in registration transfers and the share of young and elderly people. The TSE requires all three at once; the 730 municipalities meet, by definition, the IBGE criterion — the law's (65%) and the resolution's (80%).",
   } as L,
+
+  // Recusa por orçamento × o Estado já tem os dados (ADR-URNA-074). Citações literais, T0.
+  dados: {
+    title: { pt: "Falta de orçamento? O Estado já tem os dados", en: "No budget? The State already has the data" } as L,
+    lead: {
+      pt: "O TSE negou ou adiou revisões citando, entre outros motivos, a falta de dinheiro — há decisões assim em 2001, 2002, 2009, 2016, 2021 e 2024. Só que tirar da lista quem morreu não exige chamar ninguém ao cartório: é uma consulta entre bases de dados que a lei já põe ao alcance do TSE.",
+      en: "The TSE has denied or postponed reviews citing, among other reasons, lack of money — there are such rulings in 2001, 2002, 2009, 2016, 2021 and 2024. But taking the dead off the list does not require calling anyone in to the registry office: it is a lookup between databases the law already puts within the TSE's reach.",
+    } as L,
+    itens: [
+      {
+        t: { pt: "O cartório avisa em 1 dia útil", en: "The registry office reports within 1 business day" } as L,
+        b: {
+          pt: "O cartório “remeterá ao INSS, em até 1 (um) dia útil, pelo Sistema Nacional de Informações de Registro Civil (Sirc) […] a relação dos […] óbitos” — e, pelo Código Eleitoral, comunica os óbitos ao juiz eleitoral todo mês.",
+          en: "The registry office “shall send to the INSS, within 1 (one) business day, through the National Civil Registry Information System (Sirc) […] the list of […] deaths” — and, under the Electoral Code, reports deaths to the electoral judge every month.",
+        } as L,
+        fonte: { tier: "T0", source: { pt: "Lei 8.212/1991, art. 68 (redação da Lei 13.846/2019) · Código Eleitoral, art. 71, § 3º", en: "Law 8.212/1991, art. 68 (as amended by Law 13.846/2019) · Electoral Code, art. 71, § 3" }, date: "2019", href: URL.lei8212 },
+      },
+      {
+        t: { pt: "A base fica sob a guarda do próprio TSE", en: "The database is in the TSE's own custody" } as L,
+        b: {
+          pt: "A Identificação Civil Nacional usa a base do Sirc e a central dos cartórios, e “a base de dados da ICN será armazenada e gerida pelo Tribunal Superior Eleitoral, que a manterá atualizada”.",
+          en: "The National Civil Identification uses the Sirc database and the registry offices' central database, and “the ICN database shall be stored and managed by the Superior Electoral Court, which shall keep it up to date”.",
+        } as L,
+        fonte: { tier: "T0", source: { pt: "Lei 13.444/2017, art. 2º, II e § 1º", en: "Law 13.444/2017, art. 2, II and § 1" }, date: "2017", href: URL.lei13444 },
+      },
+      {
+        t: { pt: "Uma portaria do TSE manda cruzar", en: "A TSE ordinance orders the cross-check" } as L,
+        b: {
+          pt: "A área de tecnologia do TSE deve verificar alterações “mediante cruzamento dos dados contidos nas bases do […] Sirc, da […] CRC Nacional […] bem como do Cadastro Eleitoral […], especialmente para a atualização da situação do cadastro do cidadão(ã) em decorrência do registro de óbito”. A portaria trata da base da identificação civil; o ponto é que o canal existe e está nas mãos do TSE.",
+          en: "The TSE's technology department must check for changes “by cross-matching the data in the databases of the […] Sirc, the […] CRC Nacional […] as well as the Voter Registry […], especially to update the status of the citizen's record as a result of a death registration”. The ordinance concerns the civil-identification database; the point is that the channel exists and is in the TSE's hands.",
+        } as L,
+        fonte: { tier: "T0", source: { pt: "Portaria TSE 567/2022, art. 8º", en: "TSE Ordinance 567/2022, art. 8" }, date: "2022", href: URL.prt567 },
+      },
+      {
+        t: { pt: "O INSS faz isso todo ano", en: "The INSS does this every year" } as L,
+        b: {
+          pt: "“Cabe ao próprio INSS utilizar as bases de dados […] para checar se os segurados estão vivos. Isso é feito com o cruzamento de informações.” São 72.501 benefícios de centenários conferidos assim. A lista do TSE tem 297.977.",
+          en: "“It is up to the INSS itself to use the databases […] to check whether the insured are alive. This is done by cross-checking information.” That is how 72,501 centenarian benefits are checked. The TSE's list has 297,977.",
+        } as L,
+        fonte: { tier: "T0", source: { pt: "INSS · “Prova de vida do INSS é feita por cruzamento de dados” (atualizado em 26/10/2026)", en: "INSS · “INSS proof of life is done by cross-checking data” (updated 26 Oct 2026)" }, date: "2026", href: URL.inssProvaVida },
+      },
+    ] as { t: L; b: L; fonte: Fonte }[],
+    fecho: {
+      pt: "A revisão presencial custa dinheiro; conferir óbitos é consulta de computador. A própria resolução do TSE admite dispensar o comparecimento por “economicidade” quando há “cruzamento de dados com outras entidades” (art. 114). Negar a correção por falta de orçamento é tratar um problema de dados como se fosse uma operação de campo.",
+      en: "An in-person review costs money; checking deaths is a computer lookup. The TSE's own resolution allows waiving attendance on grounds of “economy” when there is “cross-checking of data with other entities” (art. 114). Denying the fix for lack of budget treats a data problem as if it were a field operation.",
+    } as L,
+  },
 
   // A lei da baixa por óbito e a regra dos 70+.
   obito: {
@@ -130,8 +182,8 @@ export const lei = {
   },
 
   compacto: {
-    pt: "A lei diz “determinará”. A resolução do TSE diz “poderá … observada a conveniência e a disponibilidade de recursos”. Em 2005, o TSE registrou a decisão de não fazer essas revisões naquele ano; em 2024, negou uma porque “não há previsão orçamentária”.",
-    en: "The law says “shall”. The TSE's resolution says “may … subject to convenience and available resources”. In 2005, the TSE recorded its decision not to carry out those reviews that year; in 2024, it denied one because “there is no budget provision”.",
+    pt: "A lei diz “determinará”. A resolução do TSE diz “poderá … observada a conveniência e a disponibilidade de recursos”. Em 2005, o TSE registrou a decisão de não fazer essas revisões naquele ano; em 2024, negou uma porque “não há previsão orçamentária”. Só que tirar da lista quem morreu não exige orçamento de campo: os óbitos chegam ao registro civil em um dia útil, e a lei põe essa base sob a guarda do próprio TSE.",
+    en: "The law says “shall”. The TSE's resolution says “may … subject to convenience and available resources”. In 2005, the TSE recorded its decision not to carry out those reviews that year; in 2024, it denied one because “there is no budget provision”. But taking the dead off the list needs no field budget: deaths reach the civil registry within one business day, and the law places that database in the TSE's own custody.",
   } as L,
   link: { pt: "Ver a lei, a resolução e as decisões, com as fontes", en: "See the law, the resolution and the rulings, with sources" } as L,
 
@@ -142,5 +194,8 @@ export const lei = {
     { tier: "T0", source: { pt: "TSE · Temas Selecionados — revisão de eleitorado (Res. 22.128/2005; Ac. de 29/4/2021 na RvE 060029495; Ac. de 21/11/2024 na RvE 060037608)", en: "TSE · Selected Topics — electorate review (Res. 22.128/2005; ruling of 29 Apr 2021, RvE 060029495; ruling of 21 Nov 2024, RvE 060037608)" }, date: "2025", href: URL.temas },
     { tier: "T0", source: { pt: "TSE · notícia de 21/11/2024 — revisão de Baía da Traição (PB) negada", en: "TSE · news item of 21 Nov 2024 — Baía da Traição (PB) review denied" }, date: "2024", href: URL.baia },
     { tier: "T0", source: { pt: "TSE · notícia de 15/01/2026 — maiores de 70 anos fora do cancelamento por ausência", en: "TSE · news item of 15 Jan 2026 — voters over 70 exempt from cancellation for absence" }, date: "2026", href: URL.eleitorEmDia },
+    { tier: "T0", source: { pt: "Lei 13.444/2017, art. 2º — a base da Identificação Civil Nacional (Sirc + cartórios) fica com o TSE", en: "Law 13.444/2017, art. 2 — the National Civil Identification database (Sirc + registry offices) is held by the TSE" }, date: "2017", href: URL.lei13444 },
+    { tier: "T0", source: { pt: "Portaria TSE 567/2022, art. 8º — cruzamento com o registro civil para óbitos", en: "TSE Ordinance 567/2022, art. 8 — cross-check with the civil registry for deaths" }, date: "2022", href: URL.prt567 },
+    { tier: "T0", source: { pt: "Lei 8.212/1991, art. 68 — óbitos ao Sirc em até 1 dia útil", en: "Law 8.212/1991, art. 68 — deaths sent to the Sirc within 1 business day" }, date: "2019", href: URL.lei8212 },
   ] as Fonte[],
 };

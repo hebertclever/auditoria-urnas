@@ -78,6 +78,33 @@ export const reguas = {
     pt: "E a lista deveria encolher: entre 2020 e 2024, o DATASUS registrou a morte de 63.455 centenários — nomes que deveriam ter saído do cadastro. Entre 2022 e 2026, em vez de encolher, ela cresceu 113 mil.",
     en: "And the list should shrink: between 2020 and 2024, DATASUS recorded the deaths of 63,455 centenarians — names that should have left the registry. Between 2022 and 2026, instead of shrinking, it grew by 113,000.",
   } as L,
+  // Centenários como lupa + a comparação dos 70+ (ADR-URNA-074, itens 4 e 4b). Números de 2022, T0 × T0, 27 UFs:
+  // TSE 14.871.235 títulos de 70+ × IBGE 14.292.869 pessoas; 90+: 1.389.277 × 782.721 = +606.556; mortes de 90+ em 2022: 167.320.
+  lupa: {
+    title: { pt: "Os centenários são a lupa, não o limite", en: "The centenarians are the magnifying glass, not the limit" } as L,
+    text: {
+      pt: "Usamos os centenários como exemplo porque é a idade em que o erro aparece sem discussão. O defeito é o mesmo em todas as idades: o nome de quem morreu não sai da lista. Em 2022, somando todos os eleitores de 70 anos ou mais, o TSE tinha 14,87 milhões de títulos para 14,29 milhões de pessoas contadas pelo IBGE. Até os 89 anos, lista e Censo empatam; dos 90 em diante, sobram 606 mil títulos — o equivalente a três anos e meio de todas as mortes de pessoas com 90 anos ou mais. Cada um desses títulos continua apto a votar.",
+      en: "We use centenarians as the example because it is the age at which the error shows beyond dispute. The fault is the same at every age: the names of those who died do not leave the list. In 2022, adding up all voters aged 70 or over, the TSE had 14.87 million registrations for 14.29 million people counted by IBGE. Up to age 89, list and Census are level; from 90 onward, 606,000 registrations are left over — the equivalent of three and a half years of all deaths of people aged 90 or over. Each of those registrations is still eligible to vote.",
+    } as L,
+    stats: [
+      {
+        valor: { pt: "177", en: "177" } as L,
+        label: { pt: "nomes na lista do TSE para cada 100 pessoas com 90 anos ou mais contadas pelo IBGE (2022)", en: "names on the TSE's list for every 100 people aged 90 or over counted by IBGE (2022)" } as L,
+      },
+      {
+        valor: { pt: "606.556", en: "606,556" } as L,
+        label: { pt: "títulos de 90 anos ou mais além de todos os brasileiros vivos dessa idade (2022)", en: "registrations aged 90 or over beyond every living Brazilian of that age (2022)" } as L,
+      },
+      {
+        valor: { pt: "629 mil", en: "629,000" } as L,
+        label: { pt: "mortes de eleitores que ficaram sem baixa por óbito num único ano (2022)", en: "voter deaths left without a death removal in a single year (2022)" } as L,
+      },
+    ],
+    nota: {
+      pt: "O TSE não informa em que data calcula a idade do eleitor. Se for o dia da eleição, e não a data do Censo, até 32 mil dos 606 mil títulos de 90 anos ou mais seriam diferença de datas: o excesso continua acima de 570 mil.",
+      en: "The TSE does not say on what date it calculates a voter's age. If it is election day rather than the Census date, up to 32,000 of the 606,000 registrations aged 90 or over would be a date difference: the excess stays above 570,000.",
+    } as L,
+  },
   replay: { pt: "Repetir", en: "Replay" } as L,
   fontes: [
     { tier: "T0" as Tier, source: { pt: "IBGE · Censo 2022, SIDRA 9514 (100 anos ou mais)", en: "IBGE · 2022 Census, SIDRA 9514 (aged 100 or over)" } as L, href: "https://sidra.ibge.gov.br/tabela/9514" },

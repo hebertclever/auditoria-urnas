@@ -187,6 +187,21 @@ export function QuatroReguas({ className }: { className?: string }) {
         </div>
       </motion.div>
 
+      {/* Os centenários são a lupa, não o limite: a mesma conta para os 70+ e os 90+ */}
+      <div className="mt-5 rounded-3xl border border-line bg-bg-elev p-5 sm:p-7">
+        <p className="mb-2 font-mono text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-rose">{L(reguas.lupa.title)}</p>
+        <p className="max-w-4xl text-[0.98rem] leading-relaxed text-fg-2">{L(reguas.lupa.text)}</p>
+        <div className="mt-5 grid gap-3 sm:grid-cols-3">
+          {reguas.lupa.stats.map((s, i) => (
+            <div key={i} className="rounded-2xl border border-line bg-bg p-4">
+              <div className="display tabular text-2xl font-semibold text-rose sm:text-3xl">{L(s.valor)}</div>
+              <p className="mt-1.5 text-sm leading-snug text-fg-2">{L(s.label)}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-3 text-xs leading-relaxed text-fg-3">{L(reguas.lupa.nota)}</p>
+      </div>
+
       <Sources className="mt-6">
         {reguas.fontes.map((f, i) => (
           <SourceTag key={i} tier={f.tier} source={L(f.source)} href={f.href} />

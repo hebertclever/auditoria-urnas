@@ -21,6 +21,7 @@ import { BiometriaCentenarios } from "@/components/shared/biometria-centenarios"
 import { QuatroReguas } from "@/components/shared/quatro-reguas";
 import { LeiRevisao } from "@/components/shared/lei-revisao";
 import { ObjetivoAuditoria } from "@/components/shared/objetivo-auditoria";
+import { Angulos } from "@/components/shared/angulos";
 import { cn } from "@/lib/utils";
 
 export const generateMetadata = metaFor("provas");
@@ -141,6 +142,11 @@ export default async function ProvasPage({ params }: PageProps<"/[lang]/provas">
       {/* BIOMETRIA — a digital que não chegou aos centenários */}
       <Section className="border-t border-line">
         <BiometriaCentenarios />
+      </Section>
+
+      {/* TODOS OS ÂNGULOS — as curvas por idade, quanto cada órgão teria de errar, as chances, quem votou e as perguntas */}
+      <Section id="chances" className="border-t border-line">
+        <Angulos />
       </Section>
 
       {/* A LEI — revisão do eleitorado (art. 92) e baixa por óbito (CE art. 71) */}
