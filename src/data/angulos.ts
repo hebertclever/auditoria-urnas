@@ -34,6 +34,10 @@ export const numeros = {
   presentesSemBiometriaMin: 705, // soma, célula a célula, de max(0, presentes − títulos com biometria)
   presentesSemBiometriaMax: 1_094,
   rio: { titulos: 68_142, censo: 1_390, presentes: 126 },
+  // INSS em pessoas (estimativa nossa): dos 26.769 centenários com pensão por morte, cerca de 13 mil têm também outro benefício
+  // com a mesma data de nascimento, sexo e município (13.732 casados, 1.235 por acaso no placebo). 72.501 benefícios ≈ 60 mil pessoas.
+  inssBeneficios100: 72_501,
+  inssPessoas100: 60_000,
 };
 
 export const angulos = {
@@ -120,9 +124,12 @@ export const angulos = {
       {
         id: "inss",
         nome: { pt: "INSS", en: "INSS" } as L,
-        valor: { pt: "3 em cada 4", en: "3 in every 4" } as L,
+        valor: { pt: "4 em cada 5", en: "4 in every 5" } as L,
         texto: { pt: "centenários vivos que estariam sem aposentadoria, pensão ou qualquer benefício.", en: "living centenarians who would be without a pension or any benefit at all." } as L,
-        medido: { pt: "Dos 70 aos 94 anos, o INSS paga mais benefícios do que o TSE tem títulos.", en: "From 70 to 94, the INSS pays more benefits than the TSE has registrations." } as L,
+        medido: {
+          pt: "O INSS paga 72.501 benefícios a centenários — cerca de 60 mil pessoas, porque quem tem aposentadoria e pensão conta duas vezes. Dos 70 aos 94 anos, paga mais benefícios do que o TSE tem títulos.",
+          en: "The INSS pays 72,501 benefits to centenarians — about 60,000 people, because anyone with both a retirement and a survivor's pension counts twice. From 70 to 94, it pays more benefits than the TSE has registrations.",
+        } as L,
       },
       {
         id: "tse",
@@ -152,8 +159,8 @@ export const angulos = {
       {
         valor: { pt: "4 em 10", en: "4 in 10" } as L,
         label: {
-          pt: "é a chance máxima de um título de centenário ser de alguém vivo — pela conta mais generosa. Pela folha do INSS, 1 em 4; pelo Censo, 1 em 8.",
-          en: "is the maximum chance that a centenarian registration belongs to someone alive — on the most generous count. By the INSS payroll, 1 in 4; by the Census, 1 in 8.",
+          pt: "é a chance máxima de um título de centenário ser de alguém vivo — pela conta mais generosa. Pela folha do INSS, 1 em 5; pelo Censo, 1 em 8.",
+          en: "is the maximum chance that a centenarian registration belongs to someone alive — on the most generous count. By the INSS payroll, 1 in 5; by the Census, 1 in 8.",
         } as L,
         tom: "amber" as const,
       },
