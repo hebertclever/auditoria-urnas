@@ -8,7 +8,7 @@ const pt = {
     eyebrow: "Código · kit público de verificação",
     title: "63 gaps no kit de verificação oficial",
     lead:
-      "O TSE distribui scripts em Python e especificações ASN.1 para qualquer cidadão conferir os boletins de urna. Lemos as 2.852 linhas, uma a uma, nas três versões publicadas (2022, 2024 e 2026). Encontramos 63 falhas.",
+      "É como receber do banco uma calculadora para conferir o extrato — e descobrir que ela tem 63 defeitos, todos para o mesmo lado. O TSE distribui scripts em Python e especificações ASN.1 para qualquer cidadão conferir os boletins de urna. Lemos as 2.852 linhas, uma a uma, nas três versões publicadas (2022, 2024 e 2026). Encontramos 63 falhas. Elas não dizem de onde vem o erro — por isso pedimos perícia independente e a abertura do código-fonte da urna.",
     stats: {
       gaps: "gaps confirmados, com arquivo e linha",
       linhas: "linhas de código e especificação auditadas",
@@ -223,7 +223,7 @@ const en: typeof pt = {
     eyebrow: "Code · public verification kit",
     title: "63 gaps in the official verification kit",
     lead:
-      "The TSE distributes Python scripts and ASN.1 specifications so any citizen can check the ballot box bulletins. We read all 2,852 lines, one by one, across the three published versions (2022, 2024 and 2026). We found 63 flaws.",
+      "It is like getting a calculator from your bank to check your statement — and finding it has 63 defects, all in the same direction. The TSE distributes Python scripts and ASN.1 specifications so any citizen can check the ballot box bulletins. We read all 2,852 lines, one by one, across the three published versions (2022, 2024 and 2026). We found 63 flaws. They do not say where the error comes from — which is why we ask for an independent examination and for the voting machine's source code to be opened.",
     stats: {
       gaps: "confirmed gaps, each with file and line",
       linhas: "lines of code and specification audited",

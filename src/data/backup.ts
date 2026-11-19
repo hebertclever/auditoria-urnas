@@ -50,6 +50,10 @@ export const backupTitulos: Record<string, L> = {
   inssBeneficios: { pt: "INSS · benefícios mantidos (página do conjunto de dados)", en: "INSS · benefits in force (dataset page)" },
   inssProvaVida: { pt: "INSS · notícia: a prova de vida é feita por cruzamento de dados", en: "INSS · news: proof of life is done by cross-checking data" },
   tcuAcordao1606: { pt: "TCU · nota sobre o Acórdão 1606/2025 (R$ 4,4 bi pagos a mortos)", en: "TCU · note on Ruling 1606/2025 (R$ 4.4bn paid to the dead)" },
+  lei9504Planalto: { pt: "Planalto · Lei 9.504/1997, texto compilado (art. 92: revisão do eleitorado)", en: "Planalto · Law 9.504/1997, consolidated text (art. 92: electorate review)" },
+  codigoEleitoral: { pt: "Planalto · Código Eleitoral, texto compilado (art. 71: baixa por óbito)", en: "Planalto · Electoral Code, consolidated text (art. 71: death removal)" },
+  temasRevisao: { pt: "TSE · Temas Selecionados: revisão de eleitorado (jurisprudência)", en: "TSE · Selected Topics: electorate review (case law)" },
+  eleitorEmDia: { pt: "TSE · notícia: Eleitor em dia (70+ fora do cancelamento por ausência)", en: "TSE · news: Voter up to date (70+ exempt from cancellation for absence)" },
 };
 
 export const backupGrupos: { id: GrupoBackup; titulo: L }[] = [

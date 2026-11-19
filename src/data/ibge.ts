@@ -31,10 +31,10 @@ export const ibge = {
     },
     resolucao: {
       tier: "T0" as Tier,
-      fonte: { pt: "Res. TSE 23.659/2021, art. 105, III (80%); confirmado em notícia oficial do TSE sobre Baía da Traição/PB", en: "TSE Res. 23.659/2021, art. 105, III (80%); confirmed by an official TSE news item on Baía da Traição/PB" } as L,
-      data: "2021 · nov 2024",
-      url: "https://www.tse.jus.br/comunicacao/noticias/2024/Novembro/tse-nega-pedido-de-revisao-do-eleitorado-de-baia-da-traicao-pb",
-      nota: { pt: "Transcrição literal integral do art. 105 não obtida (site do TSE bloqueia leitura automatizada); o percentual de 80% está confirmado pelo próprio TSE.", en: "Full literal text of art. 105 not retrieved (the TSE site blocks automated reading); the 80% threshold is confirmed by the TSE itself." } as L,
+      fonte: { pt: "Res. TSE 23.659/2021, art. 105 — texto compilado do TSE", en: "TSE Res. 23.659/2021, art. 105 — TSE consolidated text" } as L,
+      data: "2021",
+      url: "https://www.tse.jus.br/legislacao/compilada/res/2021/resolucao-no-23-659-de-26-de-outubro-de-2021",
+      nota: { pt: "Texto literal (captura de 10/11/2026): “O Tribunal Superior Eleitoral poderá, de ofício, determinar a revisão do eleitorado do município, observada a conveniência e a disponibilidade de recursos, quando: […] III – o eleitorado for superior a 80% da população projetada para aquele ano pelo IBGE.”", en: "Literal text (capture of 10 Nov 2026): “The Superior Electoral Court may, on its own initiative, order the review of a municipality's electorate, subject to convenience and available resources, when: […] III – the electorate exceeds 80% of the population projected for that year by IBGE.”" } as L,
     },
     implicacao: {
       pt: "Os 730 municípios em que os eleitores aptos superam 100% da população IBGE/2026 preenchem o gatilho por definição — tanto o da lei (65%) quanto o da resolução (80%).",
@@ -63,6 +63,24 @@ export const ibge = {
         fonte: { pt: "TSE, notícia oficial", en: "TSE, official news item" } as L,
         data: "nov 2024",
         url: "https://www.tse.jus.br/comunicacao/noticias/2024/Novembro/tse-nega-pedido-de-revisao-do-eleitorado-de-baia-da-traicao-pb",
+      },
+      {
+        local: "José de Freitas · PI",
+        numeros: { pt: "Relatório de inspeção do TRE-PI apontando os três requisitos do art. 92 (I, II e III)", en: "TRE-PI inspection report pointing to all three requirements of art. 92 (I, II and III)" } as L,
+        decisao: { pt: "Negado: revisão biométrica feita em 2013, conceito amplo de domicílio e “ausência de previsão orçamentária específica” (Ac. de 29/4/2021 na RvE 060029495).", en: "Denied: biometric review done in 2013, broad concept of domicile and “absence of a specific budget provision” (ruling of 29 Apr 2021, RvE 060029495)." } as L,
+        tier: "T0" as Tier,
+        fonte: { pt: "TSE, Temas Selecionados — revisão de eleitorado", en: "TSE, Selected Topics — electorate review" } as L,
+        data: "abr 2021",
+        url: "https://web.archive.org/web/20251225054552/https://temasselecionados.tse.jus.br/temas-selecionados/eleitor-do-alistamento-ao-voto/revisao-de-eleitorado/generalidades",
+      },
+      {
+        local: "Todo o país · 2005",
+        numeros: { pt: "Pedido de revisão de eleitorado (RvE 455)", en: "Request for electorate review (RvE 455)" } as L,
+        decisao: { pt: "Negado “considerando a deliberação do Tribunal Superior Eleitoral de não realizar, de ofício, no presente exercício, as revisões de eleitorado de que cuida o art. 92 da Lei nº 9.504/97” (Res. 22.128, 15/12/2005).", en: "Denied “considering the Superior Electoral Court's resolution not to carry out, on its own initiative, in the current year, the electorate reviews provided for in art. 92 of Law 9.504/97” (Res. 22.128, 15 Dec 2005)." } as L,
+        tier: "T0" as Tier,
+        fonte: { pt: "TSE, Temas Selecionados — revisão de eleitorado", en: "TSE, Selected Topics — electorate review" } as L,
+        data: "dez 2005",
+        url: "https://web.archive.org/web/20251225054552/https://temasselecionados.tse.jus.br/temas-selecionados/eleitor-do-alistamento-ao-voto/revisao-de-eleitorado/generalidades",
       },
     ],
     serie: {
@@ -182,8 +200,8 @@ export const ibge = {
       en: "Our comparison introduces no yardstick foreign to the system. It applies to the voter registry the very yardstick the Electoral Justice is legally bound to apply — and which it itself acknowledges as “met” when it denies reviews for “convenience and available resources”.",
     } as L,
     emAberto: {
-      pt: "Não achamos: avaliação específica da idade de idosos no Censo 2022; a distribuição de cauda do erro das estimativas (% de municípios com erro > 20% ou > 50%); o texto literal integral do art. 105 da Res. 23.659/2021.",
-      en: "Not found: a specific evaluation of elderly age reporting in the 2022 Census; the tail distribution of estimate error (% of municipalities off by > 20% or > 50%); the full literal text of art. 105 of Res. 23.659/2021.",
+      pt: "Não achamos: avaliação específica da idade de idosos no Censo 2022; a distribuição de cauda do erro das estimativas (% de municípios com erro > 20% ou > 50%).",
+      en: "Not found: a specific evaluation of elderly age reporting in the 2022 Census; the tail distribution of estimate error (% of municipalities off by > 20% or > 50%).",
     } as L,
   },
 };

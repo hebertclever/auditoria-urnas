@@ -16,8 +16,8 @@ const pt = {
   },
   footer: {
     motto:
-      "Ceticismo é o método, não a conclusão. Governos são formados por humanos; uma democracia saudável permite — e exige — que cidadãos auditem seus representantes.",
-    sources: "Fontes T0: IBGE · TSE · DATASUS · PNS. Novembro de 2026.",
+      "Ceticismo é o método, não a conclusão. Cada erro encontrado aqui aponta uma correção — e todas levam ao mesmo pedido: abrir o código-fonte e tornar a eleição verificável por qualquer cidadão.",
+    sources: "Fontes T0: IBGE · TSE · DATASUS · INSS · PNS · legislação federal. Novembro de 2026.",
     eixos: "Eixos",
     transparencia: "Transparência",
     cadastro: "Cadastro fantasma",
@@ -86,7 +86,7 @@ const pt = {
     assinatura: { term: "assinatura digital", def: "Prova criptográfica de que um arquivo foi gerado por quem possui uma chave privada específica. Vale tanto quanto a confiança na origem e custódia dessa chave." },
     censo: { term: "Censo", def: "Contagem porta a porta de toda a população feita pelo IBGE. O Censo 2022 teve data de referência em 1º de agosto de 2022." },
     sim: { term: "SIM", def: "Sistema de Informação sobre Mortalidade (DATASUS/Ministério da Saúde). Registra todas as declarações de óbito emitidas no Brasil." },
-    t0: { term: "T0", def: "Fonte primária oficial com metodologia publicada: IBGE, TSE, DATASUS. Ponto de partida obrigatório — nunca a palavra final." },
+    t0: { term: "T0", def: "Fonte primária oficial com metodologia publicada: IBGE, TSE, DATASUS, INSS, texto da lei. Ponto de partida obrigatório — nunca a palavra final." },
     turnout: { term: "comparecimento %", def: "Comparecimento dividido por aptos. Se os aptos incluem falecidos, a taxa oficial sai artificialmente baixa — e o número absoluto de votos pode esconder títulos usados indevidamente." },
   },
 };
@@ -109,8 +109,8 @@ const en: typeof pt = {
   },
   footer: {
     motto:
-      "Skepticism is the method, not the conclusion. Governments are made of humans; a healthy democracy allows — and requires — citizens to audit their representatives.",
-    sources: "T0 sources: IBGE · TSE · DATASUS · PNS. November 2026.",
+      "Skepticism is the method, not the conclusion. Every error found here points to a fix — and they all lead to the same request: open the source code and make the election verifiable by any citizen.",
+    sources: "T0 sources: IBGE · TSE · DATASUS · INSS · PNS · federal law. November 2026.",
     eixos: "Tracks",
     transparencia: "Transparency",
     cadastro: "Phantom registry",
@@ -179,7 +179,7 @@ const en: typeof pt = {
     assinatura: { term: "digital signature", def: "Cryptographic proof that a file was produced by whoever holds a specific private key. Worth exactly as much as the trust in that key's origin and custody." },
     censo: { term: "Census", def: "The door-to-door count of the entire population by IBGE, Brazil's statistics institute. The 2022 Census reference date was 1 August 2022." },
     sim: { term: "SIM", def: "Mortality Information System (DATASUS / Ministry of Health). Records every death certificate issued in Brazil." },
-    t0: { term: "T0", def: "Primary official source with published methodology: IBGE, TSE, DATASUS. The mandatory starting point — never the final word." },
+    t0: { term: "T0", def: "Primary official source with published methodology: IBGE, TSE, DATASUS, INSS, the text of the law. The mandatory starting point — never the final word." },
     turnout: { term: "turnout %", def: "Turnout count divided by registered voters. If the registered include the deceased, the official rate comes out artificially low — and the absolute count can hide misused registrations." },
   },
 };

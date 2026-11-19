@@ -5,7 +5,7 @@ import type { StatFormat } from "@/lib/format";
 import { useLang } from "@/i18n/context";
 import { EquivCallout, PanelAudit, SimpleOnly } from "./ui";
 import { comparacoes } from "@/data/comparacoes";
-import { centenarios, centenariosRazao, limpeza, saltoResumo, municipios } from "@/data/cadastro";
+import { centenarios, centenariosRazao, centenariosRazaoINSS, inss, limpeza, perfilEleitorado, saltoResumo, municipios } from "@/data/cadastro";
 import type { AuditarProps } from "@/components/shared/auditar";
 
 const SRC = {
@@ -50,6 +50,27 @@ export function Kpis() {
         fonte: { tier: "T0", source: { pt: "TSE 2026 · IBGE Censo 2022", en: "TSE 2026 · IBGE 2022 Census" }, href: SRC.sidra9514 },
         metodo: { pt: "297.977 ÷ 37.814 = 7,9. Comparação nacional — migração interna não altera o total do país.", en: "297,977 ÷ 37,814 = 7.9. National comparison — internal migration does not change the country total." },
         dados: { razao: 297977 / 37814 },
+      },
+    },
+    {
+      value: centenariosRazaoINSS, format: "x1", tone: "amber", label: k.inss, equivId: "inssSala",
+      aud: {
+        titulo: { pt: "Razão TSE ÷ INSS", en: "TSE ÷ INSS ratio" },
+        fonte: { tier: "T0", source: { pt: "INSS · benefícios mantidos ativos set/2026 (dados abertos) · TSE 2026", en: "INSS · active benefits Sep 2026 (open data) · TSE 2026" }, href: "https://dadosabertos.inss.gov.br/dataset/beneficios-mantidos-plano-de-dados-abertos-jun-2023-a-dez-2027" },
+        arquivo: "MANTIDOS_ATIVOS_202609.zip (42.502.098 linhas; SHA-256 dae5db10…c623f915)",
+        metodo: { pt: "Contamos os benefícios ativos cujo recebedor tinha 100 anos completos em 06/10/2026: 72.501. 297.977 ÷ 72.501 = 4,1. Benefício não é pessoa — alguém pode receber dois —, então 4,1 é piso.", en: "We counted active benefits whose recipient was 100 or older on 6 Oct 2026: 72,501. 297,977 ÷ 72,501 = 4.1. A benefit is not a person — someone may receive two — so 4.1 is a floor." },
+        comando: "n = sum(date(a, m, d) <= date(1926, 10, 6) for d, m, a in nascimentos)   # 72.501",
+        dados: { tse_aptos_100: centenarios.tse2026Aptos100, inss_beneficios_100: inss.centenariosBeneficios, razao: centenariosRazaoINSS },
+      },
+    },
+    {
+      value: perfilEleitorado.biometria.pctSemBiometria100, format: "pct0", tone: "rose", label: k.biometria,
+      aud: {
+        titulo: { pt: "Centenários sem biometria", en: "Centenarians without biometrics" },
+        fonte: { tier: "T0", source: { pt: "TSE · perfil do eleitorado 2026 (27 UFs, só o arquivo BRASIL)", en: "TSE · 2026 voter profile (27 states, BRASIL file only)" }, href: "https://cdn.tse.jus.br/estatistica/sead/odsele/perfil_eleitorado/perfil_eleitorado_2026.zip" },
+        arquivo: "perfil_eleitorado_2026_BRASIL.csv (QT_ELEITORES, QT_ELEITORES_BIOMETRIA)",
+        metodo: { pt: "Faixa 100+: 297.977 eleitores, 23.834 com biometria (8,0%); sem biometria, 274.143 (92%). Em 2022 eram 172.945 sem biometria: +58,5%, enquanto todas as outras faixas de 65 a 99 anos caíram.", en: "Age 100+: 297,977 voters, 23,834 with biometrics (8.0%); without, 274,143 (92%). In 2022 there were 172,945 without: +58.5%, while every other band from 65 to 99 fell." },
+        dados: perfilEleitorado.biometria.faixas,
       },
     },
     {

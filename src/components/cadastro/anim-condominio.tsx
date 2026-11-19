@@ -2,22 +2,28 @@
 
 import { motion } from "motion/react";
 import { useFmt, useLang } from "@/i18n/context";
-import { centenarios, centenariosPctFantasma, centenariosRazao } from "@/data/cadastro";
+import { centenarios, centenariosPctFantasma, centenariosRazao, centenariosRazaoINSS, inss } from "@/data/cadastro";
 import { AnimLabel, Big, Chip, useAnimatedNumber } from "./figures";
 
 const WIN_COLS = 6;
 const WIN_ROWS = 7;
 const LIT = Math.round(centenarios.censo2022 / 1000); // 38
+const FOLHA = Math.round(inss.centenariosBeneficios / 1000); // 73
 const NAMES = Math.round(centenarios.tse2026Aptos100 / 1000); // 298
 const GRID_COLS = 15;
 
+/**
+ * Estágios: 0 o prédio do Censo · 1 a lista do TSE · 2 a folha do INSS (quadrados que a folha cobre ficam cinza)
+ * · 3 as razões (7,9× o Censo, 4,1× o INSS, 87% sem janela).
+ */
 export function AnimCondominio({ stage }: { stage: number }) {
   const { dict } = useLang();
   const a = dict.cadastro.p2.anim;
   const { fmtInt, fmtX, fmtPct } = useFmt();
   const censo = useAnimatedNumber(centenarios.censo2022, true, 1.4);
   const tse = useAnimatedNumber(centenarios.tse2026Aptos100, stage >= 1, 1.8);
-  const razao = useAnimatedNumber(centenariosRazao, stage >= 2, 1.2);
+  const razao = useAnimatedNumber(centenariosRazao, stage >= 3, 1.2);
+  const razaoInss = useAnimatedNumber(centenariosRazaoINSS, stage >= 3, 1.2);
 
   const cell = 9;
   const gap = 1.4;
@@ -69,6 +75,7 @@ export function AnimCondominio({ stage }: { stage: number }) {
               const c = i % GRID_COLS;
               const r = Math.floor(i / GRID_COLS);
               const real = i < LIT;
+              const naFolha = !real && i < FOLHA && stage >= 2;
               const on = stage >= 1;
               return (
                 <motion.rect
@@ -80,11 +87,11 @@ export function AnimCondominio({ stage }: { stage: number }) {
                   rx={1.6}
                   initial={{ opacity: 0, scale: 0.6 }}
                   animate={{
-                    opacity: on ? (real ? 1 : stage >= 2 ? 0.9 : 0.75) : 0.08,
+                    opacity: on ? (real || naFolha ? 1 : stage >= 3 ? 0.9 : 0.75) : 0.08,
                     scale: on ? 1 : 0.6,
-                    fill: real ? "var(--teal)" : "var(--amber)",
+                    fill: real ? "var(--teal)" : naFolha ? "var(--slate)" : "var(--amber)",
                   }}
-                  transition={{ delay: on ? i * 0.004 : 0, duration: 0.35 }}
+                  transition={{ delay: on && stage < 2 ? i * 0.004 : naFolha ? (i - LIT) * 0.01 : 0, duration: 0.35 }}
                   style={{ transformBox: "fill-box", transformOrigin: "50% 50%" }}
                 />
               );
@@ -93,16 +100,25 @@ export function AnimCondominio({ stage }: { stage: number }) {
           <div className="mt-2">
             <AnimLabel>{a.tse}</AnimLabel>
             <div className="display tabular text-xl font-semibold text-amber sm:text-2xl">{stage >= 1 ? fmtInt(tse) : "—"}</div>
-            <p className="text-[0.7rem] leading-snug text-fg-3">{a.registrados} · {NAMES} {a.nomes}</p>
+            <p className="text-[0.7rem] leading-snug text-fg-3">
+              {a.registrados} · {NAMES} {a.nomes}
+              {stage >= 2 && (
+                <>
+                  {" · "}
+                  <span className="font-semibold text-fg-2">{FOLHA} {a.inss}</span>
+                </>
+              )}
+            </p>
           </div>
         </div>
       </div>
 
-      {stage >= 2 && (
+      {stage >= 3 && (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="relative overflow-hidden rounded-2xl border border-amber/30 p-4">
           <div className="glow-amber pointer-events-none absolute -inset-10 opacity-60" />
-          <div className="relative grid grid-cols-2 gap-3">
+          <div className="relative grid grid-cols-3 gap-2 [&_.display]:text-[clamp(1.6rem,5vw,2.7rem)]">
             <Big tone="amber" sub={<Chip tone="fg">TSE ÷ {a.censo.split(" ")[0]}</Chip>}>{fmtX(razao)}</Big>
+            <Big tone="amber" sub={<Chip tone="fg">TSE ÷ INSS</Chip>}>{fmtX(razaoInss)}</Big>
             <Big tone="rose" sub={<Chip tone="rose">{a.fantasma}</Chip>}>{fmtPct(centenariosPctFantasma * 100, 0)}</Big>
           </div>
         </motion.div>

@@ -18,11 +18,11 @@ import {
   centenarios,
   centenariosPctFantasma,
   centenariosRazao,
+  centenariosRazaoINSS,
   centenariosRazaoJapao,
   historicoInversao,
   limpeza,
   municipios,
-  saltoResumo,
 } from "@/data/cadastro";
 
 export const generateMetadata = metaFor("cadastro");
@@ -76,8 +76,8 @@ export default async function CadastroPage({ params }: PageProps<"/[lang]/cadast
           <Stagger className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
             <MotionItem variants={staggerItem}><StatTile value={centenarios.tse2026Aptos100} label={d.hero.stats.tse} tone="amber" /></MotionItem>
             <MotionItem variants={staggerItem}><StatTile value={centenariosRazao} format="dec1" suffix="×" label={d.hero.stats.razao} tone="amber" /></MotionItem>
+            <MotionItem variants={staggerItem}><StatTile value={centenariosRazaoINSS} format="dec1" suffix="×" label={d.hero.stats.inss} tone="amber" /></MotionItem>
             <MotionItem variants={staggerItem}><StatTile value={limpeza.gapAnual} format="compact" label={d.hero.stats.gap} tone="rose" /></MotionItem>
-            <MotionItem variants={staggerItem}><StatTile value={saltoResumo["2026"].delta70_abs} format="compact" label={d.hero.stats.controle} tone="teal" /></MotionItem>
           </Stagger>
           <Reveal delay={0.2} className="mt-10 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
             <p className="max-w-2xl text-sm leading-relaxed text-fg-2">{d.hero.note}</p>

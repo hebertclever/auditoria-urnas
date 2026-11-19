@@ -18,6 +18,9 @@ import { objecoes } from "@/data/objecoes";
 import { DatasusConfiabilidade } from "@/components/shared/datasus-confiabilidade";
 import { InssRegua } from "@/components/shared/inss-regua";
 import { BiometriaCentenarios } from "@/components/shared/biometria-centenarios";
+import { QuatroReguas } from "@/components/shared/quatro-reguas";
+import { LeiRevisao } from "@/components/shared/lei-revisao";
+import { ObjetivoAuditoria } from "@/components/shared/objetivo-auditoria";
 import { cn } from "@/lib/utils";
 
 export const generateMetadata = metaFor("provas");
@@ -83,6 +86,11 @@ export default async function ProvasPage({ params }: PageProps<"/[lang]/provas">
         </div>
       </Section>
 
+      {/* AS QUATRO RÉGUAS — IBGE, DATASUS, INSS e TSE sobre os mesmos centenários */}
+      <Section className="border-t border-line">
+        <QuatroReguas />
+      </Section>
+
       {/* DE QUE LADO ESTÁ O ERRO */}
       <Section className="border-t border-line">
         <Reveal>
@@ -133,6 +141,11 @@ export default async function ProvasPage({ params }: PageProps<"/[lang]/provas">
       {/* BIOMETRIA — a digital que não chegou aos centenários */}
       <Section className="border-t border-line">
         <BiometriaCentenarios />
+      </Section>
+
+      {/* A LEI — revisão do eleitorado (art. 92) e baixa por óbito (CE art. 71) */}
+      <Section id="lei" className="border-t border-line">
+        <LeiRevisao />
       </Section>
 
       {/* QUANTOS — a conta mensurável */}
@@ -248,6 +261,11 @@ export default async function ProvasPage({ params }: PageProps<"/[lang]/provas">
             );
           })}
         </div>
+      </Section>
+
+      {/* PARA QUE SERVE — cada erro aponta uma correção; todas terminam no código-fonte */}
+      <Section id="objetivo" className="border-t border-line">
+        <ObjetivoAuditoria />
       </Section>
 
       {/* RESPOSTA */}

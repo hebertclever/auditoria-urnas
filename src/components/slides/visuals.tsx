@@ -53,9 +53,10 @@ function Capa() {
 /* ---------- 2. Pergunta ---------- */
 function Pergunta() {
   const nodes = [
-    { x: 40, label: "IBGE", color: "var(--teal)" },
-    { x: 150, label: "TSE", color: "var(--amber)" },
-    { x: 260, label: "DATASUS", color: "var(--rose)" },
+    { x: 36, label: "IBGE", color: "var(--teal)" },
+    { x: 112, label: "DATASUS", color: "var(--rose)" },
+    { x: 188, label: "INSS", color: "var(--slate)" },
+    { x: 264, label: "TSE", color: "var(--amber)" },
   ];
   return (
     <svg viewBox="0 0 300 200" className="w-full max-w-[380px]">
@@ -67,7 +68,7 @@ function Pergunta() {
           />
           <motion.g initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.12, ...spring }}>
             <circle cx={n.x} cy={54} r={20} fill="var(--bg-elev)" stroke={n.color} strokeWidth="2" />
-            <text x={n.x} y={58} textAnchor="middle" className="font-mono" fontSize="9" fill="var(--fg)">{n.label}</text>
+            <text x={n.x} y={58} textAnchor="middle" className="font-mono" fontSize={n.label.length > 5 ? 7 : 9} fill="var(--fg)">{n.label}</text>
           </motion.g>
         </g>
       ))}
@@ -225,6 +226,39 @@ function BioBars() {
         );
       })}
       <p className="pt-1 text-center font-mono text-[0.65rem] text-fg-3">{lang === "pt" ? "cobertura biométrica 2022 → 2026" : "biometric coverage 2022 → 2026"}</p>
+    </div>
+  );
+}
+
+/* ---------- 5d. A lei: "determinará" riscado, "poderá" no lugar ---------- */
+function LeiTroca() {
+  const { lang } = useLang();
+  const pt = lang === "pt";
+  return (
+    <div className="w-full max-w-[420px] space-y-3">
+      <div className="rounded-2xl border border-teal/30 bg-teal-soft p-4">
+        <p className="font-mono text-[0.62rem] uppercase tracking-widest text-teal">{pt ? "Lei 9.504/1997, art. 92" : "Law 9.504/1997, art. 92"}</p>
+        <p className="display mt-1 text-3xl font-semibold text-teal">{pt ? "determinará" : "shall"}</p>
+        <p className="mt-1 text-xs text-fg-2">{pt ? "quando o eleitorado passa de 65% da população" : "when the electorate exceeds 65% of the population"}</p>
+      </div>
+      <div className="rounded-2xl border border-rose/30 bg-rose-soft p-4">
+        <p className="font-mono text-[0.62rem] uppercase tracking-widest text-rose">{pt ? "Res. TSE 23.659/2021, art. 105" : "TSE Res. 23.659/2021, art. 105"}</p>
+        <div className="relative mt-1 inline-block">
+          <span className="display text-xl font-semibold text-fg-3">{pt ? "determinará" : "shall"}</span>
+          <motion.span className="absolute left-0 top-1/2 h-[3px] w-full origin-left rounded-full bg-rose"
+            initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.5, duration: 0.45, ease }} />
+        </div>
+        <motion.p className="display text-3xl font-semibold text-rose" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1, duration: 0.45 }}>
+          {pt ? "poderá" : "may"}
+        </motion.p>
+        <motion.p className="mt-1 text-xs text-fg-2" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4 }}>
+          {pt ? "“observada a conveniência e a disponibilidade de recursos” — e só acima de 80%" : "“subject to convenience and available resources” — and only above 80%"}
+        </motion.p>
+      </div>
+      <motion.div className="flex flex-wrap gap-2" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.8 }}>
+        <span className="rounded-full border border-rose/40 bg-bg px-3 py-1 font-mono text-[0.65rem] text-rose">2005 · {pt ? "“não realizar”" : "“not to carry out”"}</span>
+        <span className="rounded-full border border-rose/40 bg-bg px-3 py-1 font-mono text-[0.65rem] text-rose">2024 · {pt ? "“não há previsão orçamentária”" : "“no budget provision”"}</span>
+      </motion.div>
     </div>
   );
 }
@@ -558,6 +592,7 @@ export const visuals: Record<string, (p: VisualProps) => React.ReactNode> = {
   "centenarios-choque": Centenarios,
   "centenarios-razao": RoomRatio,
   "centenarios-mundo": CountryBars,
+  lei: LeiTroca,
   "quem-paga": PayrollBars,
   biometria: BioBars,
   inversao: AgeInversion,

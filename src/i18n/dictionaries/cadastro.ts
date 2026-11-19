@@ -20,10 +20,11 @@ const pt = {
     eyebrow: "Eixo 1 · Cadastro eleitoral",
     title: "O cadastro fantasma",
     lead:
-      "Dados oficiais do IBGE, do TSE, do Ministério da Saúde e do INSS apontam para a mesma conclusão: centenas de milhares de títulos de pessoas falecidas continuam ativos no cadastro eleitoral brasileiro. O problema é estrutural: aparece em 2022 e em 2026, e só entre os centenários o cadastro ganhou 113 mil nomes em quatro anos.",
+      "Numa sala em que o IBGE contou 10 pessoas e o INSS paga 19 benefícios, a lista de eleitores do TSE tem 79 nomes. É isso que dizem, juntos, os dados oficiais do IBGE, do Ministério da Saúde, do INSS e do próprio TSE: centenas de milhares de títulos de pessoas falecidas continuam ativos no cadastro eleitoral brasileiro. O problema é estrutural — aparece em 2022 e em 2026, e só entre os centenários o cadastro ganhou 113 mil nomes em quatro anos — e a revisão do eleitorado que a lei manda fazer virou, numa resolução do próprio TSE, uma opção.",
     stats: {
       tse: "centenários registrados como eleitores no TSE (2026), contra 37.814 encontrados vivos pelo Censo 2022",
       razao: "mais centenários no cadastro do TSE do que o IBGE contou, porta a porta, no Censo",
+      inss: "mais centenários no cadastro do que benefícios pagos pelo INSS, que confere todo ano se cada beneficiário está vivo",
       gap: "títulos de eleitores falecidos que ficam sem cancelamento a cada ano (gap de 44%)",
       controle: "eleitores de 70 anos ou mais a mais no 2º turno de 2026 do que no 1º (+14,8%) — o maior salto da série",
     },
@@ -113,7 +114,7 @@ const pt = {
     eyebrow: "Pilar 2 · contagem contra contagem",
     title: "O impossível demográfico",
     lead:
-      "O IBGE bateu em todas as casas do país em 2022 e encontrou 37.814 pessoas com 100 anos ou mais. O TSE tem 297.977 pessoas dessa idade registradas como eleitoras. São 7,9 vezes mais — sem depender de nenhuma estimativa ou projeção.",
+      "O IBGE bateu em todas as casas do país em 2022 e encontrou 37.814 pessoas com 100 anos ou mais. O INSS, que confere todo ano se cada beneficiário está vivo, paga 72.501 benefícios a pessoas dessa idade. O TSE tem 297.977 registradas como eleitoras: 7,9 vezes o Censo e 4,1 vezes o INSS — sem depender de nenhuma estimativa ou projeção.",
     steps: [
       {
         t: "O prédio do Censo",
@@ -124,6 +125,10 @@ const pt = {
         b: "Agora olhe a lista de eleitores do TSE para a mesma idade: 297.977 nomes. Só 38 mil deles cabem nas janelas acesas. Os outros 260 mil estão na lista, mas ninguém os encontrou em casa.",
       },
       {
+        t: "A folha do INSS",
+        b: "Agora a folha do INSS, que paga todo mês e confere todo ano se cada beneficiário está vivo: 72.501 benefícios a pessoas com 100 anos ou mais — 73 dos 298 quadrados da lista. Para cada benefício que quem paga reconhece, o cadastro eleitoral tem quatro nomes.",
+      },
+      {
         t: "Nenhum país do mundo",
         b: "O Japão, líder mundial em longevidade, tem 88 centenários por 100 mil habitantes. O Censo brasileiro tem 18,6 — esperado para o nível de saúde do país. Mas o cadastro do TSE equivale a 147 por 100 mil: quase o dobro do país mais longevo do mundo.",
       },
@@ -132,6 +137,7 @@ const pt = {
       censo: "Censo IBGE 2022",
       tse: "Cadastro TSE 2026",
       janela: "janela acesa = mil pessoas encontradas vivas",
+      inss: "na folha do INSS",
       nomes: "nomes na lista",
       fantasma: "sem janela",
       encontrados: "encontrados vivos",
@@ -176,7 +182,7 @@ const pt = {
     eyebrow: "Pilar 3 · o mecanismo",
     title: "A limpeza que não acontece",
     lead:
-      "O TSE é obrigado a cancelar o título de quem morre. Em 2022, cancelou 787.825 títulos por falecimento. Naquele ano, 1.491.608 adultos morreram — contagem exata do DATASUS. Mais de quatro em cada dez títulos de falecidos ficaram ativos.",
+      "A lei manda cancelar o título de quem morre, e os cartórios devem avisar os óbitos à Justiça Eleitoral todo mês (Código Eleitoral, art. 71). Em 2022, o TSE cancelou 787.825 títulos por falecimento. Naquele ano, 1.491.608 adultos morreram — contagem exata do DATASUS. Mais de quatro em cada dez títulos de falecidos ficaram ativos.",
     steps: [
       {
         t: "Mortes entram",
@@ -188,7 +194,7 @@ const pt = {
       },
       {
         t: "A pilha cresce",
-        b: "O que não é cancelado fica no cadastro. Se o ritmo de 2022 se repetisse por quatro anos, sem nenhuma correção posterior, seriam até 2,5 milhões de títulos entre duas eleições presidenciais. O estoque que dá para medir é menor — 606 mil títulos de 90 anos ou mais além dos vivos, em 2022 —, sinal de que parte é corrigida depois. Quanto, só o TSE sabe.",
+        b: "O que não é cancelado fica no cadastro. Se o ritmo de 2022 se repetisse por quatro anos, sem nenhuma correção posterior, seriam até 2,5 milhões de títulos entre duas eleições presidenciais. O estoque que dá para medir é menor — 606 mil títulos de 90 anos ou mais além dos vivos, em 2022 —, sinal de que parte é corrigida depois. Quanto, só o TSE sabe. E, para quem tem mais de 70 anos, faltar à eleição não cancela o título: a única saída da lista é o aviso de óbito.",
       },
     ],
     anim: {
@@ -217,6 +223,9 @@ const pt = {
         "Explica os Pilares 1 e 2: títulos de falecidos inflam os aptos e se concentram nas faixas mais velhas, onde há mais mortes.",
         "Os 606 mil registros de 90+ a mais do que o Censo (2022) equivalem a cerca de um ano de gap.",
         "A norma existe desde 2006: a Resolução TSE 22.166 prevê o cruzamento com registros de óbito. O gap é de execução, não de regra.",
+        "A lei é mais antiga ainda: o Código Eleitoral manda cancelar o título por falecimento (art. 71, IV) e obriga os cartórios a comunicar os óbitos ao juiz eleitoral até o dia 15 de cada mês (art. 71, § 3º).",
+        "Acima de 70 anos, quem falta às eleições não perde o título — o próprio TSE diz que essa idade está “fora dessa regra”. Sem o aviso de óbito, o título do idoso que morreu fica ativo para sempre.",
+        "A revisão do eleitorado é a faxina que a Lei das Eleições manda o TSE fazer quando o cadastro passa de 65% da população (“determinará de ofício”, art. 92). A resolução do TSE trocou por “poderá … observada a conveniência e a disponibilidade de recursos” — e o TSE já negou revisões por falta de verba.",
       ],
     },
     method: [
@@ -359,7 +368,7 @@ const pt = {
     title: "Onde a auditoria está",
     encontrado: "Gap encontrado",
     encontradoBody:
-      "O cadastro eleitoral tem centenas de milhares de títulos que não correspondem a pessoas vivas, por falha estrutural de cancelamento. Quatro linhas de evidência independentes convergem: a contagem de centenários do Censo, a folha de benefícios do INSS, a baixa por óbito em metade das mortes e os municípios com mais títulos que habitantes. E a biometria quase não alcançou os títulos de centenários: 92% estão sem digital.",
+      "O cadastro eleitoral tem centenas de milhares de títulos que não correspondem a pessoas vivas, por falha estrutural de cancelamento. Quatro linhas de evidência independentes convergem: a contagem de centenários do Censo, a folha de benefícios do INSS, a baixa por óbito em metade das mortes e os municípios com mais títulos que habitantes. E a biometria quase não alcançou os títulos de centenários: 92% estão sem digital. A revisão do eleitorado que a lei manda fazer virou, na resolução do TSE, uma opção — que ele registrou não executar.",
     naoAchado: "Ainda não achado",
     naoAchadoBody:
       "Um caso individual, com nome e documento, de título de falecido usado para votar. Fechar esse elo exige cruzar CPF de óbito com registro de comparecimento — dados que a LGPD mantém fora do acesso público.",
@@ -387,10 +396,11 @@ const en: typeof pt = {
     eyebrow: "Track 1 · Voter registry",
     title: "The phantom registry",
     lead:
-      "Official data from IBGE (the statistics institute), the TSE (the electoral court), the Ministry of Health and the INSS (social security) point to the same conclusion: hundreds of thousands of registrations belonging to deceased people remain active in Brazil's voter rolls. The problem is structural: it shows in 2022 and in 2026, and among centenarians alone the registry gained 113,000 names in four years.",
+      "In a room where IBGE counted 10 people and the INSS pays 19 benefits, the TSE's voter list has 79 names. That is what official data from IBGE (the statistics institute), the Ministry of Health, the INSS (social security) and the TSE (the electoral court) itself say together: hundreds of thousands of registrations belonging to deceased people remain active in Brazil's voter rolls. The problem is structural — it shows in 2022 and in 2026, and among centenarians alone the registry gained 113,000 names in four years — and the electorate review the law orders became, in the TSE's own resolution, an option.",
     stats: {
       tse: "centenarians registered as voters by the TSE (2026), against 37,814 found alive by the 2022 Census",
       razao: "more centenarians in the TSE registry than IBGE counted, door to door, in the Census",
+      inss: "more centenarians on the rolls than benefits paid by the INSS, which checks every year that each beneficiary is alive",
       gap: "registrations of deceased voters left uncancelled every year (a 44% gap)",
       controle: "more voters aged 70 or over in the 2026 runoff than in the first round (+14.8%) — the largest jump in the series",
     },
@@ -480,7 +490,7 @@ const en: typeof pt = {
     eyebrow: "Pillar 2 · count against count",
     title: "The demographic impossibility",
     lead:
-      "In 2022 IBGE knocked on every door in the country and found 37,814 people aged 100 or over. The TSE has 297,977 people of that age registered as voters. That is 7.9 times more — with no estimate or projection involved.",
+      "In 2022 IBGE knocked on every door in the country and found 37,814 people aged 100 or over. The INSS, which checks every year that each beneficiary is alive, pays 72,501 benefits to people that age. The TSE has 297,977 registered as voters: 7.9 times the Census and 4.1 times the INSS — with no estimate or projection involved.",
     steps: [
       {
         t: "The Census building",
@@ -491,6 +501,10 @@ const en: typeof pt = {
         b: "Now look at the TSE's voter list for the same age: 297,977 names. Only 38 thousand of them fit in the lit windows. The other 260 thousand are on the list, but nobody found them at home.",
       },
       {
+        t: "The INSS payroll",
+        b: "Now the INSS payroll, which pays every month and checks every year that each beneficiary is alive: 72,501 benefits to people aged 100 or over — 73 of the list's 298 squares. For every benefit the payer recognises, the voter registry has four names.",
+      },
+      {
         t: "No country on Earth",
         b: "Japan, the world leader in longevity, has 88 centenarians per 100,000 inhabitants. Brazil's Census figure is 18.6 — expected for the country's health profile. But the TSE registry amounts to 147 per 100,000: nearly double the most long-lived country on Earth.",
       },
@@ -499,6 +513,7 @@ const en: typeof pt = {
       censo: "IBGE Census 2022",
       tse: "TSE registry 2026",
       janela: "lit window = one thousand people found alive",
+      inss: "on the INSS payroll",
       nomes: "names on the list",
       fantasma: "no window",
       encontrados: "found alive",
@@ -543,7 +558,7 @@ const en: typeof pt = {
     eyebrow: "Pillar 3 · the mechanism",
     title: "The clean-up that does not happen",
     lead:
-      "The TSE is required to cancel the registration of anyone who dies. In 2022 it cancelled 787,825 registrations due to death. That year, 1,491,608 adults died — an exact DATASUS count. More than four in ten registrations of the deceased stayed active.",
+      "The law orders the cancellation of a deceased person's registration, and civil registries must report deaths to the electoral courts every month (Electoral Code, art. 71). In 2022 the TSE cancelled 787,825 registrations due to death. That year, 1,491,608 adults died — an exact DATASUS count. More than four in ten registrations of the deceased stayed active.",
     steps: [
       {
         t: "Deaths come in",
@@ -551,11 +566,11 @@ const en: typeof pt = {
       },
       {
         t: "Only part comes out cancelled",
-        b: "In 2022, the best year with detailed data, the TSE cancelled 787,825 registrations due to death — 56%. The other 44%, about 560 thousand, stayed active in the registry.",
+        b: "In 2022, the best year with detailed data, the TSE cancelled 787,825 registrations due to death — 56%. The other 44%, about 629 thousand, stayed active in the registry.",
       },
       {
         t: "The pile grows",
-        b: "What is not cancelled stays in the registry. If the 2022 pace repeated for four years, with no later correction, it would be up to 2.5 million registrations between two presidential elections. The stock that can be measured is smaller — 606 thousand registrations aged 90 or over beyond the living, in 2022 — a sign that part is corrected later. How much, only the TSE knows.",
+        b: "What is not cancelled stays in the registry. If the 2022 pace repeated for four years, with no later correction, it would be up to 2.5 million registrations between two presidential elections. The stock that can be measured is smaller — 606 thousand registrations aged 90 or over beyond the living, in 2022 — a sign that part is corrected later. How much, only the TSE knows. And, for anyone over 70, missing an election does not cancel the registration: the only way off the list is the death notice.",
       },
     ],
     anim: {
@@ -584,6 +599,9 @@ const en: typeof pt = {
         "It explains Pillars 1 and 2: registrations of the deceased inflate the registered count and concentrate in the oldest groups, where most deaths occur.",
         "The 606 thousand registrations aged 90+ above the Census (2022) amount to about one year of gap.",
         "The rule has existed since 2006: TSE Resolution 22.166 provides for cross-checking against death records. The gap is one of execution, not of rules.",
+        "The law is older still: the Electoral Code orders cancellation on death (art. 71, IV) and requires civil registries to report deaths to the electoral judge by the 15th of each month (art. 71, § 3).",
+        "Over 70, missing elections does not cost anyone their registration — the TSE itself says that age is “outside this rule”. Without the death notice, a deceased elderly person's registration stays active forever.",
+        "The electorate review is the clean-up the Elections Act orders the TSE to carry out when the registry exceeds 65% of the population (“shall order on its own initiative”, art. 92). The TSE's resolution swapped that for “may … subject to convenience and available resources” — and the TSE has already denied reviews for lack of funds.",
       ],
     },
     method: [
@@ -726,7 +744,7 @@ const en: typeof pt = {
     title: "Where the audit stands",
     encontrado: "Gap found",
     encontradoBody:
-      "The voter registry holds hundreds of thousands of registrations that do not correspond to living people, owing to a structural failure to cancel them. Four independent lines of evidence converge: the Census centenarian count, the INSS benefits payroll, death removals covering half the deaths, and municipalities with more registrations than inhabitants. And biometrics barely reached centenarian registrations: 92% have no fingerprint.",
+      "The voter registry holds hundreds of thousands of registrations that do not correspond to living people, owing to a structural failure to cancel them. Four independent lines of evidence converge: the Census centenarian count, the INSS benefits payroll, death removals covering half the deaths, and municipalities with more registrations than inhabitants. And biometrics barely reached centenarian registrations: 92% have no fingerprint. The electorate review the law orders became, in the TSE's resolution, an option — one it recorded it would not carry out.",
     naoAchado: "Not yet found",
     naoAchadoBody:
       "An individual case, with a name and a document, of a dead person's registration used to vote. Closing that link requires matching death-record IDs with turnout records — data that Brazil's privacy law keeps out of public reach.",

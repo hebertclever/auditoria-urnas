@@ -4,22 +4,38 @@ import { animate, motion, useInView, useReducedMotion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { RotateCcw } from "lucide-react";
 import { useFmt, useLang } from "@/i18n/context";
-import { centenarios } from "@/data/cadastro";
+import { centenarios, inss } from "@/data/cadastro";
 import { cn } from "@/lib/utils";
 
-const FROM = centenarios.censo2022;
-const TO = centenarios.tse2026Aptos100;
+const FROM = centenarios.censo2022; // IBGE — vivos contados porta a porta
+const MID = inss.centenariosBeneficios; // INSS — benefícios pagos, com prova de vida anual
+const TO = centenarios.tse2026Aptos100; // TSE — títulos aptos
+
+function Ratios({ className }: { className?: string }) {
+  const { dict } = useLang();
+  const h = dict.home.hero;
+  const { loc } = useFmt();
+  const f = (v: number) => v.toLocaleString(loc, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  return (
+    <p className={cn("text-[0.95rem] leading-snug text-fg-2", className)}>
+      <strong className="display tabular text-2xl font-semibold text-amber">{f(TO / FROM)}</strong> {h.counterRatio}
+      <span className="mx-2 text-fg-3">·</span>
+      <strong className="display tabular text-2xl font-semibold text-amber">{f(TO / MID)}</strong> {h.counterRatioInss}
+    </p>
+  );
+}
 
 /**
- * Phones: both figures at once, with bars. The counter below takes four seconds to make its point and a
+ * Phones: the three figures at once, with bars. The counter below takes several seconds to make its point and a
  * reader who scrolls past earlier only sees the smaller number.
  */
 function HeroCompare() {
   const { dict } = useLang();
   const h = dict.home.hero;
-  const { fmtInt, loc } = useFmt();
+  const { fmtInt } = useFmt();
   const rows = [
     { value: FROM, label: h.counterA, text: "text-teal", bar: "bg-teal", width: (FROM / TO) * 100 },
+    { value: MID, label: h.counterInss, text: "text-fg", bar: "bg-slate", width: (MID / TO) * 100 },
     { value: TO, label: h.counterB, text: "text-amber", bar: "bg-amber", width: 100 },
   ];
   return (
@@ -29,7 +45,7 @@ function HeroCompare() {
       <div className="relative mt-4 flex flex-col gap-5">
         {rows.map((r) => (
           <div key={r.label}>
-            <p className={cn("display tabular text-[clamp(2.4rem,11vw,3.4rem)] font-semibold leading-none", r.text)}>{fmtInt(r.value)}</p>
+            <p className={cn("display tabular text-[clamp(2.2rem,10vw,3.2rem)] font-semibold leading-none", r.text)}>{fmtInt(r.value)}</p>
             <p className="mt-1.5 text-sm leading-snug text-fg-2">{r.label}</p>
             <span className="mt-2.5 block h-2 overflow-hidden rounded-full bg-bg-sunk">
               <motion.span
@@ -43,12 +59,7 @@ function HeroCompare() {
           </div>
         ))}
       </div>
-      <p className="relative mt-5 border-t border-line pt-4 text-[0.95rem] leading-snug text-fg-2">
-        <strong className="display tabular text-2xl font-semibold text-amber">
-          {(TO / FROM).toLocaleString(loc, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}
-        </strong>{" "}
-        {h.counterRatio}
-      </p>
+      <Ratios className="relative mt-5 border-t border-line pt-4" />
     </div>
   );
 }
@@ -62,28 +73,33 @@ function AnimatedCounter() {
   const inView = useInView(ref, { once: true, margin: "-10% 0px" });
   const controls = useRef<ReturnType<typeof animate> | null>(null);
   const [val, setVal] = useState(FROM);
-  const [phase, setPhase] = useState<"a" | "b">("a");
+  const [phase, setPhase] = useState<"a" | "m" | "b">("a");
   const [run, setRun] = useState(0);
 
   useEffect(() => {
     if (!inView || reduced) return;
-    const timer = setTimeout(() => {
+    const ease = [0.16, 1, 0.3, 1] as const;
+    const t1 = setTimeout(() => {
+      setPhase("m");
+      controls.current = animate(FROM, MID, { duration: 1.1, ease, onUpdate: (v) => setVal(v) });
+    }, 1600);
+    const t2 = setTimeout(() => {
+      controls.current?.stop();
       setPhase("b");
-      controls.current = animate(FROM, TO, {
-        duration: 2.4,
-        ease: [0.16, 1, 0.3, 1],
-        onUpdate: (v) => setVal(v),
-      });
-    }, 1700);
+      controls.current = animate(MID, TO, { duration: 2.2, ease, onUpdate: (v) => setVal(v) });
+    }, 3900);
     return () => {
-      clearTimeout(timer);
+      clearTimeout(t1);
+      clearTimeout(t2);
       controls.current?.stop();
     };
   }, [inView, reduced, run]);
 
   const shownVal = reduced ? TO : val;
-  const shownPhase: "a" | "b" = reduced ? "b" : phase;
+  const shownPhase: "a" | "m" | "b" = reduced ? "b" : phase;
   const pct = Math.min(100, (shownVal / TO) * 100);
+  const label = shownPhase === "a" ? h.counterA : shownPhase === "m" ? h.counterInss : h.counterB;
+  const color = shownPhase === "a" ? "text-teal" : shownPhase === "m" ? "text-fg" : "text-amber";
 
   function replay() {
     controls.current?.stop();
@@ -97,23 +113,20 @@ function AnimatedCounter() {
       <div
         className={cn(
           "pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full blur-3xl transition-colors duration-1000",
-          shownPhase === "a" ? "glow-teal" : "glow-amber",
+          shownPhase === "b" ? "glow-amber" : "glow-teal",
         )}
       />
       <p className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-fg-3">{h.counterUnit}</p>
       <p
-        className={cn(
-          "display tabular mt-3 text-[clamp(2.8rem,7vw,5.2rem)] font-semibold leading-none transition-colors duration-700",
-          shownPhase === "a" ? "text-teal" : "text-amber",
-        )}
+        className={cn("display tabular mt-3 text-[clamp(2.8rem,7vw,5.2rem)] font-semibold leading-none transition-colors duration-700", color)}
         aria-live="polite"
       >
         {fmtInt(shownVal)}
       </p>
       <div className="mt-4 flex items-start justify-between gap-4">
-        <p className="max-w-[22ch] text-sm leading-snug text-fg-2">
+        <p className="max-w-[24ch] text-sm leading-snug text-fg-2">
           <span key={shownPhase} className="inline-block animate-[heroFade_.5s_ease_both]">
-            {shownPhase === "a" ? h.counterA : h.counterB}
+            {label}
           </span>
         </p>
         {!reduced && (
@@ -129,11 +142,15 @@ function AnimatedCounter() {
         )}
       </div>
       <div className="mt-6 flex items-center gap-3">
-        <span className="h-1.5 flex-1 overflow-hidden rounded-full bg-bg-sunk">
-          <span className="block h-full rounded-full bg-amber transition-[width] duration-300 ease-out" style={{ width: `${pct}%` }} />
+        <span className="relative h-1.5 flex-1 overflow-hidden rounded-full bg-bg-sunk">
+          <span className="absolute inset-y-0 left-0 rounded-full bg-amber transition-[width] duration-300 ease-out" style={{ width: `${pct}%` }} />
+          {/* marcas: onde ficam o IBGE e o INSS na régua do TSE */}
+          <span className="absolute inset-y-0 w-0.5 bg-teal" style={{ left: `${(FROM / TO) * 100}%` }} />
+          <span className="absolute inset-y-0 w-0.5 bg-slate" style={{ left: `${(MID / TO) * 100}%` }} />
         </span>
         <span className="font-mono text-xs tabular text-fg-3">{Math.round(pct)}%</span>
       </div>
+      <Ratios className={cn("mt-5 border-t border-line pt-4 transition-opacity duration-700", shownPhase === "b" ? "opacity-100" : "opacity-0")} />
       <style>{`@keyframes heroFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}`}</style>
     </div>
   );

@@ -171,8 +171,22 @@ export const comparacoes: Record<string, Comparacao> = {
     formato: "pct",
     rotulo: { pt: "dos títulos de quem morreu em 2022 foram cancelados no mesmo ano", en: "of the registrations of people who died in 2022 were cancelled that year" },
     equivalente: {
-      pt: "é como um condomínio que atualiza a lista de moradores para pouco mais da metade dos falecidos — e segue cobrando a taxa dos outros",
-      en: "like a condo that updates its resident list for barely more than half of the deceased — and keeps billing the rest",
+      pt: "é como um condomínio onde, de cada dois moradores que morrem, só um sai da lista de quem vota na assembleia — o outro continua lá",
+      en: "like a condominium where, of every two residents who die, only one leaves the list of those who vote at the assembly — the other stays on it",
+    },
+  },
+  inssSala: {
+    id: "inssSala",
+    numero: 4.1,
+    formato: "x",
+    rotulo: { pt: "vezes mais centenários no cadastro do TSE do que benefícios pagos pelo INSS a pessoas dessa idade", en: "times more centenarians on the TSE rolls than benefits the INSS pays to people that age" },
+    equivalente: {
+      pt: "numa sala em que o IBGE contou 10 pessoas e o INSS paga 19 benefícios, a lista do TSE tem 79 nomes",
+      en: "in a room where IBGE counted 10 people and the INSS pays 19 benefits, the TSE's list has 79 names",
+    },
+    detalhe: {
+      pt: "O INSS confere todo ano se cada beneficiário está vivo, porque pagar a um morto é dinheiro perdido. O TSE não perde nada com um título de morto ativo.",
+      en: "The INSS checks every year that each beneficiary is alive, because paying a dead person is money lost. The TSE loses nothing on an active dead person's registration.",
     },
   },
 };

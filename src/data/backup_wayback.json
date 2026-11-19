@@ -374,6 +374,46 @@
    "pedido_hoje": null,
    "situacao": "ok",
    "nota": "Nota oficial do TCU sobre o Acórdão 1606/2025 – Plenário (TC 018.882/2024-2). Texto lido na captura de 14/10/2025."
+  },
+  {
+   "id": "lei9504Planalto",
+   "grupo": "outros",
+   "url": "https://www.planalto.gov.br/ccivil_03/leis/l9504.htm",
+   "primeira": "20261027174519",
+   "ultima": "20261027174519",
+   "pedido_hoje": null,
+   "situacao": "ok",
+   "nota": "Captura conferida em 19/11/2026 (art. 92 lido no texto arquivado). Desde 15/11/2026 o endereço do Planalto redireciona para uma página genérica. Cópia local com SHA-256 410dc3bf…14ab."
+  },
+  {
+   "id": "codigoEleitoral",
+   "grupo": "outros",
+   "url": "https://www.planalto.gov.br/ccivil_03/leis/l4737compilado.htm",
+   "primeira": "20261020015444",
+   "ultima": "20261020015444",
+   "pedido_hoje": null,
+   "situacao": "ok",
+   "nota": "Captura conferida em 19/11/2026 (art. 71 lido no texto arquivado). Cópia local com SHA-256 58e41413…bdd79."
+  },
+  {
+   "id": "temasRevisao",
+   "grupo": "tseNormas",
+   "url": "https://temasselecionados.tse.jus.br/temas-selecionados/eleitor-do-alistamento-ao-voto/revisao-de-eleitorado/generalidades",
+   "primeira": "20251225054552",
+   "ultima": "20251225054552",
+   "pedido_hoje": null,
+   "situacao": "ok",
+   "nota": "Jurisprudência compilada pelo TSE (atualizada em 23/5/2025): Res. 22.128/2005, Ac. de 29/4/2021 (RvE 060029495) e Ac. de 21/11/2024 (RvE 060037608). Cópia local com SHA-256 cc24918a…."
+  },
+  {
+   "id": "eleitorEmDia",
+   "grupo": "tseNormas",
+   "url": "https://www.tse.jus.br/comunicacao/noticias/2026/Janeiro/eleitor-em-dia-confira-se-o-titulo-esta-cancelado-e-regularize-sua-situacao",
+   "primeira": "20260117055219",
+   "ultima": "20260222050750",
+   "pedido_hoje": null,
+   "situacao": "ok",
+   "nota": "Notícia de 15/01/2026: maiores de 70 anos estão fora do cancelamento por ausência a três eleições. Cópia local com SHA-256 e6699666…521e."
   }
  ]
 }
