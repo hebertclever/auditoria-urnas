@@ -60,6 +60,68 @@ export const angulos = {
     en: "We do not have anyone's vote — and we accuse no one. We have the official counts of four government agencies, and they give the size of each chance.",
   } as L,
 
+  // Exemplos didáticos do tamanho do absurdo (pedido do autor, 19/11/2026). Cada item é uma conta sobre números oficiais:
+  // 37.814 ÷ 297.977 = 1 em 7,9; mortes de 2024 ÷ lista de 2026 = 13.086 ÷ 297.977 = 4,39% ao ano → cerca de 22 anos de vida
+  // restante (RJ: 1.113 ÷ 105.262 = 1,06% → cerca de 94 anos); 72.501 ÷ 297.977 = 24%; 147 × 88 centenários por 100 mil
+  // (Brasil pelo TSE × Japão, já em cadastro.ts); 173.575 ÷ 78.838 lugares = 2,2 Maracanãs.
+  absurdo: {
+    title: { pt: "Para ter ideia do tamanho do absurdo", en: "To grasp how absurd the numbers are" } as L,
+    lead: {
+      pt: "Se a lista de centenários do TSE estivesse certa, tudo isto teria de ser verdade ao mesmo tempo:",
+      en: "If the TSE's list of centenarians were right, all of this would have to be true at the same time:",
+    } as L,
+    itens: [
+      {
+        id: "censo",
+        t: { pt: "O recenseador achou 1 em cada 8", en: "The census taker found 1 in 8" } as L,
+        b: {
+          pt: "O IBGE teria batido em oito casas onde mora um centenário e encontrado só um deles. O erro que o próprio IBGE mediu no Censo é de 8 em cada 100, não de 7 em cada 8.",
+          en: "IBGE would have knocked on eight doors where a centenarian lives and found only one of them. The error IBGE itself measured in the Census is 8 in 100, not 7 in 8.",
+        } as L,
+      },
+      {
+        id: "vida",
+        t: { pt: "Quem chega aos 100 viveria mais 22 anos", en: "Those who reach 100 would live 22 more years" } as L,
+        b: {
+          pt: "Pela lista do TSE, só 4 em cada 100 centenários morrem por ano. Nesse ritmo, o centenário médio chegaria aos 122 anos — a idade do recorde mundial, alcançada uma única vez na história. No Rio de Janeiro, viveria mais 94 anos. Na vida real, quem faz 100 vive em média mais 2 ou 3.",
+          en: "By the TSE's list, only 4 in 100 centenarians die each year. At that pace, the average centenarian would reach 122 — the age of the world record, reached once in history. In Rio de Janeiro, they would live 94 more years. In real life, those who turn 100 live 2 or 3 more years on average.",
+        } as L,
+      },
+      {
+        id: "inss",
+        t: { pt: "Três em cada quatro sem aposentadoria", en: "Three in four with no pension" } as L,
+        b: {
+          pt: "Pelo menos 3 em cada 4 brasileiros de 100 anos viveriam sem aposentadoria, pensão ou qualquer benefício — num país em que, dos 70 aos 94 anos, o INSS paga mais benefícios do que o TSE tem eleitores.",
+          en: "At least 3 in 4 Brazilians aged 100 would be living without a pension or any benefit — in a country where, from 70 to 94, the INSS pays more benefits than the TSE has voters.",
+        } as L,
+      },
+      {
+        id: "japao",
+        t: { pt: "Quase o dobro do Japão", en: "Almost twice Japan" } as L,
+        b: {
+          pt: "O Brasil teria 147 centenários para cada 100 mil habitantes. O Japão, o país mais longevo do mundo, tem 88.",
+          en: "Brazil would have 147 centenarians per 100,000 inhabitants. Japan, the longest-lived country in the world, has 88.",
+        } as L,
+      },
+      {
+        id: "mulheres",
+        t: { pt: "Mais homens que mulheres aos 100 anos", en: "More men than women at 100" } as L,
+        b: {
+          pt: "As mulheres vivem mais em todo lugar: são 72 de cada 100 centenários no Censo e 71 no INSS e nos atestados de óbito. Na lista do TSE, seriam minoria: 48.",
+          en: "Women live longer everywhere: they are 72 in 100 centenarians in the Census and 71 at the INSS and on death certificates. On the TSE's list, they would be a minority: 48.",
+        } as L,
+      },
+      {
+        id: "maracana",
+        t: { pt: "Dois Maracanãs lotados", en: "Two packed Maracanã stadiums" } as L,
+        b: {
+          pt: "É o tamanho da parte da lista que não pode ser de gente viva: pelo menos 173.575 títulos, num estádio de 78.838 lugares. Na sala de 79 nomes, pelo menos 46.",
+          en: "That is the size of the part of the list that cannot belong to living people: at least 173,575 registrations, in a stadium of 78,838 seats. In the room of 79 names, at least 46.",
+        } as L,
+      },
+    ],
+  },
+
   curvasTitle: { pt: "Quatro medidas, a mesma quebra", en: "Four measures, the same break" } as L,
   legendaRef: { pt: "IBGE", en: "IBGE" } as L,
   legendaTse: { pt: "lista do TSE", en: "the TSE's list" } as L,
@@ -124,8 +186,11 @@ export const angulos = {
       {
         id: "inss",
         nome: { pt: "INSS", en: "INSS" } as L,
-        valor: { pt: "4 em cada 5", en: "4 in every 5" } as L,
-        texto: { pt: "centenários vivos que estariam sem aposentadoria, pensão ou qualquer benefício.", en: "living centenarians who would be without a pension or any benefit at all." } as L,
+        valor: { pt: "3 em cada 4", en: "3 in every 4" } as L,
+        texto: {
+          pt: "centenários vivos, no mínimo, que estariam sem aposentadoria, pensão ou qualquer benefício — 4 em cada 5, contando pessoas em vez de benefícios.",
+          en: "living centenarians, at the least, who would be without a pension or any benefit at all — 4 in 5, counting people rather than benefits.",
+        } as L,
         medido: {
           pt: "O INSS paga 72.501 benefícios a centenários — cerca de 60 mil pessoas, porque quem tem aposentadoria e pensão conta duas vezes. Dos 70 aos 94 anos, paga mais benefícios do que o TSE tem títulos.",
           en: "The INSS pays 72,501 benefits to centenarians — about 60,000 people, because anyone with both a retirement and a survivor's pension counts twice. From 70 to 94, it pays more benefits than the TSE has registrations.",
@@ -140,8 +205,8 @@ export const angulos = {
       },
     ],
     fecho: {
-      pt: "Não é uma questão de probabilidade: é aritmética. Mesmo que ninguém com 95 anos ou mais tivesse morrido desde o Censo, sobrariam 94.985 títulos de centenários. Descontando só as mortes que o DATASUS registrou, no máximo 124.402 centenários podem estar vivos — pelo menos 173.575 títulos, 58% da lista, não são de pessoas vivas.",
-      en: "This is not a matter of probability: it is arithmetic. Even if nobody aged 95 or over had died since the Census, 94,985 centenarian registrations would be left over. Subtracting only the deaths DATASUS recorded, at most 124,402 centenarians can be alive — at least 173,575 registrations, 58% of the list, do not belong to living people.",
+      pt: "Não é uma questão de probabilidade: é aritmética. Mesmo que ninguém com 95 anos ou mais tivesse morrido desde o Censo, sobrariam 94.985 títulos de centenários. Descontando só as mortes que o DATASUS registrou, no máximo 124.402 centenários podem estar vivos — pelo menos 173.575 títulos, 58% da lista, não são de pessoas vivas. E se o Censo tivesse deixado de contar 8,3% dessas pessoas, o erro que o próprio IBGE mediu para o país inteiro? Ainda seriam pelo menos 155 mil títulos: mais da metade da lista. A conta só zeraria se o Censo tivesse perdido quase metade dos brasileiros com 95 anos ou mais.",
+      en: "This is not a matter of probability: it is arithmetic. Even if nobody aged 95 or over had died since the Census, 94,985 centenarian registrations would be left over. Subtracting only the deaths DATASUS recorded, at most 124,402 centenarians can be alive — at least 173,575 registrations, 58% of the list, do not belong to living people. And if the Census had missed 8.3% of those people, the error IBGE itself measured for the country as a whole? There would still be at least 155,000 registrations: more than half the list. The sum would only reach zero if the Census had missed almost half of Brazilians aged 95 or over.",
     } as L,
   },
 
@@ -159,8 +224,8 @@ export const angulos = {
       {
         valor: { pt: "4 em 10", en: "4 in 10" } as L,
         label: {
-          pt: "é a chance máxima de um título de centenário ser de alguém vivo — pela conta mais generosa. Pela folha do INSS, 1 em 5; pelo Censo, 1 em 8.",
-          en: "is the maximum chance that a centenarian registration belongs to someone alive — on the most generous count. By the INSS payroll, 1 in 5; by the Census, 1 in 8.",
+          pt: "é a chance máxima de um título de centenário ser de alguém vivo — pela conta mais generosa. Pela folha do INSS, no máximo 1 em 4 — cerca de 1 em 5, contando pessoas em vez de benefícios. Pelo Censo, 1 em 8.",
+          en: "is the maximum chance that a centenarian registration belongs to someone alive — on the most generous count. By the INSS payroll, at most 1 in 4 — about 1 in 5, counting people rather than benefits. By the Census, 1 in 8.",
         } as L,
         tom: "amber" as const,
       },
@@ -201,8 +266,8 @@ export const angulos = {
     mostramTitle: { pt: "O que os números mostram", en: "What the numbers show" } as L,
     mostram: [
       {
-        pt: "Eles aparecem onde há centenários vivos, não onde a lista é maior. Entre os estados, o número de presentes acompanha o Censo e a folha do INSS (correlação de 0,94) e quase não acompanha o tamanho da lista (0,56). Na cidade do Rio de Janeiro, a lista tem 68.142 centenários e o Censo encontrou 1.390: votaram 126.",
-        en: "They show up where there are living centenarians, not where the list is longest. Across states, the number present follows the Census and the INSS payroll (correlation 0.94) and barely follows the size of the list (0.56). In the city of Rio de Janeiro, the list has 68,142 centenarians and the Census found 1,390: 126 voted.",
+        pt: "Eles aparecem onde há centenários vivos, não onde a lista é maior. Entre os estados, o número de presentes acompanha o Censo e a folha do INSS (correlação de 0,94) e acompanha muito menos o tamanho da lista (0,56). Na cidade do Rio de Janeiro, a lista tem 68.142 centenários e o Censo encontrou 1.390: votaram 126.",
+        en: "They show up where there are living centenarians, not where the list is longest. Across states, the number present follows the Census and the INSS payroll (correlation 0.94) and follows the size of the list far less (0.56). In the city of Rio de Janeiro, the list has 68,142 centenarians and the Census found 1,390: 126 voted.",
       },
       {
         pt: "Quem tem biometria votou pelo menos 23 vezes mais do que quem não tem. Quem passou pelo cartório nos últimos anos também: entre os títulos com cor ou raça informada — campo previsto na resolução do TSE de 2021 —, votaram 25 em cada 100; entre os demais, 1 em cada 100.",
@@ -277,8 +342,8 @@ export const angulos = {
   },
 
   nota: {
-    pt: "Como foi contado: os dois arquivos do TSE (comparecimento e eleitorado de 2026) têm as mesmas 250.694 células para os eleitores de 90 anos ou mais, com o mesmo número de eleitores em cada uma. Em cada célula, quem votou além do número de títulos com biometria necessariamente não tem biometria cadastrada.",
-    en: "How it was counted: the two TSE files (2026 turnout and electorate) have the same 250,694 cells for voters aged 90 or over, with the same number of voters in each. In each cell, anyone who voted beyond the number of registrations with biometrics necessarily has no biometrics on file.",
+    pt: "Como foi contado: os dois arquivos do TSE (comparecimento e eleitorado de 2026) têm as mesmas 250.694 células para os eleitores de 90 anos ou mais, com o mesmo número de eleitores em cada uma. Em cada célula, quem votou além do número de títulos com biometria necessariamente não tem biometria cadastrada (“com biometria cadastrada” é a definição oficial do campo, no manual do arquivo). A contagem foi refeita pelos 27 arquivos estaduais, em vez do nacional, com o mesmo resultado. As mortes da geração dos centenários foram recontadas só pela idade no atestado, sem a data de nascimento: ficam entre 68.441 e 91.375, em torno das 78.590 usadas. A mortalidade “pela lista” divide as mortes de 2024, último ano publicado, pela lista de 2026; com mortes e lista de 2022, são 7 em cada 100.",
+    en: "How it was counted: the two TSE files (2026 turnout and electorate) have the same 250,694 cells for voters aged 90 or over, with the same number of voters in each. In each cell, anyone who voted beyond the number of registrations with biometrics necessarily has no biometrics on file (“with biometrics on file” is the field's official definition, in the file's manual). The count was redone from the 27 state files, instead of the national one, with the same result. Deaths in the centenarians' generation were recounted by age on the certificate alone, without the birth date: they fall between 68,441 and 91,375, around the 78,590 used. Mortality “by the list” divides 2024 deaths, the latest published year, by the 2026 list; with 2022 deaths and list, it is 7 in 100.",
   } as L,
 
   fontes: [

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Banknote, DoorOpen, Eye, EyeOff, Fingerprint, HeartPulse } from "lucide-react";
+import { ArrowRight, Banknote, DoorOpen, Eye, EyeOff, Fingerprint, Globe, HeartPulse, Hourglass, Landmark, Users } from "lucide-react";
 import { angulos, FAIXAS_70, porFaixa } from "@/data/angulos";
 import { useLang } from "@/i18n/context";
 import { t } from "@/i18n/config";
@@ -16,6 +16,7 @@ import { cn } from "@/lib/utils";
 
 const ICON = { ibge: DoorOpen, datasus: HeartPulse, inss: Banknote, tse: Fingerprint } as const;
 const TOM = { amber: "text-amber", rose: "text-rose", teal: "text-teal" } as const;
+const ICON_ABSURDO = { censo: DoorOpen, vida: Hourglass, inss: Banknote, japao: Globe, mulheres: Users, maracana: Landmark } as const;
 
 /** Os quatro números-resumo ("as chances"); usados na versão completa e na compacta. */
 function Chances() {
@@ -99,6 +100,30 @@ export function Angulos({ compact = false }: { compact?: boolean }) {
         <Heading as="h2" className="mt-3 max-w-4xl">{L(angulos.title)}</Heading>
         <Lead className="mt-5">{L(angulos.lead)}</Lead>
       </Reveal>
+
+      {/* Para ter ideia do tamanho do absurdo: seis contas que um leigo refaz */}
+      <Reveal className="mt-10">
+        <h3 className="display-md text-xl font-semibold text-fg sm:text-2xl">{L(angulos.absurdo.title)}</h3>
+        <p className="mt-2 max-w-3xl text-[0.98rem] leading-relaxed text-fg-2">{L(angulos.absurdo.lead)}</p>
+      </Reveal>
+      <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {angulos.absurdo.itens.map((a, i) => {
+          const Icon = ICON_ABSURDO[a.id as keyof typeof ICON_ABSURDO];
+          return (
+            <Reveal key={a.id} delay={(i % 3) * 0.05}>
+              <div className="flex h-full flex-col rounded-2xl border border-amber/25 bg-amber-soft p-5">
+                <p className="flex items-center gap-2.5 font-semibold leading-snug text-fg">
+                  <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber text-[#0a0c10]">
+                    <Icon className="h-4 w-4" />
+                  </span>
+                  {L(a.t)}
+                </p>
+                <p className="mt-2.5 text-[0.93rem] leading-relaxed text-fg-2">{L(a.b)}</p>
+              </div>
+            </Reveal>
+          );
+        })}
+      </div>
 
       {/* Quatro medidas, a mesma quebra */}
       <h3 className="display-md mt-10 text-xl font-semibold text-fg">{L(angulos.curvasTitle)}</h3>
