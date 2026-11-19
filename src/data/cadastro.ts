@@ -86,11 +86,13 @@ export const centenarios = {
   aptos100_2022: 184_330,
   faixa9599Censo2022: 165_178,
   obitos100PorAno: [
-    { ano: 2020, obitos: 14_187 },
-    { ano: 2021, obitos: 15_159 },
-    { ano: 2022, obitos: 15_975 },
-    { ano: 2023, obitos: 14_022 },
-    { ano: 2024, obitos: 14_899 },
+    // DATASUS/SIM, arquivos nacionais DOBR, IDADE = 5xx (100 anos ou mais). O código 999 (idade ignorada) não entra.
+    // Corrigido em 19/11/2026: a versão anterior (74.242) contava IDADE ≥ 500 e incluía 10.787 mortes de idade ignorada.
+    { ano: 2020, obitos: 11_800 },
+    { ano: 2021, obitos: 12_782 },
+    { ano: 2022, obitos: 13_638 },
+    { ano: 2023, obitos: 12_149 },
+    { ano: 2024, obitos: 13_086 },
   ],
   // Fonte: contagem oficial de cada país (Min.Saúde Japão set/2026: 107.677/123M;
   // US Census Bureau 2020 adj.: ~106K/332M; INSEE França 2024: ~31K/68M;

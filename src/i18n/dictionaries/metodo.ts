@@ -67,7 +67,7 @@ const pt = {
         },
         {
           title: "Baixe os óbitos do SIM/DATASUS",
-          body: "Arquivos DO{UF}{ANO}.dbc; converta com pyreaddbc. O campo IDADE codifica a unidade no primeiro dígito (4 = anos; ≥ 500 = 100+).",
+          body: "Arquivos DO{UF}{ANO}.dbc; converta com pyreaddbc. O campo IDADE codifica a unidade no primeiro dígito (4 = anos; 5 = 100 anos ou mais). O código 999 é idade ignorada e não entra na conta.",
           cmd: "ftp://ftp.datasus.gov.br/dissemin/publicos/SIM/CID10/DORES/DOSP2024.dbc",
         },
         {
@@ -137,6 +137,7 @@ const pt = {
     title: "O que já corrigimos em público",
     lead: "Erros anteriores ficam visíveis, com a versão antiga e a nova. Isso faz parte do método.",
     items: [
+      { antes: "DATASUS: 74.242 mortes de centenários em 2020–2024 (quatro réguas, /provas, /cadastro, slides; até 19/11/2026)", depois: "63.455", por: "Erro nosso: a contagem antiga tratou como “100 anos ou mais” todo código de idade a partir de 500. No DATASUS, o código 5 é 100 anos ou mais; o 999 é idade ignorada. As 10.787 mortes de idade ignorada saíram. A conclusão não muda: o cadastro tem quase cinco vezes as mortes de centenários de cinco anos." },
       { antes: "“Mortos votaram. Está provado (P < 10⁻¹⁵⁵⁰)” — home, provas, objeções e dados (18/11/2026)", depois: "“Títulos de pessoas que não podem estar vivas estavam aptos, e 92% dos de centenários sem biometria; se algum registrou voto, só o cruzamento nominal responde”", por: "Erro nosso, em duas camadas. A conta usou 596.478 centenários, o dobro do real: o arquivo do perfil do eleitorado traz a planilha do Brasil e as 28 dos estados com as mesmas linhas, e somamos todas — lido só o BRASIL, são 297.977 nas 27 UFs, o mesmo número do arquivo de comparecimento. E, mesmo com o número certo, a conta supunha que o título de um morto comparece tanto quanto o de um vivo, que era justamente o que se queria provar. Se nenhum morto tivesse votado, os 3.307 comparecimentos de centenários exigiriam que de 2 a 9 em cada 100 centenários vivos fossem votar — o que é possível. Os totais continuam sem separar zero de milhares." },
       { antes: "INSS: 46.575 centenários “titulares vivos”; TSE 12,8 vezes o INSS (18/11/2026)", depois: "72.501 benefícios pagos a pessoas com 100 anos ou mais; TSE 4,1 vezes o INSS", por: "Erro nosso: o 12,8× dividia o número dobrado (596.478). E o 46.575 descontava as pensões por morte supondo que a data de nascimento fosse a do falecido; no arquivo, ela é a de quem recebe — as pensões de filhos têm beneficiários com menos de 21 anos. Os pensionistas centenários são viúvas e viúvos vivos. Como uma pessoa pode receber dois benefícios, 4,1× é um piso." },
       { antes: "Centenários por 100 mil habitantes: Japão 7,5; EUA 3,0; França 3,5; Itália 4,0 — “quase 20 vezes o Japão” e o destaque “19,6×” no /cadastro (até 18/11/2026)", depois: "Japão 88; EUA 32; França 46; Itália 38 — “quase o dobro do país mais longevo”; destaque: 1,7×", por: "Erro nosso: as taxas estavam cerca de dez vezes abaixo das contagens oficiais de cada país (Japão: 107.677 centenários em set/2026). A fonte citada, a ONU, também dá números maiores. Com as taxas certas, o Censo brasileiro (18,6) fica abaixo do Japão, como esperado, e o cadastro do TSE (147) continua acima de todos." },
@@ -232,7 +233,7 @@ const en: typeof pt = {
         },
         {
           title: "Download deaths from SIM/DATASUS",
-          body: "Files DO{UF}{YEAR}.dbc; convert with pyreaddbc. The IDADE field encodes the unit in its first digit (4 = years; ≥ 500 = 100+).",
+          body: "Files DO{UF}{YEAR}.dbc; convert with pyreaddbc. The IDADE field encodes the unit in its first digit (4 = years; 5 = 100 years or more). Code 999 means unknown age and is not counted.",
           cmd: "ftp://ftp.datasus.gov.br/dissemin/publicos/SIM/CID10/DORES/DOSP2024.dbc",
         },
         {
@@ -302,6 +303,7 @@ const en: typeof pt = {
     title: "What we have already corrected in public",
     lead: "Earlier errors stay visible, with the old and the new version. That is part of the method.",
     items: [
+      { antes: "DATASUS: 74,242 centenarian deaths in 2020–2024 (four rulers, /provas, /cadastro, slides; until 19 Nov 2026)", depois: "63,455", por: "Our error: the old count treated every age code from 500 up as “100 or over”. In DATASUS, unit code 5 means 100 or over; 999 means unknown age. The 10,787 deaths of unknown age were removed. The conclusion stands: the registry holds nearly five times the centenarian deaths of five years." },
       { antes: "“Dead people voted. It is proven (P < 10⁻¹⁵⁵⁰)” — home, proofs, objections and data (18 Nov 2026)", depois: "“Registrations of people who cannot be alive were eligible, and 92% of centenarian ones lack biometrics; whether any recorded a vote, only the name-by-name cross-check can tell”", por: "Our error, in two layers. The sum used 596,478 centenarians, twice the real figure: the voter-profile file holds the national sheet and the 28 state sheets with the same rows, and we summed them all — reading only BRASIL, there are 297,977 across the 27 states, the same number as in the turnout file. And even with the right number, the sum assumed that a dead person's registration turns out as often as a living one's, which was exactly what it set out to prove. If no dead person had voted, the 3,307 centenarian turnouts would only require 2 to 9 in every 100 living centenarians to vote — which is possible. The totals still cannot tell zero from thousands." },
       { antes: "INSS: 46,575 “living titleholder” centenarians; TSE 12.8 times the INSS (18 Nov 2026)", depois: "72,501 benefits paid to people aged 100 or over; TSE 4.1 times the INSS", por: "Our error: the 12.8× divided the doubled number (596,478). And the 46,575 discounted survivor pensions on the assumption that the date of birth was the deceased's; in the file it is the recipient's — pensions paid to children have beneficiaries under 21. Centenarian pensioners are living widows and widowers. Since one person may receive two benefits, 4.1× is a floor." },
       { antes: "Centenarians per 100,000 inhabitants: Japan 7.5; USA 3.0; France 3.5; Italy 4.0 — “almost 20 times Japan” and the “19.6×” highlight on /cadastro (until 18 Nov 2026)", depois: "Japan 88; USA 32; France 46; Italy 38 — “almost double the most long-lived country”; highlight: 1.7×", por: "Our error: the rates were about ten times below each country's official counts (Japan: 107,677 centenarians in Sep 2026). The source we cited, the UN, also gives higher figures. With the right rates, Brazil's Census (18.6) sits below Japan, as expected, and the TSE registry (147) remains above them all." },

@@ -192,8 +192,8 @@ export const prova = {
         { value: 815_847, label: { pt: "mortes de pessoas com 70+ anos por ano (DATASUS)", en: "deaths of people aged 70+ per year (DATASUS)" } as L },
       ],
       text: {
-        pt: "O DATASUS não é vago: ele conta cada morte, nome a nome, com atestado assinado por médico. Foram 74.242 mortes de centenários em cinco anos. Mesmo assim, o cadastro mantém quase 300 mil centenários aptos a votar — quatro vezes todas as mortes de centenários de meia década. Esses mortos existem, estão contados pelo Ministério da Saúde, e deveriam ter saído do cadastro.",
-        en: "DATASUS is not vague: it counts every death, name by name, with a physician-signed certificate. There were 74,242 centenarian deaths in five years. Even so, the registry keeps almost 300,000 centenarians eligible to vote — four times every centenarian death of half a decade. These dead people exist, are counted by the Ministry of Health, and should have been removed from the registry.",
+        pt: "O DATASUS não é vago: ele conta cada morte, nome a nome, com atestado assinado por médico. Foram 63.455 mortes de centenários em cinco anos. Mesmo assim, o cadastro mantém quase 300 mil centenários aptos a votar — quase cinco vezes todas as mortes de centenários de meia década. Esses mortos existem, estão contados pelo Ministério da Saúde, e deveriam ter saído do cadastro.",
+        en: "DATASUS is not vague: it counts every death, name by name, with a physician-signed certificate. There were 63,455 centenarian deaths in five years. Even so, the registry keeps almost 300,000 centenarians eligible to vote — nearly five times every centenarian death of half a decade. These dead people exist, are counted by the Ministry of Health, and should have been removed from the registry.",
       } as L,
     },
     pontos: [

@@ -13,7 +13,7 @@ export type Regua = {
   tom: "teal" | "rose" | "slate" | "amber";
 };
 
-const obitos5anos = centenarios.obitos100PorAno.reduce((s, o) => s + o.obitos, 0); // 74.242 (2020–2024)
+const obitos5anos = centenarios.obitos100PorAno.reduce((s, o) => s + o.obitos, 0); // 63.455 (2020–2024; IDADE 5xx — corrigido em 19/11/2026)
 
 export const reguas = {
   eyebrow: { pt: "Quatro réguas do mesmo governo", en: "Four yardsticks from the same government" } as L,
@@ -75,8 +75,8 @@ export const reguas = {
     tse: { pt: "a mais só na lista do TSE", en: "more on the TSE's list only" } as L,
   },
   saida: {
-    pt: "E a lista deveria encolher: entre 2020 e 2024, o DATASUS registrou a morte de 74.242 centenários — nomes que deveriam ter saído do cadastro. Entre 2022 e 2026, em vez de encolher, ela cresceu 113 mil.",
-    en: "And the list should shrink: between 2020 and 2024, DATASUS recorded the deaths of 74,242 centenarians — names that should have left the registry. Between 2022 and 2026, instead of shrinking, it grew by 113,000.",
+    pt: "E a lista deveria encolher: entre 2020 e 2024, o DATASUS registrou a morte de 63.455 centenários — nomes que deveriam ter saído do cadastro. Entre 2022 e 2026, em vez de encolher, ela cresceu 113 mil.",
+    en: "And the list should shrink: between 2020 and 2024, DATASUS recorded the deaths of 63,455 centenarians — names that should have left the registry. Between 2022 and 2026, instead of shrinking, it grew by 113,000.",
   } as L,
   replay: { pt: "Repetir", en: "Replay" } as L,
   fontes: [
