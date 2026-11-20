@@ -97,10 +97,10 @@ export const angulos = {
       },
       {
         id: "japao",
-        t: { pt: "Quase o dobro do Japão", en: "Almost twice Japan" } as L,
+        t: { pt: "Seis vezes e meia o Japão", en: "Six and a half times Japan" } as L,
         b: {
-          pt: "O Brasil teria 147 centenários para cada 100 mil habitantes. O Japão, o país mais longevo do mundo, tem 88.",
-          en: "Brazil would have 147 centenarians per 100,000 inhabitants. Japan, the longest-lived country in the world, has 88.",
+          pt: "Entre as pessoas de 80 anos ou mais, o Japão — o país mais longevo do mundo — tem 8 centenários em cada mil, e o Censo do Brasil também. A lista do TSE tem 54. Por habitante, seria quase o dobro do Japão, num país muito mais jovem.",
+          en: "Among people aged 80 or over, Japan — the longest-lived country in the world — has 8 centenarians per thousand, and Brazil's Census has 8.2. The TSE's list has 54. Per capita, it would be nearly twice Japan, in a much younger country.",
         } as L,
       },
       {

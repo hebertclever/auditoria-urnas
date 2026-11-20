@@ -10,7 +10,7 @@ const pt = {
     pilar: "Pilar",
     forca: "força da evidência",
     comoMedimos: "Como medimos",
-    naoProva: "O que isto não prova",
+    naoProva: "Anomalia registrada — o que o TSE precisa responder",
     porque: "Por que isto pesa",
     passo: "Passo",
     indice: "Nesta página",
@@ -77,7 +77,7 @@ const pt = {
       legenda: "Eleição",
     },
     fac: {
-      title: "Quem tem voto facultativo se comportou de forma parecida (2026)",
+      title: "Ninguém subiu como os idosos — nem quem também vota só se quiser (2026)",
       grupo: "Grupo",
       aumento: "Aumento 1º→2º turno",
       retorno: "Voltaram, de cada 100 que faltaram ao 1º",
@@ -89,7 +89,7 @@ const pt = {
       },
     },
     why: {
-      title: "O que este pilar mostra",
+      title: "As anomalias medidas",
       items: [
         "Compara o TSE com o próprio TSE: mesmo cadastro, dois turnos, três semanas de intervalo. Não depende do IBGE nem de estimativa.",
         "É o maior salto da série: +3,9% em 2014, +2,8% em 2018, +10,0% em 2022 e +14,8% em 2026.",
@@ -107,7 +107,7 @@ const pt = {
       "Excedente = quanto cada faixa acima de 74 anos teve a mais do que teria se crescesse como a faixa 70–74: 58.913 (2014), 27.477 (2018), 198.738 (2022) e 472.721 (2026).",
     ],
     naoProva:
-      "Este pilar não identifica nenhuma pessoa nem prova voto em nome de falecido. O salto é real e está medido; a causa, não. Mobilização de eleitores de voto facultativo para o 2º turno é uma explicação possível, e os testes acima são compatíveis com ela: a volta às urnas cai com a idade depois dos 74 anos, e os analfabetos de 18 a 69 anos — também de voto facultativo — tiveram comportamento parecido. O que nenhum número agregado diz é quem são esses 1,3 milhão de eleitores. Só o TSE pode dizer, nome a nome — inclusive quantos deles foram identificados pela biometria.",
+      "É a maior anomalia de comparecimento da série, e está no arquivo do próprio TSE. Nenhum outro grupo chegou perto — nem quem também vota só se quiser: jovens de 16 e 17 anos subiram 0,8%, analfabetos de 18 a 69 anos 6,2%, adultos obrigados 1,3%. Os idosos subiram 14,8%. Quem são esses 1,3 milhão de eleitores a mais? Quantos foram identificados pela digital e quantos foram liberados sem ela? Em quais seções? O TSE registra, eleitor por eleitor, quem compareceu e como foi identificado — e não publicou essa conta. Ninguém mediu a explicação que se costuma dar, a de idosos levados às urnas para o 2º turno: nem o TSE. Enquanto ele não mostrar, a anomalia segue sem resposta.",
   },
   p2: {
     short: "Centenários",
@@ -130,7 +130,7 @@ const pt = {
       },
       {
         t: "Nenhum país do mundo",
-        b: "O Japão, líder mundial em longevidade, tem 88 centenários por 100 mil habitantes. O Censo brasileiro tem 18,6 — esperado para o nível de saúde do país. Mas o cadastro do TSE equivale a 147 por 100 mil: quase o dobro do país mais longevo do mundo.",
+        b: "O Japão, líder mundial em longevidade, tem 88 centenários por 100 mil habitantes. O Censo brasileiro tem 18,6 — esperado para o nível de saúde do país. Mas o cadastro do TSE equivale a 147 por 100 mil: quase o dobro do país mais longevo do mundo. Comparando idoso com idoso — centenários em cada mil pessoas de 80 anos ou mais —, a distância cresce: Japão 8,4; Censo do Brasil 8,2; lista do TSE 54 — seis vezes e meia.",
       },
     ],
     anim: {
@@ -150,7 +150,7 @@ const pt = {
     },
     stats: {
       fantasma: "dos centenários do cadastro não correspondem a pessoas que o Censo encontrou vivas",
-      japao: "mais centenários no cadastro do TSE do que no Japão, por 100 mil habitantes",
+      japao: "mais centenários entre os eleitores de 80+ do TSE do que entre os japoneses de 80+ — o país mais longevo do mundo",
       zero: "municípios com centenários cadastrados no TSE e zero mortes de centenários em cinco anos (578 cadastrados)",
     },
     why: {
@@ -164,6 +164,7 @@ const pt = {
         "O DATASUS registrou 63.455 mortes de centenários em 5 anos (2020–2024). O cadastro tem quase cinco vezes isso em centenários aptos.",
         "O INSS (previdência) paga 72.501 benefícios a pessoas com 100 anos ou mais e precisa confirmar, todo ano, que cada beneficiário está vivo. O TSE tem 297.977 centenários aptos — 4,1 vezes mais. Numa folha de pagamento, centenário fantasma é dinheiro perdido todo mês: o incentivo é limpar, não manter.",
         "A biometria quase não alcançou esses títulos: de 2022 a 2026, a cobertura dos centenários foi de 6,2% para 8,0%, enquanto a dos 90–94 anos subiu de 26,6% para 53,2%. E os títulos de centenários sem biometria aumentaram 58,5%, enquanto em todas as outras faixas de idosos caíram.",
+        "Idoso com idoso, o Japão fica para trás: entre as pessoas de 80 anos ou mais, o Japão tem 8 centenários em cada mil e o Censo do Brasil também (8,2). A lista do TSE tem 54 — seis vezes e meia. Essa conta não depende de o Japão ter mais idosos: compara só os idosos.",
       ],
     },
     method: [
@@ -173,9 +174,10 @@ const pt = {
       "Internacional: contagens oficiais de cada país (Japão: Min. Saúde set/2026, 107.677/123M = 88/100k; EUA: Census Bureau; França: INSEE; Itália: ISTAT). Brasil Censo = 37.814 ÷ 203 milhões; Brasil TSE = 297.977 ÷ 203 milhões.",
       "INSS: benefícios mantidos ativos em set/2026 (dados abertos, 42,5 milhões de registros), idade exata de quem recebe em 06/10/2026: 72.501 benefícios de pessoas com 100 anos ou mais. Benefício não é pessoa — alguém pode receber dois —, o que só aumenta a distância para o TSE.",
       "Biometria: “Perfil do eleitorado” 2022 e 2026 do TSE, colunas QT_ELEITORES e QT_ELEITORES_BIOMETRIA, 27 UFs. O ZIP traz o arquivo BRASIL e um por UF com as mesmas linhas: some um ou outro, nunca os dois.",
+      "Idoso com idoso: Japão 107.677 centenários ÷ 12,88 milhões de pessoas de 80+ (Agência de Estatística do Japão, Statistical Topics No. 149, tabela 1, estimativa de 15/09/2026) = 8,4 por mil; Brasil Censo 2022: 37.814 ÷ 4.586.954 = 8,2; TSE 2026: 297.977 ÷ 5.508.439 aptos de 80+ = 54,1.",
     ],
     naoProva:
-      "Não prova que algum centenário falecido votou. Erros de data de nascimento existem nos dois lados: idosos nascidos antes de 1930 frequentemente não têm registro civil preciso, e o TSE pode ter herdado datas erradas. Mas erro de idade não cria pessoas: desloca-as entre faixas. O excedente de 260 mil permanece a explicar.",
+      "Quem são os 260 mil nomes da lista que o Censo não encontrou? Erro na data de nascimento não explica: a lista tem mais centenários do que o Censo encontrou com 95 anos ou mais. O TSE tem o nome, a data de nascimento e o nome da mãe de cada um, e o Estado tem os registros de óbito. Os nomes continuam na lista — e a revisão do eleitorado que a lei manda fazer virou, numa resolução do TSE, uma opção.",
   },
   p3: {
     short: "Limpeza cadastral",
@@ -298,14 +300,14 @@ const pt = {
       "Contagem independente: a Agência Tatu reportou 733 municípios com mais eleitores que habitantes em julho de 2026; encontramos 730.",
     ],
     naoProva:
-      "Não prova fraude no dia da votação. Nesses municípios, o BU bate com o RDV em 100% das seções, não há votos após o encerramento e a velocidade de votação é normal. O que está inflado é o cadastro — por falecidos, por emigrados que nunca transferiram o título e por quem mantém título onde não mora. Não sabemos a proporção de cada causa.",
+      "Quanto desse excesso é de falecidos, quanto de quem se mudou e nunca transferiu o título e quanto de quem mantém título onde não mora? O TSE pode separar, título por título; os dados públicos, não. Nesses municípios, o BU bate com o RDV em todas as seções, não há votos depois do encerramento e a velocidade de votação é normal: o que está inflado é o cadastro.",
   },
   p5: {
     short: "Capacidade funcional",
-    eyebrow: "Pilar 5 · a régua da saúde",
+    eyebrow: "Pilar 5 · a contradição",
     title: "Quem consegue ir votar?",
     lead:
-      "A Pesquisa Nacional de Saúde do IBGE mede o que os idosos conseguem fazer sozinhos: 43% dos brasileiros com 75 anos ou mais têm dificuldade para ir a lugares distantes ou usar transporte. É contra essa régua que o comparecimento dos mais velhos precisa ser lido — e ele subiu: no 2º turno de 2026 votaram 47% dos eleitores registrados com 75 anos ou mais; em 2022 tinham sido 32%.",
+      "A Pesquisa Nacional de Saúde do IBGE mede o que os idosos conseguem fazer sozinhos: 43% dos brasileiros com 75 anos ou mais têm dificuldade para ir a lugares distantes ou usar transporte. Mesmo assim, é entre os mais velhos que o comparecimento mais cresce do 1º para o 2º turno — +9% aos 70–74 anos, +55% entre os centenários. E, em quatro anos, o comparecimento dos eleitores de 75 anos ou mais no 2º turno subiu de 32% para 47%.",
     steps: [
       {
         t: "Cem pessoas com 75 anos ou mais",
@@ -317,7 +319,7 @@ const pt = {
       },
       {
         t: "A volta às urnas cai com a idade",
-        b: "Entre os que faltaram ao 1º turno de 2026, apareceram no 2º turno 21 de cada 100 aos 70–74 anos, 15 aos 80–84 e 2 aos 95–99. A curva desce com a idade, como a saúde prevê. O que subiu foi o nível: 47% dos eleitores de 75 anos ou mais votaram no 2º turno de 2026, contra 32% em 2022.",
+        b: "Entre os que faltaram ao 1º turno de 2026, apareceram no 2º turno 21 de cada 100 aos 70–74 anos, 15 aos 80–84 e 2 aos 95–99. A curva desce com a idade. Mas o aumento em relação ao 1º turno faz o contrário: cresceu 9% aos 70–74 anos, 25% aos 80–84, 43% aos 90–94 e 55% entre os centenários. Quanto mais velha a faixa — e maior a dificuldade para sair de casa —, maior o aumento. E o nível subiu: 47% dos eleitores de 75+ votaram no 2º turno de 2026, contra 32% em 2022.",
       },
     ],
     anim: {
@@ -336,11 +338,12 @@ const pt = {
       pct: "Comparecimento",
     },
     why: {
-      title: "O que a saúde dos idosos nos diz",
+      title: "As anomalias medidas",
       items: [
-        "O nível de comparecimento cabe na capacidade funcional em todas as faixas: 46% aos 80–84 anos, onde entre 30% e 39% têm muita dificuldade ou não conseguem realizar atividades (Censo 2022).",
-        "A volta às urnas no 2º turno segue a saúde: é maior aos 70–74 anos e cai a cada faixa mais velha.",
-        "O que mudou foi o nível: entre os eleitores de 75 anos ou mais, o comparecimento no 2º turno passou de 32% em 2022 para 47% em 2026 — quase 15 pontos em quatro anos.",
+        "O aumento do comparecimento do 1º para o 2º turno cresce com a idade: +9% aos 70–74 anos, +34% aos 85–89, +55% entre os centenários. Os mais velhos, que têm mais dificuldade para sair de casa, foram os que mais cresceram.",
+        "O comparecimento dos eleitores de 75 anos ou mais subiu quase 15 pontos em quatro anos: de 32% em 2022 para 47% em 2026.",
+        "Os 70+ como grupo foram os que mais voltaram às urnas: 15 de cada 100 que faltaram ao 1º turno, contra 6 entre os adultos obrigados. Dentro dos 70+, a volta cai com a idade (21 aos 70–74, 2 aos 95–99) — mas até os 90–94 anos fica acima da dos adultos obrigados.",
+        "O nível de comparecimento ainda cabe na capacidade funcional (46% aos 80–84 anos, onde 30–39% têm muita dificuldade). O que pede resposta é a velocidade da subida.",
         "No Japão, o comparecimento dos 80+ fica entre 33% e 48%; na Alemanha chega a 85%, mas com voto postal amplo. No Brasil o voto é presencial.",
       ],
     },
@@ -350,7 +353,7 @@ const pt = {
       "Comparecimento: TSE 2022 e 2026, 2º turno, por faixa, sobre os aptos. Volta às urnas = aumento entre os turnos ÷ abstenções do 1º turno (Pilar 1).",
     ],
     naoProva:
-      "Este pilar não aponta irregularidade: o nível de comparecimento e a volta às urnas no 2º turno são compatíveis com a saúde medida pelo IBGE. Ele fica como régua do que é plausível — e registra uma subida de quase 15 pontos, em quatro anos, no comparecimento dos mais velhos, que só o TSE pode detalhar.",
+      "Anomalia: o comparecimento dos eleitores de 75 anos ou mais subiu quase 15 pontos em quatro anos, numa faixa em que 43 de cada 100 têm dificuldade para sair sozinhos, e o aumento entre os turnos cresce justamente com a idade. O que explica a subida? Quantos desses eleitores foram identificados pela digital no dia da votação? O TSE tem a resposta, eleitor por eleitor; os dados públicos não mostram.",
   },
   fraco: {
     eyebrow: "Sinal fraco · mostrado por honestidade",
@@ -386,7 +389,7 @@ const en: typeof pt = {
     pilar: "Pillar",
     forca: "strength of evidence",
     comoMedimos: "How we measured",
-    naoProva: "What this does not prove",
+    naoProva: "Anomaly on record — what the TSE needs to answer",
     porque: "Why this matters",
     passo: "Step",
     indice: "On this page",
@@ -453,7 +456,7 @@ const en: typeof pt = {
       legenda: "Election",
     },
     fac: {
-      title: "Other optional voters behaved in a similar way (2026)",
+      title: "No one rose like the elderly — not even others who vote only if they wish (2026)",
       grupo: "Group",
       aumento: "Increase R1→R2",
       retorno: "Returned, per 100 who skipped round 1",
@@ -465,7 +468,7 @@ const en: typeof pt = {
       },
     },
     why: {
-      title: "What this pillar shows",
+      title: "The measured anomalies",
       items: [
         "It compares the TSE with the TSE itself: same registry, two rounds, three weeks apart. It depends neither on IBGE nor on estimates.",
         "It is the largest jump in the series: +3.9% in 2014, +2.8% in 2018, +10.0% in 2022 and +14.8% in 2026.",
@@ -483,7 +486,7 @@ const en: typeof pt = {
       "Excess = how many more each group above 74 had than it would if it had grown like the 70–74 group: 58,913 (2014), 27,477 (2018), 198,738 (2022) and 472,721 (2026).",
     ],
     naoProva:
-      "This pillar identifies no individual and does not prove a vote in a dead person's name. The jump is real and measured; its cause is not. Mobilisation of optional voters for the runoff is a possible explanation, and the tests above are compatible with it: the return to the polls falls with age after 74, and illiterate voters aged 18 to 69 — also optional voters — behaved in a similar way. What no aggregate number says is who those 1.3 million voters are. Only the TSE can tell, name by name — including how many of them were identified by biometrics.",
+      "It is the largest turnout anomaly in the series, and it is in the TSE's own file. No other group came close — not even others who vote only if they wish: 16- and 17-year-olds rose 0.8%, illiterate voters aged 18 to 69 rose 6.2%, compulsory voters 1.3%. The elderly rose 14.8%. Who are those 1.3 million extra voters? How many were identified by fingerprint and how many were let through without one? At which polling stations? The TSE records, voter by voter, who turned up and how they were identified — and has not published that count. No one has measured the explanation usually given — that the elderly were brought to the polls for the runoff: not even the TSE. Until it does, the anomaly stands unanswered.",
   },
   p2: {
     short: "Centenarians",
@@ -506,7 +509,7 @@ const en: typeof pt = {
       },
       {
         t: "No country on Earth",
-        b: "Japan, the world leader in longevity, has 88 centenarians per 100,000 inhabitants. Brazil's Census figure is 18.6 — expected for the country's health profile. But the TSE registry amounts to 147 per 100,000: nearly double the most long-lived country on Earth.",
+        b: "Japan, the world leader in longevity, has 88 centenarians per 100,000 inhabitants. Brazil's Census figure is 18.6 — expected for the country's health profile. But the TSE registry amounts to 147 per 100,000: nearly double the most long-lived country on Earth. Comparing elderly with elderly — centenarians per thousand people aged 80 or over —, the gap widens: Japan 8.4; Brazil Census 8.2; TSE list 54 — six and a half times.",
       },
     ],
     anim: {
@@ -526,7 +529,7 @@ const en: typeof pt = {
     },
     stats: {
       fantasma: "of the centenarians in the registry do not match people the Census found alive",
-      japao: "more centenarians in the TSE registry than in Japan, per 100,000 inhabitants",
+      japao: "more centenarians among TSE voters aged 80+ than among Japan's population aged 80+ — the longest-lived country on Earth",
       zero: "municipalities with centenarians registered by the TSE and zero centenarian deaths in five years (578 registered)",
     },
     why: {
@@ -540,6 +543,7 @@ const en: typeof pt = {
         "DATASUS recorded 63,455 centenarian deaths in 5 years (2020–2024). The registry holds nearly five times as many centenarians eligible to vote.",
         "The INSS (social security) pays 72,501 benefits to people aged 100 or over and must confirm, every year, that each beneficiary is alive. The TSE has 297,977 centenarians eligible to vote — 4.1 times more. On a payroll, a phantom centenarian is money lost every month: the incentive is to clean, not to keep.",
         "Biometrics barely reached these registrations: from 2022 to 2026, centenarian coverage went from 6.2% to 8.0%, while that of ages 90–94 rose from 26.6% to 53.2%. And centenarian registrations without biometrics grew 58.5%, while in every other elderly band they fell.",
+        "Elderly against elderly, Japan falls behind: among people aged 80 or over, Japan has 8 centenarians per thousand and Brazil's Census has 8.2. The TSE's list has 54 — six and a half times. This comparison does not depend on Japan having more elderly people: it compares only the elderly.",
       ],
     },
     method: [
@@ -549,9 +553,10 @@ const en: typeof pt = {
       "International: official counts by country (Japan: Min. of Health Sep 2026, 107,677/123M = 88 per 100k; USA: Census Bureau; France: INSEE; Italy: ISTAT). Brazil Census = 37,814 ÷ 203 million; Brazil TSE = 297,977 ÷ 203 million.",
       "INSS: benefits active in Sep 2026 (open data, 42.5 million records), exact age of the recipient on 6 Oct 2026: 72,501 benefits of people aged 100 or over. A benefit is not a person — someone may receive two — which only widens the gap to the TSE.",
       "Biometrics: TSE “Voter profile” 2022 and 2026, columns QT_ELEITORES and QT_ELEITORES_BIOMETRIA, 27 states. The ZIP holds the BRASIL file and one per state with the same rows: sum one or the other, never both.",
+      "Elderly with elderly: Japan 107,677 centenarians ÷ 12.88 million people aged 80+ (Statistics Bureau of Japan, Statistical Topics No. 149, table 1, estimate of 15 Sep 2026) = 8.4 per thousand; Brazil 2022 Census: 37,814 ÷ 4,586,954 = 8.2; TSE 2026: 297,977 ÷ 5,508,439 registered aged 80+ = 54.1.",
     ],
     naoProva:
-      "It does not prove that any deceased centenarian voted. Birth-date errors exist on both sides: people born before 1930 often lack precise civil records, and the TSE may have inherited wrong dates. But an age error does not create people: it moves them between groups. The 260 thousand excess remains to be explained.",
+      "Who are the 260 thousand names on the list that the Census did not find? A birth-date error does not explain it: the list has more centenarians than the Census found aged 95 or over. The TSE holds the name, the birth date and the mother's name of each one, and the State holds the death records. The names remain on the list — and the electorate review the law requires became, in a TSE resolution, optional.",
   },
   p3: {
     short: "Registry clean-up",
@@ -674,14 +679,14 @@ const en: typeof pt = {
       "Independent count: Agência Tatu reported 733 municipalities with more voters than inhabitants in July 2026; we found 730.",
     ],
     naoProva:
-      "It does not prove fraud on election day. In these municipalities the BU matches the RDV in 100% of sections, there are no votes after closing time, and voting speed is normal. What is inflated is the registry — through the deceased, through emigrants who never transferred their registration, and through people who keep a registration where they do not live. We do not know the share of each cause.",
+      "How much of this excess is from the deceased, how much from people who moved and never transferred their registration, and how much from people who keep a registration where they do not live? The TSE can separate them, registration by registration; public data cannot. In these municipalities the BU matches the RDV in every section, there are no votes after closing time, and voting speed is normal: what is inflated is the registry.",
   },
   p5: {
     short: "Functional capacity",
-    eyebrow: "Pillar 5 · the health yardstick",
+    eyebrow: "Pillar 5 · the contradiction",
     title: "Who can actually go and vote?",
     lead:
-      "IBGE's National Health Survey measures what elderly people can do on their own: 43% of Brazilians aged 75 and over have difficulty travelling to distant places or using transport. That is the yardstick against which the turnout of the oldest must be read — and it has risen: in the 2026 runoff, 47% of registered voters aged 75 and over voted; in 2022 it had been 32%.",
+      "IBGE's National Health Survey measures what elderly people can do on their own: 43% of Brazilians aged 75 and over have difficulty travelling to distant places or using transport. Yet it is among the oldest that turnout rises the most from round 1 to round 2 — +9% at 70–74, +55% among centenarians. And in four years, turnout of voters aged 75 and over in the runoff went from 32% to 47%.",
     steps: [
       {
         t: "One hundred people aged 75 and over",
@@ -693,7 +698,7 @@ const en: typeof pt = {
       },
       {
         t: "The return to the polls falls with age",
-        b: "Among those who skipped the first round of 2026, 21 of every 100 showed up for the runoff at ages 70–74, 15 at 80–84 and 2 at 95–99. The curve falls with age, as health predicts. What rose was the level: 47% of voters aged 75 and over voted in the 2026 runoff, against 32% in 2022.",
+        b: "Among those who skipped the first round of 2026, 21 of every 100 showed up for the runoff at ages 70–74, 15 at 80–84 and 2 at 95–99. The curve falls with age. But the increase relative to round 1 goes the other way: it grew 9% at 70–74, 25% at 80–84, 43% at 90–94 and 55% among centenarians. The older the band — and the greater the difficulty leaving home —, the larger the increase. And the level rose: 47% of voters aged 75+ voted in the 2026 runoff, against 32% in 2022.",
       },
     ],
     anim: {
@@ -712,11 +717,12 @@ const en: typeof pt = {
       pct: "Turnout",
     },
     why: {
-      title: "What the health of the elderly tells us",
+      title: "The measured anomalies",
       items: [
-        "The turnout level fits within functional capacity in every group: 46% at ages 80–84, where between 30% and 39% have great difficulty or cannot perform activities (2022 Census).",
-        "The return to the polls in the runoff follows health: it is highest at ages 70–74 and falls with every older group.",
-        "What changed was the level: among voters aged 75 and over, runoff turnout went from 32% in 2022 to 47% in 2026 — almost 15 points in four years.",
+        "The increase in turnout from round 1 to round 2 grows with age: +9% at 70–74, +34% at 85–89, +55% among centenarians. The oldest, who have the greatest difficulty leaving home, rose the most.",
+        "Turnout of voters aged 75 and over rose almost 15 points in four years: from 32% in 2022 to 47% in 2026.",
+        "The 70+ as a group returned to the polls the most: 15 of every 100 who skipped round 1, against 6 among compulsory voters. Within the 70+, the return falls with age (21 at 70–74, 2 at 95–99) — but up to 90–94 it stays above that of compulsory voters.",
+        "The turnout level still fits within functional capacity (46% at ages 80–84, where 30–39% have great difficulty). What demands an answer is the speed of the rise.",
         "In Japan, turnout of those 80+ is between 33% and 48%; in Germany it reaches 85%, but with widespread postal voting. In Brazil voting is in person.",
       ],
     },
@@ -726,7 +732,7 @@ const en: typeof pt = {
       "Turnout: TSE 2022 and 2026, runoff, by age group, over registered voters. Return to the polls = increase between rounds ÷ round-1 abstentions (Pillar 1).",
     ],
     naoProva:
-      "This pillar points to no irregularity: the turnout level and the return to the polls in the runoff are compatible with the health IBGE measures. It stands as a yardstick of what is plausible — and records a rise of almost 15 points in four years in the turnout of the oldest, which only the TSE can detail.",
+      "Anomaly: turnout of voters aged 75 and over rose almost 15 points in four years, in a group where 43 of every 100 have difficulty going out on their own, and the increase between rounds grows precisely with age. What explains the rise? How many of those voters were identified by fingerprint on election day? The TSE holds the answer, voter by voter; public data does not show it.",
   },
   fraco: {
     eyebrow: "Weak signal · shown for honesty",

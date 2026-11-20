@@ -31,7 +31,7 @@ const pt = {
   ui: {
     fontes: "Fontes",
     detalhes: "Como medimos",
-    naoProva: "O que isto não prova",
+    naoProva: "Anomalia registrada — o que o TSE precisa responder",
     significado: "O que isto significa",
     analogia: "Para entender",
     play: "Reproduzir animação",
@@ -124,7 +124,7 @@ const en: typeof pt = {
   ui: {
     fontes: "Sources",
     detalhes: "How we measured",
-    naoProva: "What this does not prove",
+    naoProva: "Anomaly on record — what the TSE needs to answer",
     significado: "What this means",
     analogia: "To understand",
     play: "Play animation",

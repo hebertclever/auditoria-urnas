@@ -152,6 +152,17 @@ export const perfilEleitorado = {
 
 export const centenariosRazao = centenarios.tse2026Aptos100 / centenarios.censo2022; // ≈ 7,9×
 const por100k = centenarios.internacionalPor100k;
+// Idoso com idoso: centenários por mil pessoas de 80 anos ou mais. Não depende de o país ter mais ou menos idosos.
+// Japão: 107.677 centenários (Min. Saúde, 01/09/2026) ÷ 12,88 milhões de 80+ (Agência de Estatística do Japão,
+// Statistical Topics No. 149, tabela 1, estimativa de 15/09/2026; SHA-256 5765f7f8…7704e4). Brasil: Censo 2022 (SIDRA 9514),
+// 37.814 ÷ 4.586.954. TSE 2026: 297.977 ÷ 5.508.439 aptos de 80+ (perfil de comparecimento, 27 UFs).
+export const centenariosPorMil80 = {
+  japao: (107_677 / 12_880_000) * 1000, // 8,36
+  censo: (37_814 / 4_586_954) * 1000, // 8,24
+  tse: (297_977 / 5_508_439) * 1000, // 54,1
+};
+export const centenariosRazaoJapao80 = centenariosPorMil80.tse / centenariosPorMil80.japao; // ≈ 6,5×
+
 export const centenariosRazaoJapao = por100k[por100k.length - 1].valor / por100k.find((x) => x.pais.pt === "Japão")!.valor; // ≈ 1,7×
 export const centenariosRazaoINSS = centenarios.tse2026Aptos100 / inss.centenariosBeneficios; // ≈ 4,1×
 export const centenariosExcedente = centenarios.tse2026Aptos100 - centenarios.censo2022; // 260.163
